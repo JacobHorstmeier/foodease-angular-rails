@@ -1,4 +1,4 @@
 class ShoppingList < ApplicationRecord
-  belongs_to :user
-  has_many :ingredients, through: :user
+  belongs_to :menu
+  has_many :ingredients, through: :menu
 end
