@@ -1,3 +1,40 @@
+<!-- USER -->
+has email address, username, password
+has many healthLabels
+has a menu
+has a shoppingList
+has many ingredients through shoppingList
+
+<!-- MENU -->
+belong to user
+has many recipes
+
+<!-- HEALTHLABEL -->
+belongs to recipe
+belogns to user
+
+<!-- SHOPPING LIST -->
+belongs to user
+has many ingredients
+
+<!-- INGREDIENTS -->
+belong to shoppingList
+belong to recipe
+
+<!-- RECIPE -->
+belongs to menu
+has an imageUrl
+has many healthLabels
+has many ingredients
+has many ingredientLines 
+
+
+
+
+
+
+
+
 Recipe Shopping List
 
 Search for recipes, add recipes to the menu,  add ingredients to the shopping list
