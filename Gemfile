@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'bower-rails'
+gem 'angular-rails-templates'
 gem 'responders'
 gem 'devise'
 gem 'dotenv-rails', :groups => [:development, :test]
