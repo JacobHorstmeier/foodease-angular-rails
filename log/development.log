@@ -2799,3 +2799,82 @@ Processing by ApplicationController#index as HTML
 Completed 200 OK in 2362ms (Views: 2357.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2016-11-14 11:34:25 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 628ms (Views: 625.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 11:34:42 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 618ms (Views: 616.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 11:56:43 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'simplePagination' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jemino/Development/code/reciplease-angular-rails-application/app/assets/config
+  /Users/jemino/Development/code/reciplease-angular-rails-application/app/assets/images
+  /Users/jemino/Development/code/reciplease-angular-rails-application/app/assets/javascripts
+  /Users/jemino/Development/code/reciplease-angular-rails-application/app/assets/stylesheets
+  /Users/jemino/Development/code/reciplease-angular-rails-application/vendor/assets/bower_components
+  /Users/jemino/Development/code/reciplease-angular-rails-application/vendor/assets/javascripts
+  /Users/jemino/Development/code/reciplease-angular-rails-application/vendor/assets/stylesheets
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/angular-rails-templates-1.0.2/vendor/assets/javascripts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/jemino/Development/code/reciplease-angular-rails-application/lib/assets/bower_components
+  /Users/jemino/Development/code/reciplease-angular-rails-application/vendor/assets/bower_components
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.6/assets/stylesheets
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.6/assets/javascripts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.6/assets/fonts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.6/assets/images):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     8:     <%= javascript_include_tag 'application' %>
+     9:   </head>
+    10: 
+    11:   <body ng-app="reciPlease">
+  
+app/assets/javascripts/application.js:20
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4442860945174581224_70238670031720'
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.4ms)
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (93.0ms)
+Started GET "/" for ::1 at 2016-11-14 11:57:10 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 643ms (Views: 640.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 11:57:43 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 606ms (Views: 604.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 11:58:10 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 600ms (Views: 598.5ms | ActiveRecord: 0.0ms)
+
+

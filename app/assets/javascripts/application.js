@@ -17,5 +17,6 @@
 //= require angular-devise
 //= require angular-rails-templates
 //= require bootstrap-sprockets
+//= require ng-simplePagination
 //= require moment
 //= require_tree .

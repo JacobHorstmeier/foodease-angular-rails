@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  var reciPlease  = angular.module('reciPlease', ['ui.router', 'templates', 'Devise'])
+  var reciPlease  = angular.module('reciPlease', ['ui.router', 'templates', 'Devise', 'simplePagination'])
   .config(function($httpProvider) {
     $httpProvider.defaults.useXDomain = true;
   //   $httpProvider.defaults.withCredentials = true;
