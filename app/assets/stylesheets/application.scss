@@ -13,3 +13,11 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.recipe-image {
+  display: block;
+  height: 50%;
+  width: 50%;
+  margin: auto;
+  border: 3px solid blue;
+}

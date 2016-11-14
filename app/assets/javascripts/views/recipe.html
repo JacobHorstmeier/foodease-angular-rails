@@ -1,5 +1,14 @@
-<h2>{{recipe.recipe.label}}</h2>
-<img src="{{recipe.recipe.image}}" />
+<h3>
+  <a href="{{recipe.recipe.url}}" target="_blank">
+    {{recipe.recipe.label}}
+  </a>
+</h3>
+<div>
+  <button>Add to Menu</button>
+</div>
+<img src="{{recipe.recipe.image}}" class="recipe-image" />
+<br>
+Ingredients:
 <ul>
   <li ng-repeat="ingredient in recipe.recipe.ingredientLines">{{ingredient}}</li>
 </ul>
