@@ -1,0 +1,17 @@
+<div class="col-md-5">
+  <form ng-submit="search.recipeSearch(search.query)" remote="true">
+  <input type="text" placeholder="Search for recipes" ng-model="search.query" class="recipe-search" />
+  <input type="submit"/>
+  </form>
+  <br>
+  <!-- <a ui-sref="home.search.recipe">Recipe Search Result</a> -->
+  <ul>
+    <li ng-repeat="recipe in search.recipes" >
+      <!-- <a ui-sref="home.search.recipe">{{recipe.label}}</a> -->
+      <a ui-sref="home.search.recipe({id: '{{recipe.uri}}'})">{{recipe.label}}</a>
+    </li>
+  </ul>
+</div>
+<div class="col-md-5">
+  <div ui-view></div>
+</div>
