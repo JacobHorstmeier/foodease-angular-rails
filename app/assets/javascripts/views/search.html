@@ -1,17 +1,24 @@
 <div class="col-md-5">
-  <form ng-submit="search.recipeSearch(search.query)" remote="true">
-  <input type="text" placeholder="Search for recipes" ng-model="search.query" class="recipe-search" />
+  <form ng-submit="vm.recipeSearch(vm.query)" remote="true">
+  <input type="text" placeholder="Search for recipes" ng-model="vm.query" class="recipe-search" />
   <input type="submit"/>
   </form>
   <br>
-  <ul>
-    <li ng-repeat="recipe in search.recipes" >
-      <a ui-sref="home.search.recipe({id: '{{recipe.uri}}'})">{{recipe.label}}</a>
-    </li>
-  </ul>
-  <div ng-if="search.recipes.length > 0">
-    <a href="">Paginate</a>
+  
+  <div ng-if="vm.recipes.length > 0">
+    <button ng-hide="vm.pagination.page == 0" ng-click="vm.pagination.prevPage()" style='float: left;'>Previous</button>
+    <button ng-hide="vm.pagination.page + 1 >= pagination.numPages" ng-click="vm.pagination.nextPage()" style='float: right;'>Next</button>
   </div>
+
+  <div style='display: inline-block;'>
+    <ul>
+      <li ng-repeat="recipe in vm.recipes | startFrom: vm.pagination.page * vm.pagination.perPage | limitTo: vm.pagination.perPage" >
+        <a ui-sref="home.search.recipe({id: '{{recipe.uri}}'})">{{recipe.label}}</a>
+      </li>
+    </ul>
+  </div>
+
+
 </div>
 <div class="col-md-5">
   <div ui-view></div>

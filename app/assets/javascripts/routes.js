@@ -11,7 +11,7 @@ angular
       .state('home.search', {
         url: '/search',
         templateUrl: 'views/search.html',
-        controller: 'SearchController as search'
+        controller: 'SearchController as vm'
       })
       .state('home.search.recipe', {
         url: '/recipe/:id',
@@ -19,7 +19,6 @@ angular
         controller: 'RecipeController as recipe',
         resolve: {
           recipe: function($stateParams, SearchService){
-            // debugger;            
             return SearchService.getRecipe($stateParams.id)
           }
         }      

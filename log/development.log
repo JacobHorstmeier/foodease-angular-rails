@@ -2878,3 +2878,325 @@ Processing by ApplicationController#index as HTML
 Completed 200 OK in 600ms (Views: 598.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2016-11-14 12:03:56 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 665ms (Views: 662.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 12:05:07 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 747ms (Views: 745.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 12:05:21 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.5ms)
+Completed 200 OK in 648ms (Views: 646.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 12:05:45 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 581ms (Views: 579.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 12:05:53 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 579ms (Views: 577.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 12:06:35 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 606ms (Views: 604.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 12:07:06 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 602ms (Views: 600.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 12:08:10 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 626ms (Views: 623.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 12:08:52 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 614ms (Views: 612.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 12:14:10 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 829ms (Views: 823.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 12:14:27 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 83ms (Views: 80.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 12:14:44 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 624ms (Views: 621.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 12:14:52 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 80ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 12:16:43 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.7ms)
+Completed 200 OK in 629ms (Views: 626.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:07:16 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (24.0ms)
+Completed 200 OK in 1117ms (Views: 1103.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:08:43 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (3.4ms)
+Completed 200 OK in 674ms (Views: 672.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:09:49 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (1.9ms)
+Completed 200 OK in 733ms (Views: 730.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:10:59 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (1.8ms)
+Completed 200 OK in 750ms (Views: 747.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:11:13 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (3.2ms)
+Completed 200 OK in 97ms (Views: 95.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:11:34 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (4.8ms)
+Completed 200 OK in 655ms (Views: 650.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:11:57 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 642ms (Views: 640.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:13:29 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (8.0ms)
+Completed 200 OK in 714ms (Views: 711.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:13:30 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 125ms (Views: 123.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:13:56 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (3.2ms)
+Completed 200 OK in 701ms (Views: 699.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:14:16 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (1.8ms)
+Completed 200 OK in 680ms (Views: 678.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:14:39 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (2.0ms)
+Completed 200 OK in 618ms (Views: 616.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:16:23 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 1239ms (Views: 1236.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:28:25 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (3.2ms)
+Completed 200 OK in 392ms (Views: 377.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:28:34 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 952ms (Views: 950.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:39:40 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (2.1ms)
+Completed 200 OK in 829ms (Views: 823.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:40:19 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 673ms (Views: 671.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:42:43 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 740ms (Views: 738.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 14:43:12 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 662ms (Views: 660.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 15:06:05 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (2.4ms)
+Completed 200 OK in 768ms (Views: 762.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 15:06:22 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.5ms)
+Completed 200 OK in 973ms (Views: 969.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 15:06:43 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 694ms (Views: 691.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 15:08:10 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 650ms (Views: 648.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 15:08:29 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 604ms (Views: 602.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 15:10:07 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (1.8ms)
+Completed 200 OK in 755ms (Views: 749.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 15:10:33 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 669ms (Views: 667.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 15:15:00 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (1.7ms)
+Completed 200 OK in 769ms (Views: 763.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 15:15:30 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.5ms)
+Completed 200 OK in 693ms (Views: 690.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 15:15:57 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.4ms)
+Completed 200 OK in 645ms (Views: 643.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 15:17:31 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.3ms)
+Completed 200 OK in 737ms (Views: 735.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 15:17:51 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (0.5ms)
+Completed 200 OK in 659ms (Views: 657.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-14 15:18:47 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html within layouts/application
+  Rendered application/index.html within layouts/application (1.9ms)
+Completed 200 OK in 754ms (Views: 748.1ms | ActiveRecord: 0.0ms)
+
+

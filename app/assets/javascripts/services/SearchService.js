@@ -3,6 +3,7 @@ angular
   .service('SearchService', function($http){
     this.getRecipes = function(query){
       var url = 'https://api.edamam.com/search?q=' + query;
+      url += '&from=0&to=100'
       return $http({
         url: url,
         method: 'GET'
