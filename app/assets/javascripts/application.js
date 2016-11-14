@@ -18,5 +18,6 @@
 //= require angular-rails-templates
 //= require bootstrap-sprockets
 //= require ng-simplePagination
+//= require angular-messages
 //= require moment
 //= require_tree .

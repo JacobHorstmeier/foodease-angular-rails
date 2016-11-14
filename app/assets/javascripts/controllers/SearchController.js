@@ -15,9 +15,13 @@ angular
           ctrl.pagination.numPages = Math.ceil(ctrl.recipes.length/ctrl.pagination.perPage);
         })
     };
-    
+
     ctrl.recipe = null
     ctrl.showRecipe = function(recipe){
       ctrl.recipe = recipe
+    }
+
+    ctrl.addToCookbook = function(recipe){
+      // get current users cookBook and push recipe
     }
   })

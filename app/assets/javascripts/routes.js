@@ -18,20 +18,34 @@ angular
         templateUrl: 'views/recipe.html',
         require: '^vm'   
       })
-      // .state('home.search.recipe', {
-      //   url: '/recipe/:id',
-      //   templateUrl: 'views/recipe.html',
-      //   controller: 'RecipeController as recipe',
-      //   resolve: {
-      //     recipe: function($stateParams, SearchService){
-      //       return SearchService.getRecipe($stateParams.id)
-      //     }
-      //   }      
-      // })
-      // .state('menu', {
-      //   url: '/menu',
+      .state('home.login', {
+        url: '/login',
+        templateUrl: 'views/login.html',
+        controller: 'AuthController',
+        onEnter: function($state, Auth){
+          if(Auth._currentUser){
+            Auth.currentUser().then(function(){
+              $state.go('home.search')
+            })
+          }
+        }
+      })
+      .state('home.register', {
+        url: '/register',
+        templateUrl: 'views/register.html',
+        controller: 'AuthController',
+        onEnter: function($state, Auth) {
+        if (Auth._currentUser) {
+          Auth.currentUser().then(function (){
+            $state.go('home.beaches');
+          });
+        }
+      }
+      })
+      // .state('cookbook', {
+      //   url: '/cookbook',
       //   templateUrl: 'some/template.html',
-      //   controller: 'MenuController as menu'
+      //   controller: 'CookbookController as vm'
       // })
       // .state('menu.recipe', {
       //   url: '/recipe/:id'
@@ -45,16 +59,6 @@ angular
       //   url: '/shopping-list',
       //   templateUrl: 'some/template.html',
       //   controller: 'ShoppingListController as shoppingList'
-      // })
-      // .state('login', {
-      //   url: '/login',
-      //   templateUrl: 'some/template.html',
-      //   controller: 'LoginController as login'
-      // })
-      // .state('signup', {
-      //   url: '/signup',
-      //   templateUrl: 'some/template.html',
-      //   controller: 'SignupController as signup'
       // })
     $urlRouterProvider.otherwise('/search');
   })

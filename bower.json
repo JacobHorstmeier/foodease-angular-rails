@@ -6,7 +6,8 @@
       "angular-ui-router": "latest",
       "moment": "latest",
       "angular-devise": "latest",
-      "ng-simplePagination": "latest"
+      "ng-simplePagination": "latest",
+      "angular-messages": "latest"
     }
   }
 }
