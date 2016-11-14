@@ -6,14 +6,21 @@
   <br>
   
   <div ng-if="vm.recipes.length > 0">
-    <button ng-hide="vm.pagination.page == 0" ng-click="vm.pagination.prevPage()" style='float: left;'>Previous</button>
-    <button ng-hide="vm.pagination.page + 1 >= pagination.numPages" ng-click="vm.pagination.nextPage()" style='float: right;'>Next</button>
+    <button 
+      ng-hide="vm.pagination.page == 0" 
+      ng-click="vm.pagination.prevPage()" 
+      style='float: left;'>Previous</button>
+    <button 
+      ng-hide="vm.pagination.page + 1 >= vm.pagination.numPages" 
+      ng-click="vm.pagination.nextPage()" 
+      style='float: right;'>Next</button>
   </div>
 
   <div style='display: inline-block;'>
     <ul>
-      <li ng-repeat="recipe in vm.recipes | startFrom: vm.pagination.page * vm.pagination.perPage | limitTo: vm.pagination.perPage" >
-        <a ui-sref="home.search.recipe({id: '{{recipe.uri}}'})">{{recipe.label}}</a>
+      <li ng-repeat="recipe in vm.recipes | startFrom: vm.pagination.page * vm.pagination.perPage | limitTo: vm.pagination.perPage">
+        <a ui-sref="home.search.recipe" ng-click="vm.showRecipe(recipe)">{{recipe.label}}</a>
+        <!-- <a ui-sref="home.search.recipe({id: '{{recipe.uri}}'})">{{recipe.label}}</a> -->
       </li>
     </ul>
   </div>

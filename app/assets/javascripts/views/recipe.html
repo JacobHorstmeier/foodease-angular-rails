@@ -1,14 +1,16 @@
-<h3>
-  <a href="{{recipe.recipe.url}}" target="_blank">
-    {{recipe.recipe.label}}
-  </a>
-</h3>
-<div>
-  <button>Add to Cookbook</button>
+<div ng-show="vm.recipe">
+  <h3>
+    <a href="{{vm.recipe.url}}" target="_blank">
+      {{vm.recipe.label}}
+    </a>
+  </h3>
+  <div>
+    <button>Add to Cookbook</button>
+  </div>
+  <img src="{{vm.recipe.image}}" class="recipe-image" />
+  <br>
+  Ingredients:
+  <ul>
+    <li ng-repeat="ingredient in vm.recipe.ingredientLines">{{ingredient}}</li>
+  </ul>
 </div>
-<img src="{{recipe.recipe.image}}" class="recipe-image" />
-<br>
-Ingredients:
-<ul>
-  <li ng-repeat="ingredient in recipe.recipe.ingredientLines">{{ingredient}}</li>
-</ul>

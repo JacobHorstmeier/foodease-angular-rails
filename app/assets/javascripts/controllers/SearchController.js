@@ -15,4 +15,9 @@ angular
           ctrl.pagination.numPages = Math.ceil(ctrl.recipes.length/ctrl.pagination.perPage);
         })
     };
+    
+    ctrl.recipe = null
+    ctrl.showRecipe = function(recipe){
+      ctrl.recipe = recipe
+    }
   })

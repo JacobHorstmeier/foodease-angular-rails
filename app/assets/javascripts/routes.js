@@ -14,15 +14,20 @@ angular
         controller: 'SearchController as vm'
       })
       .state('home.search.recipe', {
-        url: '/recipe/:id',
+        url: '/recipe',
         templateUrl: 'views/recipe.html',
-        controller: 'RecipeController as recipe',
-        resolve: {
-          recipe: function($stateParams, SearchService){
-            return SearchService.getRecipe($stateParams.id)
-          }
-        }      
+        require: '^vm'   
       })
+      // .state('home.search.recipe', {
+      //   url: '/recipe/:id',
+      //   templateUrl: 'views/recipe.html',
+      //   controller: 'RecipeController as recipe',
+      //   resolve: {
+      //     recipe: function($stateParams, SearchService){
+      //       return SearchService.getRecipe($stateParams.id)
+      //     }
+      //   }      
+      // })
       // .state('menu', {
       //   url: '/menu',
       //   templateUrl: 'some/template.html',
