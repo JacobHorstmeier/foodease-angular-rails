@@ -6,7 +6,7 @@ angular
     $stateProvider
       .state('home', {
         templateUrl: 'views/home.html',
-        controller: 'HomeController as home'
+        controller: 'HomeController'
       })
       .state('home.search', {
         url: '/search',

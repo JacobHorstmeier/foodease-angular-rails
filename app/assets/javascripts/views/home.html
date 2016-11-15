@@ -1,3 +1,4 @@
+<!-- <flash-message></flash-message> -->
 <div class="container">
   <div class="page-header">
     <a ui-sref="home.search">
@@ -9,14 +10,15 @@
     
     <div class="col-md-2">
     
-      <div><button>Recipes</button></div>
-      <div><button ui-sref="home.login">Login</button></div>
-      <div><button ui-sref="home.register">Regiser</button></div>
-      <div><button>My Cookbook</button></div>
-      <div><button>Shopping List</button></div>
+      <div><button ui-sref="home.search">Recipes</button></div>
+      <div><button ng-hide="signedIn()" ui-sref="home.login">Login</button></div>
+      <div><button ng-hide="signedIn()" ui-sref="home.register">Register</button></div>
+      <div><button ng-show="signedIn()">My Cookbook</button></div>
+      <div><button ng-show="signedIn()">Shopping List</button></div>
+      <div><button ng-show="signedIn()" ng-click="logout()">Log Out</button></div>
       
       <!-- component: <search-filter/> -->
-      <select>
+      <select ng-show="signedIn()">
         <option>Vegan</option>
         <option>Vegetarian</option>
         <option>Shellfish-Free</option>

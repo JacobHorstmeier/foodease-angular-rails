@@ -2,9 +2,8 @@ angular
   .module('reciPlease')
   .controller('SearchController', function($scope, Pagination, SearchService){    
     var ctrl = this;
-    ctrl.query = '';
-    ctrl.recipes = [];
     ctrl.recipeSearch = function(query){
+      ctrl.recipes = [];
       SearchService.getRecipes(query)
         .success(function(response){
           response.hits.forEach(function(res){
