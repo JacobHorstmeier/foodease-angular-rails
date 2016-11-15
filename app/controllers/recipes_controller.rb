@@ -23,12 +23,14 @@ class RecipesController < ApplicationController
     recipe.save
     cookbook.recipes << recipe
     cookbook.save
-    # binding.pry
-    render json: recipe
+    render json: cookbook
   end
 
   def destroy
-    binding.pry
+    cookbook = Cookbook.find(params[:cookbook_id])
+    recipe = Recipe.find(params[:id])
+    cookbook.recipes.delete(recipe)
+    render json: cookbook
   end
 
 end

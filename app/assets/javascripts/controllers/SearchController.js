@@ -4,6 +4,7 @@ angular
 
     $scope.signedIn = Auth.isAuthenticated;   
     var ctrl = this;
+    ctrl.user = Auth._currentUser
 
     ctrl.recipeSearch = function(query){
       ctrl.recipes = [];
@@ -24,12 +25,20 @@ angular
     }
 
     ctrl.addToCookbook = function(recipe){
-      var user = Auth._currentUser
-      var cookbook = user.cookbook
-      RecipeService.addToCookbook(cookbook.id, recipe)
-        .success(function(recipe){  
-          debugger;
-          user.cookbook.recipes.push(recipe)
+      RecipeService.addToCookbook(ctrl.user.cookbook.id, recipe)
+        .success(function(cookbook){  
+          ctrl.user.cookbook = cookbook
         })
+    }
+
+    ctrl.removeFromCookbook = function(recipe){
+      RecipeService.removeFromCookbook(ctrl.user.cookbook.id, recipe.id)
+        .success(function(cookbook){
+          ctrl.user.cookbook = cookbook;
+        })
+    }
+
+    ctrl.alreadyInCookbook = function(recipe){
+      // check users cookbook for recipe
     }
   })

@@ -5,8 +5,16 @@
     </a>
   </h3>
 
-  <div>
-    <button ng-show="signedIn()" ng-click="vm.addToCookbook(vm.recipe)">Add to Cookbook</button>
+  <div ng-show="signedIn()">
+      <!-- ng-hide="vm.alreadyInCookbook(vm.recipe)"  -->
+    <button 
+      ng-click="vm.addToCookbook(vm.recipe)">Add to Cookbook
+    </button>
+
+      <!-- ng-show="vm.alreadyInCookbook(vm.recipe)"  -->
+    <button 
+      ng-click="vm.removeFromCookbook(vm.recipe)">Remove from Cookbook
+    </button>
   </div>
   
   <img src="{{vm.recipe.image}}" class="recipe-image" />

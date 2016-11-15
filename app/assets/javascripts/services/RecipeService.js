@@ -13,4 +13,12 @@ angular
       })
     }
 
+    this.removeFromCookbook = function(cookbookId, recipeId){
+      var url = '/cookbooks/' + cookbookId + '/recipes/' + recipeId;
+      return $http({
+        url: url,
+        method: 'DELETE'
+      })
+    }
+
   })

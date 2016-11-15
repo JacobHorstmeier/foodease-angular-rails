@@ -6504,3 +6504,871 @@ Processing by RecipesController#create as HTML
 Completed 200 OK in 49ms (Views: 4.0ms | ActiveRecord: 12.2ms)
 
 
+Started GET "/" for ::1 at 2016-11-15 12:39:40 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (782.1ms)
+Completed 200 OK in 790ms (Views: 789.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 12:39:45 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.6ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.5ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 3]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 3]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (109.48ms)
+Completed 201 Created in 137ms (Views: 104.0ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 12:55:58 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (733.2ms)
+Completed 200 OK in 743ms (Views: 742.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 12:56:13 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (136.1ms)
+Completed 200 OK in 144ms (Views: 143.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 12:56:14 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 3]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 3]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (142.13ms)
+Completed 201 Created in 273ms (Views: 128.4ms | ActiveRecord: 42.6ms)
+
+
+Started DELETE "/cookbooks/5/recipes/1" for ::1 at 2016-11-15 12:56:31 -0700
+Processing by RecipesController#destroy as HTML
+  Parameters: {"cookbook_id"=>"5", "id"=>"1"}
+  [1m[36mCookbook Load (0.6ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+  [1m[36mRecipeCookbook Load (0.9ms)[0m  [1m[34mSELECT  "recipe_cookbooks".* FROM "recipe_cookbooks" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipe_cookbooks"."recipe_id" = $2 LIMIT $3[0m  [["cookbook_id", 5], ["recipe_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "recipe_cookbooks" WHERE "recipe_cookbooks"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecipeCookbook Load (0.6ms)[0m  [1m[34mSELECT  "recipe_cookbooks".* FROM "recipe_cookbooks" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipe_cookbooks"."recipe_id" = $2 LIMIT $3[0m  [["cookbook_id", 5], ["recipe_id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipes"."id" = $2[0m  [["cookbook_id", 5], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "recipe_cookbooks" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipe_cookbooks"."recipe_id" = 1[0m  [["cookbook_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for RecipesController#destroy, rendering head :no_content
+Completed 204 No Content in 505736ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:06:46 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (133.3ms)
+Completed 200 OK in 142ms (Views: 141.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 13:06:47 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.8ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 3]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 3]]
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (210.99ms)
+Completed 201 Created in 324ms (Views: 185.1ms | ActiveRecord: 45.2ms)
+
+
+Started DELETE "/cookbooks/5/recipes/3" for ::1 at 2016-11-15 13:06:52 -0700
+Processing by RecipesController#destroy as HTML
+  Parameters: {"cookbook_id"=>"5", "id"=>"3"}
+  [1m[36mCookbook Load (0.6ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "recipe_cookbooks" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipe_cookbooks"."recipe_id" = 3[0m  [["cookbook_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (10.88ms)
+Completed 200 OK in 22ms (Views: 12.2ms | ActiveRecord: 3.6ms)
+
+
+Started DELETE "/cookbooks/5/recipes/3" for ::1 at 2016-11-15 13:07:20 -0700
+Processing by RecipesController#destroy as HTML
+  Parameters: {"cookbook_id"=>"5", "id"=>"3"}
+  [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "recipe_cookbooks" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipe_cookbooks"."recipe_id" = 3[0m  [["cookbook_id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (10.95ms)
+Completed 200 OK in 19ms (Views: 11.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:08:17 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (669.7ms)
+Completed 200 OK in 677ms (Views: 676.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 13:08:23 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.6ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (35.11ms)
+Completed 201 Created in 55ms (Views: 34.3ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:08:25 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (89.1ms)
+Completed 200 OK in 96ms (Views: 95.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 13:08:26 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.4ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (36.47ms)
+Completed 201 Created in 53ms (Views: 35.3ms | ActiveRecord: 3.8ms)
+
+
+Started DELETE "/cookbooks/5/recipes/4" for ::1 at 2016-11-15 13:08:32 -0700
+Processing by RecipesController#destroy as HTML
+  Parameters: {"cookbook_id"=>"5", "id"=>"4"}
+  [1m[36mCookbook Load (0.4ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "recipe_cookbooks" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipe_cookbooks"."recipe_id" = 4[0m  [["cookbook_id", 5]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (1.7ms)
+Completed 200 OK in 12ms (Views: 3.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:08:40 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (87.8ms)
+Completed 200 OK in 96ms (Views: 95.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:08:44 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (91.2ms)
+Completed 200 OK in 102ms (Views: 102.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:08:45 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (101.3ms)
+Completed 200 OK in 109ms (Views: 108.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 13:08:46 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (13.96ms)
+Completed 201 Created in 32ms (Views: 13.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:10:04 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (743.5ms)
+Completed 200 OK in 753ms (Views: 752.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 13:10:06 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (18.17ms)
+Completed 201 Created in 37ms (Views: 18.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:11:42 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (647.3ms)
+Completed 200 OK in 655ms (Views: 654.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 13:11:43 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.5ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (3.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (19.11ms)
+Completed 201 Created in 35ms (Views: 15.7ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:12:39 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (146.4ms)
+Completed 200 OK in 158ms (Views: 157.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 13:12:41 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.6ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.7ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (2.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (16.92ms)
+Completed 201 Created in 35ms (Views: 14.1ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:12:42 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (86.3ms)
+Completed 200 OK in 93ms (Views: 92.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 13:12:43 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.4ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (2.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (13.35ms)
+Completed 201 Created in 28ms (Views: 11.2ms | ActiveRecord: 4.5ms)
+
+
+Started DELETE "/users/sign_out.json" for ::1 at 2016-11-15 13:12:52 -0700
+Processing by Devise::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 16ms (ActiveRecord: 1.4ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 13:12:55 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"email@email.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"email@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "email@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", 2016-11-15 20:12:55 UTC], ["sign_in_count", 2], ["updated_at", 2016-11-15 20:12:55 UTC], ["id", 5]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mCookbook Load (0.3ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.2ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.5ms)
+Completed 201 Created in 241ms (Views: 8.7ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/cookbooks/5/recipes" for ::1 at 2016-11-15 13:13:38 -0700
+Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{"uri"=>"c468dc28f8b64bb711125cc150b15c25", "label"=>"Grilled Deviled Chickens Under a Brick", "image"=>"https://www.edamam.com/web-img/5f5/5f51c89f832d50da84e3c05bef3f66f9.jpg", "source"=>"Martha Stewart", "sourceIcon"=>"http://www.marthastewart.com/sites/all/themes/marthastewart/images/favicon.ico", "url"=>"http://www.marthastewart.com/recipe/grilled-deviled-chickens-under-a-brick", "shareAs"=>"http://www.edamam.com/recipe/grilled-deviled-chickens-under-a-brick-c468dc28f8b64bb711125cc150b15c25/chicken", "yield"=>4, "dietLabels"=>["Low-Carb"], "healthLabels"=>["Paleo", "Dairy-Free", "Gluten-Free", "Egg-Free", "Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free"], "cautions"=>[], "ingredientLines"=>["4 baby chickens (poussins) or cornish hens (about 1 1/4 pounds each), or 4 chicken breast halves", "3 lemons, plus wedges for garnish", "4 cloves garlic, peeled and smashed", "1 tablespoon crushed red-pepper flakes, or to taste", "1 tablespoon finely chopped fresh thyme", "1 tablespoon finely chopped fresh rosemary", "1/2 cup olive oil", "Salt, to taste"], "ingredients"=>[{"text"=>"4 baby chickens (poussins) or cornish hens (about 1 1/4 pounds each), or 4 chicken breast halves", "quantity"=>5, "measure"=>"lb", "food"=>"chickens", "weight"=>2267.96}, {"text"=>"3 lemons, plus wedges for garnish", "quantity"=>3, "measure"=>"lemon", "food"=>"lemons", "weight"=>174}, {"text"=>"3 lemons, plus wedges for garnish", "quantity"=>1, "measure"=>"wedge", "food"=>"lemons", "weight"=>7}, {"text"=>"4 cloves garlic, peeled and smashed", "quantity"=>4, "measure"=>"clove", "food"=>"garlic", "weight"=>12}, {"text"=>"1 tablespoon crushed red-pepper flakes, or to taste", "quantity"=>1, "measure"=>"tbsp", "food"=>"red pepper flake", "weight"=>5.3}, {"text"=>"1 tablespoon finely chopped fresh thyme", "quantity"=>1, "measure"=>"tbsp", "food"=>"fresh thyme", "weight"=>2.4}, {"text"=>"1 tablespoon finely chopped fresh rosemary", "quantity"=>1, "measure"=>"tbsp", "food"=>"fresh rosemary", "weight"=>1.7}, {"text"=>"1/2 cup olive oil", "quantity"=>0.5, "measure"=>"cup", "food"=>"olive oil", "weight"=>108}, {"text"=>"Salt, to taste", "quantity"=>0, "measure"=>"medium", "food"=>"salt", "weight"=>0.059700002768357505}], "calories"=>5922.709000000001, "totalWeight"=>2578.4197000027684, "totalNutrients"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>5922.709000000001, "unit"=>"kcal"}, "FAT"=>{"label"=>"Fat", "quantity"=>451.213026, "unit"=>"g"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>112.94890599999998, "unit"=>"g"}, "FATRN"=>{"label"=>"Trans", "quantity"=>2.041164, "unit"=>"g"}, "FAMS"=>{"label"=>"Monounsaturated", "quantity"=>220.50419400000004, "unit"=>"g"}, "FAPU"=>{"label"=>"Polyunsaturated", "quantity"=>85.26193800000001, "unit"=>"g"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>24.77649, "unit"=>"g"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>7.3373, "unit"=>"g"}, "SUGAR"=>{"label"=>"Sugars", "quantity"=>5.19302, "unit"=>"g"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>425.421, "unit"=>"g"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>1700.97, "unit"=>"mg"}, "NA"=>{"label"=>"Sodium", "quantity"=>1620.77852707296, "unit"=>"mg"}, "CA"=>{"label"=>"Calcium", "quantity"=>342.3029280006644, "unit"=>"mg"}, "MG"=>{"label"=>"Magnesium", "quantity"=>484.5155970000277, "unit"=>"mg"}, "K"=>{"label"=>"Potassium", "quantity"=>4718.1431760002215, "unit"=>"mg"}, "FE"=>{"label"=>"Iron", "quantity"=>23.251887010009142, "unit"=>"mg"}, "ZN"=>{"label"=>"Zinc", "quantity"=>30.148825700002767, "unit"=>"mg"}, "P"=>{"label"=>"Phosphorus", "quantity"=>3400.4162, "unit"=>"mg"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>1050.1606, "unit"=>"µg_RAE"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>144.22356000000002, "unit"=>"mg"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>1.475606, "unit"=>"mg"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>2.833012, "unit"=>"mg"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>155.00653, "unit"=>"mg"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>8.37388, "unit"=>"mg"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>164.89860000000004, "unit"=>"µg"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>7.030676000000001, "unit"=>"µg"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>4.53592, "unit"=>"µg"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>24.163970000000003, "unit"=>"mg"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>103.49530000000001, "unit"=>"µg"}}, "totalDaily"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>296.13545, "unit"=>"%"}, "FAT"=>{"label"=>"Fat", "quantity"=>694.1738861538462, "unit"=>"%"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>564.7445299999999, "unit"=>"%"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>8.25883, "unit"=>"%"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>29.3492, "unit"=>"%"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>850.842, "unit"=>"%"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>566.99, "unit"=>"%"}, "NA"=>{"label"=>"Sodium", "quantity"=>67.53243862804, "unit"=>"%"}, "CA"=>{"label"=>"Calcium", "quantity"=>34.23029280006644, "unit"=>"%"}, "MG"=>{"label"=>"Magnesium", "quantity"=>121.12889925000692, "unit"=>"%"}, "K"=>{"label"=>"Potassium", "quantity"=>134.80409074286345, "unit"=>"%"}, "FE"=>{"label"=>"Iron", "quantity"=>129.17715005560635, "unit"=>"%"}, "ZN"=>{"label"=>"Zinc", "quantity"=>200.9921713333518, "unit"=>"%"}, "P"=>{"label"=>"Phosphorus", "quantity"=>485.77374285714285, "unit"=>"%"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>116.6845111111111, "unit"=>"%"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>240.37260000000003, "unit"=>"%"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>98.37373333333333, "unit"=>"%"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>166.64776470588237, "unit"=>"%"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>775.03265, "unit"=>"%"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>418.69399999999996, "unit"=>"%"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>41.22465000000001, "unit"=>"%"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>117.17793333333334, "unit"=>"%"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>1.13398, "unit"=>"%"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>120.81985000000002, "unit"=>"%"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>129.369125, "unit"=>"%"}}, "digest"=>[{"label"=>"Fat", "tag"=>"FAT", "schemaOrgTag"=>"fatContent", "total"=>451.213026, "hasRDI"=>true, "daily"=>694.1738861538462, "unit"=>"g", "sub"=>[{"label"=>"Saturated", "tag"=>"FASAT", "schemaOrgTag"=>"saturatedFatContent", "total"=>112.94890599999998, "hasRDI"=>true, "daily"=>564.7445299999999, "unit"=>"g"}, {"label"=>"Trans", "tag"=>"FATRN", "schemaOrgTag"=>"transFatContent", "total"=>2.041164, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Monounsaturated", "tag"=>"FAMS", "schemaOrgTag"=>nil, "total"=>220.50419400000004, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Polyunsaturated", "tag"=>"FAPU", "schemaOrgTag"=>nil, "total"=>85.26193800000001, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Carbs", "tag"=>"CHOCDF", "schemaOrgTag"=>"carbohydrateContent", "total"=>24.77649, "hasRDI"=>true, "daily"=>8.25883, "unit"=>"g", "sub"=>[{"label"=>"Carbs (net)", "tag"=>"CHOCDF.net", "schemaOrgTag"=>nil, "total"=>17.43919, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Fiber", "tag"=>"FIBTG", "schemaOrgTag"=>"fiberContent", "total"=>7.3373, "hasRDI"=>true, "daily"=>29.3492, "unit"=>"g"}, {"label"=>"Sugars", "tag"=>"SUGAR", "schemaOrgTag"=>"sugarContent", "total"=>5.19302, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Protein", "tag"=>"PROCNT", "schemaOrgTag"=>"proteinContent", "total"=>425.421, "hasRDI"=>true, "daily"=>850.842, "unit"=>"g"}, {"label"=>"Cholesterol", "tag"=>"CHOLE", "schemaOrgTag"=>"cholesterolContent", "total"=>1700.97, "hasRDI"=>true, "daily"=>566.99, "unit"=>"mg"}, {"label"=>"Sodium", "tag"=>"NA", "schemaOrgTag"=>"sodiumContent", "total"=>1620.77852707296, "hasRDI"=>true, "daily"=>67.53243862804, "unit"=>"mg"}, {"label"=>"Calcium", "tag"=>"CA", "schemaOrgTag"=>nil, "total"=>342.3029280006644, "hasRDI"=>true, "daily"=>34.23029280006644, "unit"=>"mg"}, {"label"=>"Magnesium", "tag"=>"MG", "schemaOrgTag"=>nil, "total"=>484.5155970000277, "hasRDI"=>true, "daily"=>121.12889925000692, "unit"=>"mg"}, {"label"=>"Potassium", "tag"=>"K", "schemaOrgTag"=>nil, "total"=>4718.1431760002215, "hasRDI"=>true, "daily"=>134.80409074286345, "unit"=>"mg"}, {"label"=>"Iron", "tag"=>"FE", "schemaOrgTag"=>nil, "total"=>23.251887010009142, "hasRDI"=>true, "daily"=>129.17715005560635, "unit"=>"mg"}, {"label"=>"Zinc", "tag"=>"ZN", "schemaOrgTag"=>nil, "total"=>30.148825700002767, "hasRDI"=>true, "daily"=>200.9921713333518, "unit"=>"mg"}, {"label"=>"Phosphorus", "tag"=>"P", "schemaOrgTag"=>nil, "total"=>3400.4162, "hasRDI"=>true, "daily"=>485.77374285714285, "unit"=>"mg"}, {"label"=>"Vitamin A", "tag"=>"VITA_RAE", "schemaOrgTag"=>nil, "total"=>1050.1606, "hasRDI"=>true, "daily"=>116.6845111111111, "unit"=>"µg"}, {"label"=>"Vitamin C", "tag"=>"VITC", "schemaOrgTag"=>nil, "total"=>144.22356000000002, "hasRDI"=>true, "daily"=>240.37260000000003, "unit"=>"mg"}, {"label"=>"Thiamin (B1)", "tag"=>"THIA", "schemaOrgTag"=>nil, "total"=>1.475606, "hasRDI"=>true, "daily"=>98.37373333333333, "unit"=>"mg"}, {"label"=>"Riboflavin (B2)", "tag"=>"RIBF", "schemaOrgTag"=>nil, "total"=>2.833012, "hasRDI"=>true, "daily"=>166.64776470588237, "unit"=>"mg"}, {"label"=>"Niacin (B3)", "tag"=>"NIA", "schemaOrgTag"=>nil, "total"=>155.00653, "hasRDI"=>true, "daily"=>775.03265, "unit"=>"mg"}, {"label"=>"Vitamin B6", "tag"=>"VITB6A", "schemaOrgTag"=>nil, "total"=>8.37388, "hasRDI"=>true, "daily"=>418.69399999999996, "unit"=>"mg"}, {"label"=>"Folic Acid (B9)", "tag"=>"FOL", "schemaOrgTag"=>nil, "total"=>164.89860000000004, "hasRDI"=>true, "daily"=>41.22465000000001, "unit"=>"µg"}, {"label"=>"Vitamin B12", "tag"=>"VITB12", "schemaOrgTag"=>nil, "total"=>7.030676000000001, "hasRDI"=>true, "daily"=>117.17793333333334, "unit"=>"µg"}, {"label"=>"Vitamin D", "tag"=>"VITD", "schemaOrgTag"=>nil, "total"=>4.53592, "hasRDI"=>true, "daily"=>1.13398, "unit"=>"µg"}, {"label"=>"Vitamin E", "tag"=>"TOCPHA", "schemaOrgTag"=>nil, "total"=>24.163970000000003, "hasRDI"=>true, "daily"=>120.81985000000002, "unit"=>"mg"}, {"label"=>"Vitamin K", "tag"=>"VITK1", "schemaOrgTag"=>nil, "total"=>103.49530000000001, "hasRDI"=>true, "daily"=>129.369125, "unit"=>"µg"}]}, "cookbook_id"=>"5"}
+  [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."label" = $1 AND "recipes"."image" = $2 AND "recipes"."url" = $3 AND "recipes"."ingredient_lines" = $4 LIMIT $5[0m  [["label", "Grilled Deviled Chickens Under a Brick"], ["image", "https://www.edamam.com/web-img/5f5/5f51c89f832d50da84e3c05bef3f66f9.jpg"], ["url", "http://www.marthastewart.com/recipe/grilled-deviled-chickens-under-a-brick"], ["ingredient_lines", "4 baby chickens (poussins) or cornish hens (about 1 1/4 pounds each), or 4 chicken breast halves\n3 lemons, plus wedges for garnish\n4 cloves garlic, peeled and smashed\n1 tablespoon crushed red-pepper flakes, or to taste\n1 tablespoon finely chopped fresh thyme\n1 tablespoon finely chopped fresh rosemary\n1/2 cup olive oil\nSalt, to taste"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "chickens"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "lemons"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "lemons"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "garlic"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "red pepper flake"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "fresh thyme"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "fresh rosemary"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "olive oil"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "salt"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "recipe_cookbooks" ("cookbook_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cookbook_id", 5], ["recipe_id", 4], ["created_at", 2016-11-15 20:13:38 UTC], ["updated_at", 2016-11-15 20:13:38 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (3.23ms)
+Completed 200 OK in 56ms (Views: 4.8ms | ActiveRecord: 11.6ms)
+
+
+Started DELETE "/cookbooks/5/recipes/4" for ::1 at 2016-11-15 13:14:12 -0700
+Processing by RecipesController#destroy as HTML
+  Parameters: {"cookbook_id"=>"5", "id"=>"4"}
+  [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "recipe_cookbooks" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipe_cookbooks"."recipe_id" = 4[0m  [["cookbook_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (1.26ms)
+Completed 200 OK in 10ms (Views: 2.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:15:32 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (649.8ms)
+Completed 200 OK in 657ms (Views: 657.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 13:15:40 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (1.8ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.6ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (19.01ms)
+Completed 201 Created in 36ms (Views: 17.1ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:16:56 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (856.2ms)
+Completed 200 OK in 864ms (Views: 863.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 13:16:58 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (14.09ms)
+Completed 201 Created in 31ms (Views: 13.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:17:16 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (640.0ms)
+Completed 200 OK in 647ms (Views: 646.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 13:17:21 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.6ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (15.63ms)
+Completed 201 Created in 37ms (Views: 14.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 13:18:00 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (87.3ms)
+Completed 200 OK in 94ms (Views: 93.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 13:18:12 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.4ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.2ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.48ms)
+Completed 201 Created in 20ms (Views: 6.7ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/cookbooks/5/recipes" for ::1 at 2016-11-15 13:18:30 -0700
+Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{"uri"=>"c468dc28f8b64bb711125cc150b15c25", "label"=>"Grilled Deviled Chickens Under a Brick", "image"=>"https://www.edamam.com/web-img/5f5/5f51c89f832d50da84e3c05bef3f66f9.jpg", "source"=>"Martha Stewart", "sourceIcon"=>"http://www.marthastewart.com/sites/all/themes/marthastewart/images/favicon.ico", "url"=>"http://www.marthastewart.com/recipe/grilled-deviled-chickens-under-a-brick", "shareAs"=>"http://www.edamam.com/recipe/grilled-deviled-chickens-under-a-brick-c468dc28f8b64bb711125cc150b15c25/chicken", "yield"=>4, "dietLabels"=>["Low-Carb"], "healthLabels"=>["Paleo", "Dairy-Free", "Gluten-Free", "Egg-Free", "Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free"], "cautions"=>[], "ingredientLines"=>["4 baby chickens (poussins) or cornish hens (about 1 1/4 pounds each), or 4 chicken breast halves", "3 lemons, plus wedges for garnish", "4 cloves garlic, peeled and smashed", "1 tablespoon crushed red-pepper flakes, or to taste", "1 tablespoon finely chopped fresh thyme", "1 tablespoon finely chopped fresh rosemary", "1/2 cup olive oil", "Salt, to taste"], "ingredients"=>[{"text"=>"4 baby chickens (poussins) or cornish hens (about 1 1/4 pounds each), or 4 chicken breast halves", "quantity"=>5, "measure"=>"lb", "food"=>"chickens", "weight"=>2267.96}, {"text"=>"3 lemons, plus wedges for garnish", "quantity"=>3, "measure"=>"lemon", "food"=>"lemons", "weight"=>174}, {"text"=>"3 lemons, plus wedges for garnish", "quantity"=>1, "measure"=>"wedge", "food"=>"lemons", "weight"=>7}, {"text"=>"4 cloves garlic, peeled and smashed", "quantity"=>4, "measure"=>"clove", "food"=>"garlic", "weight"=>12}, {"text"=>"1 tablespoon crushed red-pepper flakes, or to taste", "quantity"=>1, "measure"=>"tbsp", "food"=>"red pepper flake", "weight"=>5.3}, {"text"=>"1 tablespoon finely chopped fresh thyme", "quantity"=>1, "measure"=>"tbsp", "food"=>"fresh thyme", "weight"=>2.4}, {"text"=>"1 tablespoon finely chopped fresh rosemary", "quantity"=>1, "measure"=>"tbsp", "food"=>"fresh rosemary", "weight"=>1.7}, {"text"=>"1/2 cup olive oil", "quantity"=>0.5, "measure"=>"cup", "food"=>"olive oil", "weight"=>108}, {"text"=>"Salt, to taste", "quantity"=>0, "measure"=>"medium", "food"=>"salt", "weight"=>0.059700002768357505}], "calories"=>5922.709000000001, "totalWeight"=>2578.4197000027684, "totalNutrients"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>5922.709000000001, "unit"=>"kcal"}, "FAT"=>{"label"=>"Fat", "quantity"=>451.213026, "unit"=>"g"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>112.94890599999998, "unit"=>"g"}, "FATRN"=>{"label"=>"Trans", "quantity"=>2.041164, "unit"=>"g"}, "FAMS"=>{"label"=>"Monounsaturated", "quantity"=>220.50419400000004, "unit"=>"g"}, "FAPU"=>{"label"=>"Polyunsaturated", "quantity"=>85.26193800000001, "unit"=>"g"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>24.77649, "unit"=>"g"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>7.3373, "unit"=>"g"}, "SUGAR"=>{"label"=>"Sugars", "quantity"=>5.19302, "unit"=>"g"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>425.421, "unit"=>"g"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>1700.97, "unit"=>"mg"}, "NA"=>{"label"=>"Sodium", "quantity"=>1620.77852707296, "unit"=>"mg"}, "CA"=>{"label"=>"Calcium", "quantity"=>342.3029280006644, "unit"=>"mg"}, "MG"=>{"label"=>"Magnesium", "quantity"=>484.5155970000277, "unit"=>"mg"}, "K"=>{"label"=>"Potassium", "quantity"=>4718.1431760002215, "unit"=>"mg"}, "FE"=>{"label"=>"Iron", "quantity"=>23.251887010009142, "unit"=>"mg"}, "ZN"=>{"label"=>"Zinc", "quantity"=>30.148825700002767, "unit"=>"mg"}, "P"=>{"label"=>"Phosphorus", "quantity"=>3400.4162, "unit"=>"mg"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>1050.1606, "unit"=>"µg_RAE"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>144.22356000000002, "unit"=>"mg"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>1.475606, "unit"=>"mg"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>2.833012, "unit"=>"mg"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>155.00653, "unit"=>"mg"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>8.37388, "unit"=>"mg"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>164.89860000000004, "unit"=>"µg"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>7.030676000000001, "unit"=>"µg"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>4.53592, "unit"=>"µg"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>24.163970000000003, "unit"=>"mg"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>103.49530000000001, "unit"=>"µg"}}, "totalDaily"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>296.13545, "unit"=>"%"}, "FAT"=>{"label"=>"Fat", "quantity"=>694.1738861538462, "unit"=>"%"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>564.7445299999999, "unit"=>"%"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>8.25883, "unit"=>"%"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>29.3492, "unit"=>"%"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>850.842, "unit"=>"%"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>566.99, "unit"=>"%"}, "NA"=>{"label"=>"Sodium", "quantity"=>67.53243862804, "unit"=>"%"}, "CA"=>{"label"=>"Calcium", "quantity"=>34.23029280006644, "unit"=>"%"}, "MG"=>{"label"=>"Magnesium", "quantity"=>121.12889925000692, "unit"=>"%"}, "K"=>{"label"=>"Potassium", "quantity"=>134.80409074286345, "unit"=>"%"}, "FE"=>{"label"=>"Iron", "quantity"=>129.17715005560635, "unit"=>"%"}, "ZN"=>{"label"=>"Zinc", "quantity"=>200.9921713333518, "unit"=>"%"}, "P"=>{"label"=>"Phosphorus", "quantity"=>485.77374285714285, "unit"=>"%"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>116.6845111111111, "unit"=>"%"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>240.37260000000003, "unit"=>"%"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>98.37373333333333, "unit"=>"%"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>166.64776470588237, "unit"=>"%"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>775.03265, "unit"=>"%"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>418.69399999999996, "unit"=>"%"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>41.22465000000001, "unit"=>"%"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>117.17793333333334, "unit"=>"%"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>1.13398, "unit"=>"%"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>120.81985000000002, "unit"=>"%"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>129.369125, "unit"=>"%"}}, "digest"=>[{"label"=>"Fat", "tag"=>"FAT", "schemaOrgTag"=>"fatContent", "total"=>451.213026, "hasRDI"=>true, "daily"=>694.1738861538462, "unit"=>"g", "sub"=>[{"label"=>"Saturated", "tag"=>"FASAT", "schemaOrgTag"=>"saturatedFatContent", "total"=>112.94890599999998, "hasRDI"=>true, "daily"=>564.7445299999999, "unit"=>"g"}, {"label"=>"Trans", "tag"=>"FATRN", "schemaOrgTag"=>"transFatContent", "total"=>2.041164, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Monounsaturated", "tag"=>"FAMS", "schemaOrgTag"=>nil, "total"=>220.50419400000004, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Polyunsaturated", "tag"=>"FAPU", "schemaOrgTag"=>nil, "total"=>85.26193800000001, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Carbs", "tag"=>"CHOCDF", "schemaOrgTag"=>"carbohydrateContent", "total"=>24.77649, "hasRDI"=>true, "daily"=>8.25883, "unit"=>"g", "sub"=>[{"label"=>"Carbs (net)", "tag"=>"CHOCDF.net", "schemaOrgTag"=>nil, "total"=>17.43919, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Fiber", "tag"=>"FIBTG", "schemaOrgTag"=>"fiberContent", "total"=>7.3373, "hasRDI"=>true, "daily"=>29.3492, "unit"=>"g"}, {"label"=>"Sugars", "tag"=>"SUGAR", "schemaOrgTag"=>"sugarContent", "total"=>5.19302, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Protein", "tag"=>"PROCNT", "schemaOrgTag"=>"proteinContent", "total"=>425.421, "hasRDI"=>true, "daily"=>850.842, "unit"=>"g"}, {"label"=>"Cholesterol", "tag"=>"CHOLE", "schemaOrgTag"=>"cholesterolContent", "total"=>1700.97, "hasRDI"=>true, "daily"=>566.99, "unit"=>"mg"}, {"label"=>"Sodium", "tag"=>"NA", "schemaOrgTag"=>"sodiumContent", "total"=>1620.77852707296, "hasRDI"=>true, "daily"=>67.53243862804, "unit"=>"mg"}, {"label"=>"Calcium", "tag"=>"CA", "schemaOrgTag"=>nil, "total"=>342.3029280006644, "hasRDI"=>true, "daily"=>34.23029280006644, "unit"=>"mg"}, {"label"=>"Magnesium", "tag"=>"MG", "schemaOrgTag"=>nil, "total"=>484.5155970000277, "hasRDI"=>true, "daily"=>121.12889925000692, "unit"=>"mg"}, {"label"=>"Potassium", "tag"=>"K", "schemaOrgTag"=>nil, "total"=>4718.1431760002215, "hasRDI"=>true, "daily"=>134.80409074286345, "unit"=>"mg"}, {"label"=>"Iron", "tag"=>"FE", "schemaOrgTag"=>nil, "total"=>23.251887010009142, "hasRDI"=>true, "daily"=>129.17715005560635, "unit"=>"mg"}, {"label"=>"Zinc", "tag"=>"ZN", "schemaOrgTag"=>nil, "total"=>30.148825700002767, "hasRDI"=>true, "daily"=>200.9921713333518, "unit"=>"mg"}, {"label"=>"Phosphorus", "tag"=>"P", "schemaOrgTag"=>nil, "total"=>3400.4162, "hasRDI"=>true, "daily"=>485.77374285714285, "unit"=>"mg"}, {"label"=>"Vitamin A", "tag"=>"VITA_RAE", "schemaOrgTag"=>nil, "total"=>1050.1606, "hasRDI"=>true, "daily"=>116.6845111111111, "unit"=>"µg"}, {"label"=>"Vitamin C", "tag"=>"VITC", "schemaOrgTag"=>nil, "total"=>144.22356000000002, "hasRDI"=>true, "daily"=>240.37260000000003, "unit"=>"mg"}, {"label"=>"Thiamin (B1)", "tag"=>"THIA", "schemaOrgTag"=>nil, "total"=>1.475606, "hasRDI"=>true, "daily"=>98.37373333333333, "unit"=>"mg"}, {"label"=>"Riboflavin (B2)", "tag"=>"RIBF", "schemaOrgTag"=>nil, "total"=>2.833012, "hasRDI"=>true, "daily"=>166.64776470588237, "unit"=>"mg"}, {"label"=>"Niacin (B3)", "tag"=>"NIA", "schemaOrgTag"=>nil, "total"=>155.00653, "hasRDI"=>true, "daily"=>775.03265, "unit"=>"mg"}, {"label"=>"Vitamin B6", "tag"=>"VITB6A", "schemaOrgTag"=>nil, "total"=>8.37388, "hasRDI"=>true, "daily"=>418.69399999999996, "unit"=>"mg"}, {"label"=>"Folic Acid (B9)", "tag"=>"FOL", "schemaOrgTag"=>nil, "total"=>164.89860000000004, "hasRDI"=>true, "daily"=>41.22465000000001, "unit"=>"µg"}, {"label"=>"Vitamin B12", "tag"=>"VITB12", "schemaOrgTag"=>nil, "total"=>7.030676000000001, "hasRDI"=>true, "daily"=>117.17793333333334, "unit"=>"µg"}, {"label"=>"Vitamin D", "tag"=>"VITD", "schemaOrgTag"=>nil, "total"=>4.53592, "hasRDI"=>true, "daily"=>1.13398, "unit"=>"µg"}, {"label"=>"Vitamin E", "tag"=>"TOCPHA", "schemaOrgTag"=>nil, "total"=>24.163970000000003, "hasRDI"=>true, "daily"=>120.81985000000002, "unit"=>"mg"}, {"label"=>"Vitamin K", "tag"=>"VITK1", "schemaOrgTag"=>nil, "total"=>103.49530000000001, "hasRDI"=>true, "daily"=>129.369125, "unit"=>"µg"}]}, "cookbook_id"=>"5"}
+  [1m[36mCookbook Load (0.6ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (3.8ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."label" = $1 AND "recipes"."image" = $2 AND "recipes"."url" = $3 AND "recipes"."ingredient_lines" = $4 LIMIT $5[0m  [["label", "Grilled Deviled Chickens Under a Brick"], ["image", "https://www.edamam.com/web-img/5f5/5f51c89f832d50da84e3c05bef3f66f9.jpg"], ["url", "http://www.marthastewart.com/recipe/grilled-deviled-chickens-under-a-brick"], ["ingredient_lines", "4 baby chickens (poussins) or cornish hens (about 1 1/4 pounds each), or 4 chicken breast halves\n3 lemons, plus wedges for garnish\n4 cloves garlic, peeled and smashed\n1 tablespoon crushed red-pepper flakes, or to taste\n1 tablespoon finely chopped fresh thyme\n1 tablespoon finely chopped fresh rosemary\n1/2 cup olive oil\nSalt, to taste"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "chickens"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "lemons"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "lemons"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "garlic"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "red pepper flake"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "fresh thyme"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "fresh rosemary"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "olive oil"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "salt"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "recipe_cookbooks" ("cookbook_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cookbook_id", 5], ["recipe_id", 4], ["created_at", 2016-11-15 20:18:30 UTC], ["updated_at", 2016-11-15 20:18:30 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (3.73ms)
+Completed 200 OK in 45ms (Views: 5.3ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/cookbooks/5/recipes" for ::1 at 2016-11-15 13:18:33 -0700
+Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{"uri"=>"f1c853a77986214680bbdd424883499a", "label"=>"Herbes de Provence Rotisserie Chickens", "image"=>"https://www.edamam.com/web-img/18d/18dcf05995cb40e8ce4c077972341d7a.jpg", "source"=>"Bon Appetit", "sourceIcon"=>"http://www.bonappetit.com/favicon.ico", "url"=>"http://www.bonappetit.com/recipes/2007/07/herbes_de_provence_rotisserie_chickens", "shareAs"=>"http://www.edamam.com/recipe/herbes-de-provence-rotisserie-chickens-f1c853a77986214680bbdd424883499a/chicken", "yield"=>6, "dietLabels"=>["Low-Carb"], "healthLabels"=>["Gluten-Free", "Egg-Free", "Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free"], "cautions"=>[], "ingredientLines"=>["2 tablespoons (1/4 stick) butter, room temperature", "2 tablespoons dried herbes de provence*", "1 tablespoon coarse kosher salt", "2 (3 1/2-pound) chickens"], "ingredients"=>[{"text"=>"2 tablespoons (1/4 stick) butter, room temperature", "quantity"=>2, "measure"=>"tbsp", "food"=>"butter", "weight"=>28.4}, {"text"=>"2 tablespoons dried herbes de provence*", "quantity"=>2, "measure"=>"tbsp", "food"=>"herbe de provence", "weight"=>8.6}, {"text"=>"1 tablespoon coarse kosher salt", "quantity"=>1, "measure"=>"tbsp", "food"=>"coarse kosher salt", "weight"=>18}, {"text"=>"2 (3 1/2-pound) chickens", "quantity"=>7, "measure"=>"lb", "food"=>"chickens", "weight"=>3175.144}], "calories"=>7053.923599999999, "totalWeight"=>3230.144, "totalNutrients"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>7053.923599999999, "unit"=>"kcal"}, "FAT"=>{"label"=>"Fat", "quantity"=>501.8509064, "unit"=>"g"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>151.66972639999997, "unit"=>"g"}, "FATRN"=>{"label"=>"Trans", "quantity"=>3.7863095999999996, "unit"=>"g"}, "FAMS"=>{"label"=>"Monounsaturated", "quantity"=>204.1390856, "unit"=>"g"}, "FAPU"=>{"label"=>"Polyunsaturated", "quantity"=>103.52285119999999, "unit"=>"g"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>5.515879999999999, "unit"=>"g"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>3.182, "unit"=>"g"}, "SUGAR"=>{"label"=>"Sugars", "quantity"=>0.1641, "unit"=>"g"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>591.601644, "unit"=>"g"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>2442.4179999999997, "unit"=>"mg"}, "NA"=>{"label"=>"Sodium", "quantity"=>9206.8948, "unit"=>"mg"}, "CA"=>{"label"=>"Calcium", "quantity"=>522.94184, "unit"=>"mg"}, "MG"=>{"label"=>"Magnesium", "quantity"=>654.6967999999999, "unit"=>"mg"}, "K"=>{"label"=>"Potassium", "quantity"=>6079.28216, "unit"=>"mg"}, "FE"=>{"label"=>"Iron", "quantity"=>39.270976, "unit"=>"mg"}, "ZN"=>{"label"=>"Zinc", "quantity"=>42.1694264, "unit"=>"mg"}, "P"=>{"label"=>"Phosphorus", "quantity"=>4691.563679999999, "unit"=>"mg"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>1512.4050399999999, "unit"=>"µg_RAE"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>55.102304, "unit"=>"mg"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>1.9503663999999998, "unit"=>"mg"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>3.8522328, "unit"=>"mg"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>216.345992, "unit"=>"mg"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>11.161155999999998, "unit"=>"mg"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>214.92463999999998, "unit"=>"µg"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>9.891226399999999, "unit"=>"µg"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>6.776288, "unit"=>"µg"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>10.827592, "unit"=>"mg"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>197.06215999999998, "unit"=>"µg"}}, "totalDaily"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>352.6961799999999, "unit"=>"%"}, "FAT"=>{"label"=>"Fat", "quantity"=>772.0783175384614, "unit"=>"%"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>758.348632, "unit"=>"%"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>1.8386266666666666, "unit"=>"%"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>12.728, "unit"=>"%"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>1183.203288, "unit"=>"%"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>814.1393333333332, "unit"=>"%"}, "NA"=>{"label"=>"Sodium", "quantity"=>383.62061666666665, "unit"=>"%"}, "CA"=>{"label"=>"Calcium", "quantity"=>52.294183999999994, "unit"=>"%"}, "MG"=>{"label"=>"Magnesium", "quantity"=>163.67419999999998, "unit"=>"%"}, "K"=>{"label"=>"Potassium", "quantity"=>173.693776, "unit"=>"%"}, "FE"=>{"label"=>"Iron", "quantity"=>218.17208888888888, "unit"=>"%"}, "ZN"=>{"label"=>"Zinc", "quantity"=>281.1295093333334, "unit"=>"%"}, "P"=>{"label"=>"Phosphorus", "quantity"=>670.2233828571427, "unit"=>"%"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>168.04500444444443, "unit"=>"%"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>91.83717333333333, "unit"=>"%"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>130.02442666666664, "unit"=>"%"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>226.6019294117647, "unit"=>"%"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>1081.7299600000001, "unit"=>"%"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>558.0577999999999, "unit"=>"%"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>53.73116, "unit"=>"%"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>164.85377333333332, "unit"=>"%"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>1.6940719999999998, "unit"=>"%"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>54.13796, "unit"=>"%"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>246.32769999999996, "unit"=>"%"}}, "digest"=>[{"label"=>"Fat", "tag"=>"FAT", "schemaOrgTag"=>"fatContent", "total"=>501.8509064, "hasRDI"=>true, "daily"=>772.0783175384614, "unit"=>"g", "sub"=>[{"label"=>"Saturated", "tag"=>"FASAT", "schemaOrgTag"=>"saturatedFatContent", "total"=>151.66972639999997, "hasRDI"=>true, "daily"=>758.348632, "unit"=>"g"}, {"label"=>"Trans", "tag"=>"FATRN", "schemaOrgTag"=>"transFatContent", "total"=>3.7863095999999996, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Monounsaturated", "tag"=>"FAMS", "schemaOrgTag"=>nil, "total"=>204.1390856, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Polyunsaturated", "tag"=>"FAPU", "schemaOrgTag"=>nil, "total"=>103.52285119999999, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Carbs", "tag"=>"CHOCDF", "schemaOrgTag"=>"carbohydrateContent", "total"=>5.515879999999999, "hasRDI"=>true, "daily"=>1.8386266666666666, "unit"=>"g", "sub"=>[{"label"=>"Carbs (net)", "tag"=>"CHOCDF.net", "schemaOrgTag"=>nil, "total"=>2.3338799999999993, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Fiber", "tag"=>"FIBTG", "schemaOrgTag"=>"fiberContent", "total"=>3.182, "hasRDI"=>true, "daily"=>12.728, "unit"=>"g"}, {"label"=>"Sugars", "tag"=>"SUGAR", "schemaOrgTag"=>"sugarContent", "total"=>0.1641, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Protein", "tag"=>"PROCNT", "schemaOrgTag"=>"proteinContent", "total"=>591.601644, "hasRDI"=>true, "daily"=>1183.203288, "unit"=>"g"}, {"label"=>"Cholesterol", "tag"=>"CHOLE", "schemaOrgTag"=>"cholesterolContent", "total"=>2442.4179999999997, "hasRDI"=>true, "daily"=>814.1393333333332, "unit"=>"mg"}, {"label"=>"Sodium", "tag"=>"NA", "schemaOrgTag"=>"sodiumContent", "total"=>9206.8948, "hasRDI"=>true, "daily"=>383.62061666666665, "unit"=>"mg"}, {"label"=>"Calcium", "tag"=>"CA", "schemaOrgTag"=>nil, "total"=>522.94184, "hasRDI"=>true, "daily"=>52.294183999999994, "unit"=>"mg"}, {"label"=>"Magnesium", "tag"=>"MG", "schemaOrgTag"=>nil, "total"=>654.6967999999999, "hasRDI"=>true, "daily"=>163.67419999999998, "unit"=>"mg"}, {"label"=>"Potassium", "tag"=>"K", "schemaOrgTag"=>nil, "total"=>6079.28216, "hasRDI"=>true, "daily"=>173.693776, "unit"=>"mg"}, {"label"=>"Iron", "tag"=>"FE", "schemaOrgTag"=>nil, "total"=>39.270976, "hasRDI"=>true, "daily"=>218.17208888888888, "unit"=>"mg"}, {"label"=>"Zinc", "tag"=>"ZN", "schemaOrgTag"=>nil, "total"=>42.1694264, "hasRDI"=>true, "daily"=>281.1295093333334, "unit"=>"mg"}, {"label"=>"Phosphorus", "tag"=>"P", "schemaOrgTag"=>nil, "total"=>4691.563679999999, "hasRDI"=>true, "daily"=>670.2233828571427, "unit"=>"mg"}, {"label"=>"Vitamin A", "tag"=>"VITA_RAE", "schemaOrgTag"=>nil, "total"=>1512.4050399999999, "hasRDI"=>true, "daily"=>168.04500444444443, "unit"=>"µg"}, {"label"=>"Vitamin C", "tag"=>"VITC", "schemaOrgTag"=>nil, "total"=>55.102304, "hasRDI"=>true, "daily"=>91.83717333333333, "unit"=>"mg"}, {"label"=>"Thiamin (B1)", "tag"=>"THIA", "schemaOrgTag"=>nil, "total"=>1.9503663999999998, "hasRDI"=>true, "daily"=>130.02442666666664, "unit"=>"mg"}, {"label"=>"Riboflavin (B2)", "tag"=>"RIBF", "schemaOrgTag"=>nil, "total"=>3.8522328, "hasRDI"=>true, "daily"=>226.6019294117647, "unit"=>"mg"}, {"label"=>"Niacin (B3)", "tag"=>"NIA", "schemaOrgTag"=>nil, "total"=>216.345992, "hasRDI"=>true, "daily"=>1081.7299600000001, "unit"=>"mg"}, {"label"=>"Vitamin B6", "tag"=>"VITB6A", "schemaOrgTag"=>nil, "total"=>11.161155999999998, "hasRDI"=>true, "daily"=>558.0577999999999, "unit"=>"mg"}, {"label"=>"Folic Acid (B9)", "tag"=>"FOL", "schemaOrgTag"=>nil, "total"=>214.92463999999998, "hasRDI"=>true, "daily"=>53.73116, "unit"=>"µg"}, {"label"=>"Vitamin B12", "tag"=>"VITB12", "schemaOrgTag"=>nil, "total"=>9.891226399999999, "hasRDI"=>true, "daily"=>164.85377333333332, "unit"=>"µg"}, {"label"=>"Vitamin D", "tag"=>"VITD", "schemaOrgTag"=>nil, "total"=>6.776288, "hasRDI"=>true, "daily"=>1.6940719999999998, "unit"=>"µg"}, {"label"=>"Vitamin E", "tag"=>"TOCPHA", "schemaOrgTag"=>nil, "total"=>10.827592, "hasRDI"=>true, "daily"=>54.13796, "unit"=>"mg"}, {"label"=>"Vitamin K", "tag"=>"VITK1", "schemaOrgTag"=>nil, "total"=>197.06215999999998, "hasRDI"=>true, "daily"=>246.32769999999996, "unit"=>"µg"}]}, "cookbook_id"=>"5"}
+  [1m[36mCookbook Load (0.4ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (5.9ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."label" = $1 AND "recipes"."image" = $2 AND "recipes"."url" = $3 AND "recipes"."ingredient_lines" = $4 LIMIT $5[0m  [["label", "Herbes de Provence Rotisserie Chickens"], ["image", "https://www.edamam.com/web-img/18d/18dcf05995cb40e8ce4c077972341d7a.jpg"], ["url", "http://www.bonappetit.com/recipes/2007/07/herbes_de_provence_rotisserie_chickens"], ["ingredient_lines", "2 tablespoons (1/4 stick) butter, room temperature\n2 tablespoons dried herbes de provence*\n1 tablespoon coarse kosher salt\n2 (3 1/2-pound) chickens"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "recipes" ("label", "image", "url", "created_at", "updated_at", "ingredient_lines") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["label", "Herbes de Provence Rotisserie Chickens"], ["image", "https://www.edamam.com/web-img/18d/18dcf05995cb40e8ce4c077972341d7a.jpg"], ["url", "http://www.bonappetit.com/recipes/2007/07/herbes_de_provence_rotisserie_chickens"], ["created_at", 2016-11-15 20:18:33 UTC], ["updated_at", 2016-11-15 20:18:33 UTC], ["ingredient_lines", "2 tablespoons (1/4 stick) butter, room temperature\n2 tablespoons dried herbes de provence*\n1 tablespoon coarse kosher salt\n2 (3 1/2-pound) chickens"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "butter"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "butter"], ["created_at", 2016-11-15 20:18:33 UTC], ["updated_at", 2016-11-15 20:18:33 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:33 UTC], ["recipe_id", 5], ["id", 18]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "herbe de provence"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "herbe de provence"], ["created_at", 2016-11-15 20:18:33 UTC], ["updated_at", 2016-11-15 20:18:33 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:33 UTC], ["recipe_id", 5], ["id", 19]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "coarse kosher salt"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "coarse kosher salt"], ["created_at", 2016-11-15 20:18:33 UTC], ["updated_at", 2016-11-15 20:18:33 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:33 UTC], ["recipe_id", 5], ["id", 20]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "chickens"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ingredients" SET "recipe_id" = $1, "updated_at" = $2 WHERE "ingredients"."id" = $3[0m  [["recipe_id", 5], ["updated_at", 2016-11-15 20:18:33 UTC], ["id", 10]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "recipe_cookbooks" ("cookbook_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cookbook_id", 5], ["recipe_id", 5], ["created_at", 2016-11-15 20:18:33 UTC], ["updated_at", 2016-11-15 20:18:33 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (5.67ms)
+Completed 200 OK in 62ms (Views: 7.1ms | ActiveRecord: 20.1ms)
+
+
+Started POST "/cookbooks/5/recipes" for ::1 at 2016-11-15 13:18:35 -0700
+Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{"uri"=>"d38d01540acb03fba45e4ac2660627ac", "label"=>"Sunday Supper: Jerk Half-Chickens", "image"=>"https://www.edamam.com/web-img/279/2793088da34ec5397abb8848852bb8dc.jpg", "source"=>"Serious Eats", "sourceIcon"=>"http://www.seriouseats.com/favicon.ico", "url"=>"http://www.seriouseats.com/recipes/2011/06/jerk-chicken-recipe.html", "shareAs"=>"http://www.edamam.com/recipe/sunday-supper-jerk-half-chickens-d38d01540acb03fba45e4ac2660627ac/chicken", "yield"=>4, "dietLabels"=>["Low-Carb"], "healthLabels"=>["Dairy-Free", "Egg-Free", "Peanut-Free", "Tree-Nut-Free", "Fish-Free", "Shellfish-Free"], "cautions"=>[], "ingredientLines"=>["1/2 teaspoon allspice berries, ground", "3 large garlic cloves, peeled", "4 scallions, trimmed", "1 hot pepper, seeded (depending on how hot you like it, scotch bonnets are traditional but long peppers or even jalapenos work in a pinch)", "Juice of 1 lime", "2 tablespoons soy sauce", "3 tablespoons vegetable oil", "2 large pinches of kosher salt", "2 large pinches freshly cracked black pepper", "1 small bunch thyme", "3/4 teaspoon freshly grated nutmeg", "1/2 teaspoon cinnamon", "2 chickens"], "ingredients"=>[{"text"=>"1/2 teaspoon allspice berries, ground", "quantity"=>0.5, "measure"=>"tsp", "food"=>"berry", "weight"=>1.563953}, {"text"=>"3 large garlic cloves, peeled", "quantity"=>3, "measure"=>"clove", "food"=>"garlic", "weight"=>11.7}, {"text"=>"4 scallions, trimmed", "quantity"=>4, "measure"=>"scallion", "food"=>"scallions", "weight"=>60}, {"text"=>"1 hot pepper, seeded (depending on how hot you like it, scotch bonnets are traditional but long peppers or even jalapenos work in a pinch)", "quantity"=>1, "measure"=>"pepper", "food"=>"hot pepper", "weight"=>150}, {"text"=>"Juice of 1 lime", "quantity"=>1, "measure"=>"medium", "food"=>"lime", "weight"=>67}, {"text"=>"2 tablespoons soy sauce", "quantity"=>2, "measure"=>"tbsp", "food"=>"soy sauce", "weight"=>32}, {"text"=>"3 tablespoons vegetable oil", "quantity"=>3, "measure"=>"tbsp", "food"=>"vegetable oil", "weight"=>42}, {"text"=>"2 large pinches of kosher salt", "quantity"=>2, "measure"=>"large", "food"=>"kosher salt", "weight"=>41.01149}, {"text"=>"2 large pinches freshly cracked black pepper", "quantity"=>2, "measure"=>"large", "food"=>"black pepper", "weight"=>0.2}, {"text"=>"1 small bunch thyme", "quantity"=>1, "measure"=>"bunch", "food"=>"thyme", "weight"=>15}, {"text"=>"3/4 teaspoon freshly grated nutmeg", "quantity"=>0.75, "measure"=>"tsp", "food"=>"grated nutmeg", "weight"=>1.65}, {"text"=>"1/2 teaspoon cinnamon", "quantity"=>0.5, "measure"=>"tsp", "food"=>"cinnamon", "weight"=>1.3}, {"text"=>"2 chickens", "quantity"=>2, "measure"=>"chicken", "food"=>"chickens", "weight"=>2718}], "calories"=>6377.08995321, "totalWeight"=>3131.789577667063, "totalNutrients"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>6377.08995321, "unit"=>"kcal"}, "FAT"=>{"label"=>"Fat", "quantity"=>453.18901604490003, "unit"=>"g"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>120.48688279059999, "unit"=>"g"}, "FATRN"=>{"label"=>"Trans", "quantity"=>2.7653999999999996, "unit"=>"g"}, "FAMS"=>{"label"=>"Monounsaturated", "quantity"=>199.9611255812, "unit"=>"g"}, "FAPU"=>{"label"=>"Polyunsaturated", "quantity"=>95.51120453419999, "unit"=>"g"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>36.86699178970001, "unit"=>"g"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>9.409334872, "unit"=>"g"}, "SUGAR"=>{"label"=>"Sugars", "quantity"=>11.796644718799998, "unit"=>"g"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>513.6883032522001, "unit"=>"g"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>2038.5, "unit"=>"mg"}, "NA"=>{"label"=>"Sodium", "quantity"=>15895.233247990356, "unit"=>"mg"}, "CA"=>{"label"=>"Calcium", "quantity"=>497.8689871000952, "unit"=>"mg"}, "MG"=>{"label"=>"Magnesium", "quantity"=>639.3540934266707, "unit"=>"mg"}, "K"=>{"label"=>"Potassium", "quantity"=>6079.417293783365, "unit"=>"mg"}, "FE"=>{"label"=>"Iron", "quantity"=>31.016658629801306, "unit"=>"mg"}, "ZN"=>{"label"=>"Zinc", "quantity"=>36.972642949467065, "unit"=>"mg"}, "P"=>{"label"=>"Phosphorus", "quantity"=>4172.87117436, "unit"=>"mg"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>1253.79841859, "unit"=>"µg_RAE"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>317.731003441, "unit"=>"mg"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>1.8314391859, "unit"=>"mg"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>3.5799005812, "unit"=>"mg"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>188.2329672073, "unit"=>"mg"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>10.5714619765, "unit"=>"mg"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>254.38083718000001, "unit"=>"µg"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>8.4258, "unit"=>"µg"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>5.436, "unit"=>"µg"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>18.872914532099998, "unit"=>"mg"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>187.60574292899997, "unit"=>"µg"}}, "totalDaily"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>318.8544976605, "unit"=>"%"}, "FAT"=>{"label"=>"Fat", "quantity"=>697.2138708383078, "unit"=>"%"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>602.434413953, "unit"=>"%"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>12.288997263233336, "unit"=>"%"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>37.637339488, "unit"=>"%"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>1027.3766065044001, "unit"=>"%"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>679.5, "unit"=>"%"}, "NA"=>{"label"=>"Sodium", "quantity"=>662.3013853329315, "unit"=>"%"}, "CA"=>{"label"=>"Calcium", "quantity"=>49.78689871000952, "unit"=>"%"}, "MG"=>{"label"=>"Magnesium", "quantity"=>159.83852335666768, "unit"=>"%"}, "K"=>{"label"=>"Potassium", "quantity"=>173.69763696523898, "unit"=>"%"}, "FE"=>{"label"=>"Iron", "quantity"=>172.3147701655628, "unit"=>"%"}, "ZN"=>{"label"=>"Zinc", "quantity"=>246.48428632978045, "unit"=>"%"}, "P"=>{"label"=>"Phosphorus", "quantity"=>596.1244534799999, "unit"=>"%"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>139.3109353988889, "unit"=>"%"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>529.5516724016667, "unit"=>"%"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>122.09594572666667, "unit"=>"%"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>210.58238712941179, "unit"=>"%"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>941.1648360365, "unit"=>"%"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>528.573098825, "unit"=>"%"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>63.595209295000004, "unit"=>"%"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>140.43, "unit"=>"%"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>1.359, "unit"=>"%"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>94.36457266049999, "unit"=>"%"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>234.50717866124995, "unit"=>"%"}}, "digest"=>[{"label"=>"Fat", "tag"=>"FAT", "schemaOrgTag"=>"fatContent", "total"=>453.18901604490003, "hasRDI"=>true, "daily"=>697.2138708383078, "unit"=>"g", "sub"=>[{"label"=>"Saturated", "tag"=>"FASAT", "schemaOrgTag"=>"saturatedFatContent", "total"=>120.48688279059999, "hasRDI"=>true, "daily"=>602.434413953, "unit"=>"g"}, {"label"=>"Trans", "tag"=>"FATRN", "schemaOrgTag"=>"transFatContent", "total"=>2.7653999999999996, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Monounsaturated", "tag"=>"FAMS", "schemaOrgTag"=>nil, "total"=>199.9611255812, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Polyunsaturated", "tag"=>"FAPU", "schemaOrgTag"=>nil, "total"=>95.51120453419999, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Carbs", "tag"=>"CHOCDF", "schemaOrgTag"=>"carbohydrateContent", "total"=>36.86699178970001, "hasRDI"=>true, "daily"=>12.288997263233336, "unit"=>"g", "sub"=>[{"label"=>"Carbs (net)", "tag"=>"CHOCDF.net", "schemaOrgTag"=>nil, "total"=>27.457656917700007, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Fiber", "tag"=>"FIBTG", "schemaOrgTag"=>"fiberContent", "total"=>9.409334872, "hasRDI"=>true, "daily"=>37.637339488, "unit"=>"g"}, {"label"=>"Sugars", "tag"=>"SUGAR", "schemaOrgTag"=>"sugarContent", "total"=>11.796644718799998, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Protein", "tag"=>"PROCNT", "schemaOrgTag"=>"proteinContent", "total"=>513.6883032522001, "hasRDI"=>true, "daily"=>1027.3766065044001, "unit"=>"g"}, {"label"=>"Cholesterol", "tag"=>"CHOLE", "schemaOrgTag"=>"cholesterolContent", "total"=>2038.5, "hasRDI"=>true, "daily"=>679.5, "unit"=>"mg"}, {"label"=>"Sodium", "tag"=>"NA", "schemaOrgTag"=>"sodiumContent", "total"=>15895.233247990356, "hasRDI"=>true, "daily"=>662.3013853329315, "unit"=>"mg"}, {"label"=>"Calcium", "tag"=>"CA", "schemaOrgTag"=>nil, "total"=>497.8689871000952, "hasRDI"=>true, "daily"=>49.78689871000952, "unit"=>"mg"}, {"label"=>"Magnesium", "tag"=>"MG", "schemaOrgTag"=>nil, "total"=>639.3540934266707, "hasRDI"=>true, "daily"=>159.83852335666768, "unit"=>"mg"}, {"label"=>"Potassium", "tag"=>"K", "schemaOrgTag"=>nil, "total"=>6079.417293783365, "hasRDI"=>true, "daily"=>173.69763696523898, "unit"=>"mg"}, {"label"=>"Iron", "tag"=>"FE", "schemaOrgTag"=>nil, "total"=>31.016658629801306, "hasRDI"=>true, "daily"=>172.3147701655628, "unit"=>"mg"}, {"label"=>"Zinc", "tag"=>"ZN", "schemaOrgTag"=>nil, "total"=>36.972642949467065, "hasRDI"=>true, "daily"=>246.48428632978045, "unit"=>"mg"}, {"label"=>"Phosphorus", "tag"=>"P", "schemaOrgTag"=>nil, "total"=>4172.87117436, "hasRDI"=>true, "daily"=>596.1244534799999, "unit"=>"mg"}, {"label"=>"Vitamin A", "tag"=>"VITA_RAE", "schemaOrgTag"=>nil, "total"=>1253.79841859, "hasRDI"=>true, "daily"=>139.3109353988889, "unit"=>"µg"}, {"label"=>"Vitamin C", "tag"=>"VITC", "schemaOrgTag"=>nil, "total"=>317.731003441, "hasRDI"=>true, "daily"=>529.5516724016667, "unit"=>"mg"}, {"label"=>"Thiamin (B1)", "tag"=>"THIA", "schemaOrgTag"=>nil, "total"=>1.8314391859, "hasRDI"=>true, "daily"=>122.09594572666667, "unit"=>"mg"}, {"label"=>"Riboflavin (B2)", "tag"=>"RIBF", "schemaOrgTag"=>nil, "total"=>3.5799005812, "hasRDI"=>true, "daily"=>210.58238712941179, "unit"=>"mg"}, {"label"=>"Niacin (B3)", "tag"=>"NIA", "schemaOrgTag"=>nil, "total"=>188.2329672073, "hasRDI"=>true, "daily"=>941.1648360365, "unit"=>"mg"}, {"label"=>"Vitamin B6", "tag"=>"VITB6A", "schemaOrgTag"=>nil, "total"=>10.5714619765, "hasRDI"=>true, "daily"=>528.573098825, "unit"=>"mg"}, {"label"=>"Folic Acid (B9)", "tag"=>"FOL", "schemaOrgTag"=>nil, "total"=>254.38083718000001, "hasRDI"=>true, "daily"=>63.595209295000004, "unit"=>"µg"}, {"label"=>"Vitamin B12", "tag"=>"VITB12", "schemaOrgTag"=>nil, "total"=>8.4258, "hasRDI"=>true, "daily"=>140.43, "unit"=>"µg"}, {"label"=>"Vitamin D", "tag"=>"VITD", "schemaOrgTag"=>nil, "total"=>5.436, "hasRDI"=>true, "daily"=>1.359, "unit"=>"µg"}, {"label"=>"Vitamin E", "tag"=>"TOCPHA", "schemaOrgTag"=>nil, "total"=>18.872914532099998, "hasRDI"=>true, "daily"=>94.36457266049999, "unit"=>"mg"}, {"label"=>"Vitamin K", "tag"=>"VITK1", "schemaOrgTag"=>nil, "total"=>187.60574292899997, "hasRDI"=>true, "daily"=>234.50717866124995, "unit"=>"µg"}]}, "cookbook_id"=>"5"}
+  [1m[36mCookbook Load (0.3ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."label" = $1 AND "recipes"."image" = $2 AND "recipes"."url" = $3 AND "recipes"."ingredient_lines" = $4 LIMIT $5[0m  [["label", "Sunday Supper: Jerk Half-Chickens"], ["image", "https://www.edamam.com/web-img/279/2793088da34ec5397abb8848852bb8dc.jpg"], ["url", "http://www.seriouseats.com/recipes/2011/06/jerk-chicken-recipe.html"], ["ingredient_lines", "1/2 teaspoon allspice berries, ground\n3 large garlic cloves, peeled\n4 scallions, trimmed\n1 hot pepper, seeded (depending on how hot you like it, scotch bonnets are traditional but long peppers or even jalapenos work in a pinch)\nJuice of 1 lime\n2 tablespoons soy sauce\n3 tablespoons vegetable oil\n2 large pinches of kosher salt\n2 large pinches freshly cracked black pepper\n1 small bunch thyme\n3/4 teaspoon freshly grated nutmeg\n1/2 teaspoon cinnamon\n2 chickens"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "recipes" ("label", "image", "url", "created_at", "updated_at", "ingredient_lines") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["label", "Sunday Supper: Jerk Half-Chickens"], ["image", "https://www.edamam.com/web-img/279/2793088da34ec5397abb8848852bb8dc.jpg"], ["url", "http://www.seriouseats.com/recipes/2011/06/jerk-chicken-recipe.html"], ["created_at", 2016-11-15 20:18:35 UTC], ["updated_at", 2016-11-15 20:18:35 UTC], ["ingredient_lines", "1/2 teaspoon allspice berries, ground\n3 large garlic cloves, peeled\n4 scallions, trimmed\n1 hot pepper, seeded (depending on how hot you like it, scotch bonnets are traditional but long peppers or even jalapenos work in a pinch)\nJuice of 1 lime\n2 tablespoons soy sauce\n3 tablespoons vegetable oil\n2 large pinches of kosher salt\n2 large pinches freshly cracked black pepper\n1 small bunch thyme\n3/4 teaspoon freshly grated nutmeg\n1/2 teaspoon cinnamon\n2 chickens"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "berry"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "berry"], ["created_at", 2016-11-15 20:18:35 UTC], ["updated_at", 2016-11-15 20:18:35 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:35 UTC], ["recipe_id", 6], ["id", 21]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "garlic"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "ingredients" SET "recipe_id" = $1, "updated_at" = $2 WHERE "ingredients"."id" = $3[0m  [["recipe_id", 6], ["updated_at", 2016-11-15 20:18:35 UTC], ["id", 12]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "scallions"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "scallions"], ["created_at", 2016-11-15 20:18:35 UTC], ["updated_at", 2016-11-15 20:18:35 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:35 UTC], ["recipe_id", 6], ["id", 22]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "hot pepper"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "hot pepper"], ["created_at", 2016-11-15 20:18:35 UTC], ["updated_at", 2016-11-15 20:18:35 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:35 UTC], ["recipe_id", 6], ["id", 23]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "lime"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "lime"], ["created_at", 2016-11-15 20:18:35 UTC], ["updated_at", 2016-11-15 20:18:35 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:35 UTC], ["recipe_id", 6], ["id", 24]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "soy sauce"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "soy sauce"], ["created_at", 2016-11-15 20:18:35 UTC], ["updated_at", 2016-11-15 20:18:35 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:35 UTC], ["recipe_id", 6], ["id", 25]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "vegetable oil"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "vegetable oil"], ["created_at", 2016-11-15 20:18:35 UTC], ["updated_at", 2016-11-15 20:18:35 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:35 UTC], ["recipe_id", 6], ["id", 26]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "kosher salt"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "kosher salt"], ["created_at", 2016-11-15 20:18:35 UTC], ["updated_at", 2016-11-15 20:18:35 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:35 UTC], ["recipe_id", 6], ["id", 27]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "black pepper"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "black pepper"], ["created_at", 2016-11-15 20:18:35 UTC], ["updated_at", 2016-11-15 20:18:35 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:35 UTC], ["recipe_id", 6], ["id", 28]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "thyme"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "thyme"], ["created_at", 2016-11-15 20:18:35 UTC], ["updated_at", 2016-11-15 20:18:35 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:35 UTC], ["recipe_id", 6], ["id", 29]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "grated nutmeg"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "grated nutmeg"], ["created_at", 2016-11-15 20:18:35 UTC], ["updated_at", 2016-11-15 20:18:35 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:35 UTC], ["recipe_id", 6], ["id", 30]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "cinnamon"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cinnamon"], ["created_at", 2016-11-15 20:18:35 UTC], ["updated_at", 2016-11-15 20:18:35 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:35 UTC], ["recipe_id", 6], ["id", 31]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "chickens"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "recipe_id" = $1, "updated_at" = $2 WHERE "ingredients"."id" = $3[0m  [["recipe_id", 6], ["updated_at", 2016-11-15 20:18:35 UTC], ["id", 10]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "recipe_cookbooks" ("cookbook_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cookbook_id", 5], ["recipe_id", 6], ["created_at", 2016-11-15 20:18:35 UTC], ["updated_at", 2016-11-15 20:18:35 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 5]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (10.08ms)
+Completed 200 OK in 126ms (Views: 11.4ms | ActiveRecord: 31.5ms)
+
+
+Started POST "/cookbooks/5/recipes" for ::1 at 2016-11-15 13:18:37 -0700
+Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{"uri"=>"a31ab5a5bfc4f021beed3814453a709e", "label"=>"Herbes de Provence Rotisserie Chickens", "image"=>"https://www.edamam.com/web-img/7ec/7ece067b0acebd68d4fd40cf5bea2343.jpg", "source"=>"Epicurious", "sourceIcon"=>"http://www.epicurious.com/favicon.ico", "url"=>"http://www.epicurious.com/recipes/food/views/Herbes-de-Provence-Rotisserie-Chickens-238794", "shareAs"=>"http://www.edamam.com/recipe/herbes-de-provence-rotisserie-chickens-a31ab5a5bfc4f021beed3814453a709e/chicken", "yield"=>6, "dietLabels"=>["High-Fiber", "Low-Carb"], "healthLabels"=>["Gluten-Free", "Egg-Free", "Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free"], "cautions"=>[], "ingredientLines"=>["2 tablespoons (1/4 stick) butter, room temperature", "2 tablespoons dried herbes de provence*", "1 tablespoon coarse kosher salt", "2 (3 1/2-pound) chickens", "*this dried herb mixture can be found in the spice section of supermarkets and specialty foods stores. if unavailable, use a mix of dried thyme, basil, savory, and fennel seeds."], "ingredients"=>[{"text"=>"2 tablespoons (1/4 stick) butter, room temperature", "quantity"=>2, "measure"=>"tbsp", "food"=>"butter", "weight"=>28.4}, {"text"=>"2 tablespoons dried herbes de provence*", "quantity"=>2, "measure"=>"tbsp", "food"=>"herbe de provence", "weight"=>8.6}, {"text"=>"1 tablespoon coarse kosher salt", "quantity"=>1, "measure"=>"tbsp", "food"=>"coarse kosher salt", "weight"=>18}, {"text"=>"2 (3 1/2-pound) chickens", "quantity"=>7, "measure"=>"lb", "food"=>"chickens", "weight"=>3175.144}, {"text"=>"*this dried herb mixture can be found in the spice section of supermarkets and specialty foods stores. if unavailable, use a mix of dried thyme, basil, savory, and fennel seeds.", "quantity"=>1, "measure"=>"can", "food"=>"herb", "weight"=>127.166176}], "calories"=>7404.9022457599995, "totalWeight"=>3357.310176, "totalNutrients"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>7404.9022457599995, "unit"=>"kcal"}, "FAT"=>{"label"=>"Fat", "quantity"=>511.2993532768, "unit"=>"g"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>155.14136300479998, "unit"=>"g"}, "FATRN"=>{"label"=>"Trans", "quantity"=>3.7863095999999996, "unit"=>"g"}, "FAMS"=>{"label"=>"Monounsaturated", "quantity"=>204.73676662719998, "unit"=>"g"}, "FAPU"=>{"label"=>"Polyunsaturated", "quantity"=>105.03612869439999, "unit"=>"g"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>86.82593293439999, "unit"=>"g"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>50.233485120000005, "unit"=>"g"}, "SUGAR"=>{"label"=>"Sugars", "quantity"=>2.3386416096, "unit"=>"g"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>603.1864826336, "unit"=>"g"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>2442.4179999999997, "unit"=>"mg"}, "NA"=>{"label"=>"Sodium", "quantity"=>9276.8361968, "unit"=>"mg"}, "CA"=>{"label"=>"Calcium", "quantity"=>2926.3825664, "unit"=>"mg"}, "MG"=>{"label"=>"Magnesium", "quantity"=>934.4623872, "unit"=>"mg"}, "K"=>{"label"=>"Potassium", "quantity"=>7114.41483264, "unit"=>"mg"}, "FE"=>{"label"=>"Iron", "quantity"=>196.44836953599997, "unit"=>"mg"}, "ZN"=>{"label"=>"Zinc", "quantity"=>50.0282960768, "unit"=>"mg"}, "P"=>{"label"=>"Phosphorus", "quantity"=>4947.16769376, "unit"=>"mg"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>1754.0207744, "unit"=>"µg_RAE"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>118.685392, "unit"=>"mg"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>2.5989138975999997, "unit"=>"mg"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>4.3481808864, "unit"=>"mg"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>222.6280010944, "unit"=>"mg"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>11.860569967999998, "unit"=>"mg"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>563.35996224, "unit"=>"µg"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>9.891226399999999, "unit"=>"µg"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>6.776288, "unit"=>"µg"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>20.3396219648, "unit"=>"mg"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>2377.32624752, "unit"=>"µg"}}, "totalDaily"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>370.245112288, "unit"=>"%"}, "FAT"=>{"label"=>"Fat", "quantity"=>786.6143896566153, "unit"=>"%"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>775.706815024, "unit"=>"%"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>28.941977644799998, "unit"=>"%"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>200.93394048000002, "unit"=>"%"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>1206.3729652672, "unit"=>"%"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>814.1393333333332, "unit"=>"%"}, "NA"=>{"label"=>"Sodium", "quantity"=>386.5348415333334, "unit"=>"%"}, "CA"=>{"label"=>"Calcium", "quantity"=>292.63825664, "unit"=>"%"}, "MG"=>{"label"=>"Magnesium", "quantity"=>233.6155968, "unit"=>"%"}, "K"=>{"label"=>"Potassium", "quantity"=>203.26899521828574, "unit"=>"%"}, "FE"=>{"label"=>"Iron", "quantity"=>1091.3798307555553, "unit"=>"%"}, "ZN"=>{"label"=>"Zinc", "quantity"=>333.5219738453333, "unit"=>"%"}, "P"=>{"label"=>"Phosphorus", "quantity"=>706.7382419657142, "unit"=>"%"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>194.89119715555555, "unit"=>"%"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>197.80898666666664, "unit"=>"%"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>173.26092650666666, "unit"=>"%"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>255.77534625882353, "unit"=>"%"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>1113.140005472, "unit"=>"%"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>593.0284983999999, "unit"=>"%"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>140.83999056, "unit"=>"%"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>164.85377333333332, "unit"=>"%"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>1.6940719999999998, "unit"=>"%"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>101.698109824, "unit"=>"%"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>2971.6578094, "unit"=>"%"}}, "digest"=>[{"label"=>"Fat", "tag"=>"FAT", "schemaOrgTag"=>"fatContent", "total"=>511.2993532768, "hasRDI"=>true, "daily"=>786.6143896566153, "unit"=>"g", "sub"=>[{"label"=>"Saturated", "tag"=>"FASAT", "schemaOrgTag"=>"saturatedFatContent", "total"=>155.14136300479998, "hasRDI"=>true, "daily"=>775.706815024, "unit"=>"g"}, {"label"=>"Trans", "tag"=>"FATRN", "schemaOrgTag"=>"transFatContent", "total"=>3.7863095999999996, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Monounsaturated", "tag"=>"FAMS", "schemaOrgTag"=>nil, "total"=>204.73676662719998, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Polyunsaturated", "tag"=>"FAPU", "schemaOrgTag"=>nil, "total"=>105.03612869439999, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Carbs", "tag"=>"CHOCDF", "schemaOrgTag"=>"carbohydrateContent", "total"=>86.82593293439999, "hasRDI"=>true, "daily"=>28.941977644799998, "unit"=>"g", "sub"=>[{"label"=>"Carbs (net)", "tag"=>"CHOCDF.net", "schemaOrgTag"=>nil, "total"=>36.59244781439998, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Fiber", "tag"=>"FIBTG", "schemaOrgTag"=>"fiberContent", "total"=>50.233485120000005, "hasRDI"=>true, "daily"=>200.93394048000002, "unit"=>"g"}, {"label"=>"Sugars", "tag"=>"SUGAR", "schemaOrgTag"=>"sugarContent", "total"=>2.3386416096, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Protein", "tag"=>"PROCNT", "schemaOrgTag"=>"proteinContent", "total"=>603.1864826336, "hasRDI"=>true, "daily"=>1206.3729652672, "unit"=>"g"}, {"label"=>"Cholesterol", "tag"=>"CHOLE", "schemaOrgTag"=>"cholesterolContent", "total"=>2442.4179999999997, "hasRDI"=>true, "daily"=>814.1393333333332, "unit"=>"mg"}, {"label"=>"Sodium", "tag"=>"NA", "schemaOrgTag"=>"sodiumContent", "total"=>9276.8361968, "hasRDI"=>true, "daily"=>386.5348415333334, "unit"=>"mg"}, {"label"=>"Calcium", "tag"=>"CA", "schemaOrgTag"=>nil, "total"=>2926.3825664, "hasRDI"=>true, "daily"=>292.63825664, "unit"=>"mg"}, {"label"=>"Magnesium", "tag"=>"MG", "schemaOrgTag"=>nil, "total"=>934.4623872, "hasRDI"=>true, "daily"=>233.6155968, "unit"=>"mg"}, {"label"=>"Potassium", "tag"=>"K", "schemaOrgTag"=>nil, "total"=>7114.41483264, "hasRDI"=>true, "daily"=>203.26899521828574, "unit"=>"mg"}, {"label"=>"Iron", "tag"=>"FE", "schemaOrgTag"=>nil, "total"=>196.44836953599997, "hasRDI"=>true, "daily"=>1091.3798307555553, "unit"=>"mg"}, {"label"=>"Zinc", "tag"=>"ZN", "schemaOrgTag"=>nil, "total"=>50.0282960768, "hasRDI"=>true, "daily"=>333.5219738453333, "unit"=>"mg"}, {"label"=>"Phosphorus", "tag"=>"P", "schemaOrgTag"=>nil, "total"=>4947.16769376, "hasRDI"=>true, "daily"=>706.7382419657142, "unit"=>"mg"}, {"label"=>"Vitamin A", "tag"=>"VITA_RAE", "schemaOrgTag"=>nil, "total"=>1754.0207744, "hasRDI"=>true, "daily"=>194.89119715555555, "unit"=>"µg"}, {"label"=>"Vitamin C", "tag"=>"VITC", "schemaOrgTag"=>nil, "total"=>118.685392, "hasRDI"=>true, "daily"=>197.80898666666664, "unit"=>"mg"}, {"label"=>"Thiamin (B1)", "tag"=>"THIA", "schemaOrgTag"=>nil, "total"=>2.5989138975999997, "hasRDI"=>true, "daily"=>173.26092650666666, "unit"=>"mg"}, {"label"=>"Riboflavin (B2)", "tag"=>"RIBF", "schemaOrgTag"=>nil, "total"=>4.3481808864, "hasRDI"=>true, "daily"=>255.77534625882353, "unit"=>"mg"}, {"label"=>"Niacin (B3)", "tag"=>"NIA", "schemaOrgTag"=>nil, "total"=>222.6280010944, "hasRDI"=>true, "daily"=>1113.140005472, "unit"=>"mg"}, {"label"=>"Vitamin B6", "tag"=>"VITB6A", "schemaOrgTag"=>nil, "total"=>11.860569967999998, "hasRDI"=>true, "daily"=>593.0284983999999, "unit"=>"mg"}, {"label"=>"Folic Acid (B9)", "tag"=>"FOL", "schemaOrgTag"=>nil, "total"=>563.35996224, "hasRDI"=>true, "daily"=>140.83999056, "unit"=>"µg"}, {"label"=>"Vitamin B12", "tag"=>"VITB12", "schemaOrgTag"=>nil, "total"=>9.891226399999999, "hasRDI"=>true, "daily"=>164.85377333333332, "unit"=>"µg"}, {"label"=>"Vitamin D", "tag"=>"VITD", "schemaOrgTag"=>nil, "total"=>6.776288, "hasRDI"=>true, "daily"=>1.6940719999999998, "unit"=>"µg"}, {"label"=>"Vitamin E", "tag"=>"TOCPHA", "schemaOrgTag"=>nil, "total"=>20.3396219648, "hasRDI"=>true, "daily"=>101.698109824, "unit"=>"mg"}, {"label"=>"Vitamin K", "tag"=>"VITK1", "schemaOrgTag"=>nil, "total"=>2377.32624752, "hasRDI"=>true, "daily"=>2971.6578094, "unit"=>"µg"}]}, "cookbook_id"=>"5"}
+  [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."label" = $1 AND "recipes"."image" = $2 AND "recipes"."url" = $3 AND "recipes"."ingredient_lines" = $4 LIMIT $5[0m  [["label", "Herbes de Provence Rotisserie Chickens"], ["image", "https://www.edamam.com/web-img/7ec/7ece067b0acebd68d4fd40cf5bea2343.jpg"], ["url", "http://www.epicurious.com/recipes/food/views/Herbes-de-Provence-Rotisserie-Chickens-238794"], ["ingredient_lines", "2 tablespoons (1/4 stick) butter, room temperature\n2 tablespoons dried herbes de provence*\n1 tablespoon coarse kosher salt\n2 (3 1/2-pound) chickens\n*this dried herb mixture can be found in the spice section of supermarkets and specialty foods stores. if unavailable, use a mix of dried thyme, basil, savory, and fennel seeds."], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO "recipes" ("label", "image", "url", "created_at", "updated_at", "ingredient_lines") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["label", "Herbes de Provence Rotisserie Chickens"], ["image", "https://www.edamam.com/web-img/7ec/7ece067b0acebd68d4fd40cf5bea2343.jpg"], ["url", "http://www.epicurious.com/recipes/food/views/Herbes-de-Provence-Rotisserie-Chickens-238794"], ["created_at", 2016-11-15 20:18:37 UTC], ["updated_at", 2016-11-15 20:18:37 UTC], ["ingredient_lines", "2 tablespoons (1/4 stick) butter, room temperature\n2 tablespoons dried herbes de provence*\n1 tablespoon coarse kosher salt\n2 (3 1/2-pound) chickens\n*this dried herb mixture can be found in the spice section of supermarkets and specialty foods stores. if unavailable, use a mix of dried thyme, basil, savory, and fennel seeds."]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "butter"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "recipe_id" = $1, "updated_at" = $2 WHERE "ingredients"."id" = $3[0m  [["recipe_id", 7], ["updated_at", 2016-11-15 20:18:37 UTC], ["id", 18]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "herbe de provence"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ingredients" SET "recipe_id" = $1, "updated_at" = $2 WHERE "ingredients"."id" = $3[0m  [["recipe_id", 7], ["updated_at", 2016-11-15 20:18:37 UTC], ["id", 19]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "coarse kosher salt"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "recipe_id" = $1, "updated_at" = $2 WHERE "ingredients"."id" = $3[0m  [["recipe_id", 7], ["updated_at", 2016-11-15 20:18:37 UTC], ["id", 20]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "chickens"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "ingredients" SET "recipe_id" = $1, "updated_at" = $2 WHERE "ingredients"."id" = $3[0m  [["recipe_id", 7], ["updated_at", 2016-11-15 20:18:37 UTC], ["id", 10]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "herb"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "herb"], ["created_at", 2016-11-15 20:18:37 UTC], ["updated_at", 2016-11-15 20:18:37 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:37 UTC], ["recipe_id", 7], ["id", 32]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "recipe_cookbooks" ("cookbook_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cookbook_id", 5], ["recipe_id", 7], ["created_at", 2016-11-15 20:18:37 UTC], ["updated_at", 2016-11-15 20:18:37 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 6]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (10.63ms)
+Completed 200 OK in 62ms (Views: 11.6ms | ActiveRecord: 18.6ms)
+
+
+Started POST "/cookbooks/5/recipes" for ::1 at 2016-11-15 13:18:39 -0700
+Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{"uri"=>"bde860b0b72ccb595124cea5d0b5fdad", "label"=>"Roasted Chickens With Lemon And Orange", "image"=>"https://www.edamam.com/web-img/6ff/6ff3dcb7d112fa5831966600949206f1.jpg", "source"=>"Food & Wine", "sourceIcon"=>"http://www.foodandwine.com/favicon.ico", "url"=>"http://www.foodandwine.com/recipes/roasted-chickens-with-lemon-and-orange", "shareAs"=>"http://www.edamam.com/recipe/roasted-chickens-with-lemon-and-orange-bde860b0b72ccb595124cea5d0b5fdad/chicken", "yield"=>20, "dietLabels"=>["Low-Carb", "Low-Sodium"], "healthLabels"=>["Paleo", "Dairy-Free", "Gluten-Free", "Egg-Free", "Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free"], "cautions"=>[], "ingredientLines"=>["Two 3 1/2-lb chickens", "Salt and freshly ground pepper", "1 lemon, halved", "1 orange, halved", "8 garlic cloves", "8 rosemary sprigs", "8 thyme sprigs"], "ingredients"=>[{"text"=>"Two 3 1/2-lb chickens", "quantity"=>7, "measure"=>"lb", "food"=>"chickens", "weight"=>3175.144}, {"text"=>"Salt and freshly ground pepper", "quantity"=>0, "measure"=>"medium", "food"=>"salt", "weight"=>0.05969999700056762}, {"text"=>"Salt and freshly ground pepper", "quantity"=>1, "measure"=>"pepper", "food"=>"ground pepper", "weight"=>0.3}, {"text"=>"1 lemon, halved", "quantity"=>1, "measure"=>"lemon", "food"=>"lemon", "weight"=>58}, {"text"=>"1 orange, halved", "quantity"=>1, "measure"=>"medium", "food"=>"orange", "weight"=>184}, {"text"=>"8 garlic cloves", "quantity"=>8, "measure"=>"clove", "food"=>"garlic", "weight"=>24}, {"text"=>"8 rosemary sprigs", "quantity"=>8, "measure"=>"sprig", "food"=>"rosemary sprigs", "weight"=>40}, {"text"=>"8 thyme sprigs", "quantity"=>8, "measure"=>"sprig", "food"=>"thyme sprigs", "weight"=>24}], "calories"=>7043.012599999998, "totalWeight"=>3505.5036999970007, "totalNutrients"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>7043.012599999998, "unit"=>"kcal"}, "FAT"=>{"label"=>"Fat", "quantity"=>481.4484664, "unit"=>"g"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>138.1502764, "unit"=>"g"}, "FATRN"=>{"label"=>"Trans", "quantity"=>2.8576295999999997, "unit"=>"g"}, "FAMS"=>{"label"=>"Monounsaturated", "quantity"=>198.6593756, "unit"=>"g"}, "FAPU"=>{"label"=>"Polyunsaturated", "quantity"=>103.1881212, "unit"=>"g"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>49.29985, "unit"=>"g"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>15.6199, "unit"=>"g"}, "SUGAR"=>{"label"=>"Sugars", "quantity"=>18.89592, "unit"=>"g"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>597.1603539999999, "unit"=>"g"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>2381.3579999999997, "unit"=>"mg"}, "NA"=>{"label"=>"Sodium", "quantity"=>2263.5993248374793, "unit"=>"mg"}, "CA"=>{"label"=>"Calcium", "quantity"=>706.7291679992802, "unit"=>"mg"}, "MG"=>{"label"=>"Magnesium", "quantity"=>739.3823969999698, "unit"=>"mg"}, "K"=>{"label"=>"Potassium", "quantity"=>6927.693935999759, "unit"=>"mg"}, "FE"=>{"label"=>"Iron", "quantity"=>36.39362300999011, "unit"=>"mg"}, "ZN"=>{"label"=>"Zinc", "quantity"=>42.84641609999699, "unit"=>"mg"}, "P"=>{"label"=>"Phosphorus", "quantity"=>4791.535679999999, "unit"=>"mg"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>1438.2300399999997, "unit"=>"µg_RAE"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>234.062304, "unit"=>"mg"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>2.1453864, "unit"=>"mg"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>4.0951128, "unit"=>"mg"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>217.455212, "unit"=>"mg"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>11.779473999999999, "unit"=>"mg"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>307.25964, "unit"=>"µg"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>9.842946399999999, "unit"=>"µg"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>6.350288, "unit"=>"µg"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>9.965951999999998, "unit"=>"mg"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>48.52626, "unit"=>"µg"}}, "totalDaily"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>352.15062999999986, "unit"=>"%"}, "FAT"=>{"label"=>"Fat", "quantity"=>740.6899483076922, "unit"=>"%"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>690.751382, "unit"=>"%"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>16.433283333333332, "unit"=>"%"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>62.4796, "unit"=>"%"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>1194.3207079999997, "unit"=>"%"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>793.7859999999998, "unit"=>"%"}, "NA"=>{"label"=>"Sodium", "quantity"=>94.31663853489496, "unit"=>"%"}, "CA"=>{"label"=>"Calcium", "quantity"=>70.67291679992802, "unit"=>"%"}, "MG"=>{"label"=>"Magnesium", "quantity"=>184.84559924999246, "unit"=>"%"}, "K"=>{"label"=>"Potassium", "quantity"=>197.93411245713597, "unit"=>"%"}, "FE"=>{"label"=>"Iron", "quantity"=>202.18679449994502, "unit"=>"%"}, "ZN"=>{"label"=>"Zinc", "quantity"=>285.64277399997997, "unit"=>"%"}, "P"=>{"label"=>"Phosphorus", "quantity"=>684.505097142857, "unit"=>"%"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>159.80333777777773, "unit"=>"%"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>390.10384, "unit"=>"%"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>143.02576000000002, "unit"=>"%"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>240.88898823529414, "unit"=>"%"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>1087.27606, "unit"=>"%"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>588.9736999999999, "unit"=>"%"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>76.81491, "unit"=>"%"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>164.04910666666663, "unit"=>"%"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>1.5875720000000002, "unit"=>"%"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>49.829759999999986, "unit"=>"%"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>60.657825, "unit"=>"%"}}, "digest"=>[{"label"=>"Fat", "tag"=>"FAT", "schemaOrgTag"=>"fatContent", "total"=>481.4484664, "hasRDI"=>true, "daily"=>740.6899483076922, "unit"=>"g", "sub"=>[{"label"=>"Saturated", "tag"=>"FASAT", "schemaOrgTag"=>"saturatedFatContent", "total"=>138.1502764, "hasRDI"=>true, "daily"=>690.751382, "unit"=>"g"}, {"label"=>"Trans", "tag"=>"FATRN", "schemaOrgTag"=>"transFatContent", "total"=>2.8576295999999997, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Monounsaturated", "tag"=>"FAMS", "schemaOrgTag"=>nil, "total"=>198.6593756, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Polyunsaturated", "tag"=>"FAPU", "schemaOrgTag"=>nil, "total"=>103.1881212, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Carbs", "tag"=>"CHOCDF", "schemaOrgTag"=>"carbohydrateContent", "total"=>49.29985, "hasRDI"=>true, "daily"=>16.433283333333332, "unit"=>"g", "sub"=>[{"label"=>"Carbs (net)", "tag"=>"CHOCDF.net", "schemaOrgTag"=>nil, "total"=>33.67995, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Fiber", "tag"=>"FIBTG", "schemaOrgTag"=>"fiberContent", "total"=>15.6199, "hasRDI"=>true, "daily"=>62.4796, "unit"=>"g"}, {"label"=>"Sugars", "tag"=>"SUGAR", "schemaOrgTag"=>"sugarContent", "total"=>18.89592, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Protein", "tag"=>"PROCNT", "schemaOrgTag"=>"proteinContent", "total"=>597.1603539999999, "hasRDI"=>true, "daily"=>1194.3207079999997, "unit"=>"g"}, {"label"=>"Cholesterol", "tag"=>"CHOLE", "schemaOrgTag"=>"cholesterolContent", "total"=>2381.3579999999997, "hasRDI"=>true, "daily"=>793.7859999999998, "unit"=>"mg"}, {"label"=>"Sodium", "tag"=>"NA", "schemaOrgTag"=>"sodiumContent", "total"=>2263.5993248374793, "hasRDI"=>true, "daily"=>94.31663853489496, "unit"=>"mg"}, {"label"=>"Calcium", "tag"=>"CA", "schemaOrgTag"=>nil, "total"=>706.7291679992802, "hasRDI"=>true, "daily"=>70.67291679992802, "unit"=>"mg"}, {"label"=>"Magnesium", "tag"=>"MG", "schemaOrgTag"=>nil, "total"=>739.3823969999698, "hasRDI"=>true, "daily"=>184.84559924999246, "unit"=>"mg"}, {"label"=>"Potassium", "tag"=>"K", "schemaOrgTag"=>nil, "total"=>6927.693935999759, "hasRDI"=>true, "daily"=>197.93411245713597, "unit"=>"mg"}, {"label"=>"Iron", "tag"=>"FE", "schemaOrgTag"=>nil, "total"=>36.39362300999011, "hasRDI"=>true, "daily"=>202.18679449994502, "unit"=>"mg"}, {"label"=>"Zinc", "tag"=>"ZN", "schemaOrgTag"=>nil, "total"=>42.84641609999699, "hasRDI"=>true, "daily"=>285.64277399997997, "unit"=>"mg"}, {"label"=>"Phosphorus", "tag"=>"P", "schemaOrgTag"=>nil, "total"=>4791.535679999999, "hasRDI"=>true, "daily"=>684.505097142857, "unit"=>"mg"}, {"label"=>"Vitamin A", "tag"=>"VITA_RAE", "schemaOrgTag"=>nil, "total"=>1438.2300399999997, "hasRDI"=>true, "daily"=>159.80333777777773, "unit"=>"µg"}, {"label"=>"Vitamin C", "tag"=>"VITC", "schemaOrgTag"=>nil, "total"=>234.062304, "hasRDI"=>true, "daily"=>390.10384, "unit"=>"mg"}, {"label"=>"Thiamin (B1)", "tag"=>"THIA", "schemaOrgTag"=>nil, "total"=>2.1453864, "hasRDI"=>true, "daily"=>143.02576000000002, "unit"=>"mg"}, {"label"=>"Riboflavin (B2)", "tag"=>"RIBF", "schemaOrgTag"=>nil, "total"=>4.0951128, "hasRDI"=>true, "daily"=>240.88898823529414, "unit"=>"mg"}, {"label"=>"Niacin (B3)", "tag"=>"NIA", "schemaOrgTag"=>nil, "total"=>217.455212, "hasRDI"=>true, "daily"=>1087.27606, "unit"=>"mg"}, {"label"=>"Vitamin B6", "tag"=>"VITB6A", "schemaOrgTag"=>nil, "total"=>11.779473999999999, "hasRDI"=>true, "daily"=>588.9736999999999, "unit"=>"mg"}, {"label"=>"Folic Acid (B9)", "tag"=>"FOL", "schemaOrgTag"=>nil, "total"=>307.25964, "hasRDI"=>true, "daily"=>76.81491, "unit"=>"µg"}, {"label"=>"Vitamin B12", "tag"=>"VITB12", "schemaOrgTag"=>nil, "total"=>9.842946399999999, "hasRDI"=>true, "daily"=>164.04910666666663, "unit"=>"µg"}, {"label"=>"Vitamin D", "tag"=>"VITD", "schemaOrgTag"=>nil, "total"=>6.350288, "hasRDI"=>true, "daily"=>1.5875720000000002, "unit"=>"µg"}, {"label"=>"Vitamin E", "tag"=>"TOCPHA", "schemaOrgTag"=>nil, "total"=>9.965951999999998, "hasRDI"=>true, "daily"=>49.829759999999986, "unit"=>"mg"}, {"label"=>"Vitamin K", "tag"=>"VITK1", "schemaOrgTag"=>nil, "total"=>48.52626, "hasRDI"=>true, "daily"=>60.657825, "unit"=>"µg"}]}, "cookbook_id"=>"5"}
+  [1m[36mCookbook Load (0.4ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."label" = $1 AND "recipes"."image" = $2 AND "recipes"."url" = $3 AND "recipes"."ingredient_lines" = $4 LIMIT $5[0m  [["label", "Roasted Chickens With Lemon And Orange"], ["image", "https://www.edamam.com/web-img/6ff/6ff3dcb7d112fa5831966600949206f1.jpg"], ["url", "http://www.foodandwine.com/recipes/roasted-chickens-with-lemon-and-orange"], ["ingredient_lines", "Two 3 1/2-lb chickens\nSalt and freshly ground pepper\n1 lemon, halved\n1 orange, halved\n8 garlic cloves\n8 rosemary sprigs\n8 thyme sprigs"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "recipes" ("label", "image", "url", "created_at", "updated_at", "ingredient_lines") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["label", "Roasted Chickens With Lemon And Orange"], ["image", "https://www.edamam.com/web-img/6ff/6ff3dcb7d112fa5831966600949206f1.jpg"], ["url", "http://www.foodandwine.com/recipes/roasted-chickens-with-lemon-and-orange"], ["created_at", 2016-11-15 20:18:39 UTC], ["updated_at", 2016-11-15 20:18:39 UTC], ["ingredient_lines", "Two 3 1/2-lb chickens\nSalt and freshly ground pepper\n1 lemon, halved\n1 orange, halved\n8 garlic cloves\n8 rosemary sprigs\n8 thyme sprigs"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "chickens"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "recipe_id" = $1, "updated_at" = $2 WHERE "ingredients"."id" = $3[0m  [["recipe_id", 8], ["updated_at", 2016-11-15 20:18:39 UTC], ["id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "salt"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "recipe_id" = $1, "updated_at" = $2 WHERE "ingredients"."id" = $3[0m  [["recipe_id", 8], ["updated_at", 2016-11-15 20:18:39 UTC], ["id", 17]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "ground pepper"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "ground pepper"], ["created_at", 2016-11-15 20:18:39 UTC], ["updated_at", 2016-11-15 20:18:39 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:39 UTC], ["recipe_id", 8], ["id", 33]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "lemon"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ingredients" SET "recipe_id" = $1, "updated_at" = $2 WHERE "ingredients"."id" = $3[0m  [["recipe_id", 8], ["updated_at", 2016-11-15 20:18:39 UTC], ["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "orange"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "orange"], ["created_at", 2016-11-15 20:18:39 UTC], ["updated_at", 2016-11-15 20:18:39 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:39 UTC], ["recipe_id", 8], ["id", 34]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "garlic"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "recipe_id" = $1, "updated_at" = $2 WHERE "ingredients"."id" = $3[0m  [["recipe_id", 8], ["updated_at", 2016-11-15 20:18:39 UTC], ["id", 12]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "rosemary sprigs"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "rosemary sprigs"], ["created_at", 2016-11-15 20:18:39 UTC], ["updated_at", 2016-11-15 20:18:39 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:39 UTC], ["recipe_id", 8], ["id", 35]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "thyme sprigs"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "thyme sprigs"], ["created_at", 2016-11-15 20:18:39 UTC], ["updated_at", 2016-11-15 20:18:39 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-15 20:18:39 UTC], ["recipe_id", 8], ["id", 36]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "recipe_cookbooks" ("cookbook_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cookbook_id", 5], ["recipe_id", 8], ["created_at", 2016-11-15 20:18:39 UTC], ["updated_at", 2016-11-15 20:18:39 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 6]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 7]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (11.66ms)
+Completed 200 OK in 70ms (Views: 12.6ms | ActiveRecord: 17.7ms)
+
+
+Started DELETE "/cookbooks/5/recipes/4" for ::1 at 2016-11-15 13:18:43 -0700
+Processing by RecipesController#destroy as HTML
+  Parameters: {"cookbook_id"=>"5", "id"=>"4"}
+  [1m[36mCookbook Load (0.3ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "recipe_cookbooks" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipe_cookbooks"."recipe_id" = 4[0m  [["cookbook_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 6]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 7]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 8]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (10.03ms)
+Completed 200 OK in 18ms (Views: 10.8ms | ActiveRecord: 3.4ms)
+
+
+Started DELETE "/cookbooks/5/recipes/6" for ::1 at 2016-11-15 13:18:45 -0700
+Processing by RecipesController#destroy as HTML
+  Parameters: {"cookbook_id"=>"5", "id"=>"6"}
+  [1m[36mCookbook Load (0.3ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "recipe_cookbooks" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipe_cookbooks"."recipe_id" = 6[0m  [["cookbook_id", 5]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 7]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 8]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (8.51ms)
+Completed 200 OK in 20ms (Views: 9.8ms | ActiveRecord: 6.5ms)
+
+
+Started DELETE "/cookbooks/5/recipes/7" for ::1 at 2016-11-15 13:18:47 -0700
+Processing by RecipesController#destroy as HTML
+  Parameters: {"cookbook_id"=>"5", "id"=>"7"}
+  [1m[36mCookbook Load (0.2ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "recipe_cookbooks" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipe_cookbooks"."recipe_id" = 7[0m  [["cookbook_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 8]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (5.56ms)
+Completed 200 OK in 13ms (Views: 6.5ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/cookbooks/5/recipes/5" for ::1 at 2016-11-15 13:18:49 -0700
+Processing by RecipesController#destroy as HTML
+  Parameters: {"cookbook_id"=>"5", "id"=>"5"}
+  [1m[36mCookbook Load (0.3ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "recipe_cookbooks" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipe_cookbooks"."recipe_id" = 5[0m  [["cookbook_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 8]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (3.67ms)
+Completed 200 OK in 12ms (Views: 5.3ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/cookbooks/5/recipes/8" for ::1 at 2016-11-15 13:18:50 -0700
+Processing by RecipesController#destroy as HTML
+  Parameters: {"cookbook_id"=>"5", "id"=>"8"}
+  [1m[36mCookbook Load (0.3ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "recipe_cookbooks" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipe_cookbooks"."recipe_id" = 8[0m  [["cookbook_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (1.16ms)
+Completed 200 OK in 9ms (Views: 2.8ms | ActiveRecord: 2.3ms)
+
+
