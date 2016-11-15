@@ -6,13 +6,15 @@
   </h3>
 
   <div ng-show="signedIn()">
+      <!-- ng-hide="vm.recipeAdded === true" -->
     <button 
-      ng-hide="vm.alreadyInCookbook(vm.recipe)" 
+      ng-hide="recipeAdded"
       ng-click="vm.addToCookbook(vm.recipe)">Add to Cookbook
     </button>
 
+      <!-- ng-show="vm.recipeAdded === false" -->
     <button 
-      ng-show="vm.alreadyInCookbook(vm.recipe)" 
+      ng-show="recipeAdded" 
       ng-click="vm.removeFromCookbook(vm.recipe)">Remove from Cookbook
     </button>
   </div>

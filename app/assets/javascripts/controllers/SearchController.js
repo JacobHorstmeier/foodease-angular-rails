@@ -1,4 +1,5 @@
-angular
+(function(){
+  angular
   .module('reciPlease')
   .controller('SearchController', function(Auth, $scope, Pagination, SearchService, RecipeService){ 
     var ctrl = this;
@@ -6,10 +7,9 @@ angular
     $scope.signedIn = Auth.isAuthenticated;   
     Auth.currentUser().then(function(user) {
       ctrl.user = user
+      // debugger;
     $scope.cookbookRecipes = ctrl.user.cookbook.recipes
-    // debugger;
     })
-    // ctrl.user = Auth._currentUser
 
     ctrl.recipeSearch = function(query){
       ctrl.recipes = [];
@@ -30,30 +30,48 @@ angular
     }
 
     ctrl.addToCookbook = function(recipe){
+      $scope.recipeAdded = true
       RecipeService.addToCookbook(ctrl.user.cookbook.id, recipe)
         .success(function(cookbook){  
           ctrl.user.cookbook = cookbook
-          debugger;
+          // debugger;
         })
     }
 
     ctrl.removeFromCookbook = function(recipe){
+      $scope.recipeAdded = false
+      var recipe = recipe
       RecipeService.removeFromCookbook(ctrl.user.cookbook.id, recipe)
         .success(function(cookbook){
           ctrl.user.cookbook = cookbook;
-          debugger;
+          // debugger;
         })
     }
 
+    // ctrl.recipeAdded = false
+    // ctrl.toggleShow = function(){
+    //   if($scope.recipeAdded == false){
+    //     $scope.recipeAdded = true
+    //   }else if($scope.recipeAdded == true){
+    //     $scope.recipeAdded = false;
+    //   }
+    // }
+console.log("in the controller");
+console.log(ctrl.user);
     ctrl.alreadyInCookbook = function(recipe){
-      // debugger;
-      var recipes = $scope.cookbookRecipes
-      var verdict = false;
-      for(var i = 0; i < recipes.length; i++){
-        if(recipes[i].label === recipe.label){
-          verdict = true;
+      console.log("in the function");
+      console.log(ctrl.user);
+      if(ctrl.user){
+        var recipes = $scope.cookbookRecipes
+        $scope.recipeAdded = false
+        for(var i = 0; i < recipes.length; i++){
+          if(recipes[i].label === recipe.label){
+            $scope.recipeAdded = true;
+          }
         }
+        // debugger;
+        return $scope.recipeAdded;
       }
-      return verdict;
     }
   })
+}())

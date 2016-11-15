@@ -20,7 +20,7 @@
     <ul>
       <li ng-repeat="recipe in vm.recipes | startFrom: vm.pagination.page * vm.pagination.perPage | limitTo: vm.pagination.perPage">
         <a ui-sref="home.cookbook.recipe" 
-        ng-click="vm.showCookbookRecipe(recipe)">
+        ng-click="vm.showCookbookRecipe(recipe); vm.alreadyInCookbook(recipe)">
           {{recipe.label}}
         </a>
       </li>
