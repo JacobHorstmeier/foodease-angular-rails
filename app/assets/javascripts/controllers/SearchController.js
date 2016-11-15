@@ -1,10 +1,10 @@
 angular
   .module('reciPlease')
-  .controller('SearchController', function($scope, Pagination, Auth, SearchService){ 
+  .controller('SearchController', function($scope, Pagination, Auth, SearchService, RecipeService){ 
 
     $scope.signedIn = Auth.isAuthenticated;   
     var ctrl = this;
-    
+
     ctrl.recipeSearch = function(query){
       ctrl.recipes = [];
       SearchService.getRecipes(query)
@@ -19,12 +19,17 @@ angular
     };
 
     ctrl.recipe = null
-    ctrl.showRecipe = function(recipe){
+    ctrl.showSearchRecipe = function(recipe){
       ctrl.recipe = recipe
     }
 
     ctrl.addToCookbook = function(recipe){
       var user = Auth._currentUser
-      user.cookbook.recipes.push(recipe)
+      var cookbook = user.cookbook
+      RecipeService.addToCookbook(cookbook.id, recipe)
+        .success(function(recipe){  
+          user.cookbook.recipes.push(recipe)
+          debugger;
+        })
     }
   })

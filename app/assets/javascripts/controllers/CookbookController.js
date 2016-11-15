@@ -7,5 +7,10 @@ angular
     ctrl.pagination = Pagination.getNew(10);
     ctrl.pagination.numPages = Math.ceil(ctrl.recipes.length/ctrl.pagination.perPage);
     // debugger;
+
+    ctrl.recipe = null
+    ctrl.showCookbookRecipe = function(recipe){
+      ctrl.recipe = recipe
+    }
   })
 

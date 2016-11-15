@@ -5781,3 +5781,323 @@ Processing by Devise::SessionsController#create as JSON
 Completed 201 Created in 44ms (Views: 19.6ms | ActiveRecord: 9.6ms)
 
 
+Started GET "/" for ::1 at 2016-11-15 10:07:50 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (694.0ms)
+Completed 200 OK in 704ms (Views: 702.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 10:07:52 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.7ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (1.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.5ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (1.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (26.49ms)
+Completed 201 Created in 45ms (Views: 24.3ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 11:01:48 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (840.6ms)
+Completed 200 OK in 852ms (Views: 851.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 11:01:50 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.6ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (23.69ms)
+Completed 201 Created in 47ms (Views: 21.8ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 11:03:02 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (671.3ms)
+Completed 200 OK in 679ms (Views: 679.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 11:03:04 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.7ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (2.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (20.52ms)
+Completed 201 Created in 38ms (Views: 16.7ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 11:33:02 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (815.6ms)
+Completed 200 OK in 830ms (Views: 829.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 11:33:17 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.3ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.3ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (115.51ms)
+Completed 201 Created in 168ms (Views: 97.9ms | ActiveRecord: 36.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 11:33:19 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (110.8ms)
+Completed 200 OK in 118ms (Views: 117.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 11:33:20 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.6ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (2.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (3.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (3.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (48.28ms)
+Completed 201 Created in 69ms (Views: 39.8ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 11:34:38 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (724.2ms)
+Completed 200 OK in 732ms (Views: 731.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 11:34:47 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (91.1ms)
+Completed 200 OK in 98ms (Views: 97.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 11:34:48 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (2.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (21.4ms)
+Completed 201 Created in 39ms (Views: 18.2ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/cookbooks/5/recipes.json" for ::1 at 2016-11-15 11:35:00 -0700
+  
+ActionController::RoutingError (uninitialized constant ApplicationControllers):
+  
+app/controllers/recipes_controller.rb:1:in `<top (required)>'
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered collection of /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [18 times] (23.7ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (16.4ms)
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (31.0ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (183.4ms)
+Started GET "/" for ::1 at 2016-11-15 11:35:37 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (1429.4ms)
+Completed 200 OK in 1441ms (Views: 1441.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 11:35:40 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.6ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.5ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (180.0ms)
+Completed 201 Created in 310ms (Views: 176.1ms | ActiveRecord: 48.1ms)
+
+
+Started POST "/cookbooks/5/recipes.json" for ::1 at 2016-11-15 11:36:07 -0700
+  
+ActionController::RoutingError (uninitialized constant ApplicationControllers):
+  
+app/controllers/recipes_controller.rb:1:in `<top (required)>'
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered collection of /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [18 times] (7.0ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.8ms)
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (24.7ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (138.7ms)
+Started GET "/" for ::1 at 2016-11-15 11:38:04 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (636.0ms)
+Completed 200 OK in 644ms (Views: 644.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 11:38:06 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (1.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (22.02ms)
+Completed 201 Created in 39ms (Views: 19.5ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/cookbooks/5/recipes" for ::1 at 2016-11-15 11:38:23 -0700
+  
+ActionController::RoutingError (uninitialized constant ApplicationControllers):
+  
+app/controllers/recipes_controller.rb:1:in `<top (required)>'
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered collection of /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [18 times] (6.3ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (26.9ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (141.1ms)
+Started GET "/" for ::1 at 2016-11-15 11:41:28 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (762.5ms)
+Completed 200 OK in 776ms (Views: 774.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 11:41:30 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (10.0ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (1.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.9ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (44.03ms)
+Completed 201 Created in 73ms (Views: 33.4ms | ActiveRecord: 15.4ms)
+
+
+Started POST "/cookbooks/5/recipes" for ::1 at 2016-11-15 11:41:41 -0700
+  
+ActionController::RoutingError (uninitialized constant ApplicationControllers):
+  
+app/controllers/recipes_controller.rb:1:in `<top (required)>'
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered collection of /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [18 times] (7.4ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (24.3ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (135.1ms)
+Started GET "/cookbooks/5/recipes" for ::1 at 2016-11-15 11:42:14 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/cookbooks/5/recipes"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered collection of /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [18 times] (6.6ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (99.8ms)
+Started GET "/cookbooks/5/recipes" for ::1 at 2016-11-15 11:43:40 -0700
+  
+ActionController::RoutingError (uninitialized constant ApplicationControllers):
+  
+app/controllers/recipes_controller.rb:1:in `<top (required)>'
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered collection of /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [19 times] (7.3ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (112.3ms)
+Started GET "/" for ::1 at 2016-11-15 11:44:28 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (140.6ms)
+Completed 200 OK in 151ms (Views: 150.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-15 11:44:30 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.4ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 5]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (135.27ms)
+Completed 201 Created in 242ms (Views: 114.5ms | ActiveRecord: 53.2ms)
+
+
+Started POST "/cookbooks/5/recipes" for ::1 at 2016-11-15 11:44:43 -0700
+Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{"uri"=>"c44c0080f113687f76c0d29f1dc8983b", "label"=>"Test Pilot", "image"=>"https://www.edamam.com/web-img/aac/aacac9409ed32d4ca0235f92ced9dac2.jpg", "source"=>"Serious Eats", "sourceIcon"=>"http://www.seriouseats.com/favicon.ico", "url"=>"http://www.seriouseats.com/recipes/2011/04/test-pilot-tiki-drink-recipe.html", "shareAs"=>"http://www.edamam.com/recipe/test-pilot-c44c0080f113687f76c0d29f1dc8983b/test", "yield"=>1, "dietLabels"=>["Low-Fat", "Low-Sodium"], "healthLabels"=>["Vegan", "Vegetarian", "Dairy-Free", "Gluten-Free", "Egg-Free", "Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free"], "cautions"=>[], "ingredientLines"=>["1/2 ounce fresh lime juice", "1/2 ounce falernum", "1 tablespoon cointreau", "1 1/2 ounces dark jamaican rum", "3/4 ounce light puerto rican rum", "1 dash angostura bitters", "6 drops pernod", "1 cup crushed ice"], "ingredients"=>[{"text"=>"1/2 ounce fresh lime juice", "quantity"=>0.5, "measure"=>"oz", "food"=>"lime juice", "weight"=>14.175}, {"text"=>"1/2 ounce falernum", "quantity"=>0.5, "measure"=>"oz", "food"=>"falernum", "weight"=>14.175}, {"text"=>"1 tablespoon cointreau", "quantity"=>1, "measure"=>"tbsp", "food"=>"cointreau", "weight"=>12}, {"text"=>"1 1/2 ounces dark jamaican rum", "quantity"=>1.5, "measure"=>"oz", "food"=>"rum", "weight"=>42.525}, {"text"=>"3/4 ounce light puerto rican rum", "quantity"=>0.75, "measure"=>"oz", "food"=>"rum", "weight"=>21.2625}, {"text"=>"1 dash angostura bitters", "quantity"=>1, "measure"=>"dash", "food"=>"angostura bitters", "weight"=>1}, {"text"=>"6 drops pernod", "quantity"=>6, "measure"=>"drop", "food"=>"pernod", "weight"=>0.29376954}, {"text"=>"1 cup crushed ice", "quantity"=>1, "measure"=>"cup", "food"=>"ice", "weight"=>237}], "calories"=>219.59048263740002, "totalWeight"=>342.43126954, "totalNutrients"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>219.59048263740002, "unit"=>"kcal"}, "FAT"=>{"label"=>"Fat", "quantity"=>0.009922500000000002, "unit"=>"g"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>0.0011340000000000002, "unit"=>"g"}, "FAMS"=>{"label"=>"Monounsaturated", "quantity"=>0.0011340000000000002, "unit"=>"g"}, "FAPU"=>{"label"=>"Polyunsaturated", "quantity"=>0.0028350000000000003, "unit"=>"g"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>10.6780275, "unit"=>"g"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>0.05670000000000001, "unit"=>"g"}, "SUGAR"=>{"label"=>"Sugars", "quantity"=>6.83802, "unit"=>"g"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>0.059535000000000005, "unit"=>"g"}, "NA"=>{"label"=>"Sodium", "quantity"=>14.3615626954, "unit"=>"mg"}, "CA"=>{"label"=>"Calcium", "quantity"=>9.945, "unit"=>"mg"}, "MG"=>{"label"=>"Magnesium", "quantity"=>4.071, "unit"=>"mg"}, "K"=>{"label"=>"Potassium", "quantity"=>22.0953753908, "unit"=>"mg"}, "FE"=>{"label"=>"Iron", "quantity"=>0.10170750781599999, "unit"=>"mg"}, "ZN"=>{"label"=>"Zinc", "quantity"=>0.10343625781600001, "unit"=>"mg"}, "P"=>{"label"=>"Phosphorus", "quantity"=>6.2726257815999995, "unit"=>"mg"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>0.28350000000000003, "unit"=>"µg_RAE"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>4.2525, "unit"=>"mg"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>0.008735626172399999, "unit"=>"mg"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>0.0033667507816000004, "unit"=>"mg"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>0.021174376954000006, "unit"=>"mg"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>0.0043854376954000004, "unit"=>"mg"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>1.4175000000000002, "unit"=>"µg"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>0.031185000000000004, "unit"=>"mg"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>0.08505, "unit"=>"µg"}}, "totalDaily"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>10.97952413187, "unit"=>"%"}, "FAT"=>{"label"=>"Fat", "quantity"=>0.01526538461538462, "unit"=>"%"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>0.005670000000000001, "unit"=>"%"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>3.5593425, "unit"=>"%"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>0.22680000000000003, "unit"=>"%"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>0.11907, "unit"=>"%"}, "NA"=>{"label"=>"Sodium", "quantity"=>0.5983984456416667, "unit"=>"%"}, "CA"=>{"label"=>"Calcium", "quantity"=>0.9945, "unit"=>"%"}, "MG"=>{"label"=>"Magnesium", "quantity"=>1.01775, "unit"=>"%"}, "K"=>{"label"=>"Potassium", "quantity"=>0.6312964397371429, "unit"=>"%"}, "FE"=>{"label"=>"Iron", "quantity"=>0.5650417100888888, "unit"=>"%"}, "ZN"=>{"label"=>"Zinc", "quantity"=>0.6895750521066667, "unit"=>"%"}, "P"=>{"label"=>"Phosphorus", "quantity"=>0.8960893973714286, "unit"=>"%"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>0.0315, "unit"=>"%"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>7.087500000000001, "unit"=>"%"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>0.5823750781599999, "unit"=>"%"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>0.19804416362352945, "unit"=>"%"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>0.10587188477000002, "unit"=>"%"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>0.21927188477000004, "unit"=>"%"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>0.35437500000000005, "unit"=>"%"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>0.15592500000000004, "unit"=>"%"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>0.1063125, "unit"=>"%"}}, "digest"=>[{"label"=>"Fat", "tag"=>"FAT", "schemaOrgTag"=>"fatContent", "total"=>0.009922500000000002, "hasRDI"=>true, "daily"=>0.01526538461538462, "unit"=>"g", "sub"=>[{"label"=>"Saturated", "tag"=>"FASAT", "schemaOrgTag"=>"saturatedFatContent", "total"=>0.0011340000000000002, "hasRDI"=>true, "daily"=>0.005670000000000001, "unit"=>"g"}, {"label"=>"Trans", "tag"=>"FATRN", "schemaOrgTag"=>"transFatContent", "total"=>0, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Monounsaturated", "tag"=>"FAMS", "schemaOrgTag"=>nil, "total"=>0.0011340000000000002, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Polyunsaturated", "tag"=>"FAPU", "schemaOrgTag"=>nil, "total"=>0.0028350000000000003, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Carbs", "tag"=>"CHOCDF", "schemaOrgTag"=>"carbohydrateContent", "total"=>10.6780275, "hasRDI"=>true, "daily"=>3.5593425, "unit"=>"g", "sub"=>[{"label"=>"Carbs (net)", "tag"=>"CHOCDF.net", "schemaOrgTag"=>nil, "total"=>10.621327500000001, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Fiber", "tag"=>"FIBTG", "schemaOrgTag"=>"fiberContent", "total"=>0.05670000000000001, "hasRDI"=>true, "daily"=>0.22680000000000003, "unit"=>"g"}, {"label"=>"Sugars", "tag"=>"SUGAR", "schemaOrgTag"=>"sugarContent", "total"=>6.83802, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Protein", "tag"=>"PROCNT", "schemaOrgTag"=>"proteinContent", "total"=>0.059535000000000005, "hasRDI"=>true, "daily"=>0.11907, "unit"=>"g"}, {"label"=>"Cholesterol", "tag"=>"CHOLE", "schemaOrgTag"=>"cholesterolContent", "total"=>0, "hasRDI"=>false, "daily"=>0, "unit"=>"mg"}, {"label"=>"Sodium", "tag"=>"NA", "schemaOrgTag"=>"sodiumContent", "total"=>14.3615626954, "hasRDI"=>true, "daily"=>0.5983984456416667, "unit"=>"mg"}, {"label"=>"Calcium", "tag"=>"CA", "schemaOrgTag"=>nil, "total"=>9.945, "hasRDI"=>true, "daily"=>0.9945, "unit"=>"mg"}, {"label"=>"Magnesium", "tag"=>"MG", "schemaOrgTag"=>nil, "total"=>4.071, "hasRDI"=>true, "daily"=>1.01775, "unit"=>"mg"}, {"label"=>"Potassium", "tag"=>"K", "schemaOrgTag"=>nil, "total"=>22.0953753908, "hasRDI"=>true, "daily"=>0.6312964397371429, "unit"=>"mg"}, {"label"=>"Iron", "tag"=>"FE", "schemaOrgTag"=>nil, "total"=>0.10170750781599999, "hasRDI"=>true, "daily"=>0.5650417100888888, "unit"=>"mg"}, {"label"=>"Zinc", "tag"=>"ZN", "schemaOrgTag"=>nil, "total"=>0.10343625781600001, "hasRDI"=>true, "daily"=>0.6895750521066667, "unit"=>"mg"}, {"label"=>"Phosphorus", "tag"=>"P", "schemaOrgTag"=>nil, "total"=>6.2726257815999995, "hasRDI"=>true, "daily"=>0.8960893973714286, "unit"=>"mg"}, {"label"=>"Vitamin A", "tag"=>"VITA_RAE", "schemaOrgTag"=>nil, "total"=>0.28350000000000003, "hasRDI"=>true, "daily"=>0.0315, "unit"=>"µg"}, {"label"=>"Vitamin C", "tag"=>"VITC", "schemaOrgTag"=>nil, "total"=>4.2525, "hasRDI"=>true, "daily"=>7.087500000000001, "unit"=>"mg"}, {"label"=>"Thiamin (B1)", "tag"=>"THIA", "schemaOrgTag"=>nil, "total"=>0.008735626172399999, "hasRDI"=>true, "daily"=>0.5823750781599999, "unit"=>"mg"}, {"label"=>"Riboflavin (B2)", "tag"=>"RIBF", "schemaOrgTag"=>nil, "total"=>0.0033667507816000004, "hasRDI"=>true, "daily"=>0.19804416362352945, "unit"=>"mg"}, {"label"=>"Niacin (B3)", "tag"=>"NIA", "schemaOrgTag"=>nil, "total"=>0.021174376954000006, "hasRDI"=>true, "daily"=>0.10587188477000002, "unit"=>"mg"}, {"label"=>"Vitamin B6", "tag"=>"VITB6A", "schemaOrgTag"=>nil, "total"=>0.0043854376954000004, "hasRDI"=>true, "daily"=>0.21927188477000004, "unit"=>"mg"}, {"label"=>"Folic Acid (B9)", "tag"=>"FOL", "schemaOrgTag"=>nil, "total"=>1.4175000000000002, "hasRDI"=>true, "daily"=>0.35437500000000005, "unit"=>"µg"}, {"label"=>"Vitamin B12", "tag"=>"VITB12", "schemaOrgTag"=>nil, "total"=>0, "hasRDI"=>false, "daily"=>0, "unit"=>"µg"}, {"label"=>"Vitamin D", "tag"=>"VITD", "schemaOrgTag"=>nil, "total"=>0, "hasRDI"=>false, "daily"=>0, "unit"=>"µg"}, {"label"=>"Vitamin E", "tag"=>"TOCPHA", "schemaOrgTag"=>nil, "total"=>0.031185000000000004, "hasRDI"=>true, "daily"=>0.15592500000000004, "unit"=>"mg"}, {"label"=>"Vitamin K", "tag"=>"VITK1", "schemaOrgTag"=>nil, "total"=>0.08505, "hasRDI"=>true, "daily"=>0.1063125, "unit"=>"µg"}]}, "cookbook_id"=>"5"}
+  [1m[36mCookbook Load (0.8ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRecipe Load (4.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."label" = $1 LIMIT $2[0m  [["label", "Test Pilot"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "recipes" ("label", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["label", "Test Pilot"], ["created_at", 2016-11-15 18:49:01 UTC], ["updated_at", 2016-11-15 18:49:01 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m

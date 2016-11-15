@@ -35,7 +35,7 @@ angular
       }
       })
       .state('home.cookbook', {
-        url: '/cookbook/:userId',
+        url: '/cookbook',
         templateUrl: 'views/cookbook.html',
         controller: 'CookbookController as vm',
         resolve: {
@@ -43,6 +43,11 @@ angular
             return Auth._currentUser || $state.go('home.search')
           }
         }
+      })
+      .state('home.cookbook.recipe', {
+        url: '/recipe',
+        templateUrl: 'views/recipe.html',
+        require: '^vm'   
       })
       // .state('menu.recipe', {
       //   url: '/recipe/:id'
