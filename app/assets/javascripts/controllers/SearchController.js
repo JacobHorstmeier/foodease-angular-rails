@@ -1,10 +1,15 @@
 angular
   .module('reciPlease')
-  .controller('SearchController', function($scope, Pagination, Auth, SearchService, RecipeService){ 
+  .controller('SearchController', function(Auth, $scope, Pagination, SearchService, RecipeService){ 
+    var ctrl = this;
 
     $scope.signedIn = Auth.isAuthenticated;   
-    var ctrl = this;
-    ctrl.user = Auth._currentUser
+    Auth.currentUser().then(function(user) {
+      ctrl.user = user
+    $scope.cookbookRecipes = ctrl.user.cookbook.recipes
+    // debugger;
+    })
+    // ctrl.user = Auth._currentUser
 
     ctrl.recipeSearch = function(query){
       ctrl.recipes = [];
@@ -28,17 +33,27 @@ angular
       RecipeService.addToCookbook(ctrl.user.cookbook.id, recipe)
         .success(function(cookbook){  
           ctrl.user.cookbook = cookbook
+          debugger;
         })
     }
 
     ctrl.removeFromCookbook = function(recipe){
-      RecipeService.removeFromCookbook(ctrl.user.cookbook.id, recipe.id)
+      RecipeService.removeFromCookbook(ctrl.user.cookbook.id, recipe)
         .success(function(cookbook){
           ctrl.user.cookbook = cookbook;
+          debugger;
         })
     }
 
     ctrl.alreadyInCookbook = function(recipe){
-      // check users cookbook for recipe
+      // debugger;
+      var recipes = $scope.cookbookRecipes
+      var verdict = false;
+      for(var i = 0; i < recipes.length; i++){
+        if(recipes[i].label === recipe.label){
+          verdict = true;
+        }
+      }
+      return verdict;
     }
   })

@@ -13,7 +13,7 @@ angular
     }
 
     ctrl.removeFromCookbook = function(recipe){
-      RecipeService.removeFromCookbook(ctrl.user.cookbook.id, recipe.id)
+      RecipeService.removeFromCookbook(ctrl.user.cookbook.id, recipe)
         .success(function(cookbook){
           ctrl.user.cookbook = cookbook;
           ctrl.recipes = user.cookbook.recipes

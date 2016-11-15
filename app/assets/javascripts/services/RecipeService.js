@@ -6,18 +6,22 @@ angular
       var url = '/cookbooks/' + cookbookId + '/recipes'
       return $http({
         url: url,
-        method: 'POST',
+        method: 'PUT',
         data: {
           recipe: recipe
         }
       })
     }
 
-    this.removeFromCookbook = function(cookbookId, recipeId){
-      var url = '/cookbooks/' + cookbookId + '/recipes/' + recipeId;
+    this.removeFromCookbook = function(cookbookId, recipe){
+      var url = '/cookbooks/' + cookbookId + '/recipes';
       return $http({
         url: url,
-        method: 'DELETE'
+        method: 'PUT',
+        data: {
+          remove: true,
+          label: recipe.label
+        }
       })
     }
 

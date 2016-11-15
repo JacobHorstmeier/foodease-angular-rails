@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
     cookbook = Cookbook.find(params[:cookbook_id])
     # for params[:recipe] do |recipe|
     # end
+    binding.pry
     recipe = Recipe.find_or_create_by(
       label: params[:recipe][:label], 
       image: params[:recipe][:image], 
@@ -28,7 +29,9 @@ class RecipesController < ApplicationController
 
   def destroy
     cookbook = Cookbook.find(params[:cookbook_id])
-    recipe = Recipe.find(params[:id])
+    binding.pry
+    params[:label] ? recipe = Recipe.find_by(label: params[:id]) : recipe = Recipe.find(params[:id])
+
     cookbook.recipes.delete(recipe)
     render json: cookbook
   end

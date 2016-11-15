@@ -17,22 +17,7 @@ angular
         url: '/recipe',
         templateUrl: 'views/recipe.html',
         require: '^vm'   
-      })
-      .state('home.login', {
-        url: '/login',
-        templateUrl: 'views/login.html',
-        controller: 'AuthController',
-        onEnter: function($state, Auth){
-          if (Auth._currentUser){$state.go('home.search')};
-        }
-      })
-      .state('home.register', {
-        url: '/register',
-        templateUrl: 'views/register.html',
-        controller: 'AuthController',
-        onEnter: function($state, Auth) {
-          if (Auth._currentUser){$state.go('home.search')};
-      }
+
       })
       .state('home.cookbook', {
         url: '/cookbook',
@@ -48,6 +33,22 @@ angular
         url: '/recipe',
         templateUrl: 'views/recipe.html',
         require: '^vm'   
+      })
+      .state('home.login', {
+        url: '/login',
+        templateUrl: 'views/login.html',
+        controller: 'AuthController',
+        onEnter: function($state, Auth){
+          if (Auth._currentUser){$state.go('home.search')};
+        }
+      })
+      .state('home.register', {
+        url: '/register',
+        templateUrl: 'views/register.html',
+        controller: 'AuthController',
+        onEnter: function($state, Auth) {
+          if (Auth._currentUser){$state.go('home.search')};
+        }
       })
       // .state('menu.recipe', {
       //   url: '/recipe/:id'
