@@ -1,3 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :cookbook, :shopping_list
+  attributes :id
+  has_one :cookbook
+  has_one :shopping_list
 end

@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   def show
-    user = User.find(params[:id])
-    render json: user
+    user = User.last
     # binding.pry
+    render json: user
   end
 
   def update
