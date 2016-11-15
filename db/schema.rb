@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161115150454) do
+ActiveRecord::Schema.define(version: 20161115152614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,18 +34,18 @@ ActiveRecord::Schema.define(version: 20161115150454) do
     t.integer  "recipe_id"
   end
 
+  create_table "recipe_cookbooks", force: :cascade do |t|
+    t.integer  "cookbook_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "recipe_health_labels", force: :cascade do |t|
     t.integer  "recipe_id"
     t.integer  "health_label_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-  end
-
-  create_table "recipe_menus", force: :cascade do |t|
-    t.integer  "menu_id"
-    t.integer  "recipe_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -90,7 +90,8 @@ ActiveRecord::Schema.define(version: 20161115150454) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "username"
-    t.integer  "menu_id"
+    t.integer  "cookbook_id"
+    t.integer  "shopping_list_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
