@@ -6,16 +6,25 @@ class RecipesController < ApplicationController
   end
 
   def create
-    binding.pry
     cookbook = Cookbook.find(params[:cookbook_id])
-    recipe = Recipe.find_or_create_by(label: params[:recipe][:label])
-    recipe.image = params[:recipe][:image]
-    recipe.url = params[:recipe][:url]
-    recipe.ingredient_lines = params[:recipe][:ingredientLines].join("\n")
+    # for params[:recipe] do |recipe|
+    # end
+    recipe = Recipe.find_or_create_by(
+      label: params[:recipe][:label], 
+      image: params[:recipe][:image], 
+      url: params[:recipe][:url], 
+      ingredient_lines: params[:recipe][:ingredientLines].join("\n")
+      )
+
     params[:recipe][:ingredients].map do |ingredient|
-      recipe.ingredients << Ingredient.find_or_create_by(name: ingredient.food)
+      recipe.ingredients << Ingredient.find_or_create_by(name: ingredient[:food])
     end
-    recipe.ingredients.uniq
+    recipe.ingredients.uniq{|ing| ing.name}
+    recipe.save
+    cookbook.recipes << recipe
+    cookbook.save
+    # binding.pry
+    render json: recipe
   end
 
   def destroy
@@ -23,3 +32,4 @@ class RecipesController < ApplicationController
   end
 
 end
+

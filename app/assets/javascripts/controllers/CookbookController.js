@@ -12,5 +12,6 @@ angular
     ctrl.showCookbookRecipe = function(recipe){
       ctrl.recipe = recipe
     }
+    debugger;
   })
 

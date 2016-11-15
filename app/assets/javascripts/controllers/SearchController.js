@@ -28,8 +28,8 @@ angular
       var cookbook = user.cookbook
       RecipeService.addToCookbook(cookbook.id, recipe)
         .success(function(recipe){  
-          user.cookbook.recipes.push(recipe)
           debugger;
+          user.cookbook.recipes.push(recipe)
         })
     }
   })
