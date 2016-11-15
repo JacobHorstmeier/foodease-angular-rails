@@ -23,11 +23,9 @@ angular
         templateUrl: 'views/login.html',
         controller: 'AuthController',
         onEnter: function($state, Auth){
-          if(Auth._currentUser){
-            Auth.currentUser().then(function(){
-              $state.go('home.search')
-            })
-          }
+          Auth.currentUser().then(function(){
+            $state.go('home.search')
+          })
         }
       })
       .state('home.register', {
@@ -35,18 +33,27 @@ angular
         templateUrl: 'views/register.html',
         controller: 'AuthController',
         onEnter: function($state, Auth) {
-        if (Auth._currentUser) {
-          Auth.currentUser().then(function (){
-            $state.go('home.beaches');
+          Auth.currentUser().then(function(){
+            $state.go('home.search');
           });
-        }
       }
       })
-      // .state('cookbook', {
-      //   url: '/cookbook',
-      //   templateUrl: 'some/template.html',
-      //   controller: 'CookbookController as vm'
-      // })
+      .state('home.cookbook', {
+        url: '/cookbook/:userId',
+        templateUrl: 'views/cookbook.html',
+        controller: 'CookbookController as vm',
+        resolve: {
+          user: function($state, Auth){
+            debugger;
+            return Auth._currentUser || $state.go('home.search')
+            // Auth.currentUser().then(function(user){
+            //   return user;
+            // }, function(error){
+            //   $state.go('home.search');
+            // });
+          }
+        }
+      })
       // .state('menu.recipe', {
       //   url: '/recipe/:id'
       //   templateUrl: 'some/template.html',

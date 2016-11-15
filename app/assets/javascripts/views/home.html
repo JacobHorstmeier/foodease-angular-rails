@@ -13,7 +13,7 @@
       <div><button ui-sref="home.search">Recipes</button></div>
       <div><button ng-hide="signedIn()" ui-sref="home.login">Login</button></div>
       <div><button ng-hide="signedIn()" ui-sref="home.register">Register</button></div>
-      <div><button ng-show="signedIn()">My Cookbook</button></div>
+      <div><button ng-show="signedIn()" ui-sref="home.cookbook({userId: '{{user.id}}'})">My Cookbook</button></div>
       <div><button ng-show="signedIn()">Shopping List</button></div>
       <div><button ng-show="signedIn()" ng-click="logout()">Log Out</button></div>
       

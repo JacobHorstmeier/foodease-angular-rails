@@ -5,8 +5,6 @@ angular
     $scope.logout = Auth.logout;
 
     Auth.currentUser().then(function(user){
-      
-    debugger;
       $scope.user = user;
     });
 
