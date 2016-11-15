@@ -67,6 +67,6 @@ angular
       //   templateUrl: 'some/template.html',
       //   controller: 'ShoppingListController as shoppingList'
       // })
-    $urlRouterProvider.otherwise('/search');
+    // $urlRouterProvider.otherwise('/search');
   })
 }())
