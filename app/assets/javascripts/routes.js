@@ -23,9 +23,7 @@ angular
         templateUrl: 'views/login.html',
         controller: 'AuthController',
         onEnter: function($state, Auth){
-          Auth.currentUser().then(function(){
-            $state.go('home.search')
-          })
+          if (Auth._currentUser){$state.go('home.search')};
         }
       })
       .state('home.register', {
@@ -33,9 +31,7 @@ angular
         templateUrl: 'views/register.html',
         controller: 'AuthController',
         onEnter: function($state, Auth) {
-          Auth.currentUser().then(function(){
-            $state.go('home.search');
-          });
+          if (Auth._currentUser){$state.go('home.search')};
       }
       })
       .state('home.cookbook', {
@@ -44,13 +40,7 @@ angular
         controller: 'CookbookController as vm',
         resolve: {
           user: function($state, Auth){
-            debugger;
             return Auth._currentUser || $state.go('home.search')
-            // Auth.currentUser().then(function(user){
-            //   return user;
-            // }, function(error){
-            //   $state.go('home.search');
-            // });
           }
         }
       })
@@ -67,6 +57,6 @@ angular
       //   templateUrl: 'some/template.html',
       //   controller: 'ShoppingListController as shoppingList'
       // })
-    // $urlRouterProvider.otherwise('/search');
+    $urlRouterProvider.otherwise('/search');
   })
 }())

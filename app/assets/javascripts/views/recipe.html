@@ -4,13 +4,19 @@
       {{vm.recipe.label}}
     </a>
   </h3>
+
   <div>
-    <button ng-click="vm.addToCookbook(vm.recipe)">Add to Cookbook</button>
+    <button ng-show="signedIn()" ng-click="vm.addToCookbook(vm.recipe)">Add to Cookbook</button>
   </div>
+  
   <img src="{{vm.recipe.image}}" class="recipe-image" />
+  
   <br>
+  
   Ingredients:
+  
   <ul>
-    <li ng-repeat="ingredient in vm.recipe.ingredientLines">{{ingredient}}</li>
+    <li ng-repeat="ingredient in vm.recipe.ingredients">{{ingredient.text}}</li>
   </ul>
+
 </div>

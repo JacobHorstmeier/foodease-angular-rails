@@ -1,7 +1,10 @@
 angular
   .module('reciPlease')
-  .controller('SearchController', function($scope, Pagination, SearchService){    
+  .controller('SearchController', function($scope, Pagination, Auth, SearchService){ 
+
+    $scope.signedIn = Auth.isAuthenticated;   
     var ctrl = this;
+    
     ctrl.recipeSearch = function(query){
       ctrl.recipes = [];
       SearchService.getRecipes(query)
@@ -21,6 +24,7 @@ angular
     }
 
     ctrl.addToCookbook = function(recipe){
-      // get current users cookBook and push recipe
+      var user = Auth._currentUser
+      user.cookbook.recipes.push(recipe)
     }
   })
