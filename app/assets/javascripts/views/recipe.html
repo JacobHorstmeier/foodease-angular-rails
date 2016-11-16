@@ -5,16 +5,16 @@
     </a>
   </h3>
 
-  <div ng-show="signedIn()">
+  <div ng-show="vm.signedIn()">
       <!-- ng-hide="vm.recipeAdded === true" -->
     <button 
-      ng-hide="recipeAdded"
+      ng-hide="vm.recipe.bookmarked"
       ng-click="vm.addToCookbook(vm.recipe)">Add to Cookbook
     </button>
 
       <!-- ng-show="vm.recipeAdded === false" -->
     <button 
-      ng-show="recipeAdded" 
+      ng-show="vm.recipe.bookmarked" 
       ng-click="vm.removeFromCookbook(vm.recipe)">Remove from Cookbook
     </button>
   </div>
