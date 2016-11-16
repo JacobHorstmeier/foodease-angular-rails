@@ -2,6 +2,7 @@
   angular
   .module('reciPlease')
   .controller('SearchController', function(Auth, $scope, $rootScope, Pagination, SearchService, RecipeService){ 
+    $("input:text:visible:first").focus();
     var ctrl = this;
 
     ctrl.signedIn = Auth.isAuthenticated;
