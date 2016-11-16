@@ -1,10 +1,47 @@
 <div class="col-md-5">
   <h3>Ingredients from Cookbook</h3>
+
+    <div ng-if="ingredients > 0">
+    <button 
+      ng-hide="vm.pagination.page == 0" 
+      ng-click="vm.pagination.prevPage()" 
+      style='float: left;'>Previous
+    </button>
+    <button 
+      ng-hide="vm.pagination.page + 1 >= vm.pagination.numPages" 
+      ng-click="vm.pagination.nextPage()" 
+      style='float: right;'>Next
+    </button>
+  </div>
+
   <ul>
-    <li ng-repeat="ingredient in ingredients | unique:'food'">{{ingredient.food}}</li>
+    <li ng-repeat="ingredient in ingredients | unique:'food'">
+      <ng-click 
+        ng-hide="ingredient.added"
+        ng-click="vm.addToShoppingList(ingredient)">+
+      </ng-click>
+      <ng-click 
+        ng-show="ingredient.added"
+        ng-click="vm.removeFromShoppingList(ingredient)">-
+      </ng-click>
+      {{ingredient.food}}
+    </li>
   </ul>
 </div>
 
 <div class="col-md-5">
   <h3>Shopping List</h3>
+  <ul>
+    <li ng-repeat="ingredient in shoppingList | unique:'food'">
+      <ng-click 
+        ng-hide="ingredient.added"
+        ng-click="vm.addToShoppingList(ingredient)">+
+      </ng-click>
+      <ng-click 
+        ng-show="ingredient.added"
+        ng-click="vm.removeFromShoppingList(ingredient)">-
+      </ng-click>
+      {{ingredient.food}}
+    </li>
+  </ul>
 </div>
