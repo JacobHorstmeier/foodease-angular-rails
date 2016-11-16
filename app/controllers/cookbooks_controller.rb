@@ -10,7 +10,7 @@ class CookbooksController < ApplicationController
       recipe = Recipe.find_or_create_by(recipe_params)
       if params[:recipe][:ingredients]
         params[:recipe][:ingredients].map do |ingredient|
-          ingredient = Ingredient.find_or_create_by(name: ingredient[:food])
+          ingredient = Ingredient.find_or_create_by(text: ingredient[:text], food: ingredient[:food])
           recipe.ingredients << ingredient unless recipe.ingredients.include?(ingredient)
         end
       end
@@ -24,7 +24,7 @@ class CookbooksController < ApplicationController
 private
 
   def recipe_params
-    params.require(:recipe).permit(:label, :image, :url, :ingredientLines)
+    params.require(:recipe).permit(:label, :image, :url)
   end
   
 end
