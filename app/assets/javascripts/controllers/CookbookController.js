@@ -25,6 +25,7 @@
 
     ctrl.showCookbookRecipe = function(recipe){
       $rootScope.recipe = ctrl.alreadyInCookbook(recipe);
+      debugger;
     }
 
     ctrl.removeFromCookbook = function(recipe){
