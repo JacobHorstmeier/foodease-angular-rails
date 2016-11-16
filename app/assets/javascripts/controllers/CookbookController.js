@@ -13,8 +13,6 @@
       ctrl.pagination.numPages = Math.ceil($rootScope.cookbookRecipes.length/ctrl.pagination.perPage);
     })
 
-
-
     ctrl.addToCookbook = function(recipe){
       recipe.bookmarked = true
       RecipeService.addToCookbook(ctrl.user.cookbook.id, recipe)

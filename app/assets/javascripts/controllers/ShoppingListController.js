@@ -20,14 +20,11 @@ angular
     }
 
     ctrl.removeFromShoppingList = function(ingredient){
-      // debugger;
       ingredient.added = false;
       ShoppingListService.updateShoppingList('DELETE', ctrl.user.shopping_list.id, ingredient.id)
         .success(function(shoppingList){
           $scope.shoppingList = shoppingList.ingredients
-          // debugger;
       ctrl.updateIngredients()
-      // debugger;
         })
     }
 
@@ -42,13 +39,11 @@ angular
       })
     }
 
-    ctrl.alreadyInShoppingList = function(ingredient){
-      var shoppingList = $rootScope.shoppingList
-      for(var i = 0; i < shoppingList.length; i++){
-        if(shoppingList[i] === ingredient){
-          ingredient.added = true;
-        }
+    ctrl.toggleDone = function(ingredient){
+      if(ingredient.done == true){
+        ingredient.done = false;
+      } else {
+        ingredient.done = true;
       }
-      ingredient.added = false;
     }
   })

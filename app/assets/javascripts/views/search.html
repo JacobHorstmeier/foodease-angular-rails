@@ -5,7 +5,7 @@
   </form>
   <br>
   
-  <div ng-if="vm.recipes.length > 0">
+  <div ng-if="vm.recipes.length > 0" class="row">
     <button 
       ng-hide="vm.pagination.page == 0" 
       ng-click="vm.pagination.prevPage()" 
@@ -18,7 +18,7 @@
     </button>
   </div>
 
-  <div style='display: inline-block;'>
+  <div class="row">
     <ul>
       <li ng-repeat="recipe in searchRecipes | startFrom: vm.pagination.page * vm.pagination.perPage | limitTo: vm.pagination.perPage">
         <a ui-sref="home.search.recipe" 
