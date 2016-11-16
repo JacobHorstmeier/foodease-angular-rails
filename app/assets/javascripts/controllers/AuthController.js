@@ -27,8 +27,4 @@ angular
         console.log(error)
       });
     }
-
-    function searchRecipes(){
-      $state.go('home.search')
-    }
   })
