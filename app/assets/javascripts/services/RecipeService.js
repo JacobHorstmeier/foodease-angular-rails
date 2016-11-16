@@ -4,6 +4,7 @@ angular
 
     this.addToCookbook = function(cookbookId, recipe){
       var url = '/cookbooks/' + cookbookId + '/recipes'
+      // debugger;
       return $http({
         url: url,
         method: 'PUT',

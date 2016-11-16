@@ -5,48 +5,50 @@
     
     var ctrl = this
 
+    ctrl.signedIn = Auth.isAuthenticated;
+
     Auth.currentUser().then(function(user) {
-      // debugger;
       ctrl.user = user
       ctrl.recipes = ctrl.user.cookbook.recipes
-      ctrl.cookbookRecipes = ctrl.user.cookbook.recipes
       ctrl.pagination = Pagination.getNew(10);
       ctrl.pagination.numPages = Math.ceil(ctrl.recipes.length/ctrl.pagination.perPage);
     })
 
 
+
+    ctrl.addToCookbook = function(recipe){
+      recipe.bookmarked = true
+      RecipeService.addToCookbook(ctrl.user.cookbook.id, recipe)
+        .success(function(cookbook){  
+          // ctrl.user.cookbook = cookbook
+          ctrl.recipes = cookbook.recipes
+        })
+    }
+
     ctrl.recipe = null
     ctrl.showCookbookRecipe = function(recipe){
-      ctrl.recipe = recipe
-      ctrl.alreadyInCookbook(recipe);
+      ctrl.recipe = ctrl.alreadyInCookbook(recipe);
+      // debugger;
     }
 
     ctrl.removeFromCookbook = function(recipe){
       recipe.bookmarked = false
+      var recipe = recipe
       RecipeService.removeFromCookbook(ctrl.user.cookbook.id, recipe)
         .success(function(cookbook){
-          ctrl.user.cookbook = cookbook;
-          ctrl.recipes = user.cookbook.recipes
-          ctrl.recipe = null
+          ctrl.recipes = cookbook.recipes;
         })
     }
 
-    // ctrl.toggleShow = function(){
-      // if($scope.recipeAdded == false){
-      //   $scope.recipeAdded = true
-      // }else if($scope.recipeAdded == true){
-      //   $scope.recipeAdded = false;
-    //   }
-    // }
-
     ctrl.alreadyInCookbook = function(recipe){
-      var recipes = ctrl.cookbookRecipes
+      var recipes = ctrl.recipes
+      // debugger;
       for(var i = 0; i < recipes.length; i++){
         if(recipes[i].label === recipe.label){
           recipe.bookmarked = true;
         }
       }
-      // return $scope.recipeAdded;
+      return recipe
     }
   })
 }())

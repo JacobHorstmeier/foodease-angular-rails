@@ -2,6 +2,7 @@
   angular
   .module('reciPlease')
   .controller('SearchController', function(Auth, $scope, $rootScope, Pagination, SearchService, RecipeService){ 
+    
     var ctrl = this;
 
     ctrl.signedIn = Auth.isAuthenticated;
@@ -12,14 +13,12 @@
     })
 
     ctrl.recipeSearch = function(query){
-      debugger;
       $rootScope.recipes = [];
       SearchService.getRecipes(query)
         .success(function(response){
           response.hits.forEach(function(res){
             $rootScope.recipes.push(res.recipe)
           })
-          debugger;
           ctrl.pagination = Pagination.getNew(10);
           ctrl.pagination.numPages = Math.ceil($rootScope.recipes.length/ctrl.pagination.perPage);
         })
@@ -36,7 +35,6 @@
       RecipeService.addToCookbook(ctrl.user.cookbook.id, recipe)
         .success(function(cookbook){  
           ctrl.user.cookbook = cookbook
-          // debugger;
         })
     }
 
@@ -48,15 +46,6 @@
           ctrl.user.cookbook = cookbook;
         })
     }
-
-    // ctrl.recipeAdded = false
-    // ctrl.toggleShow = function(){
-    //   if($scope.recipeAdded == false){
-    //     $scope.recipeAdded = true
-    //   }else if($scope.recipeAdded == true){
-    //     $scope.recipeAdded = false;
-    //   }
-    // }
 
     ctrl.alreadyInCookbook = function(recipe){
       if(ctrl.user){
