@@ -15,7 +15,7 @@
   </div>
 
   <ul>
-    <li ng-repeat="ingredient in ingredients | unique:'food'">
+    <li ng-repeat="ingredient in ingredients | unique:'food' | startFrom: vm.pagination.page * vm.pagination.perPage | limitTo: vm.pagination.perPage">
       <ng-click 
         ng-hide="ingredient.added"
         ng-click="vm.addToShoppingList(ingredient)">+
@@ -39,7 +39,7 @@
       </ng-click> -->
         <!-- ng-show="ingredient.added" -->
       <ng-click 
-        ng-click="vm.removeFromShoppingList(ingredient)">-
+        ng-click="vm.removeFromShoppingList(ingredient)">X
       </ng-click>
       {{ingredient.food}}
     </li>
