@@ -23,11 +23,6 @@ angular
         url: '/cookbook',
         templateUrl: 'views/cookbook.html',
         controller: 'CookbookController as vm',
-        resolve: {
-          user: function($state, Auth){
-            return Auth._currentUser || $state.go('home.search')
-          }
-        }
       })
       .state('home.cookbook.recipe', {
         url: '/recipe',

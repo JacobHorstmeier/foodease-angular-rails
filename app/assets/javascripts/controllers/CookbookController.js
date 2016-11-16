@@ -2,7 +2,6 @@
   angular
   .module('reciPlease')
   .controller('CookbookController', function(Auth, $scope, $rootScope, Pagination, RecipeService){
-    
     var ctrl = this
 
     ctrl.signedIn = Auth.isAuthenticated;
@@ -24,10 +23,8 @@
         })
     }
 
-    $rootScope.recipe = null
     ctrl.showCookbookRecipe = function(recipe){
       $rootScope.recipe = ctrl.alreadyInCookbook(recipe);
-      // debugger;
     }
 
     ctrl.removeFromCookbook = function(recipe){
@@ -35,7 +32,6 @@
       var recipe = recipe
       RecipeService.removeFromCookbook(ctrl.user.cookbook.id, recipe)
         .success(function(cookbook){
-          // debugger;
           $rootScope.cookbookRecipes = cookbook.recipes;
         })
     }

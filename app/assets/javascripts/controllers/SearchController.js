@@ -2,7 +2,6 @@
   angular
   .module('reciPlease')
   .controller('SearchController', function(Auth, $scope, $rootScope, Pagination, SearchService, RecipeService){ 
-
     var ctrl = this;
 
     ctrl.signedIn = Auth.isAuthenticated;
@@ -24,10 +23,8 @@
         })
     };
 
-    $rootScope.recipe = null
     ctrl.showSearchRecipe = function(recipe){
       $rootScope.recipe = ctrl.alreadyInCookbook(recipe);
-      // debugger;
       ;
     }
 
