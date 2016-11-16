@@ -2,27 +2,18 @@ angular
   .module('reciPlease')
   .service('ShoppingListService', function($http){
 
-    this.addToShoppingList = function(shoppingListId, ingredient){
-      var url = '/shopping-lists/' + shoppingListId + '/ingredients'
-      return $http({
-        url: url,
-        method: 'PUT',
-        data: {
-          ingredient: ingredient
-        }
-      })
+    this.updateShoppingList = function(method, shoppingListId, ingredientId){
+      var url = '/shopping-lists/' + shoppingListId + '/ingredients/' + ingredientId;
+      // debugger;
+      return $http({url: url, method: method})
     }
 
-    this.removeFromShoppingList = function(shoppingListId, ingredient){
-      var url = '/shopping-lists/' + shoppingListId + '/ingredients'
-      return $http({
-        url: url,
-        method: 'PUT',
-        data: {
-          remove: true,
-          label: ingredient.label
-        }
-      })
-    }
+    // this.addToShoppingList = function(shoppingListId, ingredientId){      
+    //   return updateShoppingList('PUT');
+    // }
+
+    // this.removeFromShoppingList = function(shoppingListId, ingredient){
+    //   return updateShoppingList('DELETE');
+    // }
 
   })

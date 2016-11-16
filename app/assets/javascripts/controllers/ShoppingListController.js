@@ -12,17 +12,19 @@ angular
 
     ctrl.addToShoppingList = function(ingredient){
       ingredient.added = true;
-      $scope.shoppingList.push(ingredient);
+      ShoppingListService.updateShoppingList('PUT', ctrl.user.shopping_list.id, ingredient.id)
+        .success(function(shoppingList){
+          // debugger;
+          $scope.shoppingList = shoppingList.ingredients
+        })
 
     }
 
     ctrl.removeFromShoppingList = function(ingredient){
       ingredient.added = false;
-      var list = $scope.shoppingList
-      for(var i = 0; i < list.length; i++){
-        if(list[i] === ingredient){
-          $scope.shoppingList.splice(i, 1)
-        }
-      }
+      ShoppingListService.updateShoppingList('DELETE', ctrl.user.shopping_list.id, ingredient.id)
+        .success(function(shoppingList){
+          $scope.shoppingList = shoppingList.ingredients
+        })
     }
   })

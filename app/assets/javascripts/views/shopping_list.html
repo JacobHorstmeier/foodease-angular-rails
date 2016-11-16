@@ -33,12 +33,12 @@
   <h3>Shopping List</h3>
   <ul>
     <li ng-repeat="ingredient in shoppingList | unique:'food'">
-      <ng-click 
+ <!--      <ng-click 
         ng-hide="ingredient.added"
         ng-click="vm.addToShoppingList(ingredient)">+
-      </ng-click>
+      </ng-click> -->
+        <!-- ng-show="ingredient.added" -->
       <ng-click 
-        ng-show="ingredient.added"
         ng-click="vm.removeFromShoppingList(ingredient)">-
       </ng-click>
       {{ingredient.food}}
