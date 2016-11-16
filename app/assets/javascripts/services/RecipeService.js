@@ -4,9 +4,6 @@ angular
 
     this.addToCookbook = function(cookbookId, recipe){
       var url = '/cookbooks/' + cookbookId + '/recipes'
-      if(Array.isArray(recipe.ingredientLines)) {
-        recipe.ingredientLines = recipe.ingredientLines.join('\n')  
-      }
       return $http({
         url: url,
         method: 'PUT',
