@@ -9,10 +9,16 @@ angular
         $scope.healthLabels = labels.data;
       })
 
+    $scope.addHealthLabel = function(label){
+      HealthLabelService.getLabels('PUT', $scope.user.id, label.id)
+        .succes(function(labels){
+          $scope.healthLabels = labels;
+        })
+    }
+
 
     Auth.currentUser().then(function(user){
-      $scope.user = user
-    
+      $scope.user = user    
     })
 
     Auth.currentUser().then(function(user){

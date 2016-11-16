@@ -18,16 +18,21 @@
       <div><button ng-show="signedIn()" ng-click="logout()">Log Out</button></div>
       
       <!-- component: <search-filter/> -->
-      <select ng-show="signedIn()" ng-submit=>
-        <option value>Vegan</option>
-        <option>Vegetarian</option>
-        <option>Shellfish-Free</option>
-      </select>
+      <div ng-show="signedIn()" ng-submit="addHealthLabel(label)">
+        <form name="healthLabelForm">
+          <select ng-model="label" >
+            <option value="" disabled selected>Health Filters</option>
+            <option ng-repeat="label in healthLabels" value="{{label}}">{{label.label}}</option>        
+          </select>
+          <input type="submit" value="Add to Profile" />
+        </form>
+        
+        Your Health Labels:
+        <ul ng-repeat="label in user.healthLabels">
+          <li>{{filter.name}}</li>
+        </ul>
 
-      <ul ng-repeat="filter in user.filters">
-        <li>{{filter.name}}</li>
-      </ul>
-
+      </div>
     </div>
 
     <div class="col-md-10">
