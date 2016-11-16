@@ -26,7 +26,7 @@
 
     ctrl.showSearchRecipe = function(recipe){
       $rootScope.recipe = ctrl.alreadyInCookbook(recipe);
-      ;
+      // debugger;
     }
 
     ctrl.addToCookbook = function(recipe){

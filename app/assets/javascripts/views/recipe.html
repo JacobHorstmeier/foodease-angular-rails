@@ -25,7 +25,7 @@
   Ingredients:
   
   <ul>
-    <li ng-repeat="ingredient in recipe.ingredients">{{ingredient.text}}</li>
+    <li ng-repeat="ingredient in recipe.ingredients | unique:'text'">{{ingredient.text}}</li>
   </ul>
 
 </div>

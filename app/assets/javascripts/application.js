@@ -19,5 +19,6 @@
 //= require bootstrap-sprockets
 //= require ng-simplePagination
 //= require angular-messages
+//= require angular-filter
 //= require moment
 //= require_tree .
