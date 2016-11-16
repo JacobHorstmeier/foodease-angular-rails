@@ -1,0 +1,10 @@
+<div class="col-md-5">
+  <h3>Ingredients from Cookbook</h3>
+  <ul>
+    <li ng-repeat="ingredient in ingredients | unique:'food'">{{ingredient.food}}</li>
+  </ul>
+</div>
+
+<div class="col-md-5">
+  <h3>Shopping List</h3>
+</div>

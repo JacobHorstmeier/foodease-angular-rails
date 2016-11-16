@@ -45,19 +45,11 @@ angular
           if (Auth._currentUser){$state.go('home.search')};
         }
       })
-      // .state('menu.recipe', {
-      //   url: '/recipe/:id'
-      //   templateUrl: 'some/template.html',
-      //   controller: 'MenuRecipeController as menuRecipe',
-      //   resolve: function($stateParams, RecipeService){
-      //     return RecipeService.getRecipe($stateParams.id);
-      //   }
-      // })
-      // .state('shoppingList', {
-      //   url: '/shopping-list',
-      //   templateUrl: 'some/template.html',
-      //   controller: 'ShoppingListController as shoppingList'
-      // })
+      .state('home.shoppingList', {
+        url: '/shopping-list',
+        templateUrl: 'views/shopping_list.html',
+        controller: 'ShoppingListController as vm'
+      })
     $urlRouterProvider.otherwise('/search');
   })
 }())

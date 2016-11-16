@@ -10,8 +10,6 @@ angular
 
     $scope.register = function(){
       Auth.register($scope.user, config).then(function(registerdUser){
-        // create users cookbook
-        // create users shoppinglist
         console.log(registerdUser);
         $state.go('home.search');
       }, function(error){

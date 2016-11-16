@@ -18121,3 +18121,217 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+Started PUT "/cookbooks/1/recipes" for ::1 at 2016-11-16 12:27:07 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CookbooksController#update as HTML
+  Parameters: {"recipe"=>{"uri"=>"http://www.edamam.com/ontologies/edamam.owl#recipe_f1c853a77986214680bbdd424883499a", "label"=>"Herbes de Provence Rotisserie Chickens", "image"=>"https://www.edamam.com/web-img/18d/18dcf05995cb40e8ce4c077972341d7a.jpg", "source"=>"Bon Appetit", "sourceIcon"=>"http://www.bonappetit.com/favicon.ico", "url"=>"http://www.bonappetit.com/recipes/2007/07/herbes_de_provence_rotisserie_chickens", "shareAs"=>"http://www.edamam.com/recipe/herbes-de-provence-rotisserie-chickens-f1c853a77986214680bbdd424883499a/chicken", "yield"=>6, "dietLabels"=>["Low-Carb"], "healthLabels"=>["Gluten-Free", "Egg-Free", "Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free"], "cautions"=>[], "ingredientLines"=>"2 tablespoons (1/4 stick) butter, room temperature\n2 tablespoons dried herbes de provence*\n1 tablespoon coarse kosher salt\n2 (3 1/2-pound) chickens", "ingredients"=>[{"text"=>"2 tablespoons (1/4 stick) butter, room temperature", "quantity"=>2, "measure"=>"tbsp", "food"=>"butter", "weight"=>28.4}, {"text"=>"2 tablespoons dried herbes de provence*", "quantity"=>2, "measure"=>"tbsp", "food"=>"herbe de provence", "weight"=>8.6}, {"text"=>"1 tablespoon coarse kosher salt", "quantity"=>1, "measure"=>"tbsp", "food"=>"coarse kosher salt", "weight"=>18}, {"text"=>"2 (3 1/2-pound) chickens", "quantity"=>7, "measure"=>"lb", "food"=>"chickens", "weight"=>3175.144}], "calories"=>7053.923599999999, "totalWeight"=>3230.144, "totalNutrients"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>7053.923599999999, "unit"=>"kcal"}, "FAT"=>{"label"=>"Fat", "quantity"=>501.8509064, "unit"=>"g"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>151.66972639999997, "unit"=>"g"}, "FATRN"=>{"label"=>"Trans", "quantity"=>3.7863095999999996, "unit"=>"g"}, "FAMS"=>{"label"=>"Monounsaturated", "quantity"=>204.1390856, "unit"=>"g"}, "FAPU"=>{"label"=>"Polyunsaturated", "quantity"=>103.52285119999999, "unit"=>"g"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>5.515879999999999, "unit"=>"g"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>3.182, "unit"=>"g"}, "SUGAR"=>{"label"=>"Sugars", "quantity"=>0.1641, "unit"=>"g"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>591.601644, "unit"=>"g"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>2442.4179999999997, "unit"=>"mg"}, "NA"=>{"label"=>"Sodium", "quantity"=>9206.8948, "unit"=>"mg"}, "CA"=>{"label"=>"Calcium", "quantity"=>522.94184, "unit"=>"mg"}, "MG"=>{"label"=>"Magnesium", "quantity"=>654.6967999999999, "unit"=>"mg"}, "K"=>{"label"=>"Potassium", "quantity"=>6079.28216, "unit"=>"mg"}, "FE"=>{"label"=>"Iron", "quantity"=>39.270976, "unit"=>"mg"}, "ZN"=>{"label"=>"Zinc", "quantity"=>42.1694264, "unit"=>"mg"}, "P"=>{"label"=>"Phosphorus", "quantity"=>4691.563679999999, "unit"=>"mg"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>1512.4050399999999, "unit"=>"µg_RAE"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>55.102304, "unit"=>"mg"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>1.9503663999999998, "unit"=>"mg"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>3.8522328, "unit"=>"mg"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>216.345992, "unit"=>"mg"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>11.161155999999998, "unit"=>"mg"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>214.92463999999998, "unit"=>"µg"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>9.891226399999999, "unit"=>"µg"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>6.776288, "unit"=>"µg"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>10.827592, "unit"=>"mg"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>197.06215999999998, "unit"=>"µg"}}, "totalDaily"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>352.6961799999999, "unit"=>"%"}, "FAT"=>{"label"=>"Fat", "quantity"=>772.0783175384614, "unit"=>"%"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>758.348632, "unit"=>"%"}, "CHOCDF"=>{"label"=>"Carbs", "quantity"=>1.8386266666666666, "unit"=>"%"}, "FIBTG"=>{"label"=>"Fiber", "quantity"=>12.728, "unit"=>"%"}, "PROCNT"=>{"label"=>"Protein", "quantity"=>1183.203288, "unit"=>"%"}, "CHOLE"=>{"label"=>"Cholesterol", "quantity"=>814.1393333333332, "unit"=>"%"}, "NA"=>{"label"=>"Sodium", "quantity"=>383.62061666666665, "unit"=>"%"}, "CA"=>{"label"=>"Calcium", "quantity"=>52.294183999999994, "unit"=>"%"}, "MG"=>{"label"=>"Magnesium", "quantity"=>163.67419999999998, "unit"=>"%"}, "K"=>{"label"=>"Potassium", "quantity"=>173.693776, "unit"=>"%"}, "FE"=>{"label"=>"Iron", "quantity"=>218.17208888888888, "unit"=>"%"}, "ZN"=>{"label"=>"Zinc", "quantity"=>281.1295093333334, "unit"=>"%"}, "P"=>{"label"=>"Phosphorus", "quantity"=>670.2233828571427, "unit"=>"%"}, "VITA_RAE"=>{"label"=>"Vitamin A", "quantity"=>168.04500444444443, "unit"=>"%"}, "VITC"=>{"label"=>"Vitamin C", "quantity"=>91.83717333333333, "unit"=>"%"}, "THIA"=>{"label"=>"Thiamin (B1)", "quantity"=>130.02442666666664, "unit"=>"%"}, "RIBF"=>{"label"=>"Riboflavin (B2)", "quantity"=>226.6019294117647, "unit"=>"%"}, "NIA"=>{"label"=>"Niacin (B3)", "quantity"=>1081.7299600000001, "unit"=>"%"}, "VITB6A"=>{"label"=>"Vitamin B6", "quantity"=>558.0577999999999, "unit"=>"%"}, "FOL"=>{"label"=>"Folic Acid (B9)", "quantity"=>53.73116, "unit"=>"%"}, "VITB12"=>{"label"=>"Vitamin B12", "quantity"=>164.85377333333332, "unit"=>"%"}, "VITD"=>{"label"=>"Vitamin D", "quantity"=>1.6940719999999998, "unit"=>"%"}, "TOCPHA"=>{"label"=>"Vitamin E", "quantity"=>54.13796, "unit"=>"%"}, "VITK1"=>{"label"=>"Vitamin K", "quantity"=>246.32769999999996, "unit"=>"%"}}, "digest"=>[{"label"=>"Fat", "tag"=>"FAT", "schemaOrgTag"=>"fatContent", "total"=>501.8509064, "hasRDI"=>true, "daily"=>772.0783175384614, "unit"=>"g", "sub"=>[{"label"=>"Saturated", "tag"=>"FASAT", "schemaOrgTag"=>"saturatedFatContent", "total"=>151.66972639999997, "hasRDI"=>true, "daily"=>758.348632, "unit"=>"g"}, {"label"=>"Trans", "tag"=>"FATRN", "schemaOrgTag"=>"transFatContent", "total"=>3.7863095999999996, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Monounsaturated", "tag"=>"FAMS", "schemaOrgTag"=>nil, "total"=>204.1390856, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Polyunsaturated", "tag"=>"FAPU", "schemaOrgTag"=>nil, "total"=>103.52285119999999, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Carbs", "tag"=>"CHOCDF", "schemaOrgTag"=>"carbohydrateContent", "total"=>5.515879999999999, "hasRDI"=>true, "daily"=>1.8386266666666666, "unit"=>"g", "sub"=>[{"label"=>"Carbs (net)", "tag"=>"CHOCDF.net", "schemaOrgTag"=>nil, "total"=>2.3338799999999993, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}, {"label"=>"Fiber", "tag"=>"FIBTG", "schemaOrgTag"=>"fiberContent", "total"=>3.182, "hasRDI"=>true, "daily"=>12.728, "unit"=>"g"}, {"label"=>"Sugars", "tag"=>"SUGAR", "schemaOrgTag"=>"sugarContent", "total"=>0.1641, "hasRDI"=>false, "daily"=>0, "unit"=>"g"}]}, {"label"=>"Protein", "tag"=>"PROCNT", "schemaOrgTag"=>"proteinContent", "total"=>591.601644, "hasRDI"=>true, "daily"=>1183.203288, "unit"=>"g"}, {"label"=>"Cholesterol", "tag"=>"CHOLE", "schemaOrgTag"=>"cholesterolContent", "total"=>2442.4179999999997, "hasRDI"=>true, "daily"=>814.1393333333332, "unit"=>"mg"}, {"label"=>"Sodium", "tag"=>"NA", "schemaOrgTag"=>"sodiumContent", "total"=>9206.8948, "hasRDI"=>true, "daily"=>383.62061666666665, "unit"=>"mg"}, {"label"=>"Calcium", "tag"=>"CA", "schemaOrgTag"=>nil, "total"=>522.94184, "hasRDI"=>true, "daily"=>52.294183999999994, "unit"=>"mg"}, {"label"=>"Magnesium", "tag"=>"MG", "schemaOrgTag"=>nil, "total"=>654.6967999999999, "hasRDI"=>true, "daily"=>163.67419999999998, "unit"=>"mg"}, {"label"=>"Potassium", "tag"=>"K", "schemaOrgTag"=>nil, "total"=>6079.28216, "hasRDI"=>true, "daily"=>173.693776, "unit"=>"mg"}, {"label"=>"Iron", "tag"=>"FE", "schemaOrgTag"=>nil, "total"=>39.270976, "hasRDI"=>true, "daily"=>218.17208888888888, "unit"=>"mg"}, {"label"=>"Zinc", "tag"=>"ZN", "schemaOrgTag"=>nil, "total"=>42.1694264, "hasRDI"=>true, "daily"=>281.1295093333334, "unit"=>"mg"}, {"label"=>"Phosphorus", "tag"=>"P", "schemaOrgTag"=>nil, "total"=>4691.563679999999, "hasRDI"=>true, "daily"=>670.2233828571427, "unit"=>"mg"}, {"label"=>"Vitamin A", "tag"=>"VITA_RAE", "schemaOrgTag"=>nil, "total"=>1512.4050399999999, "hasRDI"=>true, "daily"=>168.04500444444443, "unit"=>"µg"}, {"label"=>"Vitamin C", "tag"=>"VITC", "schemaOrgTag"=>nil, "total"=>55.102304, "hasRDI"=>true, "daily"=>91.83717333333333, "unit"=>"mg"}, {"label"=>"Thiamin (B1)", "tag"=>"THIA", "schemaOrgTag"=>nil, "total"=>1.9503663999999998, "hasRDI"=>true, "daily"=>130.02442666666664, "unit"=>"mg"}, {"label"=>"Riboflavin (B2)", "tag"=>"RIBF", "schemaOrgTag"=>nil, "total"=>3.8522328, "hasRDI"=>true, "daily"=>226.6019294117647, "unit"=>"mg"}, {"label"=>"Niacin (B3)", "tag"=>"NIA", "schemaOrgTag"=>nil, "total"=>216.345992, "hasRDI"=>true, "daily"=>1081.7299600000001, "unit"=>"mg"}, {"label"=>"Vitamin B6", "tag"=>"VITB6A", "schemaOrgTag"=>nil, "total"=>11.161155999999998, "hasRDI"=>true, "daily"=>558.0577999999999, "unit"=>"mg"}, {"label"=>"Folic Acid (B9)", "tag"=>"FOL", "schemaOrgTag"=>nil, "total"=>214.92463999999998, "hasRDI"=>true, "daily"=>53.73116, "unit"=>"µg"}, {"label"=>"Vitamin B12", "tag"=>"VITB12", "schemaOrgTag"=>nil, "total"=>9.891226399999999, "hasRDI"=>true, "daily"=>164.85377333333332, "unit"=>"µg"}, {"label"=>"Vitamin D", "tag"=>"VITD", "schemaOrgTag"=>nil, "total"=>6.776288, "hasRDI"=>true, "daily"=>1.6940719999999998, "unit"=>"µg"}, {"label"=>"Vitamin E", "tag"=>"TOCPHA", "schemaOrgTag"=>nil, "total"=>10.827592, "hasRDI"=>true, "daily"=>54.13796, "unit"=>"mg"}, {"label"=>"Vitamin K", "tag"=>"VITK1", "schemaOrgTag"=>nil, "total"=>197.06215999999998, "hasRDI"=>true, "daily"=>246.32769999999996, "unit"=>"µg"}], "bookmarked"=>true}, "cookbook_id"=>"1", "cookbook"=>{}}
+  [1m[36mCookbook Load (0.3ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: uri, source, sourceIcon, shareAs, yield, dietLabels, healthLabels, cautions, ingredientLines, ingredients, calories, totalWeight, totalNutrients, totalDaily, digest, bookmarked
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."label" = $1 AND "recipes"."image" = $2 AND "recipes"."url" = $3 LIMIT $4[0m  [["label", "Herbes de Provence Rotisserie Chickens"], ["image", "https://www.edamam.com/web-img/18d/18dcf05995cb40e8ce4c077972341d7a.jpg"], ["url", "http://www.bonappetit.com/recipes/2007/07/herbes_de_provence_rotisserie_chickens"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "recipes" ("label", "image", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["label", "Herbes de Provence Rotisserie Chickens"], ["image", "https://www.edamam.com/web-img/18d/18dcf05995cb40e8ce4c077972341d7a.jpg"], ["url", "http://www.bonappetit.com/recipes/2007/07/herbes_de_provence_rotisserie_chickens"], ["created_at", 2016-11-16 19:27:07 UTC], ["updated_at", 2016-11-16 19:27:07 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."text" = $1 AND "ingredients"."food" = $2 LIMIT $3[0m  [["text", "2 tablespoons (1/4 stick) butter, room temperature"], ["food", "butter"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ingredients" ("text", "created_at", "updated_at", "food") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["text", "2 tablespoons (1/4 stick) butter, room temperature"], ["created_at", 2016-11-16 19:27:07 UTC], ["updated_at", 2016-11-16 19:27:07 UTC], ["food", "butter"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."recipe_id" = $1 AND "ingredients"."id" = $2 LIMIT $3[0m  [["recipe_id", 2], ["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-16 19:27:07 UTC], ["recipe_id", 2], ["id", 9]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."text" = $1 AND "ingredients"."food" = $2 LIMIT $3[0m  [["text", "2 tablespoons dried herbes de provence*"], ["food", "herbe de provence"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("text", "created_at", "updated_at", "food") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["text", "2 tablespoons dried herbes de provence*"], ["created_at", 2016-11-16 19:27:07 UTC], ["updated_at", 2016-11-16 19:27:07 UTC], ["food", "herbe de provence"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."recipe_id" = $1 AND "ingredients"."id" = $2 LIMIT $3[0m  [["recipe_id", 2], ["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-16 19:27:07 UTC], ["recipe_id", 2], ["id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."text" = $1 AND "ingredients"."food" = $2 LIMIT $3[0m  [["text", "1 tablespoon coarse kosher salt"], ["food", "coarse kosher salt"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("text", "created_at", "updated_at", "food") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["text", "1 tablespoon coarse kosher salt"], ["created_at", 2016-11-16 19:27:07 UTC], ["updated_at", 2016-11-16 19:27:07 UTC], ["food", "coarse kosher salt"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."recipe_id" = $1 AND "ingredients"."id" = $2 LIMIT $3[0m  [["recipe_id", 2], ["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-16 19:27:07 UTC], ["recipe_id", 2], ["id", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."text" = $1 AND "ingredients"."food" = $2 LIMIT $3[0m  [["text", "2 (3 1/2-pound) chickens"], ["food", "chickens"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("text", "created_at", "updated_at", "food") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["text", "2 (3 1/2-pound) chickens"], ["created_at", 2016-11-16 19:27:07 UTC], ["updated_at", 2016-11-16 19:27:07 UTC], ["food", "chickens"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mIngredient Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."recipe_id" = $1 AND "ingredients"."id" = $2 LIMIT $3[0m  [["recipe_id", 2], ["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "ingredients" SET "updated_at" = $1, "recipe_id" = $2 WHERE "ingredients"."id" = $3[0m  [["updated_at", 2016-11-16 19:27:07 UTC], ["recipe_id", 2], ["id", 12]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecipe Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1 AND "recipes"."id" = $2 LIMIT $3[0m  [["cookbook_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "recipe_cookbooks" ("cookbook_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cookbook_id", 1], ["recipe_id", 2], ["created_at", 2016-11-16 19:27:07 UTC], ["updated_at", 2016-11-16 19:27:07 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (3.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers] Rendered CookbookSerializer with ActiveModelSerializers::Adapter::Attributes (22.86ms)
+Completed 200 OK in 179ms (Views: 43.9ms | ActiveRecord: 42.5ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCookbook Load (0.4ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 1]]
+  [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 1]]
+  [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipes" ON "ingredients"."recipe_id" = "recipes"."id" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 1]]
+Started GET "/" for ::1 at 2016-11-16 12:41:34 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (717.3ms)
+Completed 200 OK in 728ms (Views: 727.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-16 12:41:36 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.4ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 1]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (63.13ms)
+Completed 201 Created in 95ms (Views: 57.2ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-16 12:41:57 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (657.6ms)
+Completed 200 OK in 667ms (Views: 666.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-16 12:41:58 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.3ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 1]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.5ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (2.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (26.87ms)
+Completed 201 Created in 41ms (Views: 23.5ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-16 12:42:21 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (679.0ms)
+Completed 200 OK in 686ms (Views: 685.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-16 12:42:22 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.5ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 1]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (1.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (26.0ms)
+Completed 201 Created in 40ms (Views: 23.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-16 12:43:32 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (110.9ms)
+Completed 200 OK in 120ms (Views: 119.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-16 12:43:33 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.4ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 1]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.6ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (152.88ms)
+Completed 201 Created in 219ms (Views: 129.9ms | ActiveRecord: 43.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-16 12:45:18 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (108.8ms)
+Completed 200 OK in 120ms (Views: 119.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-16 12:45:19 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.6ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.6ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (140.64ms)
+Completed 201 Created in 200ms (Views: 115.3ms | ActiveRecord: 45.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-16 12:45:53 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (111.3ms)
+Completed 200 OK in 121ms (Views: 120.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-16 12:45:55 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.4ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.3ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (125.03ms)
+Completed 201 Created in 166ms (Views: 125.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-16 12:46:48 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (109.6ms)
+Completed 200 OK in 118ms (Views: 117.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for ::1 at 2016-11-16 12:46:49 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCookbook Load (0.4ms)[0m  [1m[34mSELECT  "cookbooks".* FROM "cookbooks" WHERE "cookbooks"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (1.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipes" ON "ingredients"."recipe_id" = "recipes"."id" INNER JOIN "recipe_cookbooks" ON "recipes"."id" = "recipe_cookbooks"."recipe_id" WHERE "recipe_cookbooks"."cookbook_id" = $1[0m  [["cookbook_id", 1]]
+[active_model_serializers]   [1m[36mShoppingList Load (0.4ms)[0m  [1m[34mSELECT  "shopping_lists".* FROM "shopping_lists" WHERE "shopping_lists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "shopping_list_ingredients" ON "ingredients"."id" = "shopping_list_ingredients"."ingredient_id" WHERE "shopping_list_ingredients"."shopping_list_id" = $1[0m  [["shopping_list_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (164.75ms)
+Completed 201 Created in 212ms (Views: 141.5ms | ActiveRecord: 35.3ms)
+
+
