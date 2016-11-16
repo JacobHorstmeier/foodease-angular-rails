@@ -1,5 +1,5 @@
 <div class="col-md-5">
-  <div ng-if="vm.recipes.length > 0">
+  <div ng-if="cookbookRecipes.length > 0">
     <button 
       ng-hide="vm.pagination.page == 0" 
       ng-click="vm.pagination.prevPage()" 
@@ -12,13 +12,13 @@
     </button>
   </div>
 
-  <div ng-if="vm.recipes.length === 0">
+  <div ng-if="cookbookRecipes.length === 0">
     <h3>Your Cookbook is Empty</h3>
   </div>
 
   <div style='display: inline-block;'>
     <ul>
-      <li ng-repeat="recipe in vm.recipes | startFrom: vm.pagination.page * vm.pagination.perPage | limitTo: vm.pagination.perPage">
+      <li ng-repeat="recipe in cookbookRecipes | startFrom: vm.pagination.page * vm.pagination.perPage | limitTo: vm.pagination.perPage">
         <a ui-sref="home.cookbook.recipe" 
         ng-click="vm.showCookbookRecipe(recipe)">
           {{recipe.label}}

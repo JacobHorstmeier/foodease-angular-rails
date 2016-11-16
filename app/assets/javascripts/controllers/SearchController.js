@@ -9,18 +9,18 @@
 
     Auth.currentUser().then(function(user) {
       ctrl.user = user
-      ctrl.cookbookRecipes = ctrl.user.cookbook.recipes
+      $rootScope.cookbookRecipes = ctrl.user.cookbook.recipes
     })
 
     ctrl.recipeSearch = function(query){
-      $rootScope.recipes = [];
+      $rootScope.searchRecipes = [];
       SearchService.getRecipes(query)
         .success(function(response){
           response.hits.forEach(function(res){
-            $rootScope.recipes.push(res.recipe)
+            $rootScope.searchRecipes.push(res.recipe)
           })
           ctrl.pagination = Pagination.getNew(10);
-          ctrl.pagination.numPages = Math.ceil($rootScope.recipes.length/ctrl.pagination.perPage);
+          ctrl.pagination.numPages = Math.ceil($rootScope.searchRecipes.length/ctrl.pagination.perPage);
         })
     };
 
@@ -50,7 +50,7 @@
 
     ctrl.alreadyInCookbook = function(recipe){
       if(ctrl.user){
-        var recipes = ctrl.cookbookRecipes
+        var recipes = $rootScope.cookbookRecipes
         for(var i = 0; i < recipes.length; i++){
           if(recipes[i].label === recipe.label){
             recipe.bookmarked = true

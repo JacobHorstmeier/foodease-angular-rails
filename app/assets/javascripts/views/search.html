@@ -20,7 +20,7 @@
 
   <div style='display: inline-block;'>
     <ul>
-      <li ng-repeat="recipe in recipes | startFrom: vm.pagination.page * vm.pagination.perPage | limitTo: vm.pagination.perPage">
+      <li ng-repeat="recipe in searchRecipes | startFrom: vm.pagination.page * vm.pagination.perPage | limitTo: vm.pagination.perPage">
         <a ui-sref="home.search.recipe" 
         ng-click="vm.showSearchRecipe(recipe)">
           {{recipe.label}}

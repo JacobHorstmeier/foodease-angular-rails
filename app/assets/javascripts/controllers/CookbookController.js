@@ -9,9 +9,9 @@
 
     Auth.currentUser().then(function(user) {
       ctrl.user = user
-      ctrl.recipes = ctrl.user.cookbook.recipes
+      $rootScope.cookbookRecipes = ctrl.user.cookbook.recipes
       ctrl.pagination = Pagination.getNew(10);
-      ctrl.pagination.numPages = Math.ceil(ctrl.recipes.length/ctrl.pagination.perPage);
+      ctrl.pagination.numPages = Math.ceil($rootScope.cookbookRecipes.length/ctrl.pagination.perPage);
     })
 
 
@@ -20,7 +20,7 @@
       recipe.bookmarked = true
       RecipeService.addToCookbook(ctrl.user.cookbook.id, recipe)
         .success(function(cookbook){  
-          ctrl.recipes = cookbook.recipes
+          $rootScope.cookbookRecipes = cookbook.recipes
         })
     }
 
@@ -35,12 +35,13 @@
       var recipe = recipe
       RecipeService.removeFromCookbook(ctrl.user.cookbook.id, recipe)
         .success(function(cookbook){
-          ctrl.recipes = cookbook.recipes;
+          // debugger;
+          $rootScope.cookbookRecipes = cookbook.recipes;
         })
     }
 
     ctrl.alreadyInCookbook = function(recipe){
-      var recipes = ctrl.recipes
+      var recipes = $rootScope.cookbookRecipes
       for(var i = 0; i < recipes.length; i++){
         if(recipes[i].label === recipe.label){
           recipe.bookmarked = true;
