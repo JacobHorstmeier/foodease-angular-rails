@@ -1,5 +1,11 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :healthLabels
   has_one :cookbook
   has_one :shopping_list
+
+  def healthLabels
+    object.health_labels.map do |health_label|
+      HealthLabelSerializer.new(health_label)
+    end
+  end
 end

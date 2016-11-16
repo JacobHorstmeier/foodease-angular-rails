@@ -1,8 +1,19 @@
 angular
   .module('reciPlease')
-  .controller('HomeController', function($scope, Auth){
+  .controller('HomeController', function($scope, Auth, HealthLabelService){
     $scope.signedIn = Auth.isAuthenticated;
     $scope.logout = Auth.logout;
+    
+    HealthLabelService.getLabels()
+      .then(function(labels){
+        $scope.healthLabels = labels.data;
+      })
+
+
+    Auth.currentUser().then(function(user){
+      $scope.user = user
+    
+    })
 
     Auth.currentUser().then(function(user){
       $scope.user = user;

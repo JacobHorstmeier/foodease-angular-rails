@@ -18,11 +18,15 @@
       <div><button ng-show="signedIn()" ng-click="logout()">Log Out</button></div>
       
       <!-- component: <search-filter/> -->
-      <select ng-show="signedIn()">
-        <option>Vegan</option>
+      <select ng-show="signedIn()" ng-submit=>
+        <option value>Vegan</option>
         <option>Vegetarian</option>
         <option>Shellfish-Free</option>
       </select>
+
+      <ul ng-repeat="filter in user.filters">
+        <li>{{filter.name}}</li>
+      </ul>
 
     </div>
 

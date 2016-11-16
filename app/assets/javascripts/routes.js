@@ -47,7 +47,7 @@ angular
       })
       .state('home.shoppingList', {
         url: '/shopping-list',
-        templateUrl: 'views/shopping_list.html',
+        templateUrl: 'views/shoppingList.html',
         controller: 'ShoppingListController as vm'
       })
     $urlRouterProvider.otherwise('/search');

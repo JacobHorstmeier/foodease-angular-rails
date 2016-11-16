@@ -1,0 +1,9 @@
+<select ng-show="signedIn()">
+  <option>Vegan</option>
+  <option>Vegetarian</option>
+  <option>Shellfish-Free</option>
+</select>
+
+<ul ng-repeat="filter in user.filters">
+  <li>{{filter.name}}</li>
+</ul>
