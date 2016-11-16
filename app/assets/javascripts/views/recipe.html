@@ -1,32 +1,31 @@
-<div ng-show="vm.recipe">
+<div ng-show="recipe">
   <h3>
-    <a href="{{vm.recipe.url}}" target="_blank">
-      {{vm.recipe.label}}
+    <a href="{{recipe.url}}" target="_blank">
+      {{recipe.label}}
     </a>
   </h3>
 
   <div ng-show="vm.signedIn()">
-      <!-- ng-hide="vm.recipeAdded === true" -->
+
     <button 
-      ng-hide="vm.recipe.bookmarked"
-      ng-click="vm.addToCookbook(vm.recipe)">Add to Cookbook
+      ng-hide="recipe.bookmarked"
+      ng-click="vm.addToCookbook(recipe)">Add to Cookbook
     </button>
 
-      <!-- ng-show="vm.recipeAdded === false" -->
     <button 
-      ng-show="vm.recipe.bookmarked" 
-      ng-click="vm.removeFromCookbook(vm.recipe)">Remove from Cookbook
+      ng-show="recipe.bookmarked" 
+      ng-click="vm.removeFromCookbook(recipe)">Remove from Cookbook
     </button>
   </div>
   
-  <img src="{{vm.recipe.image}}" class="recipe-image" />
+  <img src="{{recipe.image}}" class="recipe-image" />
   
   <br>
   
   Ingredients:
   
   <ul>
-    <li ng-repeat="ingredient in vm.recipe.ingredients">{{ingredient.text}}</li>
+    <li ng-repeat="ingredient in recipe.ingredients">{{ingredient.text}}</li>
   </ul>
 
 </div>

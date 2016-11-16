@@ -1,7 +1,7 @@
 (function(){
   angular
   .module('reciPlease')
-  .controller('CookbookController', function(Auth, $scope, Pagination, RecipeService){
+  .controller('CookbookController', function(Auth, $scope, $rootScope, Pagination, RecipeService){
     
     var ctrl = this
 
@@ -20,14 +20,13 @@
       recipe.bookmarked = true
       RecipeService.addToCookbook(ctrl.user.cookbook.id, recipe)
         .success(function(cookbook){  
-          // ctrl.user.cookbook = cookbook
           ctrl.recipes = cookbook.recipes
         })
     }
 
-    ctrl.recipe = null
+    $rootScope.recipe = null
     ctrl.showCookbookRecipe = function(recipe){
-      ctrl.recipe = ctrl.alreadyInCookbook(recipe);
+      $rootScope.recipe = ctrl.alreadyInCookbook(recipe);
       // debugger;
     }
 
@@ -42,7 +41,6 @@
 
     ctrl.alreadyInCookbook = function(recipe){
       var recipes = ctrl.recipes
-      // debugger;
       for(var i = 0; i < recipes.length; i++){
         if(recipes[i].label === recipe.label){
           recipe.bookmarked = true;

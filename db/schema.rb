@@ -52,9 +52,9 @@ ActiveRecord::Schema.define(version: 20161115160430) do
     t.string   "label"
     t.string   "image"
     t.string   "url"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.string   "ingredient_lines"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "ingredientLines"
   end
 
   create_table "shopping_list_ingredients", force: :cascade do |t|

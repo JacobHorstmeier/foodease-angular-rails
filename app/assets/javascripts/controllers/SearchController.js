@@ -2,7 +2,7 @@
   angular
   .module('reciPlease')
   .controller('SearchController', function(Auth, $scope, $rootScope, Pagination, SearchService, RecipeService){ 
-    
+
     var ctrl = this;
 
     ctrl.signedIn = Auth.isAuthenticated;
@@ -24,10 +24,11 @@
         })
     };
 
-    ctrl.recipe = null
+    $rootScope.recipe = null
     ctrl.showSearchRecipe = function(recipe){
-      ctrl.recipe = recipe;
-      ctrl.alreadyInCookbook(recipe);
+      $rootScope.recipe = ctrl.alreadyInCookbook(recipe);
+      // debugger;
+      ;
     }
 
     ctrl.addToCookbook = function(recipe){
@@ -56,6 +57,7 @@
           }
         }
       }
+      return recipe
     }
   })
 }())
