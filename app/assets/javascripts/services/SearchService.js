@@ -1,3 +1,4 @@
+(function(){
 angular
   .module('reciPlease')
   .service('SearchService', ['$http', function($http){
@@ -14,4 +15,5 @@ angular
         method: 'GET'
       })
     }
-}]);
+  }]);
+}());

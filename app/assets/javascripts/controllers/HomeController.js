@@ -1,4 +1,5 @@
-angular
+(function(){
+  angular
   .module('reciPlease')
   .controller('HomeController', ['$scope', '$rootScope', 'Auth', 'HealthLabelService', function($scope, $rootScope, Auth, HealthLabelService){
     $scope.signedIn = Auth.isAuthenticated;
@@ -63,3 +64,4 @@ angular
       $rootScope.user = undefined;
     });
   }])
+}());

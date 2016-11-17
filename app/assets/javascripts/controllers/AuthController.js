@@ -1,4 +1,5 @@
-angular
+(function(){
+  angular
   .module('reciPlease')
   .controller('AuthController', ['$scope', '$state', 'Auth', function($scope, $state, Auth){
 
@@ -26,3 +27,4 @@ angular
       });
     }
   }])
+}());

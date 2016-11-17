@@ -1,3 +1,4 @@
+(function(){
 angular
   .module('reciPlease')
   .service('RecipeService', ['$http', function($http){
@@ -26,3 +27,4 @@ angular
     }
 
   }]);
+}());

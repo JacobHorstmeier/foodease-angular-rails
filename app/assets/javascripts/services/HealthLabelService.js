@@ -1,3 +1,4 @@
+(function(){
 angular
   .module('reciPlease')
   .service('HealthLabelService', ['$http', function($http){
@@ -11,3 +12,4 @@ angular
       return $http({url: url, method: method});
     }
   }]);
+}());
