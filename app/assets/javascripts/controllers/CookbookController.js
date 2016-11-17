@@ -2,8 +2,8 @@
   function CookbookController(Auth, $scope, $rootScope, Pagination, RecipeService, $state) {
     var ctrl = this
     $rootScope.state = $state.current.name
+    $rootScope.cookbookRecipes = $rootScope.user.cookbook.recipes
     // debugger;
-
     // ctrl.pagination = Pagination.getNew(10);
     // ctrl.pagination.numPages = Math.ceil($rootScope.cookbookRecipes.length/ctrl.pagination.perPage);
 

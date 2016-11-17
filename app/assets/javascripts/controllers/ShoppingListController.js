@@ -2,6 +2,7 @@
   function ShoppingListController($rootScope, $scope, Auth, Pagination, ShoppingListService, $state){
     var ctrl = this
     $rootScope.state = $state.current.name
+    
     ctrl.addToShoppingList = function(ingredient){
       ingredient.added = true;
       ShoppingListService.updateShoppingList('PUT', $rootScope.user.shopping_list.id, ingredient.id)
@@ -40,8 +41,8 @@
 
     $scope.ingredients = $rootScope.user.cookbook.ingredients
     $scope.shoppingList = $rootScope.user.shopping_list.ingredients
-    ctrl.pagination = Pagination.getNew(8);
-    ctrl.pagination.numPages = Math.ceil($scope.ingredients.length/ctrl.pagination.perPage);
+    // ctrl.pagination = Pagination.getNew(8);
+    // ctrl.pagination.numPages = Math.ceil($scope.ingredients.length/ctrl.pagination.perPage);
     ctrl.updateIngredients()
   }
 
