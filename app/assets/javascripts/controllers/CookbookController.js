@@ -1,9 +1,11 @@
 (function(){
-  function CookbookController(Auth, $scope, $rootScope, Pagination, RecipeService) {
+  function CookbookController(Auth, $scope, $rootScope, Pagination, RecipeService, $state) {
     var ctrl = this
+    $rootScope.state = $state.current.name
+    // debugger;
 
-    ctrl.pagination = Pagination.getNew(10);
-    ctrl.pagination.numPages = Math.ceil($rootScope.cookbookRecipes.length/ctrl.pagination.perPage);
+    // ctrl.pagination = Pagination.getNew(10);
+    // ctrl.pagination.numPages = Math.ceil($rootScope.cookbookRecipes.length/ctrl.pagination.perPage);
 
     ctrl.addToCookbook = function(recipe){
       recipe.bookmarked = true
@@ -37,7 +39,7 @@
     }
   }
 
-  CookbookController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'RecipeService']
+  CookbookController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'RecipeService', '$state']
 
   angular
   .module('reciPlease')

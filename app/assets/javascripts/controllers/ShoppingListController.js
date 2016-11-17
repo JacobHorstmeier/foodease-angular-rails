@@ -1,7 +1,7 @@
 (function(){
-  function ShoppingListController($rootScope, $scope, Auth, Pagination, ShoppingListService){
+  function ShoppingListController($rootScope, $scope, Auth, Pagination, ShoppingListService, $state){
     var ctrl = this
-    
+    $rootScope.state = $state.current.name
     ctrl.addToShoppingList = function(ingredient){
       ingredient.added = true;
       ShoppingListService.updateShoppingList('PUT', $rootScope.user.shopping_list.id, ingredient.id)
@@ -45,7 +45,7 @@
     ctrl.updateIngredients()
   }
 
-  ShoppingListController.$inject = ['$rootScope', '$scope', 'Auth', 'Pagination', 'ShoppingListService']
+  ShoppingListController.$inject = ['$rootScope', '$scope', 'Auth', 'Pagination', 'ShoppingListService', '$state']
 
 angular
   .module('reciPlease')

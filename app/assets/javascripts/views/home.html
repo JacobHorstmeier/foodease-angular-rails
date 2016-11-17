@@ -11,11 +11,39 @@
     <div class="col-md-2 col-lg-2">
     
       <h4 ng-show="user">Welcome {{user.username}}</h4>
-      <div><button type="button" class="btn btn-primary btn-md" ng-hide="user" ui-sref="home.login">Login</button></div>
-      <div><button type="button" class="btn btn-primary btn-md" ng-hide="user" ui-sref="home.register">Register</button></div>
-      <div><button type="button" class="btn btn-primary btn-md" ng-show="user" ui-sref="home.cookbook.recipe">Cookbook</button></div>
-      <div><button type="button" class="btn btn-primary btn-md" ng-show="user" ui-sref="home.shoppingList">Shopping List</button></div>
-      <div><button type="button" class="btn btn-primary btn-md" ng-show="user" ng-click="logout(); clearData()">Log Out</button></div>
+
+      <ul class="nav nav-pills nav-stacked">
+        
+        <li role="presentation" ng-class="{'active': state == 'home.search.recipe'}"><a href="#" ui-sref="home.search.recipe">Search</a></li>
+
+        <li role="presentation" ng-hide="user" ng-class="{'active': state == 'home.login'}"><a href="#" ui-sref="home.login">Login</a></li>
+
+        <li role="presentation" ng-hide="user" ng-class="{'active': state == 'home.register'}"><a href="#" ui-sref="home.register">Register</a></li>
+        
+        <li role="presentation" ng-show="user" ng-class="{'active': state == 'home.cookbook.recipe'}"><a href="#" ui-sref="home.cookbook.recipe">Cookbook</a></li>
+
+        <li role="presentation" ng-show="user" ng-class="{'active': state == 'home.shoppingList'}"><a href="#" ui-sref="home.shoppingList">Shopping List</a></li>
+
+        <li role="presentation" ng-show="user"><a href="#" ng-click="logout(); clearData()">Log Out</a></li>
+
+
+      </ul>
+
+
+
+
+
+      <!-- <button type="button" class="btn btn-primary btn-md" ui-sref="home.search">Search</button> -->
+
+      <!-- <button type="button" class="btn btn-primary btn-md" ng-hide="user" ui-sref="home.login">Login</button> -->
+      
+      <!-- <button type="button" class="btn btn-primary btn-md" ng-hide="user" ui-sref="home.register">Register</button> -->
+      
+      <!-- <button type="button" class="btn btn-primary btn-md" ng-show="user" ui-sref="home.cookbook.recipe">Cookbook</button> -->
+      
+      <!-- <button type="button" class="btn btn-primary btn-md" ng-show="user" ui-sref="home.shoppingList">Shopping List</button> -->
+      
+      <!-- <button type="button" class="btn btn-primary btn-md" ng-show="user" ng-click="logout(); clearData()">Log Out</button> -->
       
       <br>
       <div ng-show="user">

@@ -1,5 +1,7 @@
 (function(){
-  function HomeController($state, $scope, $rootScope, Auth, HealthLabelService){
+  function HomeController($state, $scope, $rootScope, Auth, HealthLabelService, $state){
+    $rootScope.state = $state.current.name
+
     $scope.authorize = Auth.currentUser().then(function(user){
       $rootScope.user = user
       $rootScope.cookbookRecipes = user.cookbook.recipes
@@ -61,7 +63,7 @@
     });
   }
 
-  HomeController.$inject = ['$state', '$scope', '$rootScope', 'Auth', 'HealthLabelService']
+  HomeController.$inject = ['$state', '$scope', '$rootScope', 'Auth', 'HealthLabelService', '$state']
   
   angular
   .module('reciPlease')

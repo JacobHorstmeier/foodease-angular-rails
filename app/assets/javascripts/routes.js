@@ -50,6 +50,6 @@ angular
         templateUrl: 'views/shoppingList.html',
         controller: 'ShoppingListController as vm'
       })
-    $urlRouterProvider.otherwise('/search');
+    $urlRouterProvider.otherwise('/search/recipe');
   }])
 }())

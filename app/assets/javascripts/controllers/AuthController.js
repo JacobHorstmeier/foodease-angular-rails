@@ -1,6 +1,6 @@
 (function(){
-  function AuthController($scope, $state, Auth) {
-
+  function AuthController($scope, $state, Auth, $state) {
+    $rootScope.state = $state.current.name
     var config = {
       headers: {
         'X-HTTP-Method-Override': 'POST'
@@ -25,7 +25,7 @@
       });
     }
   }
-  AuthController.$inject = ['$scope', '$state', 'Auth']
+  AuthController.$inject = ['$scope', '$state', 'Auth', '$state']
 
   angular
   .module('reciPlease')
