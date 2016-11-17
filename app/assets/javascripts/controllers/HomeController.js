@@ -14,16 +14,13 @@ angular
       HealthLabelService.updateUserLabels('PUT', $scope.user.id, label.id)
         .success(function(labels){
           $scope.user.healthLabels = labels;
-          // debugger;
         })
     }
 
     $scope.removeHealthLabel = function(label){
-      // label = JSON.parse(label)
       HealthLabelService.updateUserLabels('DELETE', $scope.user.id, label.id)
         .success(function(labels){
           $scope.user.healthLabels = labels;
-          // debugger;
         })
     }
 

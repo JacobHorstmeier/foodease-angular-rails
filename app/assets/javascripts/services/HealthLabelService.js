@@ -7,7 +7,7 @@ angular
     }
 
     this.updateUserLabels = function(method, userId, healthLabelId){
-      var url = '/users/' + userId + '/health-labels/' + healthLabelId;
+      var url = '/users/' + userId + '/health_labels/' + healthLabelId;
       return $http({url: url, method: method});
     }
   })
