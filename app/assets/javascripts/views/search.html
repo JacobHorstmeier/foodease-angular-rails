@@ -12,7 +12,7 @@
 
 <ul class="pagination">
 <li><a href="" ng-click="searchPagination.prevPage()">&laquo;</a></li>
-  <li ng-repeat="n in [] | range: searchPagination.numPages - 5" ng-class="{active: n == searchPagination.page}">
+  <li ng-repeat="n in [] | range: searchPagination.numPages" ng-class="{active: n == searchPagination.page}">
   <a href="" ng-click="searchPagination.toPageId(n)">{{n + 1}}</a>
   </li>
   <li><a href="" ng-click="searchPagination.nextPage()">&raquo;</a></li>
