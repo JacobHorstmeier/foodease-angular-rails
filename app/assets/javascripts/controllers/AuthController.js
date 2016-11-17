@@ -1,5 +1,5 @@
 (function(){
-  function AuthController($scope, $state, Auth, $state) {
+  function AuthController($scope, $state, Auth, $state, $rootScope) {
     $rootScope.state = $state.current.name
     var config = {
       headers: {
@@ -25,7 +25,7 @@
       });
     }
   }
-  AuthController.$inject = ['$scope', '$state', 'Auth', '$state']
+  AuthController.$inject = ['$scope', '$state', 'Auth', '$state', '$rootScope']
 
   angular
   .module('reciPlease')

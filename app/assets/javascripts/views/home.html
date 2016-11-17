@@ -14,7 +14,7 @@
 
       <ul class="nav nav-pills nav-stacked">
         
-        <li role="presentation" ng-class="{'active': state == 'home.search.recipe'}"><a href="#" ui-sref="home.search.recipe">Search</a></li>
+        <li role="presentation" ng-class="{'active': state == 'home.search.recipe' || state == 'home.search'}"><a href="#" ui-sref="home.search.recipe">Search</a></li>
 
         <li role="presentation" ng-hide="user" ng-class="{'active': state == 'home.login'}"><a href="#" ui-sref="home.login">Login</a></li>
 

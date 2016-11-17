@@ -2,6 +2,7 @@
   function SearchController(Auth, $scope, $rootScope, Pagination, SearchService, RecipeService, $state){ 
     $("input:text:visible:first").focus();
     $rootScope.state = $state.current.name
+    // debugger;
     var ctrl = this;
 
     ctrl.recipeSearch = function(query){
