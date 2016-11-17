@@ -33,17 +33,17 @@ angular
         url: '/login',
         templateUrl: 'views/login.html',
         controller: 'AuthController',
-        onEnter: function($state, Auth){
-          if (Auth._currentUser){$state.go('home.search')};
-        }
+        // onEnter: function($state, Auth){
+        //   if (Auth._currentUser){$state.go('home.search')};
+        // }
       })
       .state('home.register', {
         url: '/register',
         templateUrl: 'views/register.html',
         controller: 'AuthController',
-        onEnter: function($state, Auth) {
-          if (Auth._currentUser){$state.go('home.search')};
-        }
+        // onEnter: function($state, Auth) {
+        //   if (Auth._currentUser){$state.go('home.search')};
+        // }
       })
       .state('home.shoppingList', {
         url: '/shopping-list',
