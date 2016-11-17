@@ -56,10 +56,9 @@
         </form> -->
         
         <div class="btn-group row">
-          <button type="button" class="btn btn-primary">Health Labels</button>
+          <!-- <button type="button" class="btn btn-primary"></button> -->
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="caret"></span>
-            <span class="sr-only">Toggle Dropdown</span>
+            Health Labels<span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
             <li ng-repeat="label in healthLabels" ng-hide="label.added">
@@ -71,13 +70,18 @@
         <br>
 
         <div>
-        <h4>My Filters</h4>
-        <ul>
-          <li ng-repeat="label in user.healthLabels">
-            <ng-click ng-click="removeHealthLabel(label)">X</ng-click>
-            {{label.label}}
-          </li>
-        </ul>
+          <h4>My Filters</h4>
+          <br>
+          <ul class="list-group">
+            <li ng-repeat="label in user.healthLabels" class="list-group-item">
+            
+              <button type="button" class="btn btn-default btn-sm inline_button" ng-click="removeHealthLabel(label)">
+
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+              <span class="capitalize">{{label.label}}</span>
+            </li>
+          </ul>
         </div>
 
       </div>
