@@ -40,7 +40,7 @@
 
     $scope.ingredients = $rootScope.user.cookbook.ingredients
     $scope.shoppingList = $rootScope.user.shopping_list.ingredients
-    ctrl.pagination = Pagination.getNew(10);
+    ctrl.pagination = Pagination.getNew(8);
     ctrl.pagination.numPages = Math.ceil($scope.ingredients.length/ctrl.pagination.perPage);
     ctrl.updateIngredients()
   }

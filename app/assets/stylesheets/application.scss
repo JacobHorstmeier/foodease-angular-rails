@@ -25,3 +25,13 @@
 .done {
   text-decoration: line-through;
 }
+
+.inline_button {
+  display: inline;
+}
+
+.scroller {
+  height: 70vh;
+  width: 100%;
+  overflow: auto;
+}

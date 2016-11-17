@@ -1,22 +1,22 @@
 <div class="col-md-5 col-lg-5">
   <form ng-submit="vm.recipeSearch(vm.query)" remote="true">
-  <input type="text" placeholder="Search for recipes" ng-model="vm.query" class="recipe-search" />
-  <!-- <input type="submit"/> -->
+    <input type="text" placeholder="Search for recipes" ng-model="vm.query" class="recipe-search" />
+    <!-- <input type="submit"/> -->
   </form>
   <br>
   
   <div ng-if="searchRecipes.length > 0" class="row">
     <div class="row">
-    Showing {{searchRecipes.length}} results for "{{ searchQuery }}":
+      Showing {{searchRecipes.length}} results for "{{ searchQuery }}":
     </div>
 
-<ul class="pagination">
-<li><a href="" ng-click="searchPagination.prevPage()">&laquo;</a></li>
-  <li ng-repeat="n in [] | range: searchPagination.numPages" ng-class="{active: n == searchPagination.page}">
-  <a href="" ng-click="searchPagination.toPageId(n)">{{n + 1}}</a>
-  </li>
-  <li><a href="" ng-click="searchPagination.nextPage()">&raquo;</a></li>
-</ul>
+    <ul class="pagination">
+    <li><a href="" ng-click="searchPagination.prevPage()">&laquo;</a></li>
+      <li ng-repeat="n in [] | range: searchPagination.numPages" ng-class="{active: n == searchPagination.page}">
+      <a href="" ng-click="searchPagination.toPageId(n)">{{n + 1}}</a>
+      </li>
+      <li><a href="" ng-click="searchPagination.nextPage()">&raquo;</a></li>
+    </ul>
 
 
 

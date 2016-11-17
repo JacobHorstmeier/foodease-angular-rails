@@ -10,20 +10,21 @@
     
     <div class="col-md-2 col-lg-2">
     
-      <div ng-show="user">Welcome {{user.username}}</div>
-      <div><button ng-hide="user" ui-sref="home.login">Login</button></div>
-      <div><button ng-hide="user" ui-sref="home.register">Register</button></div>
-      <div><button ng-show="user" ui-sref="home.cookbook.recipe">My Cookbook</button></div>
-      <div><button ng-show="user" ui-sref="home.shoppingList">Shopping List</button></div>
-      <div><button ng-show="user" ng-click="logout(); clearData()">Log Out</button></div>
+      <h4 ng-show="user">Welcome {{user.username}}</h4>
+      <div><button type="button" class="btn btn-primary btn-md" ng-hide="user" ui-sref="home.login">Login</button></div>
+      <div><button type="button" class="btn btn-primary btn-md" ng-hide="user" ui-sref="home.register">Register</button></div>
+      <div><button type="button" class="btn btn-primary btn-md" ng-show="user" ui-sref="home.cookbook.recipe">My Cookbook</button></div>
+      <div><button type="button" class="btn btn-primary btn-md" ng-show="user" ui-sref="home.shoppingList">Shopping List</button></div>
+      <div><button type="button" class="btn btn-primary btn-md" ng-show="user" ng-click="logout(); clearData()">Log Out</button></div>
       
+      <br>
       <div ng-show="user">
         <form name="healthLabelForm" id="health-filters" ng-submit="addHealthLabel(label)">
           <select ng-model="label" >
             <option value="" selected>Health Filters</option>
             <option ng-repeat="label in healthLabels" value="{{label}}" ng-hide="label.added">{{label.label}}</option>        
           </select>
-          <input type="submit" value="Add to Profile" />
+          <button type="submit" class="btn btn-primary btn-md" >Add to Profile</button>
         </form>
         
         My Health Filters:
