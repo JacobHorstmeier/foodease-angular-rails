@@ -10,15 +10,26 @@ angular
       })
 
     $scope.addHealthLabel = function(label){
-      HealthLabelService.getLabels('PUT', $scope.user.id, label.id)
-        .succes(function(labels){
-          $scope.healthLabels = labels;
+      label = JSON.parse(label)
+      HealthLabelService.updateUserLabels('PUT', $scope.user.id, label.id)
+        .success(function(labels){
+          $scope.user.healthLabels = labels;
+          // debugger;
+        })
+    }
+
+    $scope.removeHealthLabel = function(label){
+      // label = JSON.parse(label)
+      HealthLabelService.updateUserLabels('DELETE', $scope.user.id, label.id)
+        .success(function(labels){
+          $scope.user.healthLabels = labels;
+          // debugger;
         })
     }
 
 
     Auth.currentUser().then(function(user){
-      $scope.user = user    
+      $scope.user = user 
     })
 
     Auth.currentUser().then(function(user){

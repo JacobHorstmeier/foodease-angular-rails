@@ -28,8 +28,11 @@
         </form>
         
         Your Health Labels:
-        <ul ng-repeat="label in user.healthLabels">
-          <li>{{filter.name}}</li>
+        <ul>
+          <li ng-repeat="label in user.healthLabels">
+            <ng-click ng-click="removeHealthLabel(label)">X</ng-click>
+            {{label.label}}
+          </li>
         </ul>
 
       </div>

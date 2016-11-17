@@ -5,10 +5,16 @@ class HealthLabelsController < ApplicationController
   end
 
   def update
-
+    user = User.find(params[:user_id])
+    health_label = HealthLabel.find(params[:id])
+    user.health_labels << health_label
+    render json: user.health_labels
   end
 
   def destroy
-
+    user = User.find(params[:user_id])
+    health_label = HealthLabel.find(params[:id])
+    user.health_labels.delete(health_label)
+    render json: user.health_labels
   end
 end
