@@ -19,7 +19,6 @@
     $scope.login = function(){
       Auth.login($scope.user, config).then(function(registerdUser){
         console.log(registerdUser);
-        
         $state.go('home.search');
       }, function(error){
         console.log(error)

@@ -10,7 +10,8 @@
 
     $scope.authorize    
     $scope.addHealthLabel = function(label){
-      var label = JSON.parse(label)
+      // debugger;
+      // var label = JSON.parse(label)
       HealthLabelService.updateUserLabels('PUT', $rootScope.user.id, label.id)
         .success(function(labels){
           $scope.updateHealthLabels(labels)
