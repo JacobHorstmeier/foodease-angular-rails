@@ -1,5 +1,5 @@
 (function(){
-  function ShoppingListController($scope, Auth, Pagination, ShoppingListService){
+  function ShoppingListController($rootScope, $scope, Auth, Pagination, ShoppingListService){
     var ctrl = this
     Auth.currentUser().then(function(user) {
       $rootScope.user = user
@@ -47,7 +47,7 @@
     }
   }
 
-  ShoppingListController.$inject = ['$scope', 'Auth', 'Pagination', 'ShoppingListService']
+  ShoppingListController.$inject = ['$rootScope', '$scope', 'Auth', 'Pagination', 'ShoppingListService']
 
 angular
   .module('reciPlease')
