@@ -1,7 +1,7 @@
 <!-- <flash-message></flash-message> -->
 <div class="container">
   <div class="page-header">
-    <a ui-sref="home.search">
+    <a ui-sref="home.search.recipe">
       <!-- <img src="logo image" /> -->
       <h1>ReciPlease</h1>
     </a>
@@ -10,7 +10,7 @@
     
     <div class="col-md-2 col-lg-2">
     
-      <div><button ui-sref="home.search.recipe">Recipes</button></div>
+      <div>Welcome {{user.username}}</div>
       <div><button ng-hide="signedIn()" ui-sref="home.login">Login</button></div>
       <div><button ng-hide="signedIn()" ui-sref="home.register">Register</button></div>
       <div><button ng-show="signedIn()" ui-sref="home.cookbook.recipe">My Cookbook</button></div>

@@ -44,6 +44,7 @@
 
     Auth.currentUser().then(function(user){
       $scope.user = user;
+      debugger;
     });
 
     $scope.clearData = function(){

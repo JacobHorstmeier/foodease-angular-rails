@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :healthLabels
+  attributes :id, :healthLabels, :username
   has_one :cookbook
   has_one :shopping_list
 
