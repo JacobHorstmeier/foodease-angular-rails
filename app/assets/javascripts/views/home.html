@@ -19,10 +19,10 @@
       
       <div ng-show="signedIn()" ng-submit="addHealthLabel(label)">
       <!-- component: <search-filter/> -->
-        <form name="healthLabelForm">
+        <form name="healthLabelForm" id="health-filters">
           <select ng-model="label" >
             <option value="" disabled selected>Health Filters</option>
-            <option ng-repeat="label in healthLabels" value="{{label}}">{{label.label}}</option>        
+            <option ng-repeat="label in healthLabels" value="{{label}}" ng-hide="label.added">{{label.label}}</option>        
           </select>
           <input type="submit" value="Add to Profile" />
         </form>
