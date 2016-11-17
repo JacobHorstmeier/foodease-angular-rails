@@ -12,15 +12,14 @@
 
     ctrl.recipeSearch = function(query){
       $rootScope.searchRecipes = [];
-      // debugger;
       SearchService.getRecipes(query, $rootScope.user)
         .success(function(response){
           $rootScope.searchQuery = response.q
           response.hits.forEach(function(res){
             $rootScope.searchRecipes.push(res.recipe)
           })
-          ctrl.pagination = Pagination.getNew(10);
-          ctrl.pagination.numPages = Math.ceil($rootScope.searchRecipes.length/ctrl.pagination.perPage);
+          $rootScope.searchPagination = Pagination.getNew(10);
+          $rootScope.searchPagination.numPages = Math.ceil($rootScope.searchRecipes.length/$rootScope.searchPagination.perPage);
         })
     };
 

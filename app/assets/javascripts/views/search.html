@@ -1,4 +1,4 @@
-<div class="col-md-5">
+<div class="col-md-5 col-lg-5">
   <form ng-submit="vm.recipeSearch(vm.query)" remote="true">
   <input type="text" placeholder="Search for recipes" ng-model="vm.query" class="recipe-search" />
   <!-- <input type="submit"/> -->
@@ -9,21 +9,32 @@
     <div class="row">
     Showing {{searchRecipes.length}} results for "{{ searchQuery }}":
     </div>
-    <button 
-      ng-hide="vm.pagination.page == 0" 
-      ng-click="vm.pagination.prevPage()" 
+
+<ul class="pagination">
+<li><a href="" ng-click="searchPagination.prevPage()">&laquo;</a></li>
+  <li ng-repeat="n in [] | range: searchPagination.numPages - 5" ng-class="{active: n == searchPagination.page}">
+  <a href="" ng-click="searchPagination.toPageId(n)">{{n + 1}}</a>
+  </li>
+  <li><a href="" ng-click="searchPagination.nextPage()">&raquo;</a></li>
+</ul>
+
+
+
+    <!-- <button 
+      ng-hide="searchPagination.page == 0" 
+      ng-click="searchPagination.prevPage()" 
       style='float: left;'>Previous
     </button>
     <button 
-      ng-hide="vm.pagination.page + 1 >= vm.pagination.numPages" 
-      ng-click="vm.pagination.nextPage()" 
+      ng-hide="searchPagination.page + 1 >= searchPagination.numPages" 
+      ng-click="searchPagination.nextPage()" 
       style='float: right;'>Next
-    </button>
+    </button> -->
   </div>
 
   <div class="row">
     <ul>
-      <li ng-repeat="recipe in searchRecipes | startFrom: vm.pagination.page * vm.pagination.perPage | limitTo: vm.pagination.perPage">
+      <li ng-repeat="recipe in searchRecipes | startFrom: searchPagination.page * searchPagination.perPage | limitTo: searchPagination.perPage">
         <a ui-sref="home.search.recipe" 
         ng-click="vm.showSearchRecipe(recipe)">
           {{recipe.label}}
@@ -34,6 +45,6 @@
 
 
 </div>
-<div class="col-md-5">
+<div class="col-md-5 col-lg-5">
   <div ui-view></div>
 </div>
