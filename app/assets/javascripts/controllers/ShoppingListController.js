@@ -1,7 +1,5 @@
 (function(){
-angular
-  .module('reciPlease')
-  .controller('ShoppingListController', ['$scope', 'Auth', 'Pagination', 'ShoppingListService', function($scope, Auth, Pagination, ShoppingListService){
+  function ShoppingListController($scope, Auth, Pagination, ShoppingListService){
     var ctrl = this
     Auth.currentUser().then(function(user) {
       $rootScope.user = user
@@ -47,5 +45,11 @@ angular
         ingredient.done = true;
       }
     }
-  }]);
+  }
+
+  ShoppingListController.$inject = ['$scope', 'Auth', 'Pagination', 'ShoppingListService']
+
+angular
+  .module('reciPlease')
+  .controller('ShoppingListController', ShoppingListController);
 }());

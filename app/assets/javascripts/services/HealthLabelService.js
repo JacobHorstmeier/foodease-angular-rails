@@ -1,7 +1,5 @@
 (function(){
-angular
-  .module('reciPlease')
-  .service('HealthLabelService', ['$http', function($http){
+  function HealthLabelService($http){
 
     this.getLabels = function(){
       return $http.get("/health_labels")
@@ -11,5 +9,11 @@ angular
       var url = '/users/' + userId + '/health_labels/' + healthLabelId;
       return $http({url: url, method: method});
     }
-  }]);
+  }
+
+  HealthLabelService.$inject = ['$http']
+  
+angular
+  .module('reciPlease')
+  .service('HealthLabelService', HealthLabelService);
 }());

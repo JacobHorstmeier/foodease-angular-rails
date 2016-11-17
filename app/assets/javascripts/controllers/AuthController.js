@@ -1,7 +1,5 @@
 (function(){
-  angular
-  .module('reciPlease')
-  .controller('AuthController', ['$scope', '$state', 'Auth', function($scope, $state, Auth){
+  function AuthController($scope, $state, Auth) {
 
     var config = {
       headers: {
@@ -26,5 +24,10 @@
         console.log(error)
       });
     }
-  }])
+  }
+  AuthController.$inject = ['$scope', '$state', 'Auth']
+
+  angular
+  .module('reciPlease')
+  .controller('AuthController', AuthController)
 }());

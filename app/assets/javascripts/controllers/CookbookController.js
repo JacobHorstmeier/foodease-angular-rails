@@ -1,7 +1,5 @@
 (function(){
-  angular
-  .module('reciPlease')
-  .controller('CookbookController', ['Auth', '$scope', '$rootScope', 'Pagination', 'RecipeService', function(Auth, $scope, $rootScope, Pagination, RecipeService){
+  function CookbookController(Auth, $scope, $rootScope, Pagination, RecipeService) {
     var ctrl = this
 
     ctrl.signedIn = Auth.isAuthenticated;
@@ -43,5 +41,11 @@
       }
       return recipe
     }
-  }])
+  }
+  CookbookController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'RecipeService']
+
+  angular
+  .module('reciPlease')
+  .controller('CookbookController', CookbookController)
+  
 }())

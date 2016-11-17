@@ -1,7 +1,5 @@
 (function(){
-angular
-  .module('reciPlease')
-  .service('SearchService', ['$http', function($http){
+  function SearchService($http){
     this.getRecipes = function(query, user){
       var url = 'https://api.edamam.com/search?q=' + query;
       url += '&from=0&to=100'
@@ -15,5 +13,10 @@ angular
         method: 'GET'
       })
     }
-  }]);
+  }
+  SearchService.$inject = ['$http']
+
+  angular
+    .module('reciPlease')
+    .service('SearchService', SearchService);
 }());

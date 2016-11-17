@@ -1,7 +1,5 @@
 (function(){
-  angular
-  .module('reciPlease')
-  .controller('SearchController', ['Auth', '$scope', '$rootScope', 'Pagination', 'SearchService', 'RecipeService', function(Auth, $scope, $rootScope, Pagination, SearchService, RecipeService){ 
+  function SearchController(Auth, $scope, $rootScope, Pagination, SearchService, RecipeService){ 
     $("input:text:visible:first").focus();
     var ctrl = this;
 
@@ -58,5 +56,11 @@
       }
       return recipe
     }
-  }])
+  }
+
+  SearchController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'SearchService', 'RecipeService']
+
+  angular
+  .module('reciPlease')
+  .controller('SearchController', SearchController)
 }());

@@ -1,7 +1,5 @@
 (function(){
-  angular
-  .module('reciPlease')
-  .controller('HomeController', ['$scope', '$rootScope', 'Auth', 'HealthLabelService', function($scope, $rootScope, Auth, HealthLabelService){
+  function HomeController($scope, $rootScope, Auth, HealthLabelService){
     $scope.signedIn = Auth.isAuthenticated;
     $scope.logout = Auth.logout;
     
@@ -63,5 +61,11 @@
     $scope.$on('devise:logout', function(e, user){
       $rootScope.user = undefined;
     });
-  }])
+  }
+
+  HomeController.$inject = ['$scope', '$rootScope', 'Auth', 'HealthLabelService']
+  
+  angular
+  .module('reciPlease')
+  .controller('HomeController', HomeController)
 }());
