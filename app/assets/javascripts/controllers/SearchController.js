@@ -1,7 +1,7 @@
 (function(){
   angular
   .module('reciPlease')
-  .controller('SearchController', function(Auth, $scope, $rootScope, Pagination, SearchService, RecipeService){ 
+  .controller('SearchController', ['Auth', '$scope', '$rootScope', 'Pagination', 'SearchService', 'RecipeService', function(Auth, $scope, $rootScope, Pagination, SearchService, RecipeService){ 
     $("input:text:visible:first").focus();
     var ctrl = this;
 
@@ -58,5 +58,5 @@
       }
       return recipe
     }
-  })
-}())
+  }])
+}());

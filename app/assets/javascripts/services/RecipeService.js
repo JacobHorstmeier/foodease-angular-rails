@@ -1,6 +1,6 @@
 angular
   .module('reciPlease')
-  .service('RecipeService', function($http){
+  .service('RecipeService', ['$http', function($http){
 
     this.addToCookbook = function(cookbookId, recipe){
       var url = '/cookbooks/' + cookbookId + '/recipes'
@@ -25,4 +25,4 @@ angular
       })
     }
 
-  })
+  }]);

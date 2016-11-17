@@ -1,6 +1,6 @@
 angular
   .module('reciPlease')
-  .controller('HomeController', function($scope, $rootScope, Auth, HealthLabelService){
+  .controller('HomeController', ['$scope', '$rootScope', 'Auth', 'HealthLabelService', function($scope, $rootScope, Auth, HealthLabelService){
     $scope.signedIn = Auth.isAuthenticated;
     $scope.logout = Auth.logout;
     
@@ -62,4 +62,4 @@ angular
     $scope.$on('devise:logout', function(e, user){
       $rootScope.user = undefined;
     });
-  })
+  }])

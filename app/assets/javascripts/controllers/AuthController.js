@@ -1,6 +1,6 @@
 angular
   .module('reciPlease')
-  .controller('AuthController', function($scope, $state, Auth){
+  .controller('AuthController', ['$scope', '$state', 'Auth', function($scope, $state, Auth){
 
     var config = {
       headers: {
@@ -25,4 +25,4 @@ angular
         console.log(error)
       });
     }
-  })
+  }])

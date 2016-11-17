@@ -1,6 +1,6 @@
 angular
   .module('reciPlease')
-  .controller('ShoppingListController', function($scope, Auth, Pagination, ShoppingListService){
+  .controller('ShoppingListController', ['$scope',, 'Auth',, 'Pagination',, 'ShoppingListService', function($scope, Auth, Pagination, ShoppingListService){
     var ctrl = this
     Auth.currentUser().then(function(user) {
       $rootScope.user = user
@@ -46,4 +46,4 @@ angular
         ingredient.done = true;
       }
     }
-  })
+  }]);

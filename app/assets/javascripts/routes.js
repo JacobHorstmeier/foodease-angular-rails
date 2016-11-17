@@ -2,7 +2,7 @@
 
 angular
   .module('reciPlease')
-  .config(function($stateProvider, $urlRouterProvider){
+  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('home', {
         templateUrl: 'views/home.html',
@@ -51,5 +51,5 @@ angular
         controller: 'ShoppingListController as vm'
       })
     $urlRouterProvider.otherwise('/search');
-  })
+  }])
 }())
