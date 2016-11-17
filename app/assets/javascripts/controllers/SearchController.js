@@ -3,13 +3,6 @@
     $("input:text:visible:first").focus();
     var ctrl = this;
 
-    ctrl.signedIn = Auth.isAuthenticated;
-
-    Auth.currentUser().then(function(user) {
-      $rootScope.user = user
-      $rootScope.cookbookRecipes = $rootScope.user.cookbook.recipes
-    })
-
     ctrl.recipeSearch = function(query){
       $rootScope.searchRecipes = [];
       SearchService.getRecipes(query, $rootScope.user)

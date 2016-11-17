@@ -5,7 +5,7 @@
     </a>
   </h3>
 
-  <div ng-show="vm.signedIn()">
+  <div ng-show="user">
     <button 
       ng-hide="recipe.bookmarked"
       ng-click="vm.addToCookbook(recipe)">Add to Cookbook
@@ -16,7 +16,7 @@
       ng-click="vm.removeFromCookbook(recipe)">Remove from Cookbook
     </button>
   </div>
-  <div ng-hide="vm.signedIn()">
+  <div ng-hide="user">
     <button ui-sref="home.register">Sign Up or Login to Add to Cookbook</button>
   </div>
   

@@ -10,14 +10,14 @@
     
     <div class="col-md-2 col-lg-2">
     
-      <div>Welcome {{user.username}}</div>
-      <div><button ng-hide="signedIn()" ui-sref="home.login">Login</button></div>
-      <div><button ng-hide="signedIn()" ui-sref="home.register">Register</button></div>
-      <div><button ng-show="signedIn()" ui-sref="home.cookbook.recipe">My Cookbook</button></div>
-      <div><button ng-show="signedIn()" ui-sref="home.shoppingList">Shopping List</button></div>
-      <div><button ng-show="signedIn()" ng-click="logout(); clearData()">Log Out</button></div>
+      <div ng-show="user">Welcome {{user.username}}</div>
+      <div><button ng-hide="user" ui-sref="home.login">Login</button></div>
+      <div><button ng-hide="user" ui-sref="home.register">Register</button></div>
+      <div><button ng-show="user" ui-sref="home.cookbook.recipe">My Cookbook</button></div>
+      <div><button ng-show="user" ui-sref="home.shoppingList">Shopping List</button></div>
+      <div><button ng-show="user" ng-click="logout(); clearData()">Log Out</button></div>
       
-      <div ng-show="signedIn()">
+      <div ng-show="user">
         <form name="healthLabelForm" id="health-filters" ng-submit="addHealthLabel(label)">
           <select ng-model="label" >
             <option value="" selected>Health Filters</option>

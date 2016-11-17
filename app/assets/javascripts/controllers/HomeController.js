@@ -1,9 +1,12 @@
 (function(){
-  function HomeController($scope, $rootScope, Auth, HealthLabelService){
-    $rootScope.signedIn = Auth.isAuthenticated;
-    // debugger;
-    $rootScope.logout = Auth.logout;
-    
+  function HomeController($state, $scope, $rootScope, Auth, HealthLabelService){
+    $scope.authorize = Auth.currentUser().then(function(user){
+      $rootScope.user = user
+      $rootScope.cookbookRecipes = user.cookbook.recipes
+      $scope.updateHealthLabels($rootScope.user.healthLabels) 
+      $rootScope.logout = Auth.logout    })
+
+    $scope.authorize    
     $scope.addHealthLabel = function(label){
       var label = JSON.parse(label)
       HealthLabelService.updateUserLabels('PUT', $rootScope.user.id, label.id)
@@ -36,37 +39,29 @@
         })
     }
 
-    Auth.currentUser().then(function(user){
-      $rootScope.user = user
-      // debugger;
-      $scope.updateHealthLabels($rootScope.user.healthLabels) 
-    })
-
-    Auth.currentUser().then(function(user){
-      $scope.user = user;
-      debugger;
-    });
-
     $scope.clearData = function(){
       $rootScope.recipe = null
       $rootScope.user = null
       $scope.healthLabels = null
     }
 
-    $scope.$on('devise:new-registration', function(e, user){
+    $rootScope.$on('devise:new-registration', function(e, user){
       $rootScope.user = user;
+      $scope.authorize
     });
 
-    $scope.$on('devise:login', function(e, user){
+    $rootScope.$on('devise:login', function(e, user){
       $rootScope.user = user;
+      $state.go('home.search')
+      $scope.authorize
     });
 
-    $scope.$on('devise:logout', function(e, user){
-      $rootScope.user = undefined;
+    $rootScope.$on('devise:logout', function(e, user){
+      $rootScope.user = undefined;      $state.go('home.search')
     });
   }
 
-  HomeController.$inject = ['$scope', '$rootScope', 'Auth', 'HealthLabelService']
+  HomeController.$inject = ['$state', '$scope', '$rootScope', 'Auth', 'HealthLabelService']
   
   angular
   .module('reciPlease')
