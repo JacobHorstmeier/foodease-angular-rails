@@ -1,7 +1,8 @@
 (function(){
   function HomeController($scope, $rootScope, Auth, HealthLabelService){
-    $scope.signedIn = Auth.isAuthenticated;
-    $scope.logout = Auth.logout;
+    $rootScope.signedIn = Auth.isAuthenticated;
+    // debugger;
+    $rootScope.logout = Auth.logout;
     
     $scope.addHealthLabel = function(label){
       var label = JSON.parse(label)
@@ -37,6 +38,7 @@
 
     Auth.currentUser().then(function(user){
       $rootScope.user = user
+      // debugger;
       $scope.updateHealthLabels($rootScope.user.healthLabels) 
     })
 

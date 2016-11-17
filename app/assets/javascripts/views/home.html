@@ -17,9 +17,8 @@
       <div><button ng-show="signedIn()" ui-sref="home.shoppingList">Shopping List</button></div>
       <div><button ng-show="signedIn()" ng-click="logout(); clearData()">Log Out</button></div>
       
-      <div ng-show="signedIn()" ng-submit="addHealthLabel(label)">
-      <!-- component: <search-filter/> -->
-        <form name="healthLabelForm" id="health-filters">
+      <div ng-show="signedIn()">
+        <form name="healthLabelForm" id="health-filters" ng-submit="addHealthLabel(label)">
           <select ng-model="label" >
             <option value="" selected>Health Filters</option>
             <option ng-repeat="label in healthLabels" value="{{label}}" ng-hide="label.added">{{label.label}}</option>        

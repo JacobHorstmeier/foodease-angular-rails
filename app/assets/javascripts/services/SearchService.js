@@ -2,16 +2,14 @@
   function SearchService($http){
     this.getRecipes = function(query, user){
       var url = 'https://api.edamam.com/search?q=' + query;
-      url += '&from=0&to=100'
+      url += '&from=0&to=20'
+      url += '&callback=angular.callbacks._0'
       if(user){
         user.healthLabels.forEach(function(label){
           url += '&health=' + label.label
         })
       }
-      return $http({
-        url: url,
-        method: 'GET'
-      })
+      return $http.jsonp(url)
     }
   }
   SearchService.$inject = ['$http']
