@@ -1,33 +1,13 @@
 <div class="col-md-5 col-lg-5">
-  <div ng-if="cookbookRecipes.length > 0">
-    <button 
-      ng-hide="vm.pagination.page == 0" 
-      ng-click="vm.pagination.prevPage()" 
-      style='float: left;'>Previous
-    </button>
-    <button 
-      ng-hide="vm.pagination.page + 1 >= vm.pagination.numPages" 
-      ng-click="vm.pagination.nextPage()" 
-      style='float: right;'>Next
-    </button>
-  </div>
 
   <div ng-if="cookbookRecipes.length === 0">
     <h3>Your Cookbook is Empty</h3>
   </div>
 
-  <div style='display: inline-block;'>
-    <ul>
-      <li ng-repeat="recipe in cookbookRecipes | startFrom: vm.pagination.page * vm.pagination.perPage | limitTo: vm.pagination.perPage">
-        <a ui-sref="home.cookbook.recipe" 
-        ng-click="vm.showCookbookRecipe(recipe)">
-          {{recipe.label}}
-        </a>
-      </li>
-    </ul>
-  </div>
-
-
+  <div class="row scroller list-group">
+    <button type="button" class="list-group-item" ui-sref="home.cookbook.recipe" ng-repeat="recipe in cookbookRecipes"
+        ng-click="vm.showCookbookRecipe(recipe)">{{recipe.label}}</button>
+    </div>
 </div>
 <div class="col-md-5 col-lg-5">
   <div ui-view></div>

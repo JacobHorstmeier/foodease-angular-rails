@@ -24,7 +24,7 @@
       recipe.bookmarked = true
       RecipeService.addToCookbook($rootScope.user.cookbook.id, recipe)
         .success(function(cookbook){  
-          $rootScope.user.cookbook = cookbook
+          $rootScope.cookbookRecipes = cookbook.recipes
         })
     }
 
@@ -33,7 +33,7 @@
       var recipe = recipe
       RecipeService.removeFromCookbook($rootScope.user.cookbook.id, recipe)
         .success(function(cookbook){
-          $rootScope.user.cookbook = cookbook;
+          $rootScope.cookbookRecipes = cookbook.recipes
         })
     }
 

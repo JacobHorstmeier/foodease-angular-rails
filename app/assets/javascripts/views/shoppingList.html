@@ -1,20 +1,6 @@
 <div class="col-md-5 col-lg-5">
   <h3>Ingredients from Cookbook</h3>
 
-<!--   <div ng-if="ingredients.length > 0"  class="row">
-    <button 
-      ng-hide="vm.pagination.page == 0" 
-      ng-click="vm.pagination.prevPage()" 
-      style='float: left;'>Previous
-    </button>
-    <button 
-      ng-hide="vm.pagination.page + 1 >= vm.pagination.numPages" 
-      ng-click="vm.pagination.nextPage()" 
-      style='float: right;'>Next
-    </button>
-  </div> -->
-   <!-- | startFrom: vm.pagination.page * vm.pagination.perPage | limitTo: vm.pagination.perPage" -->
-
   <div class="row scroller">
     <ul class="list-group">
       <li class="list-group-item" ng-if="ingredients.length == 0">You have no Recipes in your Cookbook!</li>
