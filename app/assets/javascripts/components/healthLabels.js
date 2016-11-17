@@ -1,4 +1,4 @@
-var SearchFilter = {
+var HealthLabels = {
   templateUrl: 'views/searchFilter.html',
   controller: function(){
 
@@ -9,4 +9,4 @@ var SearchFilter = {
 
 angular
   .module('reciPlease')
-  .component('searchFilter', SearchFilter)
+  .component('healthLabels', HealthLabels)

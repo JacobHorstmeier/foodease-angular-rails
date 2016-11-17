@@ -8,14 +8,16 @@
     ctrl.signedIn = Auth.isAuthenticated;
 
     Auth.currentUser().then(function(user) {
-      ctrl.user = user
-      $rootScope.cookbookRecipes = ctrl.user.cookbook.recipes
+      $rootScope.user = user
+      $rootScope.cookbookRecipes = $rootScope.user.cookbook.recipes
     })
 
     ctrl.recipeSearch = function(query){
       $rootScope.searchRecipes = [];
-      SearchService.getRecipes(query)
+      // debugger;
+      SearchService.getRecipes(query, $rootScope.user)
         .success(function(response){
+          $rootScope.searchQuery = response.q
           response.hits.forEach(function(res){
             $rootScope.searchRecipes.push(res.recipe)
           })
@@ -26,28 +28,27 @@
 
     ctrl.showSearchRecipe = function(recipe){
       $rootScope.recipe = ctrl.alreadyInCookbook(recipe);
-      // debugger;
     }
 
     ctrl.addToCookbook = function(recipe){
       recipe.bookmarked = true
-      RecipeService.addToCookbook(ctrl.user.cookbook.id, recipe)
+      RecipeService.addToCookbook($rootScope.user.cookbook.id, recipe)
         .success(function(cookbook){  
-          ctrl.user.cookbook = cookbook
+          $rootScope.user.cookbook = cookbook
         })
     }
 
     ctrl.removeFromCookbook = function(recipe){
       recipe.bookmarked = false
       var recipe = recipe
-      RecipeService.removeFromCookbook(ctrl.user.cookbook.id, recipe)
+      RecipeService.removeFromCookbook($rootScope.user.cookbook.id, recipe)
         .success(function(cookbook){
-          ctrl.user.cookbook = cookbook;
+          $rootScope.user.cookbook = cookbook;
         })
     }
 
     ctrl.alreadyInCookbook = function(recipe){
-      if(ctrl.user){
+      if($rootScope.user){
         var recipes = $rootScope.cookbookRecipes
         for(var i = 0; i < recipes.length; i++){
           if(recipes[i].label === recipe.label){

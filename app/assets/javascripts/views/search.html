@@ -5,7 +5,10 @@
   </form>
   <br>
   
-  <div ng-if="vm.recipes.length > 0" class="row">
+  <div ng-if="searchRecipes.length > 0" class="row">
+    <div class="row">
+    Showing {{searchRecipes.length}} results for "{{ searchQuery }}":
+    </div>
     <button 
       ng-hide="vm.pagination.page == 0" 
       ng-click="vm.pagination.prevPage()" 

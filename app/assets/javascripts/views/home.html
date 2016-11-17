@@ -1,11 +1,11 @@
 <!-- <flash-message></flash-message> -->
 <div class="container">
-  <!-- <div class="page-header">
+  <div class="page-header">
     <a ui-sref="home.search">
-      <img src="logo image" />
+      <!-- <img src="logo image" /> -->
       <h1>ReciPlease</h1>
     </a>
-  </div> -->
+  </div>
   <div class="row">
     
     <div class="col-md-2">
@@ -15,19 +15,19 @@
       <div><button ng-hide="signedIn()" ui-sref="home.register">Register</button></div>
       <div><button ng-show="signedIn()" ui-sref="home.cookbook.recipe">My Cookbook</button></div>
       <div><button ng-show="signedIn()" ui-sref="home.shoppingList">Shopping List</button></div>
-      <div><button ng-show="signedIn()" ng-click="logout()">Log Out</button></div>
+      <div><button ng-show="signedIn()" ng-click="logout(); clearData()">Log Out</button></div>
       
       <div ng-show="signedIn()" ng-submit="addHealthLabel(label)">
       <!-- component: <search-filter/> -->
         <form name="healthLabelForm" id="health-filters">
           <select ng-model="label" >
-            <option value="" disabled selected>Health Filters</option>
+            <option value="" selected>Health Filters</option>
             <option ng-repeat="label in healthLabels" value="{{label}}" ng-hide="label.added">{{label.label}}</option>        
           </select>
           <input type="submit" value="Add to Profile" />
         </form>
         
-        Your Health Labels:
+        My Health Filters:
         <ul>
           <li ng-repeat="label in user.healthLabels">
             <ng-click ng-click="removeHealthLabel(label)">X</ng-click>

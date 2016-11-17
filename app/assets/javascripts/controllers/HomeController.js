@@ -1,23 +1,23 @@
 angular
   .module('reciPlease')
-  .controller('HomeController', function($scope, Auth, HealthLabelService){
+  .controller('HomeController', function($scope, $rootScope, Auth, HealthLabelService){
     $scope.signedIn = Auth.isAuthenticated;
     $scope.logout = Auth.logout;
     
     $scope.addHealthLabel = function(label){
       var label = JSON.parse(label)
-      HealthLabelService.updateUserLabels('PUT', $scope.user.id, label.id)
+      HealthLabelService.updateUserLabels('PUT', $rootScope.user.id, label.id)
         .success(function(labels){
           $scope.updateHealthLabels(labels)
-          $scope.user.healthLabels = labels;
+          $rootScope.user.healthLabels = labels;
         })
     }
 
     $scope.removeHealthLabel = function(label){
-      HealthLabelService.updateUserLabels('DELETE', $scope.user.id, label.id)
+      HealthLabelService.updateUserLabels('DELETE', $rootScope.user.id, label.id)
         .success(function(labels){
           $scope.updateHealthLabels(labels)
-          $scope.user.healthLabels = labels;
+          $rootScope.user.healthLabels = labels;
         })
     }
 
@@ -27,7 +27,7 @@ angular
           $scope.healthLabels = labels.data;
           $scope.healthLabels.forEach(function(label){
             label.added = false;
-            $scope.user.healthLabels.forEach(function(userLabel){
+            $rootScope.user.healthLabels.forEach(function(userLabel){
               if(label.label === userLabel.label){
                 label.added = true;
               }
@@ -37,23 +37,29 @@ angular
     }
 
     Auth.currentUser().then(function(user){
-      $scope.user = user
-      $scope.updateHealthLabels($scope.user.healthLabels) 
+      $rootScope.user = user
+      $scope.updateHealthLabels($rootScope.user.healthLabels) 
     })
 
     Auth.currentUser().then(function(user){
       $scope.user = user;
     });
 
+    $scope.clearData = function(){
+      $rootScope.recipe = null
+      $rootScope.user = null
+      $scope.healthLabels = null
+    }
+
     $scope.$on('devise:new-registration', function(e, user){
-      $scope.user = user;
+      $rootScope.user = user;
     });
 
     $scope.$on('devise:login', function(e, user){
-      $scope.user = user;
+      $rootScope.user = user;
     });
 
     $scope.$on('devise:logout', function(e, user){
-      $scope.user = {};
+      $rootScope.user = undefined;
     });
   })

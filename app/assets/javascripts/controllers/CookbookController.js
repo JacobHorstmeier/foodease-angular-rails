@@ -7,15 +7,15 @@
     ctrl.signedIn = Auth.isAuthenticated;
 
     Auth.currentUser().then(function(user) {
-      ctrl.user = user
-      $rootScope.cookbookRecipes = ctrl.user.cookbook.recipes
+      $rootScope.user = user
+      $rootScope.cookbookRecipes = $rootScope.user.cookbook.recipes
       ctrl.pagination = Pagination.getNew(10);
       ctrl.pagination.numPages = Math.ceil($rootScope.cookbookRecipes.length/ctrl.pagination.perPage);
     })
 
     ctrl.addToCookbook = function(recipe){
       recipe.bookmarked = true
-      RecipeService.addToCookbook(ctrl.user.cookbook.id, recipe)
+      RecipeService.addToCookbook($rootScope.user.cookbook.id, recipe)
         .success(function(cookbook){  
           $rootScope.cookbookRecipes = cookbook.recipes
         })
@@ -28,7 +28,7 @@
     ctrl.removeFromCookbook = function(recipe){
       recipe.bookmarked = false
       var recipe = recipe
-      RecipeService.removeFromCookbook(ctrl.user.cookbook.id, recipe)
+      RecipeService.removeFromCookbook($rootScope.user.cookbook.id, recipe)
         .success(function(cookbook){
           $rootScope.cookbookRecipes = cookbook.recipes;
         })
