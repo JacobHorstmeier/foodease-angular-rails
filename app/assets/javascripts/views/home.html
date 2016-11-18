@@ -1,12 +1,14 @@
 <!-- <flash-message></flash-message> -->
-<div class="container">
+<div class="col-sm-12 col-md-11 col-md-push-1 col-md-pull-1 col-lg-11 col-lg-push-1 col-lg-pull-1">
   
-  <!-- <div class="page-header hidden-xs">
+  <div class="page-header hidden-xs">
     <a ui-sref="home.search.recipe">
       <h1>ReciPlease</h1>
     </a>
-  </div> -->
+  </div>
+
   <div class="navbar navbar-custom navbar-fixed-top visible-xs">
+    
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
         <span class="glyphicon glyphicon-menu-hamburger"></span>
@@ -28,7 +30,7 @@
 
   <div class="row">
     
-    <div class="col-md-2 col-lg-2">
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
     
       <h4 ng-show="user">Welcome {{user.username}}</h4>
 
@@ -36,7 +38,10 @@
 
     <div class="hidden-xs">
       <ul class="nav nav-pills nav-stacked">
+        <!-- <li class="navbar-brand hidden-xs">ReciPlease</li> -->
+
         <li role="presentation" ng-class="{'active': state == 'home.search.recipe' || state == 'home.search'}"><a href="#" ui-sref="home.search.recipe">Search</a></li>
+
         <li role="presentation" ng-hide="user" ng-class="{'active': state == 'home.login'}"><a href="#" ui-sref="home.login">Log In</a></li>
         <li role="presentation" ng-hide="user" ng-class="{'active': state == 'home.register'}"><a href="#" ui-sref="home.register">Register</a></li>
         <li role="presentation" ng-show="user" ng-class="{'active': state == 'home.cookbook.recipe'}"><a href="#" ui-sref="home.cookbook.recipe">Cookbook</a></li>
@@ -79,7 +84,7 @@
       </div>
     </div>
 
-    <div class="col-md-10 col-lg-10">
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
       <ui-view></ui-view>
     </div>
 
