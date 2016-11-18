@@ -2,40 +2,30 @@
   function CookbookController(Auth, $scope, $rootScope, Pagination, RecipeService, $state) {
     var ctrl = this
     $rootScope.state = $state.current.name
-    $rootScope.cookbookRecipes = $rootScope.user.cookbook.recipes
-    // debugger;
-    // ctrl.pagination = Pagination.getNew(10);
-    // ctrl.pagination.numPages = Math.ceil($rootScope.cookbookRecipes.length/ctrl.pagination.perPage);
-
-    ctrl.addToCookbook = function(recipe){
-      recipe.bookmarked = true
-      RecipeService.addToCookbook($rootScope.user.cookbook.id, recipe)
-        .success(function(cookbook){  
-          $rootScope.cookbookRecipes = cookbook.recipes
-        })
+    
+    if($rootScope.user){
+      $rootScope.cookbookRecipes = $rootScope.user.cookbook.recipes
+    } else {
+      Auth.currentUser().then(function(user){
+        $rootScope.user = user
+        $rootScope.cookbookRecipes = $rootScope.user.cookbook.recipes
+      })
     }
+    
+
 
     ctrl.showCookbookRecipe = function(recipe){
-      $rootScope.recipe = ctrl.alreadyInCookbook(recipe);
+      $rootScope.recipe = RecipeService.alreadyInCookbook(recipe);
     }
 
-    ctrl.removeFromCookbook = function(recipe){
+    $rootScope.addRecipe = function(recipe){
+      recipe.bookmarked = true
+      RecipeService.addToCookbook($rootScope.user.cookbook.id, recipe);
+    }
+
+    $rootScope.removeRecipe = function(recipe){
       recipe.bookmarked = false
-      var recipe = recipe
-      RecipeService.removeFromCookbook($rootScope.user.cookbook.id, recipe)
-        .success(function(cookbook){
-          $rootScope.cookbookRecipes = cookbook.recipes;
-        })
-    }
-
-    ctrl.alreadyInCookbook = function(recipe){
-      var recipes = $rootScope.cookbookRecipes
-      for(var i = 0; i < recipes.length; i++){
-        if(recipes[i].label === recipe.label){
-          recipe.bookmarked = true;
-        }
-      }
-      return recipe
+      RecipeService.removeFromCookbook($rootScope.user.cookbook.id, recipe);
     }
   }
 

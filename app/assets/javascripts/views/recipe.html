@@ -8,12 +8,12 @@
   <div ng-show="user" class="centered-text">
     <button type="button" class="btn btn-success centered-btn"
       ng-hide="recipe.bookmarked"
-      ng-click="vm.addToCookbook(recipe)">Add to Cookbook
+      ng-click="addRecipe(recipe)">Add to Cookbook
     </button>
 
     <button type="button" class="btn btn-danger centered-btn"
       ng-show="recipe.bookmarked" 
-      ng-click="vm.removeFromCookbook(recipe)">Remove from Cookbook
+      ng-click="removeRecipe(recipe)">Remove from Cookbook
     </button>
 
     <button type="button" class="btn btn-success centered-btn"
@@ -21,15 +21,12 @@
   </div>
   
   <div id="img-container" style="background-image: url({{recipe.image}});">
-    <!-- <img src="{{recipe.image}}" class="recipe-image" /> -->
   </div>
     
   <h4 class="centered-text">Ingredients:</h4>
-  <!-- <div id="scroller-container"> -->
 
     <ul class="list-group" id="recipe-scroller-container">
       <li ng-repeat="ingredient in recipe.ingredients | unique:'text'" class="list-group-item">{{ingredient.text}}</li>
     </ul>
-  <!-- </div> -->
 
 </div>

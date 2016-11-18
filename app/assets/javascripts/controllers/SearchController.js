@@ -24,37 +24,19 @@
     };
 
     ctrl.showSearchRecipe = function(recipe){
-      $rootScope.recipe = ctrl.alreadyInCookbook(recipe);
+      $rootScope.recipe = RecipeService.alreadyInCookbook(recipe);
     }
 
-    ctrl.addToCookbook = function(recipe){
+    $scope.addRecipe = function(recipe){
       recipe.bookmarked = true
-      RecipeService.addToCookbook($rootScope.user.cookbook.id, recipe)
-        .success(function(cookbook){  
-          $rootScope.cookbookRecipes = cookbook.recipes
-        })
+      RecipeService.addToCookbook($rootScope.user.cookbook.id, recipe);
     }
 
-    ctrl.removeFromCookbook = function(recipe){
+    $scope.removeRecipe = function(recipe){
       recipe.bookmarked = false
-      var recipe = recipe
-      RecipeService.removeFromCookbook($rootScope.user.cookbook.id, recipe)
-        .success(function(cookbook){
-          $rootScope.cookbookRecipes = cookbook.recipes
-        })
+      RecipeService.removeFromCookbook($rootScope.user.cookbook.id, recipe);
     }
 
-    ctrl.alreadyInCookbook = function(recipe){
-      if($rootScope.user){
-        var recipes = $rootScope.cookbookRecipes
-        for(var i = 0; i < recipes.length; i++){
-          if(recipes[i].label === recipe.label){
-            recipe.bookmarked = true
-          }
-        }
-      }
-      return recipe
-    }
   }
 
   SearchController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'SearchService', 'RecipeService', '$state']

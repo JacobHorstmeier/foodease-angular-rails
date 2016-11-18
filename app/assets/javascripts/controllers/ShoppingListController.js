@@ -2,6 +2,26 @@
   function ShoppingListController($rootScope, $scope, Auth, Pagination, ShoppingListService, $state){
     var ctrl = this
     $rootScope.state = $state.current.name
+
+    $scope.updateLists = function(){
+      if($rootScope.user == undefined){
+        Auth.currentUser().then(function(user){
+          $rootScope.user = user
+          $rootScope.ingredients = $rootScope.user.cookbook.ingredients
+          $rootScope.shoppingList = $rootScope.user.shopping_list.ingredients
+          ctrl.updateIngredients()
+          // debugger;
+        })
+      } else {
+        $rootScope.ingredients = $rootScope.user.cookbook.ingredients
+        $rootScope.shoppingList = $rootScope.user.shopping_list.ingredients
+        ctrl.updateIngredients()
+        // debugger;
+      }
+
+    }
+
+    
     
     ctrl.addToShoppingList = function(ingredient){
       ingredient.added = true;
@@ -39,11 +59,8 @@
       }
     }
 
-    $scope.ingredients = $rootScope.user.cookbook.ingredients
-    $scope.shoppingList = $rootScope.user.shopping_list.ingredients
-    // ctrl.pagination = Pagination.getNew(8);
-    // ctrl.pagination.numPages = Math.ceil($scope.ingredients.length/ctrl.pagination.perPage);
-    ctrl.updateIngredients()
+    $scope.updateLists()
+    
   }
 
   ShoppingListController.$inject = ['$rootScope', '$scope', 'Auth', 'Pagination', 'ShoppingListService', '$state']

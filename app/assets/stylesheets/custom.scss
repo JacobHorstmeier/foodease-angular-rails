@@ -1,0 +1,168 @@
+.pager {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.centered-text {
+  text-align: center;
+}
+
+li.xs-remove-label {
+  margin-left: 10px;
+}
+
+.recipe-image {
+  display: block;
+  height: 50%;
+  width: 50%;
+  margin: auto;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+
+.btn-group {
+  margin-left: 0px;
+}
+
+.capitalize {
+   text-transform: capitalize;
+}
+
+
+/***** SCROLL STYLING *****/
+
+#wrapper {
+  height: 100%;
+}
+
+#left-column, #right-column {
+  display: inline-block;
+  height: 100%;
+  max-height: 100%;
+  vertical-align: top;
+  overflow: auto;
+}
+
+#scroller-container {
+  height: 100%;
+  max-height: 70vh;
+  overflow: auto;
+  padding-bottom: 1px;
+}
+
+#recipe-scroller-container {
+  height: 100%;
+  max-height: 35vh;
+  overflow: auto;
+}
+
+
+
+
+/***** RECIPE SEARCH BAR *****/
+
+
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4 !important;
+    border-radius: 6px;
+    background-color: #fff !important;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666 !important;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc !important;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc !important;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
+
+#search-bar {
+  margin-top: 5px;
+}
+
+#search-result-title {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+
+
+/***** RECIPE SHOW PANE *****/
+
+
+h3.headline {
+  margin: 5px auto 20px;
+}
+
+#recipe-label {
+  margin: 5px auto 20px;
+}
+
+button.centered-btn {
+  margin: 0 auto 10px;
+}
+
+#img-container {
+  width: 75%;
+  height: 175px;
+  margin: 0 auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+ul#recipe-ingredients {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+
+/***** NAVBAR STYLING *****/
+
+
+.glyphicon-menu-hamburger {
+  font-size: 20px;
+}
+
+div.navbar-header {
+  background-color: #fff;
+}
+div.navbar-header>button{
+  margin: 5px 15px;
+}
+a.navbar-brand {
+  font-size: 20px;
+}
+
+ul.nav-dropdown>li>a {
+  text-align: right;
+  font-size: 16px;
+  padding-right: 30px;
+  border-bottom: 1px solid black;
+}
+
+ul.nav-dropdown {
+  background-color: #fff;
+
+}

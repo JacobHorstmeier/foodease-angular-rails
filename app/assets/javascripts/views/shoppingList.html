@@ -28,8 +28,6 @@
 
   <h3 class="centered-text headline">Shopping List</h3>
 
-  <!-- <div class="scroller-container">   -->
-
     <ul class="list-group" id="scroller-container">
       <li ng-repeat="ingredient in shoppingList | unique:'food'"  ng-class="{'done': ingredient.done}" ng-click="vm.toggleDone(ingredient)" class="list-group-item">
         <button type="button" class="btn btn-default btn-sm inline_button" ng-hide="ingredient.added" ng-click="vm.removeFromShoppingList(ingredient)">
@@ -38,5 +36,4 @@
         <span class="capitalize">{{ingredient.food}}</span>
       </li>
     </ul>
-  <!-- </div> -->
 </div>

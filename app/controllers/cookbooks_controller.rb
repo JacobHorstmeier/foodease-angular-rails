@@ -18,7 +18,9 @@ class CookbooksController < ApplicationController
       cookbook.recipes << recipe unless cookbook.recipes.include?(recipe)
     end
       cookbook.save
-    render json: cookbook
+      user = cookbook.user
+      # binding.pry
+    render json: user
   end
 
 private
