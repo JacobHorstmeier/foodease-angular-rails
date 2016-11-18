@@ -12,6 +12,8 @@
     
       <h4 ng-show="user">Welcome {{user.username}}</h4>
 
+      <br>
+
       <ul class="nav nav-pills nav-stacked">
         
         <li role="presentation" ng-class="{'active': state == 'home.search.recipe' || state == 'home.search'}"><a href="#" ui-sref="home.search.recipe">Search</a></li>
@@ -67,11 +69,11 @@
           </ul>
         </div>
 
-        <br>
+        <!-- <br> -->
 
         <div>
           <h4>My Filters</h4>
-          <br>
+          <!-- <br> -->
           <ul class="list-group">
             <li ng-repeat="label in user.healthLabels" class="list-group-item">
             
