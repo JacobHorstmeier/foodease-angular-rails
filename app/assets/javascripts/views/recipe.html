@@ -1,17 +1,17 @@
 <div ng-show="recipe">
-  <h3>
+  <h3 class="centered-text">
     <a href="{{recipe.url}}" target="_blank">
       {{recipe.label}}
     </a>
   </h3>
 
-  <div ng-show="user">
-    <button 
+  <div ng-show="user" class="centered-text">
+    <button type="button" class="btn btn-success centered-object"
       ng-hide="recipe.bookmarked"
       ng-click="vm.addToCookbook(recipe)">Add to Cookbook
     </button>
 
-    <button 
+    <button type="button" class="btn btn-danger"
       ng-show="recipe.bookmarked" 
       ng-click="vm.removeFromCookbook(recipe)">Remove from Cookbook
     </button>
@@ -24,10 +24,10 @@
   
   <br>
   
-  Ingredients:
+  <h4 class="centered-text">Ingredients:</h4>
   
-  <ul>
-    <li ng-repeat="ingredient in recipe.ingredients | unique:'text'">{{ingredient.text}}</li>
+  <ul class="list-group">
+    <li ng-repeat="ingredient in recipe.ingredients | unique:'text'" class="list-group-item">{{ingredient.text}}</li>
   </ul>
 
 </div>
