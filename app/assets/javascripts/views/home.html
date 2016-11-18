@@ -55,7 +55,7 @@
       <ul class="nav nav-pills nav-stacked">
       
         <li role="presentation" ng-show="user" class="dropdown active">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Add Filters<span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Search Filters<span class="caret"></span></a>
           <ul class="dropdown-menu">
 
             <li ng-repeat="label in healthLabels" ng-hide="label.added">
@@ -81,13 +81,6 @@
     </div>
 
 
-
-
-
-
-      <br>
-
-
       <div ng-show="user">
         <div>
           <h4 class="centered-text">My Filters</h4>
@@ -106,7 +99,7 @@
       </div>
     </div>
 
-    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10" id="wrapper">
       <ui-view></ui-view>
     </div>
 

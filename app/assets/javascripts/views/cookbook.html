@@ -1,4 +1,4 @@
-<div class="col-12-xs col-sm-6 col-md-6 col-lg-6 scroller-container">
+<div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="left-column">
   
   <h3 class="centered-text headline">Your Cookbook</h3>
   
@@ -7,13 +7,13 @@
   </div>
 
   
-    <div class="row list-group">
-  <div class="scroller">
+  <div class="row list-group" id="scroller-container">
+    <!-- <div class="scroller"> -->
       <button type="button" class="list-group-item" ui-sref="home.cookbook.recipe" ng-repeat="recipe in cookbookRecipes"
           ng-click="vm.showCookbookRecipe(recipe)">{{recipe.label}}</button>
-    </div>
+    <!-- </div> -->
   </div>
 </div>
-<div class="col-12-xs col-sm-6 col-md-6 col-lg-6 scroller-container">
+<div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="right-column">
   <div ui-view></div>
 </div>

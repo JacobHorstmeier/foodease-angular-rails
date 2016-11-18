@@ -25,11 +25,11 @@
   </div>
     
   <h4 class="centered-text">Ingredients:</h4>
-  <div class="scroller-container">
+  <!-- <div id="scroller-container"> -->
 
-    <ul class="list-group scroller">
+    <ul class="list-group" id="recipe-scroller-container">
       <li ng-repeat="ingredient in recipe.ingredients | unique:'text'" class="list-group-item">{{ingredient.text}}</li>
     </ul>
-  </div>
+  <!-- </div> -->
 
 </div>
