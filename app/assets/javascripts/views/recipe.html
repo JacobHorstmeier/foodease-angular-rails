@@ -1,33 +1,35 @@
 <div ng-show="recipe">
-  <h3 class="centered-text">
+  <h4 class="centered-text" id="recipe-label">
     <a href="{{recipe.url}}" target="_blank">
       {{recipe.label}}
     </a>
-  </h3>
+  </h4>
 
   <div ng-show="user" class="centered-text">
-    <button type="button" class="btn btn-success centered-object"
+    <button type="button" class="btn btn-success centered-btn"
       ng-hide="recipe.bookmarked"
       ng-click="vm.addToCookbook(recipe)">Add to Cookbook
     </button>
 
-    <button type="button" class="btn btn-danger"
+    <button type="button" class="btn btn-danger centered-btn"
       ng-show="recipe.bookmarked" 
       ng-click="vm.removeFromCookbook(recipe)">Remove from Cookbook
     </button>
+
+    <button type="button" class="btn btn-success centered-btn"
+    ui-sref="home.register" ng-hide="user">Sign Up or Login to Add to Cookbook</button>
   </div>
-  <div ng-hide="user">
-    <button ui-sref="home.register">Sign Up or Login to Add to Cookbook</button>
+  
+  <div id="img-container" style="background-image: url({{recipe.image}});">
+    <!-- <img src="{{recipe.image}}" class="recipe-image" /> -->
   </div>
-  
-  <img src="{{recipe.image}}" class="recipe-image" />
-  
-  <br>
-  
+    
   <h4 class="centered-text">Ingredients:</h4>
-  
-  <ul class="list-group">
-    <li ng-repeat="ingredient in recipe.ingredients | unique:'text'" class="list-group-item">{{ingredient.text}}</li>
-  </ul>
+  <div class="scroller-container">
+
+    <ul class="list-group scroller">
+      <li ng-repeat="ingredient in recipe.ingredients | unique:'text'" class="list-group-item">{{ingredient.text}}</li>
+    </ul>
+  </div>
 
 </div>

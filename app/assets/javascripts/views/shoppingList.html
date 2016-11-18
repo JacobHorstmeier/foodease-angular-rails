@@ -1,9 +1,13 @@
 <div class="col-12-xs col-sm-6 col-md-6 col-lg-6">
-  <h3>Ingredients from Cookbook</h3>
 
-  <div class="row scroller">
-    <ul class="list-group">
+  <h3 class="centered-text headline">Ingredients from Cookbook</h3>
+
+  <div class="scroller-container">
+
+    <ul class="list-group scroller">
+      
       <li class="list-group-item" ng-if="ingredients.length == 0">You have no Recipes in your Cookbook!</li>
+      
       <li ng-repeat="ingredient in ingredients | unique:'food'" class="list-group-item">
 
         <button type="button" class="btn btn-default btn-sm" ng-hide="ingredient.added" ng-click="vm.addToShoppingList(ingredient)">
@@ -21,9 +25,12 @@
 </div>
 
 <div class="col-12-xs col-sm-6 col-md-6 col-lg-6">
-  <h3>Shopping List</h3>
-  <div class="row scroller">  
-    <ul class="list-group">
+
+  <h3 class="centered-text headline">Shopping List</h3>
+
+  <div class="scroller-container">  
+
+    <ul class="list-group scroller">
       <li ng-repeat="ingredient in shoppingList | unique:'food'"  ng-class="{'done': ingredient.done}" ng-click="vm.toggleDone(ingredient)" class="list-group-item">
         <button type="button" class="btn btn-default btn-sm inline_button" ng-hide="ingredient.added" ng-click="vm.removeFromShoppingList(ingredient)">
           <span class="glyphicon glyphicon-remove"></span>

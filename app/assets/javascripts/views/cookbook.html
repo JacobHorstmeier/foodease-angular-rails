@@ -1,14 +1,19 @@
-<div class="col-12-xs col-sm-6 col-md-6 col-lg-6">
-  <h3>Your Cookbook</h3>
+<div class="col-12-xs col-sm-6 col-md-6 col-lg-6 scroller-container">
+  
+  <h3 class="centered-text headline">Your Cookbook</h3>
+  
   <div ng-if="cookbookRecipes.length === 0">
     <h4>Add some recipes and come back</h4>
   </div>
 
-  <div class="row scroller list-group">
-    <button type="button" class="list-group-item" ui-sref="home.cookbook.recipe" ng-repeat="recipe in cookbookRecipes"
-        ng-click="vm.showCookbookRecipe(recipe)">{{recipe.label}}</button>
+  
+    <div class="row list-group">
+  <div class="scroller">
+      <button type="button" class="list-group-item" ui-sref="home.cookbook.recipe" ng-repeat="recipe in cookbookRecipes"
+          ng-click="vm.showCookbookRecipe(recipe)">{{recipe.label}}</button>
     </div>
+  </div>
 </div>
-<div class="col-12-xs col-sm-6 col-md-6 col-lg-6">
+<div class="col-12-xs col-sm-6 col-md-6 col-lg-6 scroller-container">
   <div ui-view></div>
 </div>
