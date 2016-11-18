@@ -6,7 +6,6 @@
 
     ctrl.recipeSearch = function(query){
       $rootScope.searchRecipes = [];
-      // debugger;
       SearchService.getRecipes(query, $rootScope.user)
         .success(function(response){
           $rootScope.searchQuery = response.q
@@ -16,12 +15,11 @@
           if(response.hits.length == 0){
             $scope.noResults = true;
           }
-          // debugger;
           $rootScope.searchPagination = Pagination.getNew(10);
           $rootScope.searchPagination.numPages = Math.ceil($rootScope.searchRecipes.length/$rootScope.searchPagination.perPage);
         })
         .error(function(error){
-          console.log(error)
+          alert("There was an unexpected error processing your request. Please try again in a moment.")
         })
     };
 
