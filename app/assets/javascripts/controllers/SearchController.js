@@ -12,6 +12,9 @@
           response.hits.forEach(function(res){
             $rootScope.searchRecipes.push(res.recipe)
           })
+          if(response.hits.length == 0){
+            $scope.noResults = true;
+          }
           $rootScope.searchPagination = Pagination.getNew(10);
           $rootScope.searchPagination.numPages = Math.ceil($rootScope.searchRecipes.length/$rootScope.searchPagination.perPage);
         })

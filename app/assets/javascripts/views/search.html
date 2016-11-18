@@ -1,68 +1,33 @@
 <div class="col-md-5 col-lg-5">
-<!-- <div class="container">
-  <div class="row">
-        <div class="col-md-5">
-        <h2>Custom search field</h2>
-            <div id="custom-search-input"> -->
-                <div class="input-group col-md-12">
-                    <input type="text" class="form-control input-lg" placeholder="Search for recipes" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
-                </div>
-            <!-- </div>
-        </div>
+
+  <form ng-submit="vm.recipeSearch(vm.query)" remote="true">
+    <input type="text" class="form-control input-lg" placeholder="Search for recipes" ng-model="vm.query" class="recipe-search" />
+  </form>
+
+  <div ng-if="noResults">
+    <h5>Your search returned 0 results. Try removing health labels or search more general terms</h5>
   </div>
-</div>
- -->
-
-
-
-
-  <!-- <form ng-submit="vm.recipeSearch(vm.query)" remote="true">
-    <input type="text" placeholder="Search for recipes" ng-model="vm.query" class="recipe-search" />
-    <input type="submit"/>
-  </form> -->
-  <br>
   
   <div ng-if="searchRecipes.length > 0" class="row">
     <div class="row">
-      Showing {{searchRecipes.length}} results for "{{ searchQuery }}":
+      <h4 id="search-result-title">Showing {{searchRecipes.length}} results for "{{ searchQuery }}"</h4>
     </div>
 
-    <ul class="pagination">
-    <li><a href="" ng-click="searchPagination.prevPage()">&laquo;</a></li>
-      <li ng-repeat="n in [] | range: searchPagination.numPages" ng-class="{active: n == searchPagination.page}">
-      <a href="" ng-click="searchPagination.toPageId(n)">{{n + 1}}</a>
-      </li>
-      <li><a href="" ng-click="searchPagination.nextPage()">&raquo;</a></li>
-    </ul>
+    <nav aria-label="...">
+      <ul class="pager">
+        <li><a href="#" ng-click="searchPagination.prevPage()" ng-hide="searchPagination.page == 0">Previous</a></li>
+        <li><a href="#" ng-click="searchPagination.nextPage()" ng-hide="searchPagination.page + 1 >= searchPagination.numPages">Next</a></li>
+      </ul>
+    </nav>    
+   </div>
 
-
-
-    <!-- <button 
-      ng-hide="searchPagination.page == 0" 
-      ng-click="searchPagination.prevPage()" 
-      style='float: left;'>Previous
+  <div class="row list-group">
+    <button type="button" class="list-group-item" 
+      ng-repeat="recipe in searchRecipes | startFrom: searchPagination.page * searchPagination.perPage | limitTo: searchPagination.perPage" 
+      ui-sref="home.search.recipe" 
+      ng-click="vm.showSearchRecipe(recipe)">
+    {{recipe.label}}
     </button>
-    <button 
-      ng-hide="searchPagination.page + 1 >= searchPagination.numPages" 
-      ng-click="searchPagination.nextPage()" 
-      style='float: right;'>Next
-    </button> -->
-  </div>
-
-  <div class="row">
-    <ul>
-      <li ng-repeat="recipe in searchRecipes | startFrom: searchPagination.page * searchPagination.perPage | limitTo: searchPagination.perPage">
-        <a ui-sref="home.search.recipe" 
-        ng-click="vm.showSearchRecipe(recipe)">
-          {{recipe.label}}
-        </a>
-      </li>
-    </ul>
   </div>
 
 

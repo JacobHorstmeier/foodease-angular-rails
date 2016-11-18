@@ -14,7 +14,7 @@
           <span class="glyphicon glyphicon-minus"></span>
         </button>
 
-        {{ingredient.food}}
+        <span class="capitalize">{{ingredient.food}}</span>
       </li>
     </ul>
   </div>
@@ -28,7 +28,7 @@
         <button type="button" class="btn btn-default btn-sm inline_button" ng-hide="ingredient.added" ng-click="vm.removeFromShoppingList(ingredient)">
           <span class="glyphicon glyphicon-remove"></span>
         </button>
-        {{ingredient.food}}
+        <span class="capitalize">{{ingredient.food}}</span>
       </li>
     </ul>
   </div>
