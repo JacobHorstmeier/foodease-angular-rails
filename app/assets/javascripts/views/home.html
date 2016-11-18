@@ -1,11 +1,31 @@
 <!-- <flash-message></flash-message> -->
 <div class="container">
-  <div class="page-header">
+  
+  <!-- <div class="page-header hidden-xs">
     <a ui-sref="home.search.recipe">
-      <!-- <img src="logo image" /> -->
       <h1>ReciPlease</h1>
     </a>
+  </div> -->
+  <div class="navbar navbar-custom navbar-fixed-top visible-xs">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+        <span class="glyphicon glyphicon-menu-hamburger"></span>
+      </button>
+      <a class="navbar-brand visible-xs">ReciPlease</a>
+    </div>
+
+    <div uib-collapse="!isCollapsed">
+      <ul class="nav navabar-nav nav-dropdown">
+        <li><a ui-sref="home.search.recipe" ng-click="isCollapsed = !isCollapsed">Search</a></li>
+        <li ng-hide="user"><a ui-sref="home.login" ng-click="isCollapsed = !isCollapsed">Log In</a></li>
+        <li ng-hide="user"><a ui-sref="home.register" ng-click="isCollapsed = !isCollapsed">Register</a></li>
+        <li ng-show="user"><a ui-sref="home.cookbook.recipe" ng-click="isCollapsed = !isCollapsed">Cookbook</a></li>
+        <li ng-show="user"><a ui-sref="home.shoppingList" ng-click="isCollapsed = !isCollapsed">Shopping List</a></li>
+        <li ng-show="user"><a ui-sref="home.logout" ng-click="isCollapsed = !isCollapsed">Log Out</a></li>
+      </ul>
+    </div>
   </div>
+
   <div class="row">
     
     <div class="col-md-2 col-lg-2">
@@ -14,51 +34,23 @@
 
       <br>
 
+    <div class="hidden-xs">
       <ul class="nav nav-pills nav-stacked">
-        
         <li role="presentation" ng-class="{'active': state == 'home.search.recipe' || state == 'home.search'}"><a href="#" ui-sref="home.search.recipe">Search</a></li>
-
-        <li role="presentation" ng-hide="user" ng-class="{'active': state == 'home.login'}"><a href="#" ui-sref="home.login">Login</a></li>
-
+        <li role="presentation" ng-hide="user" ng-class="{'active': state == 'home.login'}"><a href="#" ui-sref="home.login">Log In</a></li>
         <li role="presentation" ng-hide="user" ng-class="{'active': state == 'home.register'}"><a href="#" ui-sref="home.register">Register</a></li>
-        
         <li role="presentation" ng-show="user" ng-class="{'active': state == 'home.cookbook.recipe'}"><a href="#" ui-sref="home.cookbook.recipe">Cookbook</a></li>
-
         <li role="presentation" ng-show="user" ng-class="{'active': state == 'home.shoppingList'}"><a href="#" ui-sref="home.shoppingList">Shopping List</a></li>
-
         <li role="presentation" ng-show="user"><a href="#" ng-click="logout(); clearData()">Log Out</a></li>
-
-
       </ul>
-
-
-
-
-
-      <!-- <button type="button" class="btn btn-primary btn-md" ui-sref="home.search">Search</button> -->
-
-      <!-- <button type="button" class="btn btn-primary btn-md" ng-hide="user" ui-sref="home.login">Login</button> -->
-      
-      <!-- <button type="button" class="btn btn-primary btn-md" ng-hide="user" ui-sref="home.register">Register</button> -->
-      
-      <!-- <button type="button" class="btn btn-primary btn-md" ng-show="user" ui-sref="home.cookbook.recipe">Cookbook</button> -->
-      
-      <!-- <button type="button" class="btn btn-primary btn-md" ng-show="user" ui-sref="home.shoppingList">Shopping List</button> -->
-      
-      <!-- <button type="button" class="btn btn-primary btn-md" ng-show="user" ng-click="logout(); clearData()">Log Out</button> -->
+    </div>
       
       <br>
+
+
       <div ng-show="user">
-   <!--      <form name="healthLabelForm" id="health-filters" ng-submit="addHealthLabel(label)">
-          <select ng-model="label" >
-            <option value="" selected>Health Filters</option>
-            <option ng-repeat="label in healthLabels" value="{{label}}" ng-hide="label.added">{{label.label}}</option>        
-          </select>
-          <button type="submit" class="btn btn-primary btn-md" >Add to Profile</button>
-        </form> -->
         
         <div class="btn-group row">
-          <!-- <button type="button" class="btn btn-primary"></button> -->
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Health Labels<span class="caret"></span>
           </button>
@@ -69,11 +61,9 @@
           </ul>
         </div>
 
-        <!-- <br> -->
 
         <div>
           <h4>My Filters</h4>
-          <!-- <br> -->
           <ul class="list-group">
             <li ng-repeat="label in user.healthLabels" class="list-group-item">
             

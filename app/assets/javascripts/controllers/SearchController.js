@@ -19,7 +19,7 @@
           $rootScope.searchPagination.numPages = Math.ceil($rootScope.searchRecipes.length/$rootScope.searchPagination.perPage);
         })
         .error(function(error){
-          alert("There was an unexpected error processing your request. Please try again in a moment.")
+          alert("There was an unexpected error processing your request. Please try another search query.")
         })
     };
 

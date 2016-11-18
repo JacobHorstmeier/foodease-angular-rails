@@ -4,6 +4,8 @@
     "dependencies": {
       "angular": "v1.5.8",
       "angular-ui-router": "latest",
+      "angular-bootstrap" : "latest",
+      "bootstrap" : "v3.3.6",
       "moment": "latest",
       "angular-devise": "latest",
       "ng-simplePagination": "latest",
