@@ -2,12 +2,14 @@
   function HomeController($state, $scope, $rootScope, Auth, HealthLabelService, $state, Flash){
     $rootScope.state = $state.current.name
 
-    $scope.authorize = Auth.currentUser().then(function(user){
-      $rootScope.user = user
-      $rootScope.cookbookRecipes = user.cookbook.recipes
-      $scope.updateHealthLabels($rootScope.user.healthLabels) 
-    })
-    $scope.authorize    
+    $scope.authorize = function(){
+      Auth.currentUser().then(function(user){
+        $rootScope.user = user
+        $rootScope.cookbookRecipes = user.cookbook.recipes
+        $scope.updateHealthLabels($rootScope.user.healthLabels) 
+      })
+    }
+    $scope.authorize()    
 
     $rootScope.logout = function(){
       Auth.logout()
@@ -41,6 +43,7 @@
               }
             })
           })
+          // debugger;
         })
     }
 
@@ -59,7 +62,7 @@
     $rootScope.$on('devise:login', function(e, user){
       $rootScope.user = user;
       $state.go('home.search')
-      $scope.authorize
+      $scope.authorize()
     });
 
     $rootScope.$on('devise:logout', function(e, user){
