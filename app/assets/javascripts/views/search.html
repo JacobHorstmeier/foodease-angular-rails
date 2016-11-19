@@ -1,6 +1,7 @@
-<div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="left-column">
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="left-column">
 
-  <form ng-submit="vm.recipeSearch(vm.query)" remote="true">
+  <form ng-submit="vm.recipeSearch(vm.query)" remote="true" id="search-form">
     <input type="text" class="form-control input-lg" placeholder="Search for recipes" ng-model="vm.query" class="recipe-search" />
   </form>
 
@@ -32,6 +33,7 @@
 
 
 </div>
-<div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="right-column">
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="right-column">
   <div ui-view></div>
+</div>
 </div>

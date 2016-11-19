@@ -49,6 +49,7 @@ li.xs-remove-label {
   display: inline-block;
   height: 100%;
   max-height: 100%;
+  margin: 0 auto;
   vertical-align: top;
   overflow: auto;
 }
@@ -72,46 +73,13 @@ li.xs-remove-label {
 /***** RECIPE SEARCH BAR *****/
 
 
-#custom-search-input{
-    padding: 3px;
-    border: solid 1px #E4E4E4 !important;
-    border-radius: 6px;
-    background-color: #fff !important;
-}
-
-#custom-search-input input{
-    border: 0;
-    box-shadow: none;
-}
-
-#custom-search-input button{
-    margin: 2px 0 0 0;
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: #666666 !important;
-    padding: 0 8px 0 10px;
-    border-left: solid 1px #ccc !important;
-}
-
-#custom-search-input button:hover{
-    border: 0;
-    box-shadow: none;
-    border-left: solid 1px #ccc !important;
-}
-
-#custom-search-input .glyphicon-search{
-    font-size: 23px;
-}
-
-#search-bar {
-  margin-top: 5px;
+#search-form {
+  margin: 15px auto 0 auto;
+  width: auto;
 }
 
 #search-result-title {
   text-align: center;
-  margin-top: 15px;
-  margin-bottom: 5px;
 }
 
 
