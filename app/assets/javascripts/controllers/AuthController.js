@@ -11,10 +11,10 @@
       Auth.register($scope.user, config).then(function(user){
         console.log(user);
         var message = "Thanks for signing up!"
-        Flash.create('success', message, 3000)
+        Flash.create('success', message, 3000, {container: 'main'})
         $state.go('home.search');
       }, function(response){
-        Flash.create('danger', response.data.error, 3000)
+        Flash.create('danger', response.data.error, 3000, {container: 'auth'})
       });
     };
 
@@ -22,10 +22,10 @@
       Auth.login($scope.user, config).then(function(user){
         console.log(user);
         var message = "Successfully signed in as " + user.username + "!"
-        Flash.create('success', message, 3000)
+        Flash.create('success', message, 3000, {container: 'main'})
         $state.go('home.search');
       }, function(response){
-        Flash.create('danger', response.data.error, 3000)
+        Flash.create('danger', response.data.error, 3000, {container: 'auth'})
       });
     }
   }
