@@ -1,0 +1,19 @@
+<div class="navbar navbar-custom navbar-fixed-top visible-xs">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+      <span class="glyphicon glyphicon-menu-hamburger"></span>
+    </button>
+    <a class="navbar-brand visible-xs">ReciPlease</a>
+  </div>
+
+  <div uib-collapse="!isCollapsed">
+    <ul class="nav navabar-nav nav-dropdown">
+      <li><a ui-sref="home.search.recipe" ng-click="isCollapsed = !isCollapsed">Search</a></li>
+      <li ng-hide="user"><a ui-sref="home.login" ng-click="isCollapsed = !isCollapsed">Log In</a></li>
+      <li ng-hide="user"><a ui-sref="home.register" ng-click="isCollapsed = !isCollapsed">Register</a></li>
+      <li ng-show="user"><a ui-sref="home.cookbook.recipe" ng-click="isCollapsed = !isCollapsed">Cookbook</a></li>
+      <li ng-show="user"><a ui-sref="home.shoppingList" ng-click="isCollapsed = !isCollapsed">Shopping List</a></li>
+      <li ng-show="user"><a ui-sref="home.logout" ng-click="isCollapsed = !isCollapsed">Log Out</a></li>
+    </ul>
+  </div>
+</div>
