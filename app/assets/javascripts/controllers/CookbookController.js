@@ -11,8 +11,6 @@
         $rootScope.cookbookRecipes = $rootScope.user.cookbook.recipes
       })
     }
-    
-
 
     ctrl.showCookbookRecipe = function(recipe){
       $rootScope.recipe = RecipeService.alreadyInCookbook(recipe);
