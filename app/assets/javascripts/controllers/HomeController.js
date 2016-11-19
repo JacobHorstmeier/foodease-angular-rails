@@ -1,15 +1,18 @@
 (function(){
   function HomeController($state, $scope, $rootScope, Auth, HealthLabelService, $state, Flash){
     $rootScope.state = $state.current.name
+    // debugger;
 
     $scope.authorize = function(){
       Auth.currentUser().then(function(user){
         $rootScope.user = user
         $rootScope.cookbookRecipes = user.cookbook.recipes
-        $scope.updateHealthLabels($rootScope.user.healthLabels) 
+        $rootScope.healthLabels = $scope.updateHealthLabels($rootScope.user.healthLabels) 
+        // debugger;
       })
     }
-    $scope.authorize()    
+    $scope.authorize()
+
 
     $rootScope.logout = function(){
       Auth.logout()
@@ -43,7 +46,6 @@
               }
             })
           })
-          // debugger;
         })
     }
 
