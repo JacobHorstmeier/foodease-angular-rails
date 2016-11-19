@@ -17,6 +17,7 @@
 //= require angular-devise
 //= require angular-rails-templates
 //= require angular-bootstrap/ui-bootstrap
+//= require angular-flash-alert
 //= require bootstrap-sprockets
 //= require ng-simplePagination
 //= require angular-messages
