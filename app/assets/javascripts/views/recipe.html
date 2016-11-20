@@ -5,19 +5,22 @@
     </a>
   </h4>
 
-  <div ng-show="user" class="centered-text">
+  <div class="centered-text">
     <button type="button" class="btn btn-success centered-btn"
       ng-hide="recipe.bookmarked"
+      ng-show="user"
       ng-click="addRecipe(recipe)">Add to Cookbook
     </button>
 
     <button type="button" class="btn btn-danger centered-btn"
-      ng-show="recipe.bookmarked" 
+      ng-show="recipe.bookmarked"
+      ng-show="user"
       ng-click="removeRecipe(recipe)">Remove from Cookbook
     </button>
 
     <button type="button" class="btn btn-success centered-btn"
-    ui-sref="home.register" ng-hide="user">Sign Up or Login to Add to Cookbook</button>
+    ui-sref="home.register"
+    ng-hide="user">Sign Up or Login to Add to Cookbook</button>
   </div>
   
   <div id="img-container" style="background-image: url({{recipe.image}});">
