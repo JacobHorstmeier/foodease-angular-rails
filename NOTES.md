@@ -1,4 +1,3 @@
-Filter Shopping List and Cookbook Recipes in Alphabetical order.
 Add a Page # indicator. "Page 1 of 5"
 mobile responsive tabs for Search Results and All Ingredients by putting each pannel into a component. 
 Create HealthLabelsController and move login from HomeController.

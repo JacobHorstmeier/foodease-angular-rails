@@ -17,6 +17,7 @@
     <nav aria-label="...">
       <ul class="pager">
         <li><a href="#" ng-click="searchPagination.prevPage()" ng-hide="searchPagination.page == 0">Previous</a></li>
+        <li> Page {{searchPagination.page + 1}} of {{searchPagination.numPages}}</li>
         <li><a href="#" ng-click="searchPagination.nextPage()" ng-hide="searchPagination.page + 1 >= searchPagination.numPages">Next</a></li>
       </ul>
     </nav>    

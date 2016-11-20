@@ -8,19 +8,21 @@
       $rootScope.searchRecipes = [];
       SearchService.getRecipes(query, $rootScope.user)
         .success(function(response){
-          $rootScope.searchQuery = response.q
+          $rootScope.searchQuery = response.q;
           response.hits.forEach(function(res){
             $rootScope.searchRecipes.push(res.recipe)
-          })
+          });
           if(response.hits.length == 0){
             $scope.noResults = true;
-          }
+          } else {
+            $scope.noResults = false;
+          };
           $rootScope.searchPagination = Pagination.getNew(10);
           $rootScope.searchPagination.numPages = Math.ceil($rootScope.searchRecipes.length/$rootScope.searchPagination.perPage);
         })
         .error(function(error){
-          alert("There was an unexpected error processing your request. Please try another search query.")
-        })
+          alert("There was an unexpected error processing your request. Please try another search query.");
+        });
     };
 
     ctrl.showSearchRecipe = function(recipe){
