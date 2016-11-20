@@ -1,7 +1,7 @@
 (function(){
 
 angular
-  .module('reciPlease')
+  .module('foodEase')
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('home', {

@@ -8,5 +8,5 @@ function HealthLabels(Auth, HealthLabelService, $compile){
 HealthLabels.$inject = ['Auth', 'HealthLabelService', '$compile']
 
 angular
-  .module('reciPlease')
+  .module('foodEase')
   .directive('healthLabels', HealthLabels)

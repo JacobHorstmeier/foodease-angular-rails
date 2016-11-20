@@ -1,36 +1,40 @@
+<div>
+  <ul class="nav nav-pills visible-xs">
+    <li class="active"><a href="#">Cookbook Ingredients</a></li>
+    <li><a href="#">Shopping List Items</a></li>
+  </ul>
+</div>
+
+
 <div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="left-column">
 
-  <h3 class="centered-text headline">Ingredients from Cookbook</h3>
+  <h3 class="centered-text headline">Cookbook Ingredients</h3>
+  <ul class="list-group" id="scroller-container">
+    
+    <li class="list-group-item" ng-if="ingredients.length == 0">You have no Recipes in your Cookbook!</li>
+    
+    <li ng-repeat="ingredient in ingredients | unique:'food' | orderBy:'food'" class="list-group-item">
 
-  <div >
+      <button type="button" class="btn btn-default btn-sm" 
+        ng-hide="ingredient.added"
+        ng-click="vm.addToShoppingList(ingredient)">
+        <span class="glyphicon glyphicon-plus"></span>
+      </button>
 
-    <ul class="list-group" id="scroller-container">
-      
-      <li class="list-group-item" ng-if="ingredients.length == 0">You have no Recipes in your Cookbook!</li>
-      
-      <li ng-repeat="ingredient in ingredients | unique:'food' | orderBy:'food'" class="list-group-item">
+      <button type="button" class="btn btn-default btn-sm" 
+        ng-show="ingredient.added" 
+        ng-click="vm.removeFromShoppingList(ingredient)">
+        <span class="glyphicon glyphicon-minus"></span>
+      </button>
 
-        <button type="button" class="btn btn-default btn-sm" 
-          ng-hide="ingredient.added"
-          ng-click="vm.addToShoppingList(ingredient)">
-          <span class="glyphicon glyphicon-plus"></span>
-        </button>
-
-        <button type="button" class="btn btn-default btn-sm" 
-          ng-show="ingredient.added" 
-          ng-click="vm.removeFromShoppingList(ingredient)">
-          <span class="glyphicon glyphicon-minus"></span>
-        </button>
-
-        <span class="capitalize">{{ingredient.food}}</span>
-      </li>
-    </ul>
-  </div>
+      <span class="capitalize">{{ingredient.food}}</span>
+    </li>
+  </ul>
 </div>
 
 <div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="right-column">
 
-  <h3 class="centered-text headline">Shopping List</h3>
+  <h3 class="centered-text headline">Shopping List Items</h3>
 
     <ul class="list-group" id="scroller-container">
       <li class="list-group-item" ng-repeat="ingredient in shoppingList | unique:'food' | orderBy:'food'" 

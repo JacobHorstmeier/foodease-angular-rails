@@ -44,6 +44,6 @@
   SearchController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'SearchService', 'RecipeService', '$state']
 
   angular
-  .module('reciPlease')
+  .module('foodEase')
   .controller('SearchController', SearchController)
 }());

@@ -48,6 +48,6 @@
   RecipeService.$inject = ['$http', '$rootScope']
 
 angular
-  .module('reciPlease')
+  .module('foodEase')
   .service('RecipeService', RecipeService);
 }());

@@ -32,6 +32,6 @@
   AuthController.$inject = ['$scope', '$state', 'Auth', '$state', '$rootScope', 'Flash']
 
   angular
-  .module('reciPlease')
+  .module('foodEase')
   .controller('AuthController', AuthController)
 }());

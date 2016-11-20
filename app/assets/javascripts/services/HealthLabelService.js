@@ -30,6 +30,6 @@
   HealthLabelService.$inject = ['$http', '$rootScope']
   
 angular
-  .module('reciPlease')
+  .module('foodEase')
   .service('HealthLabelService', HealthLabelService);
 }());

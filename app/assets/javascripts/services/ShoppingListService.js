@@ -10,7 +10,7 @@
   ShoppingListService.$inject = ['$http']
 
   angular
-  .module('reciPlease')
+  .module('foodEase')
   .service('ShoppingListService', ShoppingListService)
 }())
 

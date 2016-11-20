@@ -51,6 +51,6 @@
 //   HealthLabelController.$inject = ['Auth', '$scope', '$rootScope', 'HealthLabelService']
 
 //   angular
-//     .module('reciPlease')
+//     .module('foodEase')
 //     .controller('HealthLabelController', HealthLabelController)
 // }())

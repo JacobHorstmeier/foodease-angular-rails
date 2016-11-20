@@ -1,15 +1,15 @@
 #Description
 
-ReciPlease is my first Angular single page application with a Rails backend. This was also my final Learn.co portfolio project.
+foodEase is my first Angular single page application with a Rails backend. This was also my final Learn.co portfolio project.
 
 #How to Use
 
-Visit https://reciplease-angular-rails.herokuapp.com/ to see ReciPlease in action.
+Visit https://foodEase-angular-rails.herokuapp.com/ to see foodEase in action.
 
 Alternatively, you are welcome to fork this repo and use the following terminal commands to access locally if you wish to make changes or submit contributions:
 
 - git clone YOUR-REPO-SSH
-- cd reciplease-angular-rails
+- cd foodEase-angular-rails
 - rake db:migrate
 - rake db:seed
 - rails s

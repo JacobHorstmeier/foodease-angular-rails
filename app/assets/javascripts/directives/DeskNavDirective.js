@@ -5,5 +5,5 @@ function DeskNav(){
   }
 }
 angular
-  .module('reciPlease')
+  .module('foodEase')
   .directive('deskNav', DeskNav)

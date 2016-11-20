@@ -30,7 +30,7 @@
   CookbookController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'RecipeService', '$state']
 
   angular
-  .module('reciPlease')
+  .module('foodEase')
   .controller('CookbookController', CookbookController)
   
 }())

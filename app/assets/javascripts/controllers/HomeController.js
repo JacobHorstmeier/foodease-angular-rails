@@ -76,6 +76,6 @@
   HomeController.$inject = ['$state', '$scope', '$rootScope', 'Auth', 'HealthLabelService', '$state', 'Flash']
   
   angular
-  .module('reciPlease')
+  .module('foodEase')
   .controller('HomeController', HomeController)
 }());

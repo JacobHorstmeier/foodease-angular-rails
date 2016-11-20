@@ -8,5 +8,5 @@
 // }
 
 // angular
-//   .module('reciPlease')
+//   .module('foodEase')
 //   .component('healthLabels', HealthLabels)

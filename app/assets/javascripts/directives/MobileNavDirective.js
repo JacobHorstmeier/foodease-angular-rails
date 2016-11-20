@@ -6,5 +6,5 @@ function MobileNav(){
 }
 
 angular
-  .module('reciPlease')
+  .module('foodEase')
   .directive('mobileNav', MobileNav)

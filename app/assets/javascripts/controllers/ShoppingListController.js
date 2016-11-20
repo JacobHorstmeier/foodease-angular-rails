@@ -66,6 +66,6 @@
   ShoppingListController.$inject = ['$rootScope', '$scope', 'Auth', 'Pagination', 'ShoppingListService', '$state']
 
 angular
-  .module('reciPlease')
+  .module('foodEase')
   .controller('ShoppingListController', ShoppingListController);
 }());

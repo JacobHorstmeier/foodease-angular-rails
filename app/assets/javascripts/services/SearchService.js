@@ -18,6 +18,6 @@
   SearchService.$inject = ['$http']
 
   angular
-    .module('reciPlease')
+    .module('foodEase')
     .service('SearchService', SearchService);
 }());
