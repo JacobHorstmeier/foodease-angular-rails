@@ -8,7 +8,7 @@
   
   <ul class=" list-group" id="scroller-container">
     <li class="list-group-item"  ui-sref="home.cookbook.recipe" 
-      ng-repeat="recipe in cookbookRecipes"
+      ng-repeat="recipe in cookbookRecipes | orderBy:'label'"
       ng-click="vm.showCookbookRecipe(recipe)">
       <button type="button" class="btn btn-default btn-sm" ng-click="removeRecipe(recipe)">
         <span class="glyphicon glyphicon-remove"></span>
