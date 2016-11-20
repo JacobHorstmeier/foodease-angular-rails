@@ -19,7 +19,6 @@ class CookbooksController < ApplicationController
     end
       cookbook.save
       user = cookbook.user
-      # binding.pry
     render json: user
   end
 
