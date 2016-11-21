@@ -1,4 +1,4 @@
-<div ng-show="recipe">
+<div ng-show="recipe" id="background-wrapper">
   <h4 class="centered-text" id="recipe-label">
     <a href="{{recipe.url}}" target="_blank">
       {{recipe.label}}
@@ -7,20 +7,21 @@
 
   <div class="centered-text">
     <button type="button" class="btn btn-success centered-btn"
-      ng-hide="recipe.bookmarked"
-      ng-show="user"
+      ng-if="!recipe.bookmarked"
+      ng-if="user"
       ng-click="addRecipe(recipe)">Add to Cookbook
     </button>
 
     <button type="button" class="btn btn-danger centered-btn"
-      ng-show="recipe.bookmarked"
-      ng-show="user"
+      ng-if="recipe.bookmarked"
+      ng-if="user"
       ng-click="removeRecipe(recipe)">Remove from Cookbook
     </button>
 
     <button type="button" class="btn btn-success centered-btn"
-    ui-sref="home.register"
-    ng-hide="user">Sign Up or Login to Bookmark this Recipe</button>
+    ng-hide="user"
+    ui-sref="home.register">Sign Up or Login to Bookmark this Recipe
+    </button>
   </div>
   
   <div id="img-container" style="background-image: url({{recipe.image}});">

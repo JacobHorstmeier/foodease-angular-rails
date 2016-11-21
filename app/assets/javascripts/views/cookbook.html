@@ -1,21 +1,22 @@
 <div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="left-column">
-  
-  <h3 class="centered-text headline">Your Cookbook</h3>
-  
-  <div ng-if="cookbookRecipes.length === 0">
-    <h4 class="centered-text">Add some recipes and come back</h4>
+  <div id="background-wrapper">
+    <h3 class="centered-text headline">Your Cookbook</h3>
+    
+    <div ng-if="cookbookRecipes.length === 0">
+      <h4 class="centered-text">Add some recipes and come back</h4>
+    </div>
+    
+    <ul class=" list-group" id="scroller-container">
+      <li class="list-group-item"  ui-sref="home.cookbook.recipe" 
+        ng-repeat="recipe in cookbookRecipes | orderBy:'label'"
+        ng-click="vm.showCookbookRecipe(recipe)">
+        <button type="button" class="btn btn-default btn-sm" ng-click="removeRecipe(recipe)">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        {{recipe.label}}
+      </li>
+    </ul>
   </div>
-  
-  <ul class=" list-group" id="scroller-container">
-    <li class="list-group-item"  ui-sref="home.cookbook.recipe" 
-      ng-repeat="recipe in cookbookRecipes | orderBy:'label'"
-      ng-click="vm.showCookbookRecipe(recipe)">
-      <button type="button" class="btn btn-default btn-sm" ng-click="removeRecipe(recipe)">
-        <span class="glyphicon glyphicon-remove"></span>
-      </button>
-      {{recipe.label}}
-    </li>
-  </ul>
 </div>
 <div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="right-column">
   <div ui-view></div>

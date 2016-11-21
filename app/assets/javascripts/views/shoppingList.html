@@ -7,35 +7,35 @@
 
 
 <div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="left-column">
+  <div id="background-wrapper">
+    <h3 class="centered-text headline">Cookbook Ingredients</h3>
+    <ul class="list-group" id="scroller-container">
+      
+      <li class="list-group-item" ng-if="ingredients.length == 0">You have no Recipes in your Cookbook!</li>
+      
+      <li ng-repeat="ingredient in ingredients | unique:'food' | orderBy:'food'" class="list-group-item">
 
-  <h3 class="centered-text headline">Cookbook Ingredients</h3>
-  <ul class="list-group" id="scroller-container">
-    
-    <li class="list-group-item" ng-if="ingredients.length == 0">You have no Recipes in your Cookbook!</li>
-    
-    <li ng-repeat="ingredient in ingredients | unique:'food' | orderBy:'food'" class="list-group-item">
+        <button type="button" class="btn btn-default btn-sm" 
+          ng-hide="ingredient.added"
+          ng-click="vm.addToShoppingList(ingredient)">
+          <span class="glyphicon glyphicon-plus"></span>
+        </button>
 
-      <button type="button" class="btn btn-default btn-sm" 
-        ng-hide="ingredient.added"
-        ng-click="vm.addToShoppingList(ingredient)">
-        <span class="glyphicon glyphicon-plus"></span>
-      </button>
+        <button type="button" class="btn btn-default btn-sm" 
+          ng-show="ingredient.added" 
+          ng-click="vm.removeFromShoppingList(ingredient)">
+          <span class="glyphicon glyphicon-minus"></span>
+        </button>
 
-      <button type="button" class="btn btn-default btn-sm" 
-        ng-show="ingredient.added" 
-        ng-click="vm.removeFromShoppingList(ingredient)">
-        <span class="glyphicon glyphicon-minus"></span>
-      </button>
-
-      <span class="capitalize">{{ingredient.food}}</span>
-    </li>
-  </ul>
+        <span class="capitalize">{{ingredient.food}}</span>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="right-column">
-
-  <h3 class="centered-text headline">Shopping List Items</h3>
-
+  <div id="background-wrapper">
+    <h3 class="centered-text headline">Shopping List Items</h3>
     <ul class="list-group" id="scroller-container">
       <li class="list-group-item" ng-repeat="ingredient in shoppingList | unique:'food' | orderBy:'food'" 
         ng-class="{'done': ingredient.done}"
@@ -48,4 +48,5 @@
         <span class="capitalize">{{ingredient.food}}</span>
       </li>
     </ul>
+  </div>
 </div>

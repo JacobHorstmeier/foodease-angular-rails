@@ -1,7 +1,8 @@
-<h4 ng-show="user">Welcome, {{user.username}}</h4>
-<br>
+<div ng-show="user" id="background-wrapper">
+<h4>Welcome, {{user.username}}</h4>
+</div>
 
-<div class="hidden-xs">
+<div class="hidden-xs" id="background-wrapper">
   <ul class="nav nav-pills nav-stacked">
     <li role="presentation" ng-class="{'active': state == 'home.search.recipe' || state == 'home.search'}"><a href="#" ui-sref="home.search.recipe">Search</a></li>
     <li role="presentation" ng-hide="user" ng-class="{'active': state == 'home.login'}"><a href="#" ui-sref="home.login">Log In</a></li>
