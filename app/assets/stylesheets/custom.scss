@@ -2,13 +2,15 @@ div.page-header {
   background-image: url('../images/Cooking-Produce-Produce-Prep-Guide-1060x397.jpg');
 }
 
-.alert.ng-leave {
-  opacity: 1;
-  transition: opacity 1.5s ease-out;
+a.navbar-brand {
+  margin-left: 15px;
 }
-.alert.ng-leave-active {
-  opacity: 0;
+
+div#mobile-top-spacer {
+  margin: 20px 0;
 }
+
+
 
 .pager {
   margin-top: 5px;
@@ -41,6 +43,18 @@ li.xs-remove-label {
 .capitalize {
    text-transform: capitalize;
 }
+
+
+/***** FLASH MESSAGE ANIMATION *****/
+
+.alert.ng-leave {
+  opacity: 1;
+  transition: opacity 1.5s ease-out;
+}
+.alert.ng-leave-active {
+  opacity: 0;
+}
+
 
 
 /***** SCROLL STYLING *****/
@@ -139,7 +153,11 @@ ul.nav-dropdown>li>a {
   text-align: right;
   font-size: 16px;
   padding-right: 30px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #eeeeee;
+}
+
+ul.nav-dropdown:first-child {
+  border-top: 1px solid #eeeeee;
 }
 
 ul.nav-dropdown {

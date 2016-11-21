@@ -3,9 +3,10 @@
     $("input:text:visible:first").focus();
     $rootScope.state = $state.current.name
     var ctrl = this;
-
+    // debugger;
     ctrl.recipeSearch = function(query){
       $rootScope.searchRecipes = [];
+      $rootScope.searched = true
       SearchService.getRecipes(query, $rootScope.user)
         .success(function(response){
           $rootScope.searchQuery = response.q;

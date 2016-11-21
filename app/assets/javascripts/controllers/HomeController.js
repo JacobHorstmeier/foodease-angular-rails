@@ -53,6 +53,8 @@
       $rootScope.recipe = null
       $rootScope.user = null
       $scope.healthLabels = null
+      $rootScope.searched = false
+      $rootScope.searchRecipes = []
       Flash.create('success', 'Successfully logged out. Come back soon!', 3000, {container: 'main'})
     }
 

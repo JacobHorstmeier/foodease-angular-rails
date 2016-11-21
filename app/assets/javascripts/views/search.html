@@ -1,9 +1,19 @@
-<div class="row">
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="left-column">
-
   <form ng-submit="vm.recipeSearch(vm.query)" remote="true" id="search-form">
     <input type="text" class="form-control input-lg" placeholder="Search for recipes" ng-model="vm.query" class="recipe-search" />
   </form>
+
+  <div ng-hide="user || searched" id="intro-guide">
+    <br>
+    <p>Are you hungry? You will be sooner or later. </p>
+    <ul>
+      <li>Try searching for something like "chicken kabobs" or "tofu burger".</li>
+      <li>Signup or login to add dietary restrictions to your profile.</li>
+      <li>You'll then be able to save recipes to your cookbook.</li>
+      <li>Missing some ingredients? Check your Shopping List! There you can Add/Remove ingredients from your bookmarked recipes.</li>
+      <li>Hungry now? Come back anytime and everything will be saved for future reference!</li>
+    </ul>
+  </div>
 
   <div ng-if="noResults">
     <h5>Your search returned 0 results. Try removing health labels or search more general terms</h5>
@@ -36,5 +46,4 @@
 </div>
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="right-column">
   <div ui-view></div>
-</div>
 </div>
