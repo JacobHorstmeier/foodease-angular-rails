@@ -30,15 +30,15 @@
       $rootScope.recipe = RecipeService.alreadyInCookbook(recipe);
     }
 
-    // $scope.addRecipe = function(recipe){
-    //   recipe.bookmarked = true
-    //   RecipeService.addToCookbook($rootScope.user.cookbook.id, recipe);
-    // }
+    $scope.addRecipe = function(recipe){
+      recipe.bookmarked = true
+      RecipeService.addToCookbook($rootScope.user.cookbook.id, recipe);
+    }
 
-    // $scope.removeRecipe = function(recipe){
-    //   recipe.bookmarked = false
-    //   RecipeService.removeFromCookbook($rootScope.user.cookbook.id, recipe);
-    // }
+    $scope.removeRecipe = function(recipe){
+      recipe.bookmarked = false
+      RecipeService.removeFromCookbook($rootScope.user.cookbook.id, recipe);
+    }
 
   }
 

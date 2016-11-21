@@ -13,27 +13,18 @@
     }
 
     ctrl.showCookbookRecipe = function(recipe){
-      
+
       $rootScope.recipe = RecipeService.alreadyInCookbook(recipe);
     }
 
     $rootScope.addRecipe = function(recipe){
       recipe.bookmarked = true
-      if($rootScope.recipe.label == recipe.label) {
-        $rootScope.recipe.bookmarked = true;
-      }
       RecipeService.addToCookbook($rootScope.user.cookbook.id, recipe);
     }
 
     $rootScope.removeRecipe = function(recipe){
       recipe.bookmarked = false;
-      // debugger;
-      if($rootScope.recipe.label == recipe.label) {
-        $rootScope.recipe.bookmarked = false;
-        ctrl.showCookbookRecipe(recipe)
-      }
       RecipeService.removeFromCookbook($rootScope.user.cookbook.id, recipe);
-
     }
   }
 

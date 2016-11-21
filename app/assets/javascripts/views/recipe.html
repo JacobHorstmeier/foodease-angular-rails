@@ -7,13 +7,13 @@
 
   <div class="centered-text">
     <button type="button" class="btn btn-success centered-btn"
-      ng-if="!recipe.bookmarked"
+      ng-hide="recipe.bookmarked"
       ng-if="user"
       ng-click="addRecipe(recipe)">Add to Cookbook
     </button>
 
     <button type="button" class="btn btn-danger centered-btn"
-      ng-if="recipe.bookmarked"
+      ng-show="recipe.bookmarked"
       ng-if="user"
       ng-click="removeRecipe(recipe)">Remove from Cookbook
     </button>
