@@ -1,9 +1,9 @@
 (function(){
-  function CookbookController(Auth, $scope, $rootScope, Pagination, CookbookService, RecipeFactory, UserService, ShoppingListService, GlobalListService) {
+  function CookbookController(Auth, $scope, CookbookService, RecipeFactory, UserService, GlobalListService) {
     var ctrl = this
 
     var updateList = function(user){
-      $scope.user = UserService.user = user
+      $scope.user = user
       $scope.cookbookRecipes = user.cookbook.recipes;
     }
 
@@ -39,7 +39,7 @@
     }
   }
 
-  CookbookController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'CookbookService', 'RecipeFactory', 'UserService', 'ShoppingListService', 'GlobalListService']
+  CookbookController.$inject = ['Auth', '$scope', 'CookbookService', 'RecipeFactory', 'UserService', 'GlobalListService']
 
   angular
   .module('foodEase')

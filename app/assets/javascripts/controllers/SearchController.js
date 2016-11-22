@@ -1,5 +1,5 @@
 (function(){
-  function SearchController(Auth, $scope, Pagination, RecipeFactory, CookbookService, SearchService, UserService, ShoppingListService, GlobalListService){ 
+  function SearchController(Auth, $scope, Pagination, RecipeFactory, CookbookService, SearchService, UserService, GlobalListService){ 
     $("input:text:visible:first").focus();
     var ctrl = this;
 
@@ -67,7 +67,7 @@
     }
   }
 
-  SearchController.$inject = ['Auth', '$scope', 'Pagination', 'RecipeFactory', 'CookbookService', 'SearchService', 'UserService', 'ShoppingListService', 'GlobalListService']
+  SearchController.$inject = ['Auth', '$scope', 'Pagination', 'RecipeFactory', 'CookbookService', 'SearchService', 'UserService', 'GlobalListService']
 
   angular
   .module('foodEase')

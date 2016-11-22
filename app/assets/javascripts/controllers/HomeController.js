@@ -1,30 +1,18 @@
 (function(){
-  function HomeController($location, $scope, $rootScope, Auth, HealthLabelService, Flash, CookbookService, UserService, $state){
+  function HomeController($location, $scope, $rootScope, Auth, HealthLabelService, Flash, UserService, $state, SearchService, GlobalListService){
 
     $scope.isActive = function(viewLocation){
       return viewLocation === $location.path()
     }
 
-    // if(UserService.user === undefined){
-    //   Auth.currentUser().then(function(user){
-    //     $scope.user = UserService.user = user
-    //     CookbookService.recipes = user.cookbook.recipes;
-    //   })
-    // }
-
     $scope.authorize = function(){
       Auth.currentUser().then(function(user){
-        $scope.user = UserService.user = user
-        CookbookService.recipes = user.cookbook.recipes;
+        $scope.user = GlobalListService(user)
         $rootScope.healthLabels = $scope.updateHealthLabels(UserService.user.healthLabels) 
       })
     }
     $scope.authorize()
 
-
-    $scope.logout = function(){
-      Auth.logout()
-    }
 
     $scope.addHealthLabel = function(label){
       HealthLabelService.updateUserLabels('PUT', UserService.user.id, label.id)
@@ -57,12 +45,16 @@
         })
     }
 
+    $scope.logout = function(){
+      Auth.logout()
+    }
+
     $scope.clearData = function(){
-      $rootScope.recipe = null
+      SearchService.recipe = null
       $scope.user = UserService.user = undefined;
       $scope.healthLabels = null
-      $rootScope.searched = false
-      $rootScope.searchRecipes = []
+      SearchService.searched = false
+      SearchService.searchResults = []
       Flash.create('success', 'Successfully logged out. Come back soon!', 3000, {container: 'main'})
     }
 
@@ -84,7 +76,7 @@
     });
   }
 
-  HomeController.$inject = ['$location', '$scope', '$rootScope', 'Auth', 'HealthLabelService', 'Flash', 'CookbookService', 'UserService', '$state']
+  HomeController.$inject = ['$location', '$scope', '$rootScope', 'Auth', 'HealthLabelService', 'Flash', 'UserService', '$state', 'SearchService', 'GlobalListService']
   
   angular
   .module('foodEase')

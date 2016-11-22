@@ -1,5 +1,5 @@
 (function(){
-  function CookbookService($http, $rootScope, RecipeFactory, UserService){
+  function CookbookService($http, UserService){
     var recipes, ingredients;
 
     this.alreadyInCookbook = function(recipe){
@@ -41,7 +41,7 @@
     }
   }
 
-  CookbookService.$inject = ['$http', '$rootScope', 'RecipeFactory', 'UserService']
+  CookbookService.$inject = ['$http', 'UserService']
 
 angular
   .module('foodEase')
