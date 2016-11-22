@@ -1,35 +1,33 @@
 (function(){
-  function CookbookController(Auth, $scope, $rootScope, Pagination, CookbookService, $state, RecipeService) {
+  function CookbookController(Auth, $scope, $rootScope, Pagination, CookbookService, $state, RecipeFactory) {
     var ctrl = this
     $rootScope.state = $state.current.name
-    $scope.recipe = RecipeService.recipe;
+    $scope.recipe = RecipeFactory.recipe;
+
+    $scope.cookbookRecipes = CookbookService.recipes;
     
-    if($rootScope.user){
-      $rootScope.cookbookRecipes = $rootScope.user.cookbook.recipes
-    } else {
-      Auth.currentUser().then(function(user){
-        $rootScope.user = user
-        $rootScope.cookbookRecipes = $rootScope.user.cookbook.recipes
-      })
-    }
-
     ctrl.showCookbookRecipe = function(recipe){
-
-      $rootScope.recipe = CookbookService.alreadyInCookbook(recipe);
+      $scope.recipe = RecipeFactory.recipe = CookbookService.alreadyInCookbook(recipe);
     }
 
     $rootScope.addRecipe = function(recipe){
       recipe.bookmarked = true
-      CookbookService.addToCookbook($rootScope.user.cookbook.id, recipe);
+      CookbookService.addToCookbook($rootScope.user.cookbook.id, recipe)
+        .success(function(user){
+          $scope.cookbookRecipes = user.cookbook.recipes;
+        })
     }
 
     $rootScope.removeRecipe = function(recipe){
       recipe.bookmarked = false;
-      CookbookService.removeFromCookbook($rootScope.user.cookbook.id, recipe);
+      CookbookService.removeFromCookbook($rootScope.user.cookbook.id, recipe)
+        .success(function(user){
+          $scope.cookbookRecipes = user.cookbook.recipes;
+        })
     }
   }
 
-  CookbookController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'CookbookService', '$state', 'RecipeService']
+  CookbookController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'CookbookService', '$state', 'RecipeFactory']
 
   angular
   .module('foodEase')

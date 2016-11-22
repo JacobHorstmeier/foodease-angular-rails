@@ -1,5 +1,5 @@
 (function(){
-  function AuthController($scope, $state, Auth, $state, $rootScope, Flash) {
+  function AuthController($scope, $state, Auth, $state, $rootScope, Flash, CookbookService) {
     $rootScope.state = $state.current.name
     var config = {
       headers: {
@@ -9,6 +9,7 @@
 
     $scope.register = function(){
       Auth.register($scope.user, config).then(function(user){
+        CookbookService.recipes = user.cookbook.recipes;
         console.log(user);
         var message = "Thanks for signing up!"
         Flash.create('success', message, 3000, {container: 'main'})
@@ -21,6 +22,7 @@
     $scope.login = function(){
       Auth.login($scope.user, config).then(function(user){
         console.log(user);
+        CookbookService.recipes = user.cookbook.recipes;
         var message = "Successfully signed in as " + user.username + "!"
         Flash.create('success', message, 3000, {container: 'main'})
         $state.go('home.search');
@@ -29,7 +31,7 @@
       });
     }
   }
-  AuthController.$inject = ['$scope', '$state', 'Auth', '$state', '$rootScope', 'Flash']
+  AuthController.$inject = ['$scope', '$state', 'Auth', '$state', '$rootScope', 'Flash', 'CookbookService']
 
   angular
   .module('foodEase')

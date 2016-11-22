@@ -1,14 +1,12 @@
 (function(){
-  function HomeController($state, $scope, $rootScope, Auth, HealthLabelService, $state, Flash){
+  function HomeController($state, $scope, $rootScope, Auth, HealthLabelService, $state, Flash, CookbookService){
     $rootScope.state = $state.current.name
-    // debugger;
 
     $scope.authorize = function(){
       Auth.currentUser().then(function(user){
         $rootScope.user = user
-        $rootScope.cookbookRecipes = user.cookbook.recipes
+        CookbookService.recipes = user.cookbook.recipes;
         $rootScope.healthLabels = $scope.updateHealthLabels($rootScope.user.healthLabels) 
-        // debugger;
       })
     }
     $scope.authorize()
@@ -75,7 +73,7 @@
     });
   }
 
-  HomeController.$inject = ['$state', '$scope', '$rootScope', 'Auth', 'HealthLabelService', '$state', 'Flash']
+  HomeController.$inject = ['$state', '$scope', '$rootScope', 'Auth', 'HealthLabelService', '$state', 'Flash', 'CookbookService']
   
   angular
   .module('foodEase')

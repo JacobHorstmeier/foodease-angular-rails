@@ -35,12 +35,20 @@
 
     $scope.addRecipe = function(recipe){
       recipe.bookmarked = true
-      CookbookService.addToCookbook($rootScope.user.cookbook.id, recipe);
+      CookbookService.addToCookbook($rootScope.user.cookbook.id, recipe)
+        .success(function(user){
+          // debugger;
+          CookbookService.recipes = user.cookbook.recipes
+        });
     }
 
     $scope.removeRecipe = function(recipe){
       recipe.bookmarked = false
-      CookbookService.removeFromCookbook($rootScope.user.cookbook.id, recipe);
+      CookbookService.removeFromCookbook($rootScope.user.cookbook.id, recipe)
+        .success(function(user){
+          // debugger;
+          CookbookService.recipes = user.cookbook.recipes
+        });
     }
 
   }
