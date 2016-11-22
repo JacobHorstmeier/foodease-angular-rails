@@ -1,15 +1,15 @@
 (function(){
-  function UserService(Auth){
-    var user;
+  function UserService(){
+    var user = {};
 
-    this.getUser = function(){
-      Auth.currentUser().then(function(user){
-        return user
-      })
-    }
+    // this.getUser = function(){
+    //   Auth.currentUser().then(function(user){
+    //     return user
+    //   })
+    // }
   }
 
-  UserService.$inject = ['Auth']
+  // UserService.$inject = []
 
   angular
     .module('foodEase')

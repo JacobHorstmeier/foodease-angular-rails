@@ -1,14 +1,18 @@
 (function(){
-  function CookbookController(UserService, $scope, $rootScope, Pagination, CookbookService, RecipeFactory, Auth, ShoppingListService) {
+  function CookbookController(Auth, $scope, $rootScope, Pagination, CookbookService, RecipeFactory, UserService, ShoppingListService, GlobalListService) {
     var ctrl = this
+
+    var updateList = function(user){
+      $scope.user = UserService.user = user
+      $scope.cookbookRecipes = user.cookbook.recipes;
+    }
 
     if(UserService.user === undefined){
       Auth.currentUser().then(function(user){
-        $scope.user = UserService.user = user
-        updateLists(user)
+        updateList(GlobalListService.updateLists(user))
       })
     } else {
-      updateLists(UserService.user)
+      updateList(GlobalListService.updateLists(UserService.user))
     }
 
     $scope.recipe = RecipeFactory.recipe;
@@ -17,30 +21,25 @@
       $scope.recipe = RecipeFactory.recipe = CookbookService.alreadyInCookbook(recipe);
     }
 
-    function updateLists(user){
-      $scope.cookbookRecipes = CookbookService.recipes = user.cookbook.recipes;
-      CookbookService.ingredients = user.cookbook.ingredients;
-      ShoppingListService.items = user.shoppingList.ingredients;
-    }
-
     $scope.addRecipe = function(recipe){
-      recipe.bookmarked = true
       CookbookService.addToCookbook(UserService.user.cookbook.id, recipe)
         .success(function(user){
-          updateLists(user)
+          updateList(GlobalListService.updateLists(user))
+          recipe.bookmarked = true
         })
     }
 
     $scope.removeRecipe = function(recipe){
-      recipe.bookmarked = false;
       CookbookService.removeFromCookbook(UserService.user.cookbook.id, recipe)
         .success(function(user){
-          updateLists(user)
+          updateList(GlobalListService.updateLists(user))
+          recipe.bookmarked = false;
+
         })
     }
   }
 
-  CookbookController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'CookbookService', 'RecipeFactory', 'Auth', 'ShoppingListService']
+  CookbookController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'CookbookService', 'RecipeFactory', 'UserService', 'ShoppingListService', 'GlobalListService']
 
   angular
   .module('foodEase')

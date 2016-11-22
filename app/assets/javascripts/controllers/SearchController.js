@@ -1,5 +1,5 @@
 (function(){
-  function SearchController(Auth, $scope, UserService, Pagination, RecipeFactory, CookbookService, SearchService, UserService, ShoppingListService){ 
+  function SearchController(Auth, $scope, Pagination, RecipeFactory, CookbookService, SearchService, UserService, ShoppingListService, GlobalListService){ 
     $("input:text:visible:first").focus();
     var ctrl = this;
 
@@ -8,15 +8,27 @@
     $scope.pagination = SearchService.pagination;
     $scope.searchResults = SearchService.searchResults;
     $scope.recipe = RecipeFactory.recipe;
+    
+
+
+    // var updateLists = function(user){
+    //   debugger;
+    //   CookbookService.recipes = user.cookbook.recipes
+    //   CookbookService.ingredients = user.cookbook.ingredients;      
+    //   ShoppingListService.items = user.shoppingList.ingredients;
+    //   $scope.user = UserService.user = user
+    //   debugger;
+    // }
 
     if(UserService.user === undefined){
       Auth.currentUser().then(function(user){
-        $scope.user = UserService.user = user
+        $scope.user = GlobalListService.updateLists(user)
       })
+    } else {
+      $scope.user = GlobalListService.updateLists(UserService.user)
     }
 
     ctrl.recipeSearch = function(query){
-      // SearchService.searched;
       $scope.searched = SearchService.searched = true;
       RecipeFactory.getRecipes(query, UserService.user)
         .success(function(response){
@@ -38,34 +50,24 @@
       $scope.recipe = RecipeFactory.recipe = CookbookService.alreadyInCookbook(recipe);
     }
 
-    function updateLists(user){
-      CookbookService.recipes = user.cookbook.recipes
-      CookbookService.ingredients = user.cookbook.ingredients;      
-      ShoppingListService.items = user.shoppingList.ingredients;
-    }
-
     $scope.addRecipe = function(recipe){
-      recipe.bookmarked = true
       CookbookService.addToCookbook(UserService.user.cookbook.id, recipe)
         .success(function(user){
-          updateLists(user)
-          // CookbookService.recipes = user.cookbook.recipes
-          // CookbookService.ingredients = user.cookbook.ingredients;
+          recipe.bookmarked = true
+          $scope.user = GlobalListService.updateLists(user)
         });
     }
 
     $scope.removeRecipe = function(recipe){
-      recipe.bookmarked = false
       CookbookService.removeFromCookbook(UserService.user.cookbook.id, recipe)
         .success(function(user){
-          updateLists(user)
-          // CookbookService.recipes = user.cookbook.recipes
-          // CookbookService.ingredients = user.cookbook.ingredients;
+          recipe.bookmarked = false
+          $scope.user = GlobalListService.updateLists(user)
         });
     }
   }
 
-  SearchController.$inject = ['Auth', '$scope', 'UserService', 'Pagination', 'RecipeFactory', 'CookbookService', 'SearchService', 'UserService', 'ShoppingListService']
+  SearchController.$inject = ['Auth', '$scope', 'Pagination', 'RecipeFactory', 'CookbookService', 'SearchService', 'UserService', 'ShoppingListService', 'GlobalListService']
 
   angular
   .module('foodEase')
