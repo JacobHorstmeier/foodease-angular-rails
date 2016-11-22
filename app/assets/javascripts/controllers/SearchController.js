@@ -1,5 +1,5 @@
 (function(){
-  function SearchController(Auth, $scope, UserService, Pagination, RecipeFactory, CookbookService, SearchService, UserService){ 
+  function SearchController(Auth, $scope, UserService, Pagination, RecipeFactory, CookbookService, SearchService, UserService, ShoppingListService){ 
     $("input:text:visible:first").focus();
     var ctrl = this;
 
@@ -8,7 +8,7 @@
     $scope.pagination = SearchService.pagination;
     $scope.searchResults = SearchService.searchResults;
     $scope.recipe = RecipeFactory.recipe;
-    
+
     if(UserService.user === undefined){
       Auth.currentUser().then(function(user){
         $scope.user = UserService.user = user
@@ -16,7 +16,7 @@
     }
 
     ctrl.recipeSearch = function(query){
-      SearchService.searched;
+      // SearchService.searched;
       $scope.searched = SearchService.searched = true;
       RecipeFactory.getRecipes(query, UserService.user)
         .success(function(response){
@@ -38,12 +38,19 @@
       $scope.recipe = RecipeFactory.recipe = CookbookService.alreadyInCookbook(recipe);
     }
 
+    function updateLists(user){
+      CookbookService.recipes = user.cookbook.recipes
+      CookbookService.ingredients = user.cookbook.ingredients;      
+      ShoppingListService.items = user.shoppingList.ingredients;
+    }
+
     $scope.addRecipe = function(recipe){
       recipe.bookmarked = true
-      // debugger;
       CookbookService.addToCookbook(UserService.user.cookbook.id, recipe)
         .success(function(user){
-          CookbookService.recipes = user.cookbook.recipes
+          updateLists(user)
+          // CookbookService.recipes = user.cookbook.recipes
+          // CookbookService.ingredients = user.cookbook.ingredients;
         });
     }
 
@@ -51,12 +58,14 @@
       recipe.bookmarked = false
       CookbookService.removeFromCookbook(UserService.user.cookbook.id, recipe)
         .success(function(user){
-          CookbookService.recipes = user.cookbook.recipes
+          updateLists(user)
+          // CookbookService.recipes = user.cookbook.recipes
+          // CookbookService.ingredients = user.cookbook.ingredients;
         });
     }
   }
 
-  SearchController.$inject = ['Auth', '$scope', 'UserService', 'Pagination', 'RecipeFactory', 'CookbookService', 'SearchService', 'UserService']
+  SearchController.$inject = ['Auth', '$scope', 'UserService', 'Pagination', 'RecipeFactory', 'CookbookService', 'SearchService', 'UserService', 'ShoppingListService']
 
   angular
   .module('foodEase')

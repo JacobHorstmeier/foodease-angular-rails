@@ -6,7 +6,7 @@ class ShoppingListsController < ApplicationController
     ingredient = Ingredient.find(params[:id])
     shopping_list.ingredients << ingredient
     shopping_list.save
-    render json: shopping_list    
+    render json: shopping_list.user
   end
 
   def destroy
@@ -14,7 +14,7 @@ class ShoppingListsController < ApplicationController
     ingredient = Ingredient.find(params[:id])
     shopping_list.ingredients.delete(ingredient)
     shopping_list.save
-    render json: shopping_list
+    render json: shopping_list.user
   end
 
 end

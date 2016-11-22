@@ -1,51 +1,41 @@
 (function(){
-  function ShoppingListController($rootScope, $scope, Auth, Pagination, ShoppingListService, UserService){
+  function ShoppingListController($rootScope, $scope, Auth, Pagination, ShoppingListService, UserService, CookbookService){
     var ctrl = this
 
     if(UserService.user === undefined){
       Auth.currentUser().then(function(user){
         $scope.user = UserService.user = user
+        updateLists(user)
       })
+    } else {
+      updateLists(UserService.user)
     }
 
-    $scope.updateLists = function(){
-      if(UserService.user == undefined){
-        Auth.currentUser().then(function(user){
-          UserService.user = user
-          $rootScope.ingredients = UserService.user.cookbook.ingredients
-          $rootScope.shoppingList = UserService.user.shopping_list.ingredients
-          ctrl.updateIngredients()
-          // debugger;
-        })
-      } else {
-        $rootScope.ingredients = UserService.user.cookbook.ingredients
-        $rootScope.shoppingList = UserService.user.shopping_list.ingredients
-        ctrl.updateIngredients()
-        // debugger;
-      }
-
+    function updateLists(user){
+      $scope.user = UserService.user = user
+      $scope.ingredients = CookbookService.ingredients =  UserService.user.cookbook.ingredients
+      $scope.shoppingList = ShoppingListService.items = UserService.user.shoppingList.ingredients
+      updateIngredients()
     }
-
     
     
     ctrl.addToShoppingList = function(ingredient){
       ingredient.added = true;
-      ShoppingListService.updateShoppingList('PUT', UserService.user.shopping_list.id, ingredient.id)
-        .success(function(shoppingList){
-          $scope.shoppingList = shoppingList.ingredients
+      ShoppingListService.updateShoppingList('PUT', UserService.user.shoppingList.id, ingredient.id)
+        .success(function(user){
+          updateLists(user)
         })
     }
 
     ctrl.removeFromShoppingList = function(ingredient){
       ingredient.added = false;
-      ShoppingListService.updateShoppingList('DELETE', UserService.user.shopping_list.id, ingredient.id)
-        .success(function(shoppingList){
-          $scope.shoppingList = shoppingList.ingredients
-      ctrl.updateIngredients()
+      ShoppingListService.updateShoppingList('DELETE', UserService.user.shoppingList.id, ingredient.id)
+        .success(function(user){
+          updateLists(user)
         })
     }
 
-    ctrl.updateIngredients = function(){
+    function updateIngredients(){
       $scope.ingredients.forEach(function(ingredient){
         ingredient.added = false;
         $scope.shoppingList.forEach(function(item){
@@ -64,11 +54,10 @@
       }
     }
 
-    $scope.updateLists()
     
   }
 
-  ShoppingListController.$inject = ['$rootScope', '$scope', 'Auth', 'Pagination', 'ShoppingListService', 'UserService']
+  ShoppingListController.$inject = ['$rootScope', '$scope', 'Auth', 'Pagination', 'ShoppingListService', 'UserService', 'CookbookService']
 
 angular
   .module('foodEase')

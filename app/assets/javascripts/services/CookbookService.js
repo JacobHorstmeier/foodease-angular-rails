@@ -1,6 +1,6 @@
 (function(){
   function CookbookService($http, $rootScope, RecipeFactory, UserService){
-    var recipes;
+    var recipes, ingredients;
 
     this.alreadyInCookbook = function(recipe){
       if(UserService.user){

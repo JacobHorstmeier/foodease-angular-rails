@@ -72,7 +72,7 @@
     });
 
     $rootScope.$on('devise:login', function(e, user){
-      debugger;
+      // debugger;
       $scope.user = UserService.user = user;
       $state.go('home.search')
       $scope.authorize()
