@@ -1,29 +1,27 @@
 (function(){
-  function ShoppingListController($rootScope, $scope, Auth, Pagination, ShoppingListService, UserService, CookbookService){
+  function ShoppingListController($rootScope, $scope, Auth, Pagination, ShoppingListService, UserService, CookbookService, GlobalListService){
     var ctrl = this
 
-    if(UserService.user === undefined){
-      Auth.currentUser().then(function(user){
-        $scope.user = UserService.user = user
-        updateLists(user)
-      })
-    } else {
-      updateLists(UserService.user)
-    }
-
-    function updateLists(user){
-      $scope.user = UserService.user = user
-      $scope.ingredients = CookbookService.ingredients =  UserService.user.cookbook.ingredients
-      $scope.shoppingList = ShoppingListService.items = UserService.user.shoppingList.ingredients
+    var updateList = function(user){
+      $scope.user = user
+      $scope.ingredients = user.cookbook.ingredients
+      $scope.shoppingList = user.shoppingList.ingredients
       updateIngredients()
     }
     
-    
+    if(UserService.user === undefined){
+      Auth.currentUser().then(function(user){
+        updateList(GlobalListService.updateLists(user))
+      })
+    } else {
+      updateList(GlobalListService.updateLists(UserService.user))
+    }
+
     ctrl.addToShoppingList = function(ingredient){
       ingredient.added = true;
       ShoppingListService.updateShoppingList('PUT', UserService.user.shoppingList.id, ingredient.id)
         .success(function(user){
-          updateLists(user)
+          updateList(GlobalListService.updateLists(user))
         })
     }
 
@@ -31,7 +29,7 @@
       ingredient.added = false;
       ShoppingListService.updateShoppingList('DELETE', UserService.user.shoppingList.id, ingredient.id)
         .success(function(user){
-          updateLists(user)
+          updateList(GlobalListService.updateLists(user))
         })
     }
 
@@ -57,7 +55,7 @@
     
   }
 
-  ShoppingListController.$inject = ['$rootScope', '$scope', 'Auth', 'Pagination', 'ShoppingListService', 'UserService', 'CookbookService']
+  ShoppingListController.$inject = ['$rootScope', '$scope', 'Auth', 'Pagination', 'ShoppingListService', 'UserService', 'CookbookService', 'GlobalListService']
 
 angular
   .module('foodEase')
