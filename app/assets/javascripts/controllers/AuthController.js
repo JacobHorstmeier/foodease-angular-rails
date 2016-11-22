@@ -1,5 +1,5 @@
 (function(){
-  function AuthController($scope, Auth, $state, $rootScope, Flash, CookbookService) {
+  function AuthController($scope, Auth, $rootScope, Flash, CookbookService) {
     var config = {
       headers: {
         'X-HTTP-Method-Override': 'POST'
@@ -30,7 +30,7 @@
       });
     }
   }
-  AuthController.$inject = ['$scope', 'Auth', '$state', '$rootScope', 'Flash', 'CookbookService']
+  AuthController.$inject = ['$scope', 'Auth', '$rootScope', 'Flash', 'CookbookService']
 
   angular
   .module('foodEase')
