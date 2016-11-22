@@ -1,9 +1,10 @@
 (function(){
-  function SearchController(Auth, $scope, $rootScope, Pagination, RecipeFactory, CookbookService, $state, SearchService){ 
+  function SearchController(Auth, $scope, $rootScope, Pagination, RecipeFactory, CookbookService, SearchService){ 
     $("input:text:visible:first").focus();
     var ctrl = this;
 
-    $rootScope.state = $state.current.name;
+    // $scope.state = StateService.state
+    // debugger;
     $scope.searched = SearchService.searched;
     $scope.searchQuery = SearchService.query;
     $scope.pagination = SearchService.pagination;
@@ -50,7 +51,7 @@
     }
   }
 
-  SearchController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'RecipeFactory', 'CookbookService', '$state', 'SearchService']
+  SearchController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'RecipeFactory', 'CookbookService', 'SearchService']
 
   angular
   .module('foodEase')

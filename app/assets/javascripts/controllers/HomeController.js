@@ -1,6 +1,9 @@
 (function(){
-  function HomeController($state, $scope, $rootScope, Auth, HealthLabelService, $state, Flash, CookbookService){
-    $rootScope.state = $state.current.name
+  function HomeController($location, $scope, $rootScope, Auth, HealthLabelService, Flash, CookbookService){
+
+    $scope.isActive = function(viewLocation){
+      return viewLocation === $location.path()
+    }
 
     $scope.authorize = function(){
       Auth.currentUser().then(function(user){
@@ -73,7 +76,7 @@
     });
   }
 
-  HomeController.$inject = ['$state', '$scope', '$rootScope', 'Auth', 'HealthLabelService', '$state', 'Flash', 'CookbookService']
+  HomeController.$inject = ['$location', '$rootScope', 'Auth', 'HealthLabelService', '$state', 'Flash', 'CookbookService']
   
   angular
   .module('foodEase')

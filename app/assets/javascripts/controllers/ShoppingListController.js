@@ -1,7 +1,6 @@
 (function(){
-  function ShoppingListController($rootScope, $scope, Auth, Pagination, ShoppingListService, $state){
+  function ShoppingListController($rootScope, $scope, Auth, Pagination, ShoppingListService){
     var ctrl = this
-    $rootScope.state = $state.current.name
 
     $scope.updateLists = function(){
       if($rootScope.user == undefined){
@@ -63,7 +62,7 @@
     
   }
 
-  ShoppingListController.$inject = ['$rootScope', '$scope', 'Auth', 'Pagination', 'ShoppingListService', '$state']
+  ShoppingListController.$inject = ['$rootScope', '$scope', 'Auth', 'Pagination', 'ShoppingListService']
 
 angular
   .module('foodEase')
