@@ -37,7 +37,6 @@
       recipe.bookmarked = true
       CookbookService.addToCookbook($rootScope.user.cookbook.id, recipe)
         .success(function(user){
-          // debugger;
           CookbookService.recipes = user.cookbook.recipes
         });
     }
@@ -46,11 +45,9 @@
       recipe.bookmarked = false
       CookbookService.removeFromCookbook($rootScope.user.cookbook.id, recipe)
         .success(function(user){
-          // debugger;
           CookbookService.recipes = user.cookbook.recipes
         });
     }
-
   }
 
   SearchController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'RecipeFactory', 'CookbookService', '$state', 'SearchService']

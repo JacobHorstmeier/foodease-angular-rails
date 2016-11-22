@@ -1,10 +1,7 @@
 (function(){
   function CookbookService($http, $rootScope, RecipeFactory){
     var recipes;
-    // this.recipes = function(user){
-    //   return user.cookbook.recipes;
-    // }
-    // debugger;
+
     this.alreadyInCookbook = function(recipe){
       if($rootScope.user){
         recipe.bookmarked = false;
@@ -28,12 +25,6 @@
           recipe: recipe
         }
       })
-      // .success(function(user){
-      //   // recipes = user.cookbook.recipes
-      //   // $rootScope.user = user;
-      //   debugger;
-      //   return user.cookbook.recipes;
-      // })
     }
 
     this.removeFromCookbook = function(cookbookId, recipe){
@@ -47,15 +38,6 @@
           label: recipe.label
         }
       })
-      // .success(function(user){
-      //   // $rootScope.user = user;
-      //   recipe.bookmarked = false;
-      //   if (RecipeFactory.recipe && recipe.label === RecipeFactory.recipe.label){
-      //     RecipeFactory.recipe.bookmarked = false;
-      //   }
-      //   debugger;
-      //   return user.cookbook.recipes;
-      // })
     }
   }
 
