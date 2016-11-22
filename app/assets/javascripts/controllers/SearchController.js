@@ -1,20 +1,24 @@
 (function(){
-  function SearchController(Auth, $scope, $rootScope, Pagination, RecipeFactory, CookbookService, SearchService){ 
+  function SearchController(Auth, $scope, UserService, Pagination, RecipeFactory, CookbookService, SearchService, UserService){ 
     $("input:text:visible:first").focus();
     var ctrl = this;
 
-    // $scope.state = StateService.state
-    // debugger;
     $scope.searched = SearchService.searched;
     $scope.searchQuery = SearchService.query;
     $scope.pagination = SearchService.pagination;
     $scope.searchResults = SearchService.searchResults;
     $scope.recipe = RecipeFactory.recipe;
+    
+    if(UserService.user === undefined){
+      Auth.currentUser().then(function(user){
+        $scope.user = UserService.user = user
+      })
+    }
 
     ctrl.recipeSearch = function(query){
       SearchService.searched;
       $scope.searched = SearchService.searched = true;
-      RecipeFactory.getRecipes(query, $rootScope.user)
+      RecipeFactory.getRecipes(query, UserService.user)
         .success(function(response){
           $scope.searchQuery = SearchService.query = response.q;
           $scope.searchResults = [];
@@ -36,7 +40,8 @@
 
     $scope.addRecipe = function(recipe){
       recipe.bookmarked = true
-      CookbookService.addToCookbook($rootScope.user.cookbook.id, recipe)
+      // debugger;
+      CookbookService.addToCookbook(UserService.user.cookbook.id, recipe)
         .success(function(user){
           CookbookService.recipes = user.cookbook.recipes
         });
@@ -44,14 +49,14 @@
 
     $scope.removeRecipe = function(recipe){
       recipe.bookmarked = false
-      CookbookService.removeFromCookbook($rootScope.user.cookbook.id, recipe)
+      CookbookService.removeFromCookbook(UserService.user.cookbook.id, recipe)
         .success(function(user){
           CookbookService.recipes = user.cookbook.recipes
         });
     }
   }
 
-  SearchController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'RecipeFactory', 'CookbookService', 'SearchService']
+  SearchController.$inject = ['Auth', '$scope', 'UserService', 'Pagination', 'RecipeFactory', 'CookbookService', 'SearchService', 'UserService']
 
   angular
   .module('foodEase')

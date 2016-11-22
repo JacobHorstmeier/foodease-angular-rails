@@ -1,11 +1,11 @@
 (function(){
-  function CookbookService($http, $rootScope, RecipeFactory){
+  function CookbookService($http, $rootScope, RecipeFactory, UserService){
     var recipes;
 
     this.alreadyInCookbook = function(recipe){
-      if($rootScope.user){
+      if(UserService.user){
         recipe.bookmarked = false;
-        var recipes = $rootScope.user.cookbook.recipes;
+        var recipes = UserService.user.cookbook.recipes;
         for(var i = 0; i < recipes.length; i++){
           if(recipes[i].label === recipe.label){
             recipe.bookmarked = true
@@ -41,7 +41,7 @@
     }
   }
 
-  CookbookService.$inject = ['$http', '$rootScope', 'RecipeFactory']
+  CookbookService.$inject = ['$http', '$rootScope', 'RecipeFactory', 'UserService']
 
 angular
   .module('foodEase')

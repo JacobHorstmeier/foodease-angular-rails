@@ -1,5 +1,5 @@
 (function(){
-  function AuthController($scope, Auth, $rootScope, Flash, CookbookService) {
+  function AuthController($scope, Auth, UserService, Flash, CookbookService) {
     var config = {
       headers: {
         'X-HTTP-Method-Override': 'POST'
@@ -9,6 +9,7 @@
     $scope.register = function(){
       Auth.register($scope.user, config).then(function(user){
         CookbookService.recipes = user.cookbook.recipes;
+        UserService.user = user;
         console.log(user);
         var message = "Thanks for signing up!"
         Flash.create('success', message, 3000, {container: 'main'})
@@ -21,6 +22,7 @@
     $scope.login = function(){
       Auth.login($scope.user, config).then(function(user){
         console.log(user);
+        UserService.user = user;
         CookbookService.recipes = user.cookbook.recipes;
         var message = "Successfully signed in as " + user.username + "!"
         Flash.create('success', message, 3000, {container: 'main'})
@@ -30,7 +32,7 @@
       });
     }
   }
-  AuthController.$inject = ['$scope', 'Auth', '$rootScope', 'Flash', 'CookbookService']
+  AuthController.$inject = ['$scope', 'Auth', 'UserService', 'Flash', 'CookbookService']
 
   angular
   .module('foodEase')

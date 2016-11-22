@@ -1,37 +1,44 @@
 (function(){
-  function HomeController($location, $scope, $rootScope, Auth, HealthLabelService, Flash, CookbookService){
+  function HomeController($location, $scope, $rootScope, Auth, HealthLabelService, Flash, CookbookService, UserService, $state){
 
     $scope.isActive = function(viewLocation){
       return viewLocation === $location.path()
     }
 
+    // if(UserService.user === undefined){
+    //   Auth.currentUser().then(function(user){
+    //     $scope.user = UserService.user = user
+    //     CookbookService.recipes = user.cookbook.recipes;
+    //   })
+    // }
+
     $scope.authorize = function(){
       Auth.currentUser().then(function(user){
-        $rootScope.user = user
+        $scope.user = UserService.user = user
         CookbookService.recipes = user.cookbook.recipes;
-        $rootScope.healthLabels = $scope.updateHealthLabels($rootScope.user.healthLabels) 
+        $rootScope.healthLabels = $scope.updateHealthLabels(UserService.user.healthLabels) 
       })
     }
     $scope.authorize()
 
 
-    $rootScope.logout = function(){
+    $scope.logout = function(){
       Auth.logout()
     }
 
     $scope.addHealthLabel = function(label){
-      HealthLabelService.updateUserLabels('PUT', $rootScope.user.id, label.id)
+      HealthLabelService.updateUserLabels('PUT', UserService.user.id, label.id)
         .success(function(labels){
           $scope.updateHealthLabels(labels)
-          $rootScope.user.healthLabels = labels;
+          UserService.user.healthLabels = labels;
         })
     }
 
     $scope.removeHealthLabel = function(label){
-      HealthLabelService.updateUserLabels('DELETE', $rootScope.user.id, label.id)
+      HealthLabelService.updateUserLabels('DELETE', UserService.user.id, label.id)
         .success(function(labels){
           $scope.updateHealthLabels(labels)
-          $rootScope.user.healthLabels = labels;
+          UserService.user.healthLabels = labels;
         })
     }
 
@@ -41,7 +48,7 @@
           $scope.healthLabels = labels.data;
           $scope.healthLabels.forEach(function(label){
             label.added = false;
-            $rootScope.user.healthLabels.forEach(function(userLabel){
+            UserService.user.healthLabels.forEach(function(userLabel){
               if(label.label === userLabel.label){
                 label.added = true;
               }
@@ -52,7 +59,7 @@
 
     $scope.clearData = function(){
       $rootScope.recipe = null
-      $rootScope.user = null
+      $scope.user = UserService.user = undefined;
       $scope.healthLabels = null
       $rootScope.searched = false
       $rootScope.searchRecipes = []
@@ -60,23 +67,24 @@
     }
 
     $rootScope.$on('devise:new-registration', function(e, user){
-      $rootScope.user = user;
+      UserService.user = user;
       $scope.authorize
     });
 
     $rootScope.$on('devise:login', function(e, user){
-      $rootScope.user = user;
+      debugger;
+      $scope.user = UserService.user = user;
       $state.go('home.search')
       $scope.authorize()
     });
 
     $rootScope.$on('devise:logout', function(e, user){
-      $rootScope.user = undefined;
+      $scope.user = UserService.user = undefined;
       $state.go('home.search')
     });
   }
 
-  HomeController.$inject = ['$location', '$rootScope', 'Auth', 'HealthLabelService', '$state', 'Flash', 'CookbookService']
+  HomeController.$inject = ['$location', '$scope', '$rootScope', 'Auth', 'HealthLabelService', 'Flash', 'CookbookService', 'UserService', '$state']
   
   angular
   .module('foodEase')
