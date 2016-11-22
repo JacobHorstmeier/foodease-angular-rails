@@ -1,21 +1,15 @@
 (function(){
-  function SearchService($http){
-    this.getRecipes = function(query, user){
-      var url = 'https://api.edamam.com/search?q=' + query;
-      url += '&from=0&to=50'
-      url += '&alt=json-in-script&callback=JSON_CALLBACK'
-      if(user){
-        user.healthLabels.forEach(function(label){
-          url += '&health=' + label.label
-        })
-      }
-      return $http({
-        url: url,
-        method: 'jsonp'
-      })
+  function SearchService(Pagination){
+
+    var pagination, query, noResults, searchResults;
+    var searched = false;
+    this.paginate = function(recipeCount){
+      pagination = Pagination.getNew(10);
+      pagination.numPages = Math.ceil(recipeCount/pagination.perPage);
+      return pagination;
     }
   }
-  SearchService.$inject = ['$http']
+  SearchService.$inject = ['Pagination']
 
   angular
     .module('foodEase')

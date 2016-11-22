@@ -16,27 +16,27 @@
     </ul>
   </div>
 
-  <div ng-if="noResults">
+  <div ng-if="searchResults.length == 0">
     <h5>Your search returned 0 results. Try removing health labels or search more general terms</h5>
   </div>
   
-  <div ng-if="searchRecipes.length > 0" class="row">
+  <div ng-if="searchResults.length > 0" class="row">
     <div class="row">
-      <h4 id="search-result-title">Showing {{searchRecipes.length}} results for "{{ searchQuery }}"</h4>
+      <h4 id="search-result-title">Showing {{searchResults.length}} results for "{{ searchQuery }}"</h4>
     </div>
 
     <nav aria-label="...">
       <ul class="pager">
-        <li><a href="#" ng-click="searchPagination.prevPage()" ng-hide="searchPagination.page == 0">Previous</a></li>
-        <li> Page {{searchPagination.page + 1}} of {{searchPagination.numPages}}</li>
-        <li><a href="#" ng-click="searchPagination.nextPage()" ng-hide="searchPagination.page + 1 >= searchPagination.numPages">Next</a></li>
+        <li><a href="#" ng-click="pagination.prevPage()" ng-hide="pagination.page == 0">Previous</a></li>
+        <li> Page {{pagination.page + 1}} of {{pagination.numPages}}</li>
+        <li><a href="#" ng-click="pagination.nextPage()" ng-hide="pagination.page + 1 >= pagination.numPages">Next</a></li>
       </ul>
     </nav>    
    </div>
 
   <div class="row list-group">
     <button type="button" class="list-group-item" 
-      ng-repeat="recipe in searchRecipes | startFrom: searchPagination.page * searchPagination.perPage | limitTo: searchPagination.perPage" 
+      ng-repeat="recipe in searchResults | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage" 
       ui-sref="home.search.recipe" 
       ng-click="vm.showSearchRecipe(recipe)">
     {{recipe.label}}

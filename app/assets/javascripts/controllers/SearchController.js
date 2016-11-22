@@ -1,48 +1,51 @@
 (function(){
-  function SearchController(Auth, $scope, $rootScope, Pagination, SearchService, RecipeService, $state){ 
+  function SearchController(Auth, $scope, $rootScope, Pagination, RecipeFactory, CookbookService, $state, SearchService){ 
     $("input:text:visible:first").focus();
-    $rootScope.state = $state.current.name
     var ctrl = this;
-    // debugger;
+
+    $rootScope.state = $state.current.name;
+    $scope.searched = SearchService.searched;
+    $scope.searchQuery = SearchService.query;
+    $scope.pagination = SearchService.pagination;
+    $scope.searchResults = SearchService.searchResults;
+    $scope.recipe = RecipeFactory.recipe;
+
     ctrl.recipeSearch = function(query){
-      $rootScope.searchRecipes = [];
-      $rootScope.searched = true
-      SearchService.getRecipes(query, $rootScope.user)
+      SearchService.searched;
+      $scope.searched = SearchService.searched = true;
+      RecipeFactory.getRecipes(query, $rootScope.user)
         .success(function(response){
-          $rootScope.searchQuery = response.q;
-          response.hits.forEach(function(res){
-            $rootScope.searchRecipes.push(res.recipe)
-          });
-          if(response.hits.length == 0){
-            $scope.noResults = true;
-          } else {
-            $scope.noResults = false;
-          };
-          $rootScope.searchPagination = Pagination.getNew(10);
-          $rootScope.searchPagination.numPages = Math.ceil($rootScope.searchRecipes.length/$rootScope.searchPagination.perPage);
+          $scope.searchQuery = SearchService.query = response.q;
+          $scope.searchResults = [];
+          if(response.hits.length > 0){
+            response.hits.forEach(function(recipe){
+              $scope.searchResults.push(recipe.recipe);
+            });
+            SearchService.searchResults = $scope.searchResults;
+            $scope.pagination = Pagination.getNew(10);
+            $scope.pagination.numPages = Math.ceil($scope.searchResults.length/$scope.pagination.perPage);
+            SearchService.pagination = $scope.pagination;
+          }
         })
-        .error(function(error){
-          alert("There was an unexpected error processing your request. Please try another search query.");
-        });
     };
 
     ctrl.showSearchRecipe = function(recipe){
-      $rootScope.recipe = RecipeService.alreadyInCookbook(recipe);
+      $scope.recipe = RecipeFactory.recipe = CookbookService.alreadyInCookbook(recipe);
     }
 
     $scope.addRecipe = function(recipe){
       recipe.bookmarked = true
-      RecipeService.addToCookbook($rootScope.user.cookbook.id, recipe);
+      CookbookService.addToCookbook($rootScope.user.cookbook.id, recipe);
     }
 
     $scope.removeRecipe = function(recipe){
       recipe.bookmarked = false
-      RecipeService.removeFromCookbook($rootScope.user.cookbook.id, recipe);
+      CookbookService.removeFromCookbook($rootScope.user.cookbook.id, recipe);
     }
 
   }
 
-  SearchController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'SearchService', 'RecipeService', '$state']
+  SearchController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'RecipeFactory', 'CookbookService', '$state', 'SearchService']
 
   angular
   .module('foodEase')
