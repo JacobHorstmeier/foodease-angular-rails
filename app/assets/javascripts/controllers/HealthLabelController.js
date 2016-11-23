@@ -20,7 +20,6 @@
       })
     }
     
-  
     $scope.addHealthLabel = function(label){
       HealthLabelService.updateUserLabels('PUT', UserService.user.id, label.id)
         .success(function(user){
