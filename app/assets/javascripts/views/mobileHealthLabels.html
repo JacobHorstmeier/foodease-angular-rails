@@ -1,0 +1,27 @@
+<div class="row visible-xs" ng-show="user">
+  <div class="col-xs-12">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" ng-show="user" class="dropdown active">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dietary Restrictions<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li ng-repeat="label in healthLabels" ng-hide="label.added">
+            <a href="" class="capitalize" ng-click="addHealthLabel(label)">{{label.label}}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" ng-show="user" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Filters<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li class="xs-remove-label" ng-if="user.healthLabels.length == 0">No active filters</li>
+          <li class="xs-remove-label" ng-repeat="label in user.healthLabels" ng-hide="label.added">
+            <span class="glyphicon glyphicon-remove capitalize" ng-click="removeHealthLabel(label)"></span>
+            {{label.label}}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

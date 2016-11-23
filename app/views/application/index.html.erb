@@ -8,7 +8,28 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body id="main" ng-app="foodEase" ng-controller="HomeController" ng-strict-di>
-    <ui-view></ui-view>
+  <body id="main" ng-app="foodEase" ng-strict-di>
+    <div class="container-fluid">
+      
+      <page-header></page-header>
+      <mobile-nav></mobile-nav>
+      <mobile-health-labels></mobile-health-labels>
+      
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-10 col-md-push-1 col-md-pull-1 col-lg-10 col-lg-push-1 col-lg-pull-1">    
+          
+          <div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
+            <desk-nav></desk-nav>
+            <desk-health-labels></desk-health-labels>
+          </div>
+
+          <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+            <flash-message name="main"></flash-message>
+            <ui-view></ui-view>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </body>
 </html>
