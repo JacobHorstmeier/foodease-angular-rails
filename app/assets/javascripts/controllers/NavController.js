@@ -23,7 +23,7 @@
     }
 
     $rootScope.$on('devise:new-registration', function(e, user){
-      UserService.user = user;
+      $scope.user = UserService.user = user;
       authorize()
     });
 
