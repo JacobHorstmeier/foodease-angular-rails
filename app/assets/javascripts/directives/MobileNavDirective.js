@@ -1,10 +1,10 @@
-function MobileNav(){
-  return {
-    templateUrl: 'views/mobileNav.html',
-    controller: 'HomeController'
-  }
-}
+// function MobileNav(){
+//   return {
+//     templateUrl: 'views/mobileNav.html',
+//     controller: 'HomeController'
+//   }
+// }
 
-angular
-  .module('foodEase')
-  .directive('mobileNav', MobileNav)
+// angular
+//   .module('foodEase')
+//   .directive('mobileNav', MobileNav)
