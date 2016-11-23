@@ -10,7 +10,7 @@ class HealthLabelsController < ApplicationController
     user.health_labels << health_label
     labels = HealthLabel.all
 
-    render json: user.health_labels
+    render json: user
   end
 
   def destroy
@@ -18,6 +18,6 @@ class HealthLabelsController < ApplicationController
     health_label = HealthLabel.find(params[:id])
     user.health_labels.delete(health_label)
     
-    render json: user.health_labels
+    render json: user
   end
 end

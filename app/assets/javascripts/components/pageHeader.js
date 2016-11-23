@@ -1,6 +1,5 @@
 var PageHeader = {
-  templateUrl: 'views/pageHeader.html',
-  controller: 'HomeController'
+  templateUrl: 'views/pageHeader.html'
 }
 
 angular

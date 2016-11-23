@@ -1,6 +1,6 @@
 var DeskHealthLabels = {
   templateUrl: 'views/deskHealthLabels.html',
-  controller: 'HomeController'
+  controller: 'HealthLabelController'
 }
 
 angular

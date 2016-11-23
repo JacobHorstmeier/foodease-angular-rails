@@ -1,6 +1,7 @@
 (function(){
-  function GlobalListService(CookbookService, ShoppingListService, UserService){
+  function GlobalListService(CookbookService, ShoppingListService, UserService, HealthLabelService){
     this.updateLists = function(user){
+      var user  = user
       UserService.user = user;
       CookbookService.recipes = user.cookbook.recipes;
       CookbookService.ingredients = user.cookbook.ingredients;
@@ -9,7 +10,7 @@
     }
   }
 
-  GlobalListService.$inject = ['CookbookService', 'ShoppingListService', 'UserService']
+  GlobalListService.$inject = ['CookbookService', 'ShoppingListService', 'UserService', 'HealthLabelService']
 
   angular
     .module('foodEase')

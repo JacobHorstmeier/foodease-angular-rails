@@ -1,6 +1,6 @@
 var MobileNav = {
   templateUrl: 'views/mobileNav.html',
-  controller: 'HomeController'
+  controller: 'NavController'
 }
 
 angular

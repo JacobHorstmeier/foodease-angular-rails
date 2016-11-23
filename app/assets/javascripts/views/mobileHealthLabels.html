@@ -15,7 +15,7 @@
       <li role="presentation" ng-show="user" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Filters<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li class="xs-remove-label" ng-if="user.healthLabels.length == 0">No active filters</li>
+          <li class="xs-remove-label" ng-if="userLabels.length == 0">No active filters</li>
           <li class="xs-remove-label" ng-repeat="label in user.healthLabels" ng-hide="label.added">
             <span class="glyphicon glyphicon-remove capitalize" ng-click="removeHealthLabel(label)"></span>
             {{label.label}}

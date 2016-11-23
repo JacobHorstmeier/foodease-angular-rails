@@ -1,6 +1,6 @@
 var MobileHealthLabels = {
   templateUrl: 'views/mobileHealthLabels.html',
-  controller: 'HomeController'
+  controller: 'HealthLabelController'
 }
 
 angular

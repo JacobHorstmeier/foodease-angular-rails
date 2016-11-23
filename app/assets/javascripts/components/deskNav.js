@@ -1,6 +1,6 @@
 var DeskNav = {
   templateUrl: 'views/deskNav.html',
-  controller: 'HomeController'
+  controller: 'NavController'
 }
 
 angular
