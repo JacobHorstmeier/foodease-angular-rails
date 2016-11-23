@@ -1,6 +1,11 @@
 /*
   opacity: 0.5;
 */
+body { padding-top: 0; }
+@media screen and (max-width: 768px) {
+    body { padding-top: 60px; }
+}
+
 
 div.page-header {
   margin: 0;
@@ -133,13 +138,17 @@ li.xs-remove-label {
 /***** RECIPE SEARCH BAR *****/
 
 
-  /*margin: 15px auto 0 auto;*/
+  /*margin: 0 auto;*/
 #search-form {
   width: auto;
 }
 
 #search-result-title {
   text-align: center;
+}
+/* still need to make it wider on mobile */
+@media screen and (max-width: 768px) {
+  #search-form { width: 100%; margin: 0 15px; }
 }
 
 

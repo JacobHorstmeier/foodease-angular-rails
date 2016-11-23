@@ -37,7 +37,7 @@
   <div class="row list-group">
     <button type="button" class="list-group-item" 
       ng-repeat="recipe in searchResults | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage" 
-      ui-sref="home.search.recipe" 
+      ui-sref="search.recipe" 
       ng-click="vm.showSearchRecipe(recipe)">
     {{recipe.label}}
     </button>

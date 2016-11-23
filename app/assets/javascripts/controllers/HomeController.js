@@ -66,13 +66,13 @@
     $rootScope.$on('devise:login', function(e, user){
       // debugger;
       $scope.user = UserService.user = user;
-      $state.go('home.search')
+      $state.go('search.recipe')
       $scope.authorize()
     });
 
     $rootScope.$on('devise:logout', function(e, user){
       $scope.user = UserService.user = undefined;
-      $state.go('home.search')
+      $state.go('search.recipe')
     });
   }
 

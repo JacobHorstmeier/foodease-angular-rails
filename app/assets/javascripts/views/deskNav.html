@@ -1,10 +1,10 @@
 <h4 ng-show="user">Welcome, {{user.username}}</h4>
 
 <ul class="nav nav-pills nav-stacked">
-  <li role="presentation" ng-class="{'active': isActive('/search') || isActive('/search/recipe')}"><a href="#" ui-sref="home.search.recipe">Search</a></li>
-  <li role="presentation" ng-hide="user" ng-class="{'active': isActive('/login')}"><a href="#" ui-sref="home.login">Log In</a></li>
-  <li role="presentation" ng-hide="user" ng-class="{'active': isActive('/register')}"><a href="#" ui-sref="home.register">Register</a></li>
-  <li role="presentation" ng-show="user" ng-class="{'active': isActive('/cookbook/recipe')}"><a href="#" ui-sref="home.cookbook.recipe">Cookbook</a></li>
-  <li role="presentation" ng-show="user" ng-class="{'active': isActive('/shopping-list')}"><a href="#" ui-sref="home.shoppingList">Shopping List</a></li>
+  <li role="presentation" ng-class="{'active': isActive('/search') || isActive('/search/recipe')}"><a href="#" ui-sref="search.recipe">Search</a></li>
+  <li role="presentation" ng-hide="user" ng-class="{'active': isActive('/login')}"><a href="#" ui-sref="login">Log In</a></li>
+  <li role="presentation" ng-hide="user" ng-class="{'active': isActive('/register')}"><a href="#" ui-sref="register">Register</a></li>
+  <li role="presentation" ng-show="user" ng-class="{'active': isActive('/cookbook/recipe')}"><a href="#" ui-sref="cookbook.recipe">Cookbook</a></li>
+  <li role="presentation" ng-show="user" ng-class="{'active': isActive('/shopping-list')}"><a href="#" ui-sref="shoppingList">Shopping List</a></li>
   <li role="presentation" ng-show="user"><a href="#" ng-click="logout(); clearData()">Log Out</a></li>
 </ul>
