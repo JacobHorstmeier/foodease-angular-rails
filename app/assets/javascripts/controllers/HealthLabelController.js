@@ -1,9 +1,10 @@
 (function(){
-  function HealthLabelController(HealthLabelService, UserService, Auth, $scope){
+  function HealthLabelController(HealthLabelService, UserService, Auth, $scope, $rootScope){
 
     $scope.healthLabels = HealthLabelService.allhealthLabels
     var getLabels = HealthLabelService.getLabels;
     var updateLabels = HealthLabelService.updateLabels    
+    
     function setupLabels(){    
       if(!UserService.user){
         Auth.currentUser().then(function(user){
@@ -16,7 +17,7 @@
       } else {
         $scope.user = UserService.user
         getLabels().then(function(labels){
-          $scope.healthLabels = updateLabels(UserService.user.healthLabels, labels)
+          $scope.healthLabels = updateLabels(UserService.user.healthLabels, labels.data)
         })
       }
     }
@@ -38,6 +39,8 @@
         })
     }
 
+    setupLabels()
+
     $rootScope.$on('devise:new-registration', function(e, user){
       $scope.user = UserService.user = user;
       setupLabels()
@@ -46,16 +49,15 @@
     $rootScope.$on('devise:login', function(e, user){
       $scope.user = UserService.user = user;
       setupLabels()
-      $state.go('search.recipe')
     });
 
     $rootScope.$on('devise:logout', function(e, user){
       $scope.user = UserService.user = undefined;      
-      $state.go('search.recipe')
+      $scope.healthLabels = []
     });
   }
 
-  HealthLabelController.$inject = ['HealthLabelService', 'UserService', 'Auth', '$scope']
+  HealthLabelController.$inject = ['HealthLabelService', 'UserService', 'Auth', '$scope', '$rootScope']
 
   angular
     .module('foodEase')
