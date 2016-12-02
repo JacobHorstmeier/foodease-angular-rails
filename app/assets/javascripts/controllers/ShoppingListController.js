@@ -51,13 +51,13 @@
         ingredient.done = false;
         ShoppingListService.checkItem(UserService.user.shoppingList.id, ingredient.id, false, 'PUT')
           .success(function(something){
-            debugger;
+            // debugger;
           })
       } else {
         ingredient.done = true;
         ShoppingListService.checkItem(UserService.user.shoppingList.id, ingredient.id, true, 'PUT')
           .success(function(something){
-            debugger;
+            // debugger;
           })        
       }
     }

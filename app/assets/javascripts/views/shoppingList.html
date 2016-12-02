@@ -5,9 +5,26 @@
   </ul>
 </div>
 
-
 <div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="left-column">
   <div id="background-wrapper">
+    <h3 class="centered-text headline">Shopping List Items</h3>
+    <ul class="list-group" id="scroller-container">
+      <li class="list-group-item" ng-repeat="ingredient in shoppingList | unique:'food' | orderBy:'food'" 
+        ng-click="vm.toggleDone(ingredient)">
+        <button type="button" class="btn btn-default btn-sm inline_button" 
+          ng-hide="ingredient.added" 
+          ng-click="vm.removeFromShoppingList(ingredient)">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        <span class="capitalize">{{ingredient.food}}</span>
+        <span class="glyphicon glyphicon-ok" ng-if="ingredient.done"></span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="right-column">
+  <!-- <div id="background-wrapper">
     <h3 class="centered-text headline">Cookbook Ingredients</h3>
     <ul class="list-group" id="scroller-container">
       
@@ -30,23 +47,6 @@
         <span class="capitalize">{{ingredient.food}}</span>
       </li>
     </ul>
-  </div>
+  </div> -->
 </div>
 
-<div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="right-column">
-  <div id="background-wrapper">
-    <h3 class="centered-text headline">Shopping List Items</h3>
-    <ul class="list-group" id="scroller-container">
-      <li class="list-group-item" ng-repeat="ingredient in shoppingList | unique:'food' | orderBy:'food'" 
-        ng-class="{'done': ingredient.done}"
-        ng-click="vm.toggleDone(ingredient)">
-        <button type="button" class="btn btn-default btn-sm inline_button" 
-          ng-hide="ingredient.added" 
-          ng-click="vm.removeFromShoppingList(ingredient)">
-          <span class="glyphicon glyphicon-remove"></span>
-        </button>
-        <span class="capitalize">{{ingredient.food}}</span>
-      </li>
-    </ul>
-  </div>
-</div>
