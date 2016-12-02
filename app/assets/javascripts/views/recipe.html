@@ -27,10 +27,25 @@
   <div id="img-container" style="background-image: url({{recipe.image}});">
   </div>
     
-  <h4 class="centered-text">Ingredients:</h4>
+  <h4 class="centered-text" ng-hide="recipe.bookmarked">Ingredients:</h4>
+  <h4 class="centered-text" ng-show="recipe.bookmarked">Add Ingredients to Shopping List:</h4>
 
     <ul class="list-group" id="recipe-scroller-container">
-      <li ng-repeat="ingredient in recipe.ingredients | unique:'text'" class="list-group-item">{{ingredient.text}}</li>
+
+      <li ng-repeat="ingredient in recipe.ingredients | unique:'text'" class="list-group-item">
+      <button type="button" class="btn btn-default btn-sm" 
+          ng-hide="ingredient.added || !recipe.bookmarked"
+          
+          ng-click="vm.addToShoppingList(ingredient)">
+          <span class="glyphicon glyphicon-plus"></span>
+        </button>
+
+        <button type="button" class="btn btn-default btn-sm" 
+          ng-show="recipe.bookmarked && ingredient.added" 
+          ng-click="vm.removeFromShoppingList(ingredient)">
+          <span class="glyphicon glyphicon-minus"></span>
+        </button>
+      {{ingredient.text}}</li>
     </ul>
 
 </div>

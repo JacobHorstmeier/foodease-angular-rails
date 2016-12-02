@@ -1,5 +1,5 @@
 (function(){
-  function SearchController(Auth, $scope, Pagination, RecipeFactory, CookbookService, SearchService, UserService, GlobalListService){ 
+  function SearchController(Auth, $scope, Pagination, RecipeFactory, CookbookService, SearchService, UserService, GlobalListService, ShoppingListService){ 
     $("input:text:visible:first").focus();
     var ctrl = this;
 
@@ -65,9 +65,27 @@
           $scope.user = GlobalListService.updateLists(user)
         });
     }
+
+///////// UPDATE SHOPPING LIST /////////
+
+    ctrl.addToShoppingList = function(ingredient){
+      ingredient.added = true;
+      ShoppingListService.updateShoppingList('PUT', UserService.user.shoppingList.id, ingredient.id)
+        .success(function(user){
+          updateList(GlobalListService.updateLists(user))
+        })
+    }
+
+    ctrl.removeFromShoppingList = function(ingredient){
+      ingredient.added = false;
+      ShoppingListService.updateShoppingList('DELETE', UserService.user.shoppingList.id, ingredient.id)
+        .success(function(user){
+          updateList(GlobalListService.updateLists(user))
+        })
+    }
   }
 
-  SearchController.$inject = ['Auth', '$scope', 'Pagination', 'RecipeFactory', 'CookbookService', 'SearchService', 'UserService', 'GlobalListService']
+  SearchController.$inject = ['Auth', '$scope', 'Pagination', 'RecipeFactory', 'CookbookService', 'SearchService', 'UserService', 'GlobalListService', 'ShoppingListService']
 
   angular
   .module('foodEase')
