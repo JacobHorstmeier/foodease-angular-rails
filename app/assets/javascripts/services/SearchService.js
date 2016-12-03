@@ -1,7 +1,7 @@
 (function(){
   function SearchService(Pagination){
 
-    var pagination, query, noResults, searchResults, searched;
+    var pagination, query, searchResults, searched;
     
     this.paginate = function(recipeCount){
       pagination = Pagination.getNew(10);

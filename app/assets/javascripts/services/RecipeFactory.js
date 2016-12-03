@@ -1,5 +1,5 @@
 (function(){
-  function RecipeFactory($http, SearchService){
+  function RecipeFactory($http){
     var recipes = [];
     var recipe;
     this.getRecipes = function(query, user){
@@ -17,7 +17,7 @@
       })
     }
   }
-  RecipeFactory.$inject = ['$http', 'SearchService']
+  RecipeFactory.$inject = ['$http']
 
   angular
     .module('foodEase')
