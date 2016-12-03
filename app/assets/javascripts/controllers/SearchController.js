@@ -35,10 +35,6 @@
             });
             SearchService.searchResults = $scope.searchResults;
             $scope.pagination = SearchService.pagination = SearchService.paginate($scope.searchResults.length)
-            // debugger;
-            // $scope.pagination = Pagination.getNew(10);
-            // $scope.pagination.numPages = Math.ceil($scope.searchResults.length/$scope.pagination.perPage);
-            // SearchService.pagination = $scope.pagination;
           }
         })
     };
@@ -55,7 +51,6 @@
     $scope.searched = SearchService.searched;
     $scope.searchQuery = SearchService.query;
     $scope.pagination = SearchService.pagination;
-    // debugger;
     $scope.searchResults = SearchService.searchResults;
     setAndUpdateRecipeIngredients()
     
@@ -89,7 +84,6 @@
 
     ctrl.addToShoppingList = function(ingredient){
       ingredient.added = true;
-      // debugger;
       ShoppingListService.updateShoppingList('PUT', UserService.user.shoppingList.id, ingredient.food)
         .success(function(user){
           GlobalListService.updateLists(user)
