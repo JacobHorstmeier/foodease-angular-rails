@@ -1,31 +1,26 @@
 (function(){
   function SearchController(Auth, $scope, Pagination, RecipeFactory, CookbookService, SearchService, UserService, GlobalListService, ShoppingListService){ 
-    $("input:text:visible:first").focus();
+    
+///////// DECLARATIONS /////////
+    
     var ctrl = this;
 
-    $scope.searched = SearchService.searched;
-    $scope.searchQuery = SearchService.query;
-    $scope.pagination = SearchService.pagination;
-    $scope.searchResults = SearchService.searchResults;
-    $scope.recipe = RecipeFactory.recipe;
-    
+    var setAndUpdateRecipeIngredients = function(){
+      if (RecipeFactory.recipe){
+        $scope.recipe = updateIngredients(RecipeFactory.recipe)
+      }
+    }
 
-
-    // var updateLists = function(user){
-    //   debugger;
-    //   CookbookService.recipes = user.cookbook.recipes
-    //   CookbookService.ingredients = user.cookbook.ingredients;      
-    //   ShoppingListService.items = user.shoppingList.ingredients;
-    //   $scope.user = UserService.user = user
-    //   debugger;
-    // }
-
-    if(UserService.user === undefined){
-      Auth.currentUser().then(function(user){
-        $scope.user = GlobalListService.updateLists(user)
+    var updateIngredients = function(recipe){
+      recipe.ingredients.forEach(function(ingredient){
+        ingredient.added = false;
+        UserService.user.shoppingList.ingredients.forEach(function(item){
+          if(item.food === ingredient.food){
+            ingredient.added = true;
+          }
+        })
       })
-    } else {
-      $scope.user = GlobalListService.updateLists(UserService.user)
+      return recipe
     }
 
     ctrl.recipeSearch = function(query){
@@ -48,7 +43,28 @@
 
     ctrl.showSearchRecipe = function(recipe){
       $scope.recipe = RecipeFactory.recipe = CookbookService.alreadyInCookbook(recipe);
+      setAndUpdateRecipeIngredients()
     }
+
+///////// PAGE SETUP /////////
+
+    $("input:text:visible:first").focus();
+
+    $scope.searched = SearchService.searched;
+    $scope.searchQuery = SearchService.query;
+    $scope.pagination = SearchService.pagination;
+    $scope.searchResults = SearchService.searchResults;
+    setAndUpdateRecipeIngredients()
+    
+    if(UserService.user === undefined){
+      Auth.currentUser().then(function(user){
+        $scope.user = GlobalListService.updateLists(user)
+      })
+    } else {
+      $scope.user = GlobalListService.updateLists(UserService.user)
+    }
+
+///////// UPDATE COOKBOOK /////////    
 
     $scope.addRecipe = function(recipe){
       CookbookService.addToCookbook(UserService.user.cookbook.id, recipe)
@@ -70,17 +86,20 @@
 
     ctrl.addToShoppingList = function(ingredient){
       ingredient.added = true;
-      ShoppingListService.updateShoppingList('PUT', UserService.user.shoppingList.id, ingredient.id)
+      // debugger;
+      ShoppingListService.updateShoppingList('PUT', UserService.user.shoppingList.id, ingredient.food)
         .success(function(user){
-          updateList(GlobalListService.updateLists(user))
+          GlobalListService.updateLists(user)
+          setAndUpdateRecipeIngredients()
         })
     }
 
     ctrl.removeFromShoppingList = function(ingredient){
       ingredient.added = false;
-      ShoppingListService.updateShoppingList('DELETE', UserService.user.shoppingList.id, ingredient.id)
+      ShoppingListService.updateShoppingList('DELETE', UserService.user.shoppingList.id, ingredient.food)
         .success(function(user){
-          updateList(GlobalListService.updateLists(user))
+          GlobalListService.updateLists(user)
+          setAndUpdateRecipeIngredients()
         })
     }
   }
