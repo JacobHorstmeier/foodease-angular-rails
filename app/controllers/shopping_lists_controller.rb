@@ -2,7 +2,6 @@ class ShoppingListsController < ApplicationController
 
 
   def update
-    # binding.pry
     shopping_list = ShoppingList.find(params[:shopping_list_id])
     unless ingredient = Ingredient.find_by(id: params[:id])
       ingredient = Ingredient.find_or_create_by(food: params[:ingredient_name])

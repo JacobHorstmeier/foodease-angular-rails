@@ -10,14 +10,14 @@
     <h3 class="centered-text headline">Shopping List Items</h3>
     <ul class="list-group" id="scroller-container">
       <li class="list-group-item" ng-repeat="ingredient in shoppingList | unique:'food' | orderBy:'food'" 
-        ng-click="vm.toggleDone(ingredient)">
+        ng-click="vm.toggleChecked(ingredient)">
         <button type="button" class="btn btn-default btn-sm inline_button" 
           ng-hide="ingredient.added" 
           ng-click="vm.removeFromShoppingList(ingredient)">
           <span class="glyphicon glyphicon-remove"></span>
         </button>
         <span class="capitalize">{{ingredient.food}}</span>
-        <span class="glyphicon glyphicon-ok" ng-if="ingredient.done"></span>
+        <span class="glyphicon glyphicon-ok" ng-if="ingredient.checked"></span>
       </li>
     </ul>
   </div>
