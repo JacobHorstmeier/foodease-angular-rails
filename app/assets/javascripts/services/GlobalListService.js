@@ -4,7 +4,6 @@
       var user  = user
       UserService.user = user;
       CookbookService.recipes = user.cookbook.recipes;
-      CookbookService.ingredients = user.cookbook.ingredients;
       ShoppingListService.items = user.shoppingList.ingredients;
       return user;
     }

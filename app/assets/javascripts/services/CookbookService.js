@@ -1,6 +1,6 @@
 (function(){
   function CookbookService($http, UserService){
-    var recipes, ingredients;
+    var recipes;
 
     this.alreadyInCookbook = function(recipe){
       if(UserService.user){

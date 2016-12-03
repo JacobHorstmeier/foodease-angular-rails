@@ -4,7 +4,6 @@
 
     var updateList = function(user){
       $scope.user = user
-      $scope.ingredients = user.cookbook.ingredients
       $scope.shoppingList = user.shoppingList.ingredients
       updateIngredients()
     }
@@ -17,14 +16,6 @@
       updateList(GlobalListService.updateLists(UserService.user))
     }
 
-    ctrl.addToShoppingList = function(ingredient){
-      ingredient.added = true;
-      ShoppingListService.updateShoppingList('PUT', UserService.user.shoppingList.id, ingredient.id)
-        .success(function(user){
-          updateList(GlobalListService.updateLists(user))
-        })
-    }
-
     ctrl.removeFromShoppingList = function(ingredient){
       ingredient.added = false;
       ShoppingListService.updateShoppingList('DELETE', UserService.user.shoppingList.id, ingredient.id)
@@ -34,35 +25,30 @@
     }
 
     function updateIngredients(){
-      $scope.ingredients.forEach(function(ingredient){
-        ingredient.added = false;
-        $scope.shoppingList.forEach(function(item){
-          if(item.food === ingredient.food){
-            ingredient.added = true;
+      $scope.shoppingList.forEach(function(ingredient){
+        $scope.user.shoppingListIngredients.forEach(function(item){
+          if(ingredient.id == item.ingredient_id){
+            ingredient.checked = item.checked
           }
         })
       })
     }
 
-
-
     ctrl.toggleChecked = function(ingredient){
       if(ingredient.checked == true){
         ingredient.checked = false;
         ShoppingListService.checkItem(UserService.user.shoppingList.id, ingredient.id, false, 'PUT')
-          .success(function(something){
-            // debugger;
+          .success(function(user){
+            UserService.user = user
           })
       } else {
         ingredient.checked = true;
         ShoppingListService.checkItem(UserService.user.shoppingList.id, ingredient.id, true, 'PUT')
-          .success(function(something){
-            // debugger;
+          .success(function(user){
+            UserService.user = user
           })        
       }
     }
-
-    
   }
 
   ShoppingListController.$inject = ['$rootScope', '$scope', 'Auth', 'Pagination', 'ShoppingListService', 'UserService', 'GlobalListService']
