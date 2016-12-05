@@ -4,7 +4,11 @@
 ///////// DECLARATIONS /////////
 
     var ctrl = this
-    
+
+    $scope.$on('updateList', function(data){
+      debugger;
+    })
+
     var updateList = function(user){
       $scope.user = user
       $scope.cookbookRecipes = user.cookbook.recipes;
@@ -57,7 +61,6 @@
         .success(function(user){
           updateList(GlobalListService.updateLists(user))
           recipe.bookmarked = false;
-
         })
     }
 
