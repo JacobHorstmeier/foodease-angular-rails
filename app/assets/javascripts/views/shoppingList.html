@@ -7,7 +7,7 @@
 
 <div class="col-12-xs col-sm-6 col-md-6 col-lg-6" id="left-column">
   <div id="background-wrapper">
-    <h3 class="centered-text headline">Shopping List Items</h3>
+    <h3 class="centered-text headline">Shopping List</h3>
     <ul class="list-group" id="scroller-container">
       <li class="list-group-item" ng-repeat="ingredient in shoppingList | unique:'food' | orderBy:'food'" 
         ng-click="vm.toggleChecked(ingredient)">
