@@ -1,42 +1,10 @@
-ul.nav-tabs>li {
-  width: 50%;
-  text-align: center;
-}
+
 
 
 body { padding-top: 0; }
 @media screen and (max-width: 768px) {
     body { padding-top: 60px; }
 }
-
-div.page-header {
-  margin: 0;
-  padding: 40px 0 20px 0;
-  background-image: url('http://ce.unm.edu/assets/imgs/enrich/cooking-header');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-/*
-div.page-header{
-  position: relative;
-  overflow: hidden;
-  margin: 0;
-  padding: 40px 0 20px 0;
-}
-*/
-
-/*
-img#header-image{
-  position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    opacity: 0.6;
-}
-*/
 
 button#logo {
   background-color: #fff;
@@ -54,9 +22,19 @@ body#main {
   padding: 5px;
   margin-top: 15px;
 }
+
 /* 
   background-color: #fff;
 */
+
+ul.nav-pills {
+  margin-top: 15px;
+}
+
+
+desk-nav > h4 {
+  margin-top: 15px; 
+}
 
 
 
@@ -143,6 +121,7 @@ li.xs-remove-label {
   /*margin: 0 auto;*/
 #search-form {
   width: auto;
+  margin-top: 15px;
 }
 
 #search-result-title {
@@ -185,8 +164,16 @@ ul#recipe-ingredients {
 
 
 
-/***** NAVBAR STYLING *****/
+/***** HEADER/NAVBAR STYLING *****/
 
+div.page-header {
+  margin: 0;
+  padding: 40px 0 20px 0;
+  background-image: url('http://ce.unm.edu/assets/imgs/enrich/cooking-header');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
 .glyphicon-menu-hamburger {
   font-size: 20px;
@@ -215,5 +202,9 @@ ul.nav-dropdown:first-child {
 
 ul.nav-dropdown {
   background-color: #fff;
+}
 
+ul.nav-tabs>li {
+  width: 50%;
+  text-align: center;
 }
