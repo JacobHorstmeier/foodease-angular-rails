@@ -1,13 +1,13 @@
 (function(){
-  function SearchController(Auth, $scope, Pagination, RecipeFactory, CookbookService, SearchService, UserService, GlobalListService, ShoppingListService){ 
+  function SearchController(Auth, $scope, Pagination, RecipeService, CookbookService, SearchService, UserService, GlobalListService, ShoppingListService){ 
     
 ///////// DECLARATIONS /////////
     
     var ctrl = this;
 
     var setAndUpdateRecipeIngredients = function(){
-      if (RecipeFactory.recipe){
-        $scope.recipe = updateIngredients(RecipeFactory.recipe)
+      if (RecipeService.recipe){
+        $scope.recipe = updateIngredients(RecipeService.recipe)
       }
     }
 
@@ -25,7 +25,7 @@
 
     ctrl.recipeSearch = function(query){
       $scope.searched = SearchService.searched = true;
-      RecipeFactory.getRecipes(query, UserService.user)
+      RecipeService.getRecipes(query, UserService.user)
         .success(function(response){
           $scope.searchQuery = SearchService.query = response.q;
           $scope.searchResults = [];
@@ -37,10 +37,13 @@
             $scope.pagination = SearchService.pagination = SearchService.paginate($scope.searchResults.length)
           }
         })
+        .error(function(response){
+          alert("There was an unexpected error processing your request. Please try another search term for now.")
+        })
     };
 
     ctrl.showSearchRecipe = function(recipe){
-      $scope.recipe = RecipeFactory.recipe = CookbookService.alreadyInCookbook(recipe);
+      $scope.recipe = RecipeService.recipe = CookbookService.alreadyInCookbook(recipe);
       setAndUpdateRecipeIngredients()
     }
 
@@ -101,7 +104,7 @@
     }
   }
 
-  SearchController.$inject = ['Auth', '$scope', 'Pagination', 'RecipeFactory', 'CookbookService', 'SearchService', 'UserService', 'GlobalListService', 'ShoppingListService']
+  SearchController.$inject = ['Auth', '$scope', 'Pagination', 'RecipeService', 'CookbookService', 'SearchService', 'UserService', 'GlobalListService', 'ShoppingListService']
 
   angular
   .module('foodEase')

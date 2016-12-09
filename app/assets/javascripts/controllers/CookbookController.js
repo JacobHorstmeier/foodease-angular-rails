@@ -1,5 +1,5 @@
 (function(){
-  function CookbookController($scope, CookbookService, RecipeFactory, UserService, GlobalListService, ShoppingListService, Auth) {
+  function CookbookController($scope, CookbookService, RecipeService, UserService, GlobalListService, ShoppingListService, Auth) {
 
 ///////// DECLARATIONS /////////
 
@@ -12,8 +12,8 @@
     var updateList = function(user){
       $scope.user = user
       $scope.cookbookRecipes = user.cookbook.recipes;
-      if (RecipeFactory.recipe){
-        $scope.recipe = updateIngredients(RecipeFactory.recipe)
+      if (RecipeService.recipe){
+        $scope.recipe = updateIngredients(RecipeService.recipe)
       }
     }
 
@@ -31,12 +31,12 @@
 
     ctrl.showCookbookRecipe = function(recipe){
       updateIngredients(recipe)
-      $scope.recipe = RecipeFactory.recipe = CookbookService.alreadyInCookbook(recipe);
+      $scope.recipe = RecipeService.recipe = CookbookService.alreadyInCookbook(recipe);
     }    
 
 ///////// PAGE SETUP /////////
 
-    $scope.recipe = RecipeFactory.recipe;
+    $scope.recipe = RecipeService.recipe;
 
     if(UserService.user === undefined){
       Auth.currentUser().then(function(user){
@@ -83,7 +83,7 @@
     }
   }
 
-  CookbookController.$inject = ['$scope', 'CookbookService', 'RecipeFactory', 'UserService', 'GlobalListService', 'ShoppingListService', 'Auth']
+  CookbookController.$inject = ['$scope', 'CookbookService', 'RecipeService', 'UserService', 'GlobalListService', 'ShoppingListService', 'Auth']
 
   angular
   .module('foodEase')

@@ -1,10 +1,10 @@
-function RecipeController($scope, RecipeFactory, UserService, CookbookService, GlobalListService, ShoppingListService){
+function RecipeController($scope, RecipeService, UserService, CookbookService, GlobalListService, ShoppingListService){
   var ctrl = this;
-  $scope.recipe = RecipeFactory.recipe
+  $scope.recipe = RecipeService.recipe
 
   var setAndUpdateRecipeIngredients = function(){
-      if (RecipeFactory.recipe){
-        $scope.recipe = updateIngredients(RecipeFactory.recipe)
+      if (RecipeService.recipe){
+        $scope.recipe = updateIngredients(RecipeService.recipe)
       }
     }
 
@@ -64,7 +64,7 @@ function RecipeController($scope, RecipeFactory, UserService, CookbookService, G
 
 }
 
-RecipeController.$inject = ['$scope', 'RecipeFactory', 'UserService', 'CookbookService', 'GlobalListService', 'ShoppingListService']
+RecipeController.$inject = ['$scope', 'RecipeService', 'UserService', 'CookbookService', 'GlobalListService', 'ShoppingListService']
 
 angular
   .module('foodEase')
