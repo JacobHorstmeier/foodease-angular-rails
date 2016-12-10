@@ -13,22 +13,21 @@ angular
         templateUrl: 'views/search.html',
         controller: 'SearchController as vm'
       })
-      .state('search.recipe', {
-        url: '/recipe',
-        templateUrl: 'views/recipe.html',
-        controller: 'RecipeController'   
-
-      })
+      // .state('search.recipe', {
+      //   url: '/recipe',
+      //   templateUrl: 'views/recipe.html',
+      //   controller: 'RecipeController'   
+      // })
       .state('cookbook', {
         url: '/cookbook',
         templateUrl: 'views/cookbook.html',
         controller: 'CookbookController as vm',
       })
-      .state('cookbook.recipe', {
-        url: '/recipe',
-        templateUrl: 'views/recipe.html',
-        controller: 'RecipeController'   
-      })
+      // .state('cookbook.recipe', {
+      //   url: '/recipe',
+      //   templateUrl: 'views/recipe.html',
+      //   controller: 'RecipeController'   
+      // })
       .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',

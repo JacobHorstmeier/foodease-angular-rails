@@ -7,7 +7,7 @@
     </div>
     
     <ul class=" list-group" id="scroller-container">
-      <li class="list-group-item"  ui-sref="cookbook.recipe" 
+      <li class="list-group-item"  ui-sref="cookbook" 
         ng-repeat="recipe in cookbookRecipes | orderBy:'label'"
         ng-click="vm.showCookbookRecipe(recipe)">
         <button type="button" class="btn btn-default btn-sm" ng-click="removeRecipe(recipe)">
