@@ -15,8 +15,9 @@
       return recipe
     }
 
-    this.addToCookbook = function(cookbookId, recipe){
+    this.addToCookbook = function(recipe){
       var recipe = recipe;
+      var cookbookId = UserService.user.cookbook.id
       var url = '/cookbooks/' + cookbookId + '/recipes'
       return $http({
         url: url,
@@ -27,8 +28,9 @@
       })
     }
 
-    this.removeFromCookbook = function(cookbookId, recipe){
+    this.removeFromCookbook = function(recipe){
       var recipe = recipe;
+      var cookbookId = UserService.user.cookbook.id
       var url = '/cookbooks/' + cookbookId + '/recipes';
       return $http({
         url: url,

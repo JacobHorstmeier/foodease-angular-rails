@@ -32,7 +32,7 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
 ///////// UPDATE COOKBOOK /////////    
 
     $scope.addRecipe = function(recipe){
-      CookbookService.addToCookbook(UserService.user.cookbook.id, recipe)
+      CookbookService.addToCookbook(recipe)
         .success(function(user){
           $scope.user = GlobalListService.updateLists(user)
           $rootScope.$emit("updateCookbook", user)
@@ -41,7 +41,7 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
     }
 
     $scope.removeRecipe = function(recipe){
-      CookbookService.removeFromCookbook(UserService.user.cookbook.id, recipe)
+      CookbookService.removeFromCookbook(recipe)
         .success(function(user){
           $scope.user = GlobalListService.updateLists(user)
           $rootScope.$emit("updateCookbook", user)
@@ -53,7 +53,7 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
 
     $scope.addToShoppingList = function(ingredient){
       ingredient.added = true;
-      ShoppingListService.updateShoppingList('PUT', UserService.user.shoppingList.id, ingredient.food)
+      ShoppingListService.updateShoppingList('PUT', ingredient.food)
         .success(function(user){
           GlobalListService.updateLists(user)
           setAndUpdateRecipeIngredients(RecipeService.recipe)
@@ -62,7 +62,7 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
 
     $scope.removeFromShoppingList = function(ingredient){
       ingredient.added = false;
-      ShoppingListService.updateShoppingList('DELETE', UserService.user.shoppingList.id, ingredient.food)
+      ShoppingListService.updateShoppingList('DELETE', ingredient.food)
         .success(function(user){
           GlobalListService.updateLists(user)
           setAndUpdateRecipeIngredients(RecipeService.recipe)
