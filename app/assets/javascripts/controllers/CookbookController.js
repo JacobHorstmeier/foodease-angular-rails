@@ -12,9 +12,9 @@
     var updateList = function(user){
       $scope.user = user
       $scope.cookbookRecipes = user.cookbook.recipes;
-      if (RecipeService.recipe){
-        $scope.recipe = updateIngredients(RecipeService.recipe)
-      }
+      // if (RecipeService.recipe){
+      //   $scope.recipe = updateIngredients(RecipeService.recipe)
+      // }
     }
 
     // var updateIngredients = function(recipe){

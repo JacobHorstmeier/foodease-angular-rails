@@ -36,13 +36,13 @@
       <button type="button" class="btn btn-default btn-sm" 
           ng-hide="ingredient.added || !recipe.bookmarked"
           
-          ng-click="vm.addToShoppingList(ingredient)">
+          ng-click="addToShoppingList(ingredient)">
           <span class="glyphicon glyphicon-plus"></span>
         </button>
 
         <button type="button" class="btn btn-default btn-sm" 
           ng-show="recipe.bookmarked && ingredient.added" 
-          ng-click="vm.removeFromShoppingList(ingredient)">
+          ng-click="removeFromShoppingList(ingredient)">
           <span class="glyphicon glyphicon-minus"></span>
         </button>
       {{ingredient.text}}</li>

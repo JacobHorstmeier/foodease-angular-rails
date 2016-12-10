@@ -2,17 +2,21 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
   var ctrl = this;
   $scope.recipe = RecipeService.recipe
 
+  if(RecipeService.recipe){
+    setAndUpdateRecipeIngredients(CookbookService.alreadyInCookbook(RecipeService.recipe))
+  }
+
   $rootScope.$on('showRecipe', function(event, recipe){
     setAndUpdateRecipeIngredients(CookbookService.alreadyInCookbook(recipe))
   })
-  
-  var setAndUpdateRecipeIngredients = function(recipe){
+
+  function setAndUpdateRecipeIngredients(recipe){
       if (recipe){
         $scope.recipe = RecipeService.recipe = updateIngredients(recipe)
       }
     }
 
-  var updateIngredients = function(recipe){
+  function updateIngredients(recipe){
     recipe.ingredients.forEach(function(ingredient){
       ingredient.added = false;
       UserService.user.shoppingList.ingredients.forEach(function(item){
@@ -47,7 +51,7 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
 
 ///////// UPDATE SHOPPING LIST /////////
 
-    ctrl.addToShoppingList = function(ingredient){
+    $scope.addToShoppingList = function(ingredient){
       ingredient.added = true;
       ShoppingListService.updateShoppingList('PUT', UserService.user.shoppingList.id, ingredient.food)
         .success(function(user){
@@ -56,7 +60,7 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
         })
     }
 
-    ctrl.removeFromShoppingList = function(ingredient){
+    $scope.removeFromShoppingList = function(ingredient){
       ingredient.added = false;
       ShoppingListService.updateShoppingList('DELETE', UserService.user.shoppingList.id, ingredient.food)
         .success(function(user){
