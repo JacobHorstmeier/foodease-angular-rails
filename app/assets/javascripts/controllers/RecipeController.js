@@ -32,11 +32,10 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
 ///////// UPDATE COOKBOOK /////////    
 
     $scope.addRecipe = function(recipe){
-      debugger;
       CookbookService.addToCookbook(UserService.user.cookbook.id, recipe)
         .success(function(user){
           $scope.user = GlobalListService.updateLists(user)
-          $scope.$emit("updateList", {user: user})
+          $rootScope.$emit("updateCookbook", user)
           recipe.bookmarked = true
         });
     }
@@ -45,6 +44,7 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
       CookbookService.removeFromCookbook(UserService.user.cookbook.id, recipe)
         .success(function(user){
           $scope.user = GlobalListService.updateLists(user)
+          $rootScope.$emit("updateCookbook", user)
           recipe.bookmarked = false
         });
     }

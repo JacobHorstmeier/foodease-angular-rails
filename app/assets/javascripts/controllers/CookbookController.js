@@ -5,9 +5,10 @@
 
     var ctrl = this
 
-    // $scope.$on('updateList', function(data){
-    //   debugger;
-    // })
+    $rootScope.$on('updateCookbook', function(event, user){
+      // debugger;
+      updateList(user);
+    })
 
     var updateList = function(user){
       $scope.user = user
@@ -31,7 +32,6 @@
 
     // ctrl.showCookbookRecipe = RecipeService.showRecipe
     ctrl.showCookbookRecipe = function(recipe){
-      // debugger;
       $rootScope.$emit('showRecipe', recipe)
       // updateIngredients(recipe)
       // $scope.recipe = RecipeService.recipe = CookbookService.alreadyInCookbook(recipe);
