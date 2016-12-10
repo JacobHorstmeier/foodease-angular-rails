@@ -1,5 +1,5 @@
 (function(){
-  function RecipeService($http){
+  function RecipeService($http, CookbookService){
     var recipes = [];
     var recipe;
     this.getRecipes = function(query, user){
@@ -16,8 +16,11 @@
         method: 'jsonp'
       })
     }
+    this.showRecipe = function(recipe){
+      recipe = CookbookService.alreadyInCookbook(recipe);
+    }
   }
-  RecipeService.$inject = ['$http']
+  RecipeService.$inject = ['$http', 'CookbookService']
 
   angular
     .module('foodEase')

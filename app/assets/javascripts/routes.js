@@ -16,7 +16,7 @@ angular
       .state('search.recipe', {
         url: '/recipe',
         templateUrl: 'views/recipe.html',
-        require: '^vm'   
+        require: 'RecipeController'   
 
       })
       .state('cookbook', {
@@ -27,7 +27,7 @@ angular
       .state('cookbook.recipe', {
         url: '/recipe',
         templateUrl: 'views/recipe.html',
-        require: '^vm'   
+        require: 'RecipeController'   
       })
       .state('login', {
         url: '/login',
