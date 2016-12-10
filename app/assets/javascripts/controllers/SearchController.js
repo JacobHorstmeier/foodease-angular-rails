@@ -109,7 +109,7 @@
     // }
   }
 
-  SearchController.$inject = ['Auth', '$scope', '$rootScope' 'Pagination', 'RecipeService', 'CookbookService', 'SearchService', 'UserService', 'GlobalListService', 'ShoppingListService']
+  SearchController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'RecipeService', 'CookbookService', 'SearchService', 'UserService', 'GlobalListService', 'ShoppingListService']
 
   angular
   .module('foodEase')

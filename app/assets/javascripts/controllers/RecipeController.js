@@ -1,13 +1,14 @@
 function RecipeController($scope, RecipeService, UserService, CookbookService, GlobalListService, ShoppingListService, $rootScope){
   var ctrl = this;
   $scope.recipe = RecipeService.recipe
+
   $rootScope.$on('showRecipe', function(event, recipe){
-    $scope.recipe = RecipeService.recipe = recipe
+    setAndUpdateRecipeIngredients(CookbookService.alreadyInCookbook(recipe))
   })
-  // debugger;
-  var setAndUpdateRecipeIngredients = function(){
-      if (RecipeService.recipe){
-        $scope.recipe = updateIngredients(RecipeService.recipe)
+  
+  var setAndUpdateRecipeIngredients = function(recipe){
+      if (recipe){
+        $scope.recipe = RecipeService.recipe = updateIngredients(recipe)
       }
     }
 
@@ -51,7 +52,7 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
       ShoppingListService.updateShoppingList('PUT', UserService.user.shoppingList.id, ingredient.food)
         .success(function(user){
           GlobalListService.updateLists(user)
-          setAndUpdateRecipeIngredients()
+          setAndUpdateRecipeIngredients(RecipeService.recipe)
         })
     }
 
@@ -60,7 +61,7 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
       ShoppingListService.updateShoppingList('DELETE', UserService.user.shoppingList.id, ingredient.food)
         .success(function(user){
           GlobalListService.updateLists(user)
-          setAndUpdateRecipeIngredients()
+          setAndUpdateRecipeIngredients(RecipeService.recipe)
         })
     }
 }
