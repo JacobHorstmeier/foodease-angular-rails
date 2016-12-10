@@ -13,7 +13,7 @@
         console.log(user);
         var message = "Thanks for signing up!"
         Flash.create('success', message, 3000, {container: 'main'})
-        $state.go('search.recipe');
+        $state.go('search');
       }, function(response){
         Flash.create('danger', response.data.error, 3000, {container: 'auth'})
       });
@@ -26,7 +26,7 @@
         CookbookService.recipes = user.cookbook.recipes;
         var message = "Successfully signed in as " + user.username + "!"
         Flash.create('success', message, 3000, {container: 'main'})
-        $state.go('search.recipe');
+        $state.go('search');
       }, function(response){
         Flash.create('danger', response.data.error, 3000, {container: 'auth'})
       });

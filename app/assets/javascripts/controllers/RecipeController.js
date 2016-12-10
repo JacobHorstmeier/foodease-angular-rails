@@ -1,7 +1,8 @@
 function RecipeController($scope, RecipeService, UserService, CookbookService, GlobalListService, ShoppingListService, $rootScope){
   var ctrl = this;
   $scope.recipe = RecipeService.recipe
-
+  $scope.user = UserService.user
+  
   if(RecipeService.recipe){
     setAndUpdateRecipeIngredients(CookbookService.alreadyInCookbook(RecipeService.recipe))
   }

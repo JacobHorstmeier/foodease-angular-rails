@@ -41,8 +41,7 @@
 
   <div class="row list-group">
     <button type="button" class="list-group-item" 
-      ng-repeat="recipe in searchResults | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage" 
-      ui-sref="search.recipe" 
+      ng-repeat="recipe in searchResults | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage"  
       ng-click="vm.showSearchRecipe(recipe)">
     {{recipe.label}}
     </button>
@@ -50,5 +49,6 @@
 </div>
 
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="right-column">
-  <div ui-view></div>
+  <!-- <div ui-view></div> -->
+  <recipe></recipe>
 </div>
