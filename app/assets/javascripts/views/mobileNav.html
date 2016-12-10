@@ -1,11 +1,13 @@
 <div class="row visible-xs">
-  <div class="navbar navbar-custom navbar-fixed-top col-xs-12">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+  <div class="navbar navbar-custom navbar-fixed-top col-xs-12 mobile-header">
+    <!-- <div class="navbar-header"> -->
+      <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed" id="hamburger">
         <span class="glyphicon glyphicon-menu-hamburger"></span>
       </button>
-      <a class="navbar-brand visible-xs">FoodEase</a>
-    </div>
+      <button type="button" class="btn btn-outline-primary btn-lg" ui-sref="search" id="mobile-logo">
+        <img src="assets/Food-Ease-logo.png" />
+      </button>
+    <!-- </div> -->
 
     <div uib-collapse="!isCollapsed">
       <ul class="nav navabar-nav nav-dropdown">

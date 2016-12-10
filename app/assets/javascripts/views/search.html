@@ -1,11 +1,11 @@
 <!-- <ul class="nav nav-tabs visible-xs">
   <li role="presentation" class="active"><a ui-sref="search">Search</a></li>
-  <li role="presentation" class=""><a ui-sref="search">Recipe</a></li>
+  <li role="presentation" class=""><a ui-sref="recipe">Recipe</a></li>
 </ul> -->
 
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="left-column">
   <form ng-submit="vm.recipeSearch(vm.query)" remote="true" id="search-form">
-    <input type="text" class="form-control input-lg" placeholder="Search for recipes" ng-model="vm.query" class="recipe-search" />
+    <input type="text" class="form-control input-lg recipe-search" placeholder="Search for recipes" ng-model="vm.query" />
   </form>
 
   <div ng-hide="user || searched" id="intro-guide">

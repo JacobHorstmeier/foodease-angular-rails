@@ -13,7 +13,7 @@ angular
         templateUrl: 'views/search.html',
         controller: 'SearchController as vm'
       })
-      // .state('search.recipe', {
+      // .state('recipe', {
       //   url: '/recipe',
       //   templateUrl: 'views/recipe.html',
       //   controller: 'RecipeController'   
