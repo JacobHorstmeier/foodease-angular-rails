@@ -1,5 +1,5 @@
 (function(){
-  function SearchController(Auth, $scope, Pagination, RecipeService, CookbookService, SearchService, UserService, GlobalListService, ShoppingListService){ 
+  function SearchController(Auth, $scope, $rootScope, Pagination, RecipeService, CookbookService, SearchService, UserService, GlobalListService, ShoppingListService){ 
     
 ///////// DECLARATIONS /////////
     
@@ -43,9 +43,12 @@
     };
 
     ctrl.showSearchRecipe = function(recipe){
-      $scope.recipe = RecipeService.recipe = CookbookService.alreadyInCookbook(recipe);
-      setAndUpdateRecipeIngredients()
+      $rootScope.$emit('showRecipe', recipe)
     }
+    // ctrl.showSearchRecipe = function(recipe){
+    //   $scope.recipe = RecipeService.recipe = CookbookService.alreadyInCookbook(recipe);
+    //   setAndUpdateRecipeIngredients()
+    // }
 
 ///////// PAGE SETUP /////////
 
@@ -106,7 +109,7 @@
     // }
   }
 
-  SearchController.$inject = ['Auth', '$scope', 'Pagination', 'RecipeService', 'CookbookService', 'SearchService', 'UserService', 'GlobalListService', 'ShoppingListService']
+  SearchController.$inject = ['Auth', '$scope', '$rootScope' 'Pagination', 'RecipeService', 'CookbookService', 'SearchService', 'UserService', 'GlobalListService', 'ShoppingListService']
 
   angular
   .module('foodEase')

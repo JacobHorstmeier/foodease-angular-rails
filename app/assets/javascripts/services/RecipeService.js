@@ -2,6 +2,7 @@
   function RecipeService($http, CookbookService){
     var recipes = [];
     var recipe;
+
     this.getRecipes = function(query, user){
       var url = 'https://api.edamam.com/search?q=' + query;
       url += '&from=0&to=50'
@@ -16,7 +17,9 @@
         method: 'jsonp'
       })
     }
+
     this.showRecipe = function(recipe){
+      debugger;
       recipe = CookbookService.alreadyInCookbook(recipe);
     }
   }
