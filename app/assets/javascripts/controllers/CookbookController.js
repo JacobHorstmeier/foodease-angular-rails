@@ -17,7 +17,11 @@
 
     ctrl.showCookbookRecipe = function(recipe){
       $rootScope.$emit('showRecipe', recipe)
-    }    
+    }
+
+    $scope.removeRecipe = function(recipe){
+      $rootScope.$emit('removeRecipe', recipe)
+    }
 
 ///////// PAGE SETUP /////////
 

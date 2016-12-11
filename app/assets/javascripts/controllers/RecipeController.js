@@ -15,6 +15,10 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
     }
   })
 
+  $rootScope.$on('removeRecipe', function(event, recipe){
+    $scope.removeRecipe(recipe);
+  })
+
   function setAndUpdateRecipeIngredients(recipe){
       if (recipe){
         $scope.recipe = RecipeService.recipe = updateIngredients(recipe)
