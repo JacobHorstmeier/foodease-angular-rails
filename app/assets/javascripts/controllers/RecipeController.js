@@ -3,12 +3,16 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
   $scope.recipe = RecipeService.recipe
   $scope.user = UserService.user
   
-  if(RecipeService.recipe){
+  if(RecipeService.recipe && UserService.user){
     setAndUpdateRecipeIngredients(CookbookService.alreadyInCookbook(RecipeService.recipe))
   }
 
-  $rootScope.$on('showRecipe', function(event, recipe){
-    setAndUpdateRecipeIngredients(CookbookService.alreadyInCookbook(recipe))
+  $rootScope.$on('showRecipe', function(event, recipe){    
+    if(RecipeService.recipe && UserService.user){
+      setAndUpdateRecipeIngredients(CookbookService.alreadyInCookbook(recipe))
+    } else {
+      $scope.recipe = RecipeService.recipe = recipe
+    }
   })
 
   function setAndUpdateRecipeIngredients(recipe){
