@@ -1,6 +1,6 @@
 (function(){
   function UserService(){
-    var user = {};
+    this.user = undefined;
   }
 
   angular

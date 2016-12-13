@@ -1,6 +1,7 @@
 (function(){
   function HealthLabelService($http, UserService){
-    var allHealthLabels, userHealthLabels;
+    var allHealthLabels = this.allHealthLabels
+    var userHealthLabels = this.userHealthLabels
 
     this.getLabels = function(){
       return $http.get("/health_labels")
@@ -11,18 +12,36 @@
       return $http({url: url, method: method});
     }
 
-    this.updateLabels = function(userLabels, allLabels){
-      userHealthLabels = userLabels;
-      allHealthLabels = allLabels;
-      allHealthLabels.forEach(function(label){
+    this.setupLabels = function(user, allHealthLabels){
+      this.userHealthLabels = user.healthLabels;
+      this.allHealthLabels = allHealthLabels
+      this.allHealthLabels.forEach(function(label){
         label.added = false;
-        userLabels.forEach(function(userLabel){
+        userHealthLabels.forEach(function(userLabel){
           if(label.label === userLabel.label){
             label.added = true;
           }
         })
       })
-      return allHealthLabels
+      return this.allHealthLabels
+    }
+
+    this.removeLabel = function(removedLabel){
+      this.allHealthLabels.forEach(function(label){
+        if(label.label === removedLabel.label){
+          label.added = false;
+        }
+      })
+      return this.allHealthLabels
+    }
+
+    this.addLabel = function(addedLabel){
+      this.allHealthLabels.forEach(function(label){
+        if(label.label === addedLabel.label){
+          label.added = true;
+        }
+      })
+      return this.allHealthLabels
     }
   }
 

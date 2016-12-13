@@ -1,7 +1,7 @@
 (function(){
   function ShoppingListService ($http, UserService){
 
-    var items;
+    this.items = [];
 
     this.updateShoppingList = function(method, ingredient){
       var shoppingListId  = UserService.user.shoppingList.id

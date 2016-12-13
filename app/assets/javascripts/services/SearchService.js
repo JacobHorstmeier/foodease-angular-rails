@@ -1,12 +1,15 @@
 (function(){
   function SearchService(Pagination){
 
-    var pagination, query, searchResults, searched;
+    this.pagination;
+    this.query;
+    this.searchResults;
+    this.searched;
     
     this.paginate = function(recipeCount){
-      pagination = Pagination.getNew(10);
-      pagination.numPages = Math.ceil(recipeCount/pagination.perPage);
-      return pagination;
+      this.pagination = Pagination.getNew(10);
+      this.pagination.numPages = Math.ceil(recipeCount/pagination.perPage);
+      return this.pagination;
     }
   }
   SearchService.$inject = ['Pagination']

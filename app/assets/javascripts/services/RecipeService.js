@@ -1,7 +1,7 @@
 (function(){
   function RecipeService($http){
-    var recipes = [];
-    var recipe;
+    this.recipes = [];
+    this.recipe = undefined;
 
     this.getRecipes = function(query, user){
       var url = 'https://api.edamam.com/search?q=' + query;
