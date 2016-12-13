@@ -23,14 +23,12 @@
     }
 
     $rootScope.$on('devise:new-registration', function(e, user){
-      $scope.user = UserService.user = user;
       authorize()
     });
 
     $rootScope.$on('devise:login', function(e, user){
-      $scope.user = UserService.user = user;
-      $state.go('search')
       authorize()
+      $state.go('search')
     });
 
     $rootScope.$on('devise:logout', function(e, user){
