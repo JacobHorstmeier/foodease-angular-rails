@@ -8,12 +8,12 @@
       updateIngredients()
     }
     
-    if(UserService.user === undefined){
+    if(UserService.user){
+      updateList(GlobalListService.updateLists(UserService.user))
+    } else {
       Auth.currentUser().then(function(user){
         updateList(GlobalListService.updateLists(user))
       })
-    } else {
-      updateList(GlobalListService.updateLists(UserService.user))
     }
 
     ctrl.removeFromShoppingList = function(ingredient){
@@ -37,13 +37,13 @@
     ctrl.toggleChecked = function(ingredient){
       if(ingredient.checked == true){
         ingredient.checked = false;
-        ShoppingListService.checkItem(ingredient.id, false, 'PUT')
+        ShoppingListService.checkItem(ingredient.id, false)
           .success(function(user){
             UserService.user = user
           })
       } else {
         ingredient.checked = true;
-        ShoppingListService.checkItem(ingredient.id, true, 'PUT')
+        ShoppingListService.checkItem(ingredient.id, true)
           .success(function(user){
             UserService.user = user
           })        

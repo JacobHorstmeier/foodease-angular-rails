@@ -15,10 +15,10 @@
       }
     }
 
-    this.checkItem = function(ingredient, checked, method){
+    this.checkItem = function(ingredient, checked){
       var shoppingListId  = UserService.user.shoppingList.id
       var url = '/shopping_list/' + shoppingListId + '/ingredients/' + ingredient;
-      return $http({url: url, method: method, data: {checked: checked}})
+      return $http({url: url, method: 'PUT', data: {checked: checked}})
     }
   }
 

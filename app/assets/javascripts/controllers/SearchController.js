@@ -37,12 +37,12 @@
     $scope.pagination = SearchService.pagination;
     $scope.searchResults = SearchService.searchResults;
     
-    if(UserService.user === undefined){
+    if(UserService.user){
+      $scope.user = GlobalListService.updateLists(UserService.user)
+    } else {
       Auth.currentUser().then(function(user){
         $scope.user = GlobalListService.updateLists(user)
       })
-    } else {
-      $scope.user = GlobalListService.updateLists(UserService.user)
     }
   }
 
