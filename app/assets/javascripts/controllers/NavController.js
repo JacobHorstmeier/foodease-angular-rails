@@ -1,5 +1,5 @@
 (function(){
-  function NavController($location, $scope, $rootScope, Auth, HealthLabelService, Flash, UserService, $state, SearchService, GlobalListService){
+  function NavController($location, $scope, $rootScope, Auth, Flash, $state, GlobalListService){
 
     $scope.isActive = function(viewLocation){
       return viewLocation === $location.path()
@@ -13,15 +13,6 @@
 
     $scope.logout = Auth.logout
 
-    $scope.clearData = function(){
-      SearchService.recipe = null
-      $scope.user = UserService.user = undefined;
-      $scope.healthLabels = null
-      SearchService.searched = false
-      SearchService.searchResults = []
-      Flash.create('success', 'Successfully logged out. Come back soon!', 3000, {container: 'main'})
-    }
-
     $rootScope.$on('devise:new-registration', function(e, user){
       authorize()
     });
@@ -32,12 +23,13 @@
     });
 
     $rootScope.$on('devise:logout', function(e, user){
-      $scope.user = UserService.user = undefined;
+      $scope.user = GlobalListService.clearLists();
       $state.go('search')
+      Flash.create('success', 'Successfully logged out. Come back soon!', 3000, {container: 'main'})
     });
   }
 
-  NavController.$inject = ['$location', '$scope', '$rootScope', 'Auth', 'HealthLabelService', 'Flash', 'UserService', '$state', 'SearchService', 'GlobalListService']
+  NavController.$inject = ['$location', '$scope', '$rootScope', 'Auth', 'Flash', '$state', 'GlobalListService']
 
   angular
     .module('foodEase')
