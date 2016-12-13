@@ -23,6 +23,11 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
 
   function setAndUpdateRecipeIngredients(recipe){
       if (recipe){
+        for(var i = recipe.ingredients.length - 1; i >= 0; i--){
+          if(recipe.ingredients[i].text.length > 100){            
+            recipe.ingredients.splice(i, 1)
+          }          
+        }
         $scope.recipe = RecipeService.recipe = updateIngredients(recipe)
       }
     }
