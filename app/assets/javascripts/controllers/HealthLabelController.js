@@ -5,19 +5,19 @@
     var getLabels = HealthLabelService.getLabels;
     var updateLabels = HealthLabelService.updateLabels    
     
-    function setupLabels(){    
-      if(!UserService.user){
+    function setupLabels(user){ 
+      if(user){
+        $scope.user = UserService.user = user
+        getLabels().then(function(labels){
+          $scope.healthLabels = updateLabels(user.healthLabels, labels.data)
+        })
+      } else {
         Auth.currentUser().then(function(user){
           $scope.user = UserService.user = user
           $scope.userLabels = user.healthLabels
           getLabels().then(function(labels){
-            $scope.healthLabels = updateLabels(UserService.user.healthLabels, labels.data)
+            $scope.healthLabels = updateLabels(user.healthLabels, labels.data)
           })
-        })
-      } else {
-        $scope.user = UserService.user
-        getLabels().then(function(labels){
-          $scope.healthLabels = updateLabels(UserService.user.healthLabels, labels.data)
         })
       }
     }
@@ -39,7 +39,7 @@
         })
     }
 
-    setupLabels()
+    setupLabels(UserService.user)
 
     $rootScope.$on('devise:new-registration', function(e, user){
       $scope.user = UserService.user = user;

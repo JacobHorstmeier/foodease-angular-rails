@@ -8,7 +8,7 @@ Visit https://foodEase-angular-rails.herokuapp.com/ to see foodEase in action.
 
 Alternatively, you are welcome to fork this repo and use the following terminal commands to access locally if you wish to make changes or submit contributions:
 
-- git clone YOUR-REPO-SSH
+- git clone git@github.com:<GITHUB-USERNAME>/foodease-angular-rails.git
 - cd foodEase-angular-rails
 - rake db:migrate
 - rake db:seed

@@ -14,7 +14,6 @@
       $scope.cookbookRecipes = user.cookbook.recipes;
     }
 
-
     ctrl.showCookbookRecipe = function(recipe){
       $rootScope.$emit('showRecipe', recipe)
     }
