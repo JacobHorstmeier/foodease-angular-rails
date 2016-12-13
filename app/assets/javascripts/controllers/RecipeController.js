@@ -1,23 +1,25 @@
 function RecipeController($scope, RecipeService, UserService, CookbookService, GlobalListService, ShoppingListService, $rootScope){
-  var ctrl = this;
-  $scope.recipe = RecipeService.recipe
-  $scope.user = UserService.user
   
-  if(RecipeService.recipe && UserService.user){
-    setAndUpdateRecipeIngredients(CookbookService.alreadyInCookbook(RecipeService.recipe))
-  }
+  var ctrl = this;
+  $scope.user = UserService.user  
+  showRecipe(RecipeService.recipe)
 
   $rootScope.$on('showRecipe', function(event, recipe){    
-    if(RecipeService.recipe && UserService.user){
-      setAndUpdateRecipeIngredients(CookbookService.alreadyInCookbook(recipe))
-    } else {
-      $scope.recipe = RecipeService.recipe = recipe
-    }
+    showRecipe(recipe)
   })
 
   $rootScope.$on('removeRecipe', function(event, recipe){
     $scope.removeRecipe(recipe);
   })
+
+  function showRecipe(recipe){
+    if($scope.user = UserService.user && recipe){
+      var recipe = CookbookService.alreadyInCookbook(recipe)
+      setAndUpdateRecipeIngredients(recipe)
+    } else if(recipe){
+      $scope.recipe = RecipeService.recipe = recipe
+    }
+  }
 
   function setAndUpdateRecipeIngredients(recipe){
       if (recipe){
@@ -65,7 +67,6 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
       ShoppingListService.updateShoppingList('PUT', ingredient.food)
         .success(function(user){
           GlobalListService.updateLists(user)
-          setAndUpdateRecipeIngredients(RecipeService.recipe)
         })
     }
 
@@ -74,7 +75,6 @@ function RecipeController($scope, RecipeService, UserService, CookbookService, G
       ShoppingListService.updateShoppingList('DELETE', ingredient.food)
         .success(function(user){
           GlobalListService.updateLists(user)
-          setAndUpdateRecipeIngredients(RecipeService.recipe)
         })
     }
 }

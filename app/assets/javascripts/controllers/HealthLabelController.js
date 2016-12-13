@@ -3,7 +3,6 @@
 
     $scope.healthLabels = HealthLabelService.allhealthLabels
     var getLabels = HealthLabelService.getLabels;
-    var setupLabels = HealthLabelService.setupLabels    
         
     $scope.addHealthLabel = function(label){
       HealthLabelService.updateUserLabels('PUT', UserService.user.id, label.id)
@@ -20,29 +19,28 @@
           $scope.healthLabels = HealthLabelService.removeLabel(label)
         })
     }
-
-    if(UserService.user){
-      $scope.user = UserService.user = user
-      getLabels().then(function(labels){
-        $scope.healthLabels = setupLabels(user, labels.data)
-      })
-    } else {
-      Auth.currentUser().then(function(user){
+    function setupLabels(){      
+      if(UserService.user){
         $scope.user = UserService.user = user
-        $scope.userLabels = user.healthLabels
         getLabels().then(function(labels){
-          $scope.healthLabels = setupLabels(user, labels.data)
+          $scope.healthLabels = HealthLabelService.setupLabels(user, labels.data)
         })
-      })
+      } else {
+        Auth.currentUser().then(function(user){
+          $scope.user = UserService.user = user
+          $scope.userLabels = user.healthLabels
+          getLabels().then(function(labels){
+            $scope.healthLabels = HealthLabelService.setupLabels(user, labels.data)
+          })
+        })
+      }
     }
 
     $rootScope.$on('devise:new-registration', function(e, user){
-      $scope.user = UserService.user = user;
       setupLabels()
     });
 
     $rootScope.$on('devise:login', function(e, user){
-      $scope.user = UserService.user = user;
       setupLabels()
     });
 

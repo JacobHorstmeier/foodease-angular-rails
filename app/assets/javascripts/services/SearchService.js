@@ -8,7 +8,7 @@
     
     this.paginate = function(recipeCount){
       this.pagination = Pagination.getNew(10);
-      this.pagination.numPages = Math.ceil(recipeCount/pagination.perPage);
+      this.pagination.numPages = Math.ceil(recipeCount/this.pagination.perPage);
       return this.pagination;
     }
   }

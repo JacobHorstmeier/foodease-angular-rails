@@ -13,17 +13,15 @@
     }
 
     this.setupLabels = function(user, allHealthLabels){
-      this.userHealthLabels = user.healthLabels;
-      this.allHealthLabels = allHealthLabels
-      this.allHealthLabels.forEach(function(label){
+      allHealthLabels.forEach(function(label){
         label.added = false;
-        userHealthLabels.forEach(function(userLabel){
+        user.healthLabels.forEach(function(userLabel){
           if(label.label === userLabel.label){
             label.added = true;
           }
         })
       })
-      return this.allHealthLabels
+      return this.allHealthLabels = allHealthLabels
     }
 
     this.removeLabel = function(removedLabel){

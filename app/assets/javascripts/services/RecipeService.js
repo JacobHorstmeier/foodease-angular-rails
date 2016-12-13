@@ -1,6 +1,5 @@
 (function(){
   function RecipeService($http){
-    this.recipes = [];
     this.recipe = undefined;
 
     this.getRecipes = function(query, user){
