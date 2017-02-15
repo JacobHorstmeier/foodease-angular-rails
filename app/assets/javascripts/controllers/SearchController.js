@@ -1,5 +1,5 @@
 (function(){
-  function SearchController(Auth, $scope, $rootScope, Pagination, RecipeService, CookbookService, SearchService, UserService, GlobalListService, ShoppingListService){ 
+  function SearchController(Auth, $scope, $rootScope, Pagination, RecipeService, CookbookService, SearchService, UserService, GlobalListService, ShoppingListService, Flash){ 
     
 ///////// DECLARATIONS /////////
     
@@ -20,7 +20,7 @@
           }
         })
         .error(function(response){
-          alert("There was an unexpected error processing your request. Please try another search term for now.")
+          Flash.create('warning', "Oops! Something went wrong with the API call. Try another search term for now", 5000, {container: 'search'})
         })
     };
 
@@ -46,7 +46,7 @@
     }
   }
 
-  SearchController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'RecipeService', 'CookbookService', 'SearchService', 'UserService', 'GlobalListService', 'ShoppingListService']
+  SearchController.$inject = ['Auth', '$scope', '$rootScope', 'Pagination', 'RecipeService', 'CookbookService', 'SearchService', 'UserService', 'GlobalListService', 'ShoppingListService', 'Flash']
 
   angular
   .module('foodEase')
