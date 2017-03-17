@@ -1,6 +1,6 @@
 # Description
 
-foodEase is my first Angular single page application with a Rails backend. This was also my final Learn.co portfolio project.
+Food Ease is my first Angular single page application with a Rails backend. Looking for some pretty code? Try poking around in the app/assets/javascript/ directory!
 
 # How to Use
 
