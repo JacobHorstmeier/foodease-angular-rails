@@ -30,8 +30,6 @@
     $rootScope.$on('devise:logout', function(e, user){
       $scope.user = GlobalListService.clearLists();
       $state.go('search')
-      // debugger;
-      // Flash.create('success', 'Successfully logged out. Come back soon!', 3000, {container: 'main'})
     });
   }
 

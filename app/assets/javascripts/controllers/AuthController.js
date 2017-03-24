@@ -32,7 +32,6 @@
         Flash.create('success', message, 3000, {container: 'main'})
         $state.go('search');
       }, function(response){
-        debugger;
         Flash.create('danger', response.data.error, 3000, {container: 'auth'})
       });
     }
