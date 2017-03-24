@@ -4,7 +4,7 @@ Food Ease is my first Angular single page application with a Rails backend. It t
 
 # How to Use
 
-Visit https://www.foodease.us/ to see foodEase in action.
+Visit www.foodease.us/ to see foodEase in action.
 
 Alternatively, you are welcome to fork this repo and use the following terminal commands to access locally if you wish to make changes or submit contributions:
 
