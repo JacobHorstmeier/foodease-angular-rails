@@ -44,7 +44,7 @@
       setupLabels()
     });
 
-    $rootScope.$on('devise:logout', function(e, user){
+    $rootScope.$on('devise:logout', function(e, user){      
       $scope.user = UserService.user = undefined;      
       $scope.healthLabels = []
     });

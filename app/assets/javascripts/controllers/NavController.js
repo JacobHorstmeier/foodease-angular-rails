@@ -11,7 +11,12 @@
       })
     }
 
-    $scope.logout = Auth.logout
+    function logout() {
+      Auth.logout().then(function(){
+        Flash.create('success', 'Successfully logged out. Come back soon!', 3000, {container: 'main'})
+      })
+    }
+    $scope.logout = logout
 
     $rootScope.$on('devise:new-registration', function(e, user){
       authorize()
@@ -25,7 +30,8 @@
     $rootScope.$on('devise:logout', function(e, user){
       $scope.user = GlobalListService.clearLists();
       $state.go('search')
-      Flash.create('success', 'Successfully logged out. Come back soon!', 3000, {container: 'main'})
+      // debugger;
+      // Flash.create('success', 'Successfully logged out. Come back soon!', 3000, {container: 'main'})
     });
   }
 
