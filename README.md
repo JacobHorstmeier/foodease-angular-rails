@@ -4,11 +4,11 @@ Food Ease is my first Angular single page application with a Rails backend. It t
 
 # How to Use
 
-Visit www.foodease.us/ to see foodEase in action.
+Visit <a href="www.foodease.us/" target="_blank">foodease.us</a> to see foodEase in action.
 
 Alternatively, you are welcome to fork this repo and use the following terminal commands to access locally if you wish to make changes or submit contributions:
 
-- git clone git@github.com:<GITHUB-USERNAME>/foodease-angular-rails.git
+- git clone git@github.com:<GITHUB_USERNAME>/foodease-angular-rails.git
 - cd foodease-angular-rails
 - rake db:migrate db:seed
 - rails s
