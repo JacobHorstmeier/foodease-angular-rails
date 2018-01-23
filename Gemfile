@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.2.6'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bower-rails'
